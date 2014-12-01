@@ -1,0 +1,47 @@
+\documentclass[10pt,a4paper]{memoir}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+	\DeclareGraphicsExtensions{.eps}
+	\usepackage{hyperref}
+\else,
+\fi
+\usepackage{mystyle}
+
+\begin{document}
+
+\title{Coexistence policies in cognitive radio}
+\author{Mario Lopez Martinez \and
+Supervisor: Juan Jose Alcaraz Espin
+        \thanks{Supported by a grant from ...}}
+\date{01 March 2015\thanks{First drafted on 28 November 2014}}
+\maketitle
+\clearpage
+%\input{./tex/Title.tex}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+
+\chapter{Introduction}
+% \input{./tex/Intro.tex}
+\part{Dynamic Spectrum Access}
+\input{./tex/BR.tex}
+\input{./tex/SPEC_MAN.tex}
+\input{./tex/BD.tex}
+\input{./tex/RSM.tex}
+
+\part{Automated spectrum trading}
+\input{./tex/Survey.tex}
+\input{./tex/Sarnoff.tex}
+\input{./tex/MAB_CSSA.tex}
+
+\chapter{Conclusion}
+% \input{./tex/Conclusion.tex}
+
+%Bibliography
+\clearpage
+\input{./bibtex/thesisBib.tex}
+\end{document}
