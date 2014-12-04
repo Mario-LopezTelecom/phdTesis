@@ -1,0 +1,499 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.tex",
+			"settings":
+			{
+				"buffer_size": 1016,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 52.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"late",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 417.0
+	},
+	"console":
+	{
+		"height": 203.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/mariol/Documents/git/TESIS",
+		"/Users/mariol/Documents/git/TESIS/img",
+		"/Users/mariol/Documents/git/TESIS/tex"
+	],
+	"file_history":
+	[
+		"/Users/mariol/Documents/git/TESIS/other/untitled.py",
+		"/Users/mariol/Documents/git/TESIS/latexdiff_help.sty",
+		"/Users/mariol/Documents/git/TESIS/tex/RSM_diff.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/RSM.tex",
+		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
+		"/Users/mariol/Documents/git/TESIS/img/RSM/evolution3D.eps",
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/RSM.aux",
+		"/Users/mariol/Documents/git/TESIS/tex/RSM.log",
+		"/Users/mariol/Documents/git/TESIS/bibtex/RSM.bib",
+		"/Users/mariol/Documents/git/TESIS/bibtex/survey.bib",
+		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.aux",
+		"/Users/mariol/Documents/git/TESIS/main/mystyle.sty",
+		"/Users/mariol/Documents/git/TESIS/main/main.tex",
+		"/Users/mariol/Documents/git/TESIS/main.tex",
+		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.fdb_latexmk",
+		"/Users/mariol/Documents/git/TESIS/tex/BR.aux",
+		"/Users/mariol/Documents/git/TESIS/tesis.sublime-project",
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/Default (OSX).sublime-keymap",
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/README.markdown",
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
+		"/Users/mariol/Documents/git/TESIS/originals/RSM_ISWCS/Dual_Tesselation_Temporal_Access_v1.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
+		"/Users/mariol/Documents/git/TESIS/tesisBib",
+		"/Users/mariol/Documents/git/TESIS/BR/capacity_cognitive_paper.tex",
+		"/Users/mariol/Documents/git/TESIS/BR/PUinterferenceRev.tex",
+		"/Users/mariol/Dropbox/DOC/Workspace/BR/Manuscript/capacity_cognitive_paper.tex",
+		"/Users/mariol/Dropbox/DOC/Workspace/SpecTrading/wirNetw/MLopez_JAlcarazPREEDITORS.tex",
+		"/Users/mariol/Library/Application Support/Übersicht/widgets/hcal.widget/index.js",
+		"/Users/mariol/Documents/git/MAB_ICC15/macICC15.tex",
+		"/Users/mariol/Documents/git/MAB_ICC15/diff.tex",
+		"/Users/mariol/Documents/git/MAB_ICC15/mab.bib",
+		"/Users/mariol/Documents/eclipseWs/sei/src/org/cai/mario/AddVideo.java",
+		"/Applications/eclipse/artifacts.xml",
+		"/Users/mariol/Documents/git/MAB_ICC15/IEEEabrv.bib",
+		"/Users/mariol/Documents/git/MAB_ICC15/mabConf.tex",
+		"/Users/mariol/Documents/git/MAB_ICC15/mab_cssa.bib",
+		"/Users/mariol/Documents/git/MAB_ICC15/macICC15.bbl",
+		"/Users/mariol/Dropbox/DOC/Docencia/AvInet/RespAlumnos/1. Felix Reverte, Jose Juan Pedreño",
+		"/Users/mariol/Desktop/untitled.pl",
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/mariol/Documents/git/MAB_ICC15/mabproj.sublime-project",
+		"/Users/mariol/Documents/git/BD_ICC15/background_detection.tex",
+		"/Users/mariol/Downloads/PARALLELS.DESKTOP.10.0.1.MACOSX.CRACKED-DEViSO- [MUMBAI-TPB]/dvi-pd10.nfo",
+		"/Users/mariol/Documents/git/BD_ICC15/diff.tex",
+		"/Users/mariol/Documents/git/MAB_ICC15/geo.eps",
+		"/Users/mariol/Documents/git/MAB_ICC15/detGreedy.eps",
+		"/Users/mariol/Downloads/optimumCapacity2Denhanced.svg",
+		"/Users/mariol/Dropbox/MAC_CSSA/MAB_ICC15/macICC15.tex",
+		"/Users/mariol/Dropbox/MAC_CSSA/macICC15.tex",
+		"/Users/mariol/Dropbox/DOC/Workspace/DOC_ITA/InitialPresentation/MultiBD.svg",
+		"/Users/mariol/Documents/git/MAB_ICC15/MAB_CSSA.svg",
+		"/Users/mariol/Documents/unix_latex_template (1)/bare_conf.tex",
+		"/Users/mariol/Dropbox/DOC/Workspace/Survey/Mario López-Martínez",
+		"/Users/mariol/Dropbox/DOC/Workspace/Survey/Juan J. Alcaraz obtained his engineering degree fr",
+		"/Users/mariol/Dropbox/DOC/Workspace/Survey/Joan Garcia-Haro received the M.Sc and Ph.D degree",
+		"/Applications/Sublime Text.app/Contents/MacOS/changelog.txt",
+		"/Users/mariol/Documents/git/MAB_ICC15/untitled",
+		"/Users/mariol/Documents/git/MAB_ICC15/mab_ICC15",
+		"/Users/mariol/Documents/git/MAB_ICC15/mab_ICC'16",
+		"/Users/mariol/Documents/git/MAB_ICC15/untitled12.tex",
+		"/Users/mariol/Documents/git/MAB_ICC15/mab_ICC'15.tex",
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeX.sublime-build"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Km",
+			"textit",
+			"i.e.",
+			"vector",
+			"\\textit",
+			"ref:Goldsmith}",
+			"goldsmith",
+			"goldsmi",
+			"Gao2011",
+			"Huang20",
+			"Yi20",
+			"Zhang2009",
+			"Zhang",
+			"Zhao2007",
+			"Valletti",
+			"\\mathbf",
+			"sub",
+			"\\mathbf",
+			"\\include",
+			"\\bi",
+			"\\bi ",
+			"\\bi",
+			"[212]",
+			"as we showed",
+			"dual",
+			"tessellation",
+			"Table1",
+			"sec:Conclusion",
+			"sec:Results",
+			"sec:MOde",
+			"sec:Introduction",
+			"sec:Conclusions",
+			"sec:Numerical",
+			"sec:Model",
+			"\\subfigure",
+			"Introduction",
+			"table1",
+			"sec:Model",
+			"\\subfigure",
+			"sec:Introduction",
+			"ref:OptimalStrategies",
+			"[h",
+			"table1",
+			"sec:conclusion",
+			"sec:results",
+			"s",
+			"transitionProbabilities",
+			"sec:system",
+			"table4",
+			"table3",
+			"SPEC_MAN_table_computational",
+			"table1",
+			"SPEC_MAN_table_computation",
+			"table2",
+			"sec:Conclusion",
+			"fig:subfig1",
+			"fig:subfig2",
+			"fig:subfig1",
+			"[h",
+			"sec:System",
+			"sec:RelatedWork",
+			"sec:Relat",
+			"ieee",
+			"access.eps",
+			"access",
+			"\\subfigure",
+			"table2",
+			"table1",
+			"{figure}[",
+			"Effect of PU",
+			"\\label{BR_fig_Interference}",
+			"\\label{BR_fig_I",
+			"\\label{BR_",
+			"BR_fi",
+			"fig:",
+			"table",
+			"mab_table_related_work",
+			"table1",
+			"Table1",
+			"fff",
+			"includeg",
+			"figure",
+			"Upper Con",
+			"data rate",
+			"utility",
+			"contribution",
+			"The MAB-MDP",
+			"the PT selects the ",
+			"cssa",
+			"code:",
+			"Give the indices",
+			"numerical",
+			"layer",
+			"the differ",
+			"the main difference",
+			"code:tlp",
+			"figure",
+			"table1",
+			"table",
+			"tale",
+			"Super-Seq.",
+			"stage",
+			"an arm $s",
+			"The index of these policies",
+			"estimated",
+			"Given an",
+			"about the type",
+			"can be considered",
+			"Decision phase",
+			"footnote",
+			"fig",
+			"table1",
+			"table",
+			"magaz",
+			"proc",
+			"pproc",
+			"magazine",
+			"ICC",
+			"Veh",
+			"Dyn",
+			"Interna",
+			"Inter",
+			"Int",
+			"Inf",
+			"Theo",
+			"Proc.",
+			"Information Theory",
+			"Information"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"km",
+			"\\emph",
+			"\\mathbold",
+			"\\input",
+			"RSM_table_sim_params",
+			"RSM_sec_conclusion",
+			"RSM_sec_results",
+			"RSM_sec_model",
+			"RSM_sec_intro",
+			"Sarnoff_sec_conclusions",
+			"Sarnoff_sec_numerical",
+			"Sarnoff_sec_model",
+			"\\subfloat",
+			"Sarnoff_sec_intro",
+			"RSM_table_parameters",
+			"RSM_sec_model",
+			"\\subfloat",
+			"RSM_sec_intro",
+			"BD_table_parameters",
+			"BD_sec_conclusion",
+			"BD_sec_results",
+			"BD_eq_transition_prob",
+			"BD_sec_system",
+			"SPEC_MAN_table_parameters",
+			"SPEC_MAN_table_computational_merge",
+			"SPEC_MAN_table_computational_randomseq",
+			"SPEC_MAN_table_notation",
+			"SPEC_MAN_table_computational",
+			"SPEC_MAN_table_computation",
+			"SPEC_MAN_sec_conclusion",
+			"SPEC_MAN_fig_collision_random",
+			"SPEC_MAN_fig_throughput_random",
+			"SPEC_MAN_sec_system",
+			"SPEC_MAN_sec_related_work",
+			"\\subfloat",
+			"\\subfig",
+			"BR_table_sim_param",
+			"BR_table_parameters",
+			"BR_fig_",
+			"survey_table_related_work",
+			"Super-0CB",
+			"round",
+			"\\alpha_a",
+			"x_j",
+			"M_s^*(x_i)",
+			"\\mathcal{A}_s",
+			"x'_{i",
+			"x_{i",
+			"x_i",
+			"x'_i",
+			"x_i",
+			"x'_s(1)",
+			"x'_s(2)",
+			"x_s(1)",
+			"x_s(2)",
+			"x'_{s}",
+			"l^{\\text{acc}}",
+			"h^{\\text{rej}}",
+			"{\\text{th}}",
+			"alpha^{\\text{min}",
+			"^{(2)}",
+			"^{(1)}",
+			"^{(0)}",
+			"^{(n)}",
+			"^{\\text{MDP}}",
+			"Fig. ",
+			"[ht]",
+			"-",
+			"''",
+			"``",
+			"\\alpha_{x_s}^{min}",
+			"-",
+			"\\boldsymbol"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 254.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "tesis.sublime-project",
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 347.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

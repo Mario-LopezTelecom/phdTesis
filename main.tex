@@ -1,47 +1,50 @@
-\documentclass[10pt,a4paper]{memoir}
+\documentclass[12pt,a4paper,twoside]{memoir}
 \usepackage{graphicx}
 \usepackage{ifpdf}
 \ifpdf
-	\DeclareGraphicsExtensions{.eps}
+	\DeclareGraphicsExtensions {.eps}
 	\usepackage{hyperref}
 \else,
-\fi
+\fi 
 \usepackage{mystyle}
+\usepackage{latexdiff_help}
 
 \begin{document}
 
 \title{Coexistence policies in cognitive radio}
 \author{Mario Lopez Martinez \and
-Supervisor: Juan Jose Alcaraz Espin
-        \thanks{Supported by a grant from ...}}
+Supervisor: Juan Jose Alcaraz Espin}
 \date{01 March 2015\thanks{First drafted on 28 November 2014}}
+
+\frontmatter
 \maketitle
-\clearpage
 %\input{./tex/Title.tex}
+\clearpage
 \tableofcontents
 \clearpage
 \listoffigures
 \clearpage
 \listoftables
 \clearpage
-
 \chapter{Introduction}
-% \input{./tex/Intro.tex}
+%\input{./tex/Intro.tex}
+
+\mainmatter
 \part{Dynamic Spectrum Access}
-\input{./tex/BR.tex}
-\input{./tex/SPEC_MAN.tex}
-\input{./tex/BD.tex}
-\input{./tex/RSM.tex}
+%\input{./tex/BR}
+%\input{./tex/SPEC_MAN}
+\input{./tex/BD}
+%\input{./tex/RSM}
+\input{./tex/RSM_diff}
 
 \part{Automated spectrum trading}
-\input{./tex/Survey.tex}
-\input{./tex/Sarnoff.tex}
-\input{./tex/MAB_CSSA.tex}
+%\input{./tex/Survey}
+%\input{./tex/Sarnoff}
+%\input{./tex/MAB_CSSA}
 
-\chapter{Conclusion}
-% \input{./tex/Conclusion.tex}
-
+\backmatter
+\part{Final conclusions}
+%\input{./tex/Conclusion}
 %Bibliography
-\clearpage
-\input{./bibtex/thesisBib.tex}
+\input{./bibtex/thesisBib}
 \end{document}

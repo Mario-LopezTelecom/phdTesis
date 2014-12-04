@@ -1,27 +1,52 @@
 \ProvidesPackage{mystyle}
-%Survey
-\usepackage{mathptmx}      		% use Times fonts if available on your TeX system
-\usepackage[cmex10]{amsmath} 	% conflict in BR
 
+% Layout
+\settrims{0pt}{0pt}
+\settypeblocksize{0.8\stockheight}{0.7\stockwidth}{*}
+\setlrmargins{*}{*}{1} %								1.2 when printed
+\setulmargins{*}{*}{1}
+\checkandfixthelayout[nearest]
+
+% Heading
+\nouppercaseheads
+\makeheadrule{headings}{\textwidth}{0.3pt}
+\addtopsmarks{headings}{}{
+	\createmark{chapter}{both}{shownumber}{}{. \space}
+}
+\pagestyle{headings}
+
+% Chapter style
+\chapterstyle{veelo}
+
+% Fonts
+\usepackage{cmbright}
+%\usepackage[bitstream-charter]{mathdesign} % For the printed version?
+%\usepackage[T1]{fontenc}					% In case of needing accents
 \usepackage{amssymb}
+\usepackage{amsmath}
+
+% Caption
+\captiontitlefont{\small\itshape}
+\captionnamefont{\small\itshape}
+\captionstyle[]{\centerlastline}
+\changecaptionwidth
+\captionwidth{0.8\textwidth}
+
+% Other
 \usepackage{url}
 \usepackage{hyperref}
-%\usepackage[hyphenbreaks]{breakurl}
 \usepackage{array}
 \usepackage{enumerate}
-\usepackage{pdflscape}			% convert pages to landscape mode
-%MAB_CSSA
+\usepackage{pdflscape}			
 \usepackage{algorithmic}
 \usepackage{algorithm}
-\usepackage[T1]{fontenc}
 \usepackage{threeparttable}
 \usepackage{tabulary}
-%BR
-%\usepackage[latin1]{inputenc}
-\usepackage{subfig}				% Class memoir Warning: You are using the caption package with memoir class
-%SPEC_MAN
-\usepackage{amsfonts}
-\usepackage{epsfig}
+%\usepackage[latin1]{inputenc}		% Input accents and the like. Needed by BR?
+%\usepackage{subfig}				% Class memoir Warning. Memoir has its own methods
+%\usepackage{epsfig}
 
-
-\DeclareMathOperator*{\argmax}{arg\,max}
+% Re-definitions
+\DeclareMathOperator*{\argmax}{arg\,max}	% Operator "arg max"
+\renewcommand{\vec}[1]{\mathbold{#1}}		% Vector
+\newcommand*{\mat}[1]{\mathbf{#1}}		% Matrix
