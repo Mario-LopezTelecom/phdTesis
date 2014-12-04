@@ -1,6 +1,6 @@
 %Sustitucion de IEEEeqnarray
 \graphicspath{ {img/BD/} }
-\chapter[Background Detection of Primary User Activity in Opportunistic Spectrum Access][Background Detection of Primary User Activity in OSA]{Background Detection of Primary User Activity in Opportunistic Spectrum Access}
+\chapter[Background Detection of Primary User Activity in Opportunistic Spectrum Access][Background Detection of Primary User Activity in OSA]{Background Detection of Primary User Activity in Opportunistic Spectrum Access}\label{BD_chap}
 \section{Introduction}\label{BD_sec_intro}
 \subsection{Motivation}
 One of the main problems of opportunistic spectrum access, OSA, is that current radio frequency front-ends cannot perform sensing and transmission in the same channels at the same time. In consequence, in OSA protocols, spectrum sensing and SU data transmission are performed in two separated phases. The scanning phase allows the SUs to find spectrum holes to transmit in.
@@ -58,8 +58,8 @@ f_{X}(x) & = & \displaystyle\frac{1}{p_{ps}}e^{-\frac{x}{p_{ps}}}
 \end{align}
 where $p_{ss}$ is the average power received from the SU Tx and $p_{ps}$ is the average power received from the PU BS. Both distributions, as well as the average powers can be obtained from the previous sensing history of the SUs. 
 Similarly, this sensing history provides information about the PU traffic profile and intensity on the scanned channels.
-One basic metric is the probability of PU activity during the transmission time of an SU packet ($\mathbf{P}\left(\Theta = \theta\right)$), with $\theta = \left\{0,1\right\}$.
-Therefore, assuming $f_{Y}(y)$, $f_{X}(x)$ and $\mathbf{P}\left(\Theta = \theta\right)$ are known, the hypothesis testing is based on Bayesian estimation, resulting in a maximum a posteriori probability (MAP) decision rule. In Section \ref{BD_sec_results} we evaluate the sensitivity of the BD mechanism to the inaccuracies in the estimation of the PDFs and traffic parameters.
+One basic metric is the probability of PU activity during the transmission time of an SU packet ($\mathbold{P}\left(\Theta = \theta\right)$), with $\theta = \left\{0,1\right\}$.
+Therefore, assuming $f_{Y}(y)$, $f_{X}(x)$ and $\mathbold{P}\left(\Theta = \theta\right)$ are known, the hypothesis testing is based on Bayesian estimation, resulting in a maximum a posteriori probability (MAP) decision rule. In Section \ref{BD_sec_results} we evaluate the sensitivity of the BD mechanism to the inaccuracies in the estimation of the PDFs and traffic parameters.
 
 Summarizing, once the SU transmission has started, the SU Rx obtains, upon each packet reception, the following observation:
 \begin{equation}
@@ -87,7 +87,7 @@ And, upon this observation, the MAP decision rule selects the hypothesis having 
 
 \section{PU Activity Detection in Background}\label{sec:Detection}
 \subsection{MAP Rule}\label{sec:MAPrule}
-Given the observation pair, $\left(P=p_{r},E=e\right)$, the MAP rule selects the hypothesis $H_{i}$ for which the posterior probability $\mathbf{P}\left(\Theta=\theta|P=p_{r},E=e\right)$ is largest. 
+Given the observation pair, $\left(P=p_{r},E=e\right)$, the MAP rule selects the hypothesis $H_{i}$ for which the posterior probability $\mathbold{P}\left(\Theta=\theta|P=p_{r},E=e\right)$ is largest. 
 By Bayes' rule this is equivalent to select the hypothesis maximizing $p_{\Theta}\left(\theta\right)f_{P,E|\Theta}\left(p_{r},e|\theta\right)$.
 Because $E$ is a discrete random variable, we have to consider separately each possible value of the outcome $e$ ($e=0$, if the SU packet is received without errors and $e=1$ otherwise) for the computation of the posterior probability. Let $E_{0}$ and $E_{1}$ refer to the events $e=0$ and $e=1$ respectively. Similarly, we use $H_{0}$ and $H_{1}$ to refer to the events $\Theta=0$ and $\Theta=1$.
 Let us derive the expression of $f_{P,E|\Theta}\left(p_{r},e|\theta\right)$ for each possible combination of $E_{0}$ and $E_{1}$ with $H_{0}$ and $H_{1}$.
@@ -95,16 +95,16 @@ Let us derive the expression of $f_{P,E|\Theta}\left(p_{r},e|\theta\right)$ for 
 \subsubsection{Case $E_{1}$, $H_{1}$} Applying the definitions we have
 \begin{equation}\label{definitionE1H1}
 \begin{array}{lcl}
-f_{P,E_{1}|H_{1}}\left(p_{r},E_{1}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(P\leq p_{r},\text{\ttfamily{SINR}} \leq \gamma | H_{1}\right)\\
-&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(X+Y\leq p_{r},Y\leq N\gamma+X\gamma\right)
+f_{P,E_{1}|H_{1}}\left(p_{r},E_{1}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(P\leq p_{r},\text{\ttfamily{SINR}} \leq \gamma | H_{1}\right)\\
+&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(X+Y\leq p_{r},Y\leq N\gamma+X\gamma\right)
 \end{array}
 \end{equation}
 We will first find the joint PDF of $P$ and $X$ and then integrate to find the PDF of $P$.
 \begin{equation}\label{PxE1H1}
 \begin{array}{lcl}
-\mathbf{P}\left(X+Y\leq p_{r},Y\leq N\gamma+X\gamma|X=x\right) & = & \mathbf{P}\left(Y\leq p_{r}-x,Y\leq N\gamma+x\gamma|X=x\right)\\
-& = &\mathbf{P}\left(Y\leq \text{min}\left(p_{r}-x,N\gamma+x\gamma\right)|X=x\right)\\
-& = &\mathbf{P}\left(Y\leq \text{min}\left(p_{r}-x,N\gamma+x\gamma\right)\right)\\
+\mathbold{P}\left(X+Y\leq p_{r},Y\leq N\gamma+X\gamma|X=x\right) & = & \mathbold{P}\left(Y\leq p_{r}-x,Y\leq N\gamma+x\gamma|X=x\right)\\
+& = &\mathbold{P}\left(Y\leq \text{min}\left(p_{r}-x,N\gamma+x\gamma\right)|X=x\right)\\
+& = &\mathbold{P}\left(Y\leq \text{min}\left(p_{r}-x,N\gamma+x\gamma\right)\right)\\
 & = & \displaystyle\int_{-\infty}^{\text{min}\left(p_{r}-x,N\gamma+x\gamma\right)}f_{Y}(y)dy\\
 & = &
 \begin{cases}
@@ -154,15 +154,15 @@ f_{P,E_{1}|H_{1}}\left(p_{r}\right) =
 \subsubsection{Case $E_{0}$, $H_{1}$} Proceeding similarly to the case above we have
 \begin{equation}\label{definitionE0H1}
 \begin{array}{lcl}
-f_{P,E_{0}|H_{1}}\left(p_{r},E_{0}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(P\leq p_{r},\text{\ttfamily{SINR}} > \gamma | H_{1}\right)\\
-&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(X+Y\leq p_{r},Y>N\gamma+X\gamma\right)
+f_{P,E_{0}|H_{1}}\left(p_{r},E_{0}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(P\leq p_{r},\text{\ttfamily{SINR}} > \gamma | H_{1}\right)\\
+&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(X+Y\leq p_{r},Y>N\gamma+X\gamma\right)
 \end{array}
 \end{equation}
 To obtain the joint PDF of $X$ and $P$ we need the following probability
 \begin{equation}\label{PxE0H1}
 \begin{array}{lcl}
-\mathbf{P}\left(X+Y\leq p_{r},Y>N\gamma+X\gamma|X=x\right) & = & \mathbf{P}\left(X+Y\leq p_{r},Y>N\gamma+X\gamma\right)\\
-& = &\mathbf{P}\left(N\gamma+X\gamma < Y\leq p_{r}-x \right)\\
+\mathbold{P}\left(X+Y\leq p_{r},Y>N\gamma+X\gamma|X=x\right) & = & \mathbold{P}\left(X+Y\leq p_{r},Y>N\gamma+X\gamma\right)\\
+& = &\mathbold{P}\left(N\gamma+X\gamma < Y\leq p_{r}-x \right)\\
 & = &
 \begin{cases}
 \displaystyle\int_{N\gamma+X\gamma}^{p_{r}-x}f_{Y}(y)dy &,\mbox{if }x<\frac{p_{r}-N\gamma}{1+\gamma}\\
@@ -194,14 +194,14 @@ f_{P,E_{0}|H_{1}}\left(p_{r}\right) =
 \subsubsection{Case $E_{1}$, $H_{0}$} In this case there is no signal received from the PU and the conditional PDF of $P$ is defined as follows
 \begin{equation}\label{definitionE1H0}
 \begin{array}{lcl}
-f_{P,E_{1}|H_{0}}\left(p_{r},E_{1}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(P\leq p_{r},\text{\ttfamily{SINR}} \leq \gamma | H_{1}\right)\\
-&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(Y\leq p_{r},Y\leq N\gamma\right)
+f_{P,E_{1}|H_{0}}\left(p_{r},E_{1}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(P\leq p_{r},\text{\ttfamily{SINR}} \leq \gamma | H_{1}\right)\\
+&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(Y\leq p_{r},Y\leq N\gamma\right)
 \end{array}
 \end{equation}
 The probability in the right hand side is given by
 \begin{equation}\label{PxE1H0}
 \begin{array}{lcl}
-\mathbf{P}\left(Y\leq p_{r},Y\leq N\gamma\right) & = & \mathbf{P}\left(Y\leq\text{min}\left(p_{r},N\gamma\right)\right)\\
+\mathbold{P}\left(Y\leq p_{r},Y\leq N\gamma\right) & = & \mathbold{P}\left(Y\leq\text{min}\left(p_{r},N\gamma\right)\right)\\
 & = &
 \begin{cases}
 \displaystyle\int_{-\infty}^{p_{r}}f_{Y}(y)dy &,\mbox{if }p_{r}\leq N\gamma\\
@@ -222,13 +222,13 @@ The expression for Rayleigh fading is straightforward.
 \subsubsection{Case $E_{0}$, $H_{0}$} The PDF of $P$ is now given by
 \begin{equation}\label{definitionE0H0}
 \begin{array}{lcl}
-f_{P,E_{0}|H_{0}}\left(p_{r},E_{0}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(P\leq p_{r},\text{\ttfamily{SINR}}>\gamma | H_{1}\right)\\
-&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbf{P}\left(Y\leq p_{r},Y>N\gamma\right)
+f_{P,E_{0}|H_{0}}\left(p_{r},E_{0}|H_{1}\right) & = & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(P\leq p_{r},\text{\ttfamily{SINR}}>\gamma | H_{1}\right)\\
+&= & \displaystyle\frac{\partial}{\partial p_{r}}\mathbold{P}\left(Y\leq p_{r},Y>N\gamma\right)
 \end{array}
 \end{equation}
-where $\mathbf{P}\left(Y\leq p_{r},Y>N\gamma\right)$ equals $\mathbf{P}\left(N\gamma<Y\leq p_{r}\right)$ when $p_{r}> N\gamma$ and is 0 otherwise. Therefore we have
+where $\mathbold{P}\left(Y\leq p_{r},Y>N\gamma\right)$ equals $\mathbold{P}\left(N\gamma<Y\leq p_{r}\right)$ when $p_{r}> N\gamma$ and is 0 otherwise. Therefore we have
 %\begin{equation}\label{PxE0H0}
-%\mathbf{P}\left(Y\leq p_{r},Y\leq N\gamma\right) =
+%\mathbold{P}\left(Y\leq p_{r},Y\leq N\gamma\right) =
 %\begin{cases}
 %\displaystyle\int_{N\gamma}^{p_{r}}f_{Y}(y)dy &,\mbox{if }p_{r}\geq N\gamma\\
 %0 &,\mbox{otherwise }
@@ -246,34 +246,34 @@ The particularization for Rayleigh fading is straightforward.
 
 Given the above expressions, the MAP rule is specified by partitioning the observation space into disjoint sets in which each of the two hypothesis is chosen. In case a reception error has occurred ($E_{1}$), the following equation provides the threshold value(s) for the received power
 \begin{equation}\label{thresholdE1}
-\mathbf{P}\left(H_{0}\right)f_{P,E_{1}|H_{0}}\left(p_{r}\right) = \mathbf{P}\left(H_{1}\right)f_{P,E_{1}|H_{1}}\left(p_{r}\right)
+\mathbold{P}\left(H_{0}\right)f_{P,E_{1}|H_{0}}\left(p_{r}\right) = \mathbold{P}\left(H_{1}\right)f_{P,E_{1}|H_{1}}\left(p_{r}\right)
 \end{equation}
 And in the $E_{0}$ event, the corresponding equation is
 \begin{equation}\label{thresholdE0}
-\mathbf{P}\left(H_{0}\right)f_{P,E_{0}|H_{0}}\left(p_{r}\right) = \mathbf{P}\left(H_{1}\right)f_{P,E_{0}|H_{1}}\left(p_{r}\right)
+\mathbold{P}\left(H_{0}\right)f_{P,E_{0}|H_{0}}\left(p_{r}\right) = \mathbold{P}\left(H_{1}\right)f_{P,E_{0}|H_{1}}\left(p_{r}\right)
 \end{equation}
 
 Let us determine the power thresholds for the case of Rayleigh fading. 
 Considering exponential distributions for $X$ and $Y$ in (\ref{thresholdE1}), we obtain the following two equations for $E_{1}$
 \begin{align}{lccl}
-\mathbf{P}\left(H_{0}\right)\cdot0 & = & \mathbf{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{\left(-\frac{p_{r}}{p_{ss}}+ \frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)} \right)} }{p_{ps}-p_{ss}} &,\mbox{if }p_{r}>N\gamma \label{E1ThresholdEq1} \\
-\mathbf{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}}& = & \mathbf{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{-\frac{p_{r}}{p_{ss}}}}{p_{ps}-p_{ss}} &,\mbox{if }p_{r}\leq N\gamma \label{E1ThresholdEq2}
+\mathbold{P}\left(H_{0}\right)\cdot0 & = & \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{\left(-\frac{p_{r}}{p_{ss}}+ \frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)} \right)} }{p_{ps}-p_{ss}} &,\mbox{if }p_{r}>N\gamma \label{E1ThresholdEq1} \\
+\mathbold{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}}& = & \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{-\frac{p_{r}}{p_{ss}}}}{p_{ps}-p_{ss}} &,\mbox{if }p_{r}\leq N\gamma \label{E1ThresholdEq2}
 \end{align}
 The first equation (\ref{E1ThresholdEq1}) only holds for $p_{r}=\infty$. Therefore, whenever $p_{r}>N\gamma$, the MAP rule selects the hypothesis $H_{1}$, which is rational because if $p_{r}>N\gamma$, the hypothesis $H_{0}$ implies that $\text{\ttfamily{SINR}}>\gamma$ which is inconsistent with $E_{1}$. In other words, if $p_{r}>N\gamma$, $E_{1}$ is caused by PU interference. 
 It can be checked that the solution of second equation (\ref{E1ThresholdEq2}) is
 \begin{equation}
-p^{*} = \displaystyle\frac{p_{ss}p_{ps}}{p_{ps}-p_{ss}}\text{log}\left(\displaystyle\frac{p_{ps}-p_{ss}}{p_{ss}}\displaystyle\frac{\mathbf{P}\left(H_{0}\right)}{\mathbf{P}\left(H_{1}\right)}+1\right)
+p^{*} = \displaystyle\frac{p_{ss}p_{ps}}{p_{ps}-p_{ss}}\text{log}\left(\displaystyle\frac{p_{ps}-p_{ss}}{p_{ss}}\displaystyle\frac{\mathbold{P}\left(H_{0}\right)}{\mathbold{P}\left(H_{1}\right)}+1\right)
 \end{equation}
 If $p^{*}$ is a real number and $p^{*}\leq N\gamma$, then $p^{*}_{E_{1}}$ = $p^{*}$ is the threshold below which the MAP rule selects the hypothesis $H_{0}$ in the event $E_{1}$. In case (\ref{E1ThresholdEq2}) has no solution in $\left(0,N\gamma\right]$, then $p^{*}_{E_{1}}$ = $N\gamma$ if the left hand side of (\ref{E1ThresholdEq2}) is larger than the right hand side, and $p^{*}_{E_{1}}$ = 0 otherwise.
 
 Considering Rayleigh fading, the equation for $E_{0}$, (\ref{thresholdE0}) results in the following two equations
 \begin{align}{lccl}
-\mathbf{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}} & = & \mathbf{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}} \left(e^{\frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)}}-1\right)}{p_{ps}-p_{ss}} &,\mbox{if }p_{r}>N\gamma \label{E0ThresholdEq1} \\
-\mathbf{P}\left(H_{0}\right)\cdot0 & = & \mathbf{P}\left(H_{1}\right)\cdot0 &,\mbox{if }p_{r}\leq N\gamma \label{E0ThresholdEq2}
+\mathbold{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}} & = & \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}} \left(e^{\frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)}}-1\right)}{p_{ps}-p_{ss}} &,\mbox{if }p_{r}>N\gamma \label{E0ThresholdEq1} \\
+\mathbold{P}\left(H_{0}\right)\cdot0 & = & \mathbold{P}\left(H_{1}\right)\cdot0 &,\mbox{if }p_{r}\leq N\gamma \label{E0ThresholdEq2}
 \end{align}
 The second equation (\ref{E0ThresholdEq2}) is trivially held for every $p_{r}\leq N\gamma$ because it corresponds to an unfeasible event: the absence of error when $p_{r}\leq N\gamma$ i.e. when $\text{\ttfamily{SINR}}\leq\gamma$. For $p_{r}>N\gamma$ equation (\ref{E0ThresholdEq1}) has the following solution
 \begin{equation}
-p^{*} =  \displaystyle\frac{p_{ss}p_{ps}\left(1+\gamma\right)}{p_{ps}-p_{ss}}\left(\text{log}\left(\displaystyle\frac{p_{ps}-p_{ss}}{p_{ss}}\displaystyle\frac{\mathbf{P}\left(H_{0}\right)}{\mathbf{P}\left(H_{1}\right)}+1\right)+\displaystyle\frac{N\gamma\left(p_{ps}-p_{ss}\right)}{p_{ss}p_{ps}\left(1+\gamma\right)}\right)
+p^{*} =  \displaystyle\frac{p_{ss}p_{ps}\left(1+\gamma\right)}{p_{ps}-p_{ss}}\left(\text{log}\left(\displaystyle\frac{p_{ps}-p_{ss}}{p_{ss}}\displaystyle\frac{\mathbold{P}\left(H_{0}\right)}{\mathbold{P}\left(H_{1}\right)}+1\right)+\displaystyle\frac{N\gamma\left(p_{ps}-p_{ss}\right)}{p_{ss}p_{ps}\left(1+\gamma\right)}\right)
 \end{equation}
 If $p^{*}$ is a real number and $p^{*}>N\gamma$, then $p^{*}_{E_{0}}$ = $p^{*}$ is the threshold above which the MAP rule selects the hypothesis $H_{1}$ in the event $E_{0}$. Otherwise one of the two hypothesis always holds. The threshold is defined as $p^{*}_{E_{0}}$ = $N\gamma$ if $H_{1}$ always holds or as $p^{*}_{E_{0}}$ = $\infty$ if $H_{0}$ always holds.
 
@@ -291,28 +291,28 @@ For each possible combination of $H_{0}$, $H_{1}$ and $E_{0}$, $E_{1}$, two outc
 
 Let us first consider the analysis of the probabilities for $H_{1}$, i.e. when transmission overlap is present. The probability of a Type II error when the SU packet is received correctly is defined as
 \begin{equation}
-\mathbf{P}(\hat{H}_{0},E_{0}|H_{1}) = \mathbf{P}\left(\left(P,E\right)\in R_{H_{0}E_{0}}|H_{1}\right),
+\mathbold{P}(\hat{H}_{0},E_{0}|H_{1}) = \mathbold{P}\left(\left(P,E\right)\in R_{H_{0}E_{0}}|H_{1}\right),
 \end{equation}
 the probability of correct PU activity detection when the SU packet is received correctly is
 \begin{equation}
-\mathbf{P}(\hat{H}_{1},E_{0}|H_{1}) = \mathbf{P}\left(\left(P,E\right)\in R_{H_{1}E_{0}}|H_{1}\right),
+\mathbold{P}(\hat{H}_{1},E_{0}|H_{1}) = \mathbold{P}\left(\left(P,E\right)\in R_{H_{1}E_{0}}|H_{1}\right),
 \end{equation}
 the Type II error probability when the SU packet received is erroneous is 
 \begin{equation}
-\mathbf{P}(\hat{H}_{0},E_{1}|H_{1}) = \mathbf{P}\left(\left(P,E\right)\in R_{H_{0}E_{1}}|H_{1}\right),
+\mathbold{P}(\hat{H}_{0},E_{1}|H_{1}) = \mathbold{P}\left(\left(P,E\right)\in R_{H_{0}E_{1}}|H_{1}\right),
 \end{equation}
 and the probability of correct PU activity detection when the SU packet received is erroneous is
 \begin{equation}
-\mathbf{P}(\hat{H}_{1},E_{1}|H_{1}) = \mathbf{P}\left(\left(P,E\right)\in R_{H_{1}E_{1}}|H_{1}\right),
+\mathbold{P}(\hat{H}_{1},E_{1}|H_{1}) = \mathbold{P}\left(\left(P,E\right)\in R_{H_{1}E_{1}}|H_{1}\right),
 \end{equation}
 
 Let us obtain these probabilities for sets $R_{H_{i}E_{j}}$ defined with two thresholds ($p^{*}_{E_{0}}$ and $p^{*}_{E_{1}}$) and then particularize for Rayleigh fading.
-The probability $\mathbf{P}(\hat{H}_{0},E_{0}|H_{1})$ is given by
+The probability $\mathbold{P}(\hat{H}_{0},E_{0}|H_{1})$ is given by
 \begin{equation}\label{PH0E0H1}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{0},E_{0}|H_{1}) & = & \mathbf{P}\left(P\leq p^{*}_{E_{0}}, \text{\ttfamily{SINR}}>\gamma|H_{1}\right)\\
-& = & \mathbf{P}\left(X+Y\leq p^{*}_{E_{0}},Y>N\gamma+X\gamma\right)\\
-& = & \mathbf{P}\left(N\gamma+X\gamma<Y\leq p^{*}_{E_{0}}-X\right)\\
+\mathbold{P}(\hat{H}_{0},E_{0}|H_{1}) & = & \mathbold{P}\left(P\leq p^{*}_{E_{0}}, \text{\ttfamily{SINR}}>\gamma|H_{1}\right)\\
+& = & \mathbold{P}\left(X+Y\leq p^{*}_{E_{0}},Y>N\gamma+X\gamma\right)\\
+& = & \mathbold{P}\left(N\gamma+X\gamma<Y\leq p^{*}_{E_{0}}-X\right)\\
 & = & \displaystyle\int_{0}^{x^{*}}\displaystyle\int_{N\gamma+x\gamma}^{p^{*}_{E_{0}}-x}f_{Y}(y)f_{X}(x)dydx
 \end{array}
 \end{equation}
@@ -322,7 +322,7 @@ x^{*} = \displaystyle\frac{p^{*}_{E_{0}}-N\gamma}{\gamma+1}
 \end{equation}
 Solving for $X$ and $Y$ exponentially distributed we obtain the following probability
 \begin{equation}
-\mathbf{P}(\hat{H}_{0},E_{0}|H_{1}) = e^{-\frac{x^{*}}{p_{ps}}}p_{ss}
+\mathbold{P}(\hat{H}_{0},E_{0}|H_{1}) = e^{-\frac{x^{*}}{p_{ps}}}p_{ss}
 \displaystyle\frac{e^{\frac{p^{*}_{E_{0}}}{p_{ss}}} ( e^{-\frac{x^{*}}{p_{ss}}} - e^{\frac{x^{*}}{p_{ps}}} )}{p_{ss}-p_{ps}} +
 \displaystyle\frac{e^{-\frac{\left(\left(N+x^{*}\right)\gamma\right)}{p_{ss}}} 
 ( e^{x^{*}\left(\frac{1}{p_{ps}}+\frac{\gamma}{p_{ss}}\right)} - 1 )}{p_{ss}-p_{ps}\gamma}
@@ -330,47 +330,47 @@ Solving for $X$ and $Y$ exponentially distributed we obtain the following probab
 The probability of correct PU detection at the $E_{0}$ event is obtained as follows
 \begin{equation}\label{PH1E0H1}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{1},E_{0}|H_{1}) & = & \mathbf{P}\left(P>p^{*}_{E_{0}}, \text{\ttfamily{SINR}}>\gamma|H_{1}\right)\\
-& = & \mathbf{P}\left(X+Y>p^{*}_{E_{0}},Y>N\gamma+X\gamma\right)\\
-& = & \mathbf{P}\left(Y>\text{max}\left(p^{*}_{E_{0}}-X,N\gamma+X\gamma\right)\right)\\
+\mathbold{P}(\hat{H}_{1},E_{0}|H_{1}) & = & \mathbold{P}\left(P>p^{*}_{E_{0}}, \text{\ttfamily{SINR}}>\gamma|H_{1}\right)\\
+& = & \mathbold{P}\left(X+Y>p^{*}_{E_{0}},Y>N\gamma+X\gamma\right)\\
+& = & \mathbold{P}\left(Y>\text{max}\left(p^{*}_{E_{0}}-X,N\gamma+X\gamma\right)\right)\\
 & = & \displaystyle\int_{0}^{x^{*}}\displaystyle\int_{p^{*}_{E_{0}}-x\gamma}^{\infty}f_{Y}(y)f_{X}(x)dydx +
 \displaystyle\int_{x^{*}}^{\infty}\displaystyle\int_{N\gamma+x\gamma}^{\infty}f_{Y}(y)f_{X}(x)dydx
 \end{array}
 \end{equation}
 The expression for Rayleigh fading is
 \begin{equation}
-\mathbf{P}(\hat{H}_{1},E_{0}|H_{1}) = \frac{e^{-\frac{p^{*}_{E_{0}}}{p_{ss}}} \left(-1+e^{\left(\frac{1}{p_{ss}}-\frac{1}{p_{ps}}\right) x^{*}}\right) p_{ss}}{p_{ps}-p_{ss}}+\frac{e^{-\frac{x^{*}}{p_{ss}}-\frac{\gamma(N+x^{*})}{p_{ss}}} p_{ss}}{p_{ss}+p_{ps}\gamma}
+\mathbold{P}(\hat{H}_{1},E_{0}|H_{1}) = \frac{e^{-\frac{p^{*}_{E_{0}}}{p_{ss}}} \left(-1+e^{\left(\frac{1}{p_{ss}}-\frac{1}{p_{ps}}\right) x^{*}}\right) p_{ss}}{p_{ps}-p_{ss}}+\frac{e^{-\frac{x^{*}}{p_{ss}}-\frac{\gamma(N+x^{*})}{p_{ss}}} p_{ss}}{p_{ss}+p_{ps}\gamma}
 \end{equation}
 The probability Type II error at the $E_{1}$ event is given by
 \begin{equation}\label{PH0E1H1}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{0},E_{1}|H_{1}) & = & \mathbf{P}\left(P\leq p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{1}\right)\\
-& = & \mathbf{P}\left(X+Y\leq p^{*}_{E_{1}},Y\leq N\gamma+X\gamma\right)\\
-& = & \mathbf{P}\left(Y\leq\text{min}\left(N\gamma+X\gamma,p^{*}_{E_{1}}-X\right)\right)\\
-& = & \mathbf{P}\left(Y\leq p^{*}_{E_{1}}-X\right)\\
+\mathbold{P}(\hat{H}_{0},E_{1}|H_{1}) & = & \mathbold{P}\left(P\leq p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{1}\right)\\
+& = & \mathbold{P}\left(X+Y\leq p^{*}_{E_{1}},Y\leq N\gamma+X\gamma\right)\\
+& = & \mathbold{P}\left(Y\leq\text{min}\left(N\gamma+X\gamma,p^{*}_{E_{1}}-X\right)\right)\\
+& = & \mathbold{P}\left(Y\leq p^{*}_{E_{1}}-X\right)\\
 & = & \displaystyle\int_{0}^{p^{*}_{E_{1}}}\displaystyle\int_{0}^{p^{*}_{E_{1}}-x}f_{Y}(y)f_{X}(x)dydx
 \end{array}
 \end{equation}
 where the last equality comes from the fact that $p^{*}_{E_{1}}\leq N\gamma$. The expression for Rayleigh fading is
 \begin{equation}
-\mathbf{P}(\hat{H}_{0},E_{1}|H_{1}) = \frac{p_{ps}\left(1-e^{-\frac{p^{*}_{E_{1}}}{p_{ps}}}\right)+\left(-1+e^{-\frac{p^{*}_{E_{1}}}{p_{ss}}}\right) p_{ss}}{p_{ps}-p_{ss}}
+\mathbold{P}(\hat{H}_{0},E_{1}|H_{1}) = \frac{p_{ps}\left(1-e^{-\frac{p^{*}_{E_{1}}}{p_{ps}}}\right)+\left(-1+e^{-\frac{p^{*}_{E_{1}}}{p_{ss}}}\right) p_{ss}}{p_{ps}-p_{ss}}
 \end{equation}
 
 The probability correct PU activity detection at $E_{1}$ is
 \begin{equation}\label{PH1E1H1}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{1},E_{1}|H_{1}) & = & \mathbf{P}\left(P>p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{1}\right)\\
-& = & \mathbf{P}\left(X+Y>p^{*}_{E_{1}},Y\leq N\gamma+X\gamma\right)\\
-& = & \mathbf{P}\left(p^{*}_{E_{1}}-X<Y\leq N\gamma+X\gamma\right)\\
+\mathbold{P}(\hat{H}_{1},E_{1}|H_{1}) & = & \mathbold{P}\left(P>p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{1}\right)\\
+& = & \mathbold{P}\left(X+Y>p^{*}_{E_{1}},Y\leq N\gamma+X\gamma\right)\\
+& = & \mathbold{P}\left(p^{*}_{E_{1}}-X<Y\leq N\gamma+X\gamma\right)\\
 & = & \displaystyle\int_{0}^{p^{*}_{E_{1}}}\displaystyle\int_{p^{*}_{E_{1}}-x }^{N\gamma+x\gamma}f_{Y}(y)f_{X}(x)dydx + 
 \displaystyle\int_{p^{*}_{E_{1}}}^{\infty}\displaystyle\int_{0}^{N\gamma+x\gamma}f_{Y}(y)f_{X}(x)dydx
 \end{array}
 \end{equation}
 For Rayleigh fading the expression of this probability is
 \begin{equation}
-\mathbf{P}(\hat{H}_{1},E_{1}|H_{1})= \frac{e^{-\frac{p^{*}_{E_{1}}}{p_{ps}}} p_{ps}}{p_{ps}-p_{ss}}+\frac{e^{-\frac{p^{*}_{E_{1}}}{p_{ss}}} p_{ss}}{-p_{ps}+p_{ss}}-\frac{e^{-\frac{N \gamma}{p_{ss}}} p_{ss}}{p_{ss}+p_{ps}\gamma}
+\mathbold{P}(\hat{H}_{1},E_{1}|H_{1})= \frac{e^{-\frac{p^{*}_{E_{1}}}{p_{ps}}} p_{ps}}{p_{ps}-p_{ss}}+\frac{e^{-\frac{p^{*}_{E_{1}}}{p_{ss}}} p_{ss}}{-p_{ps}+p_{ss}}-\frac{e^{-\frac{N \gamma}{p_{ss}}} p_{ss}}{p_{ss}+p_{ps}\gamma}
 \end{equation}
-It can be checked that $\sum_{i:0,1}\sum_{j:0,1}\mathbf{P}(\hat{H}_{i},E_{j}|H_{1})=1$.
+It can be checked that $\sum_{i:0,1}\sum_{j:0,1}\mathbold{P}(\hat{H}_{i},E_{j}|H_{1})=1$.
 Figure \ref{fig:Regions} illustrates the integration regions for the detection probabilities under transmission overlap.
 
 \begin{figure}[ht]
@@ -381,49 +381,49 @@ Figure \ref{fig:Regions} illustrates the integration regions for the detection p
 
 Let us now obtain the probabilities for $H_{0}$, i.e. in absence of transmission overlap. The probabilities are defined in the following way
 \begin{align}{lcl}
-\mathbf{P}(\hat{H}_{0},E_{0}|H_{0}) & = & \mathbf{P}\left(\left(P,E\right)\in R_{H_{0}E_{0}}|H_{0}\right)\\
-\mathbf{P}(\hat{H}_{1},E_{0}|H_{0}) & = & \mathbf{P}\left(\left(P,E\right)\in R_{H_{1}E_{0}}|H_{0}\right)\\
-\mathbf{P}(\hat{H}_{0},E_{1}|H_{0}) & = & \mathbf{P}\left(\left(P,E\right)\in R_{H_{0}E_{1}}|H_{0}\right)\\
-\mathbf{P}(\hat{H}_{1},E_{1}|H_{0}) & = & \mathbf{P}\left(\left(P,E\right)\in R_{H_{0}E_{1}}|H_{0}\right)
+\mathbold{P}(\hat{H}_{0},E_{0}|H_{0}) & = & \mathbold{P}\left(\left(P,E\right)\in R_{H_{0}E_{0}}|H_{0}\right)\\
+\mathbold{P}(\hat{H}_{1},E_{0}|H_{0}) & = & \mathbold{P}\left(\left(P,E\right)\in R_{H_{1}E_{0}}|H_{0}\right)\\
+\mathbold{P}(\hat{H}_{0},E_{1}|H_{0}) & = & \mathbold{P}\left(\left(P,E\right)\in R_{H_{0}E_{1}}|H_{0}\right)\\
+\mathbold{P}(\hat{H}_{1},E_{1}|H_{0}) & = & \mathbold{P}\left(\left(P,E\right)\in R_{H_{0}E_{1}}|H_{0}\right)
 \end{align}
 We now obtain these probabilities as in the $H_{1}$ case. 
-The correct estimation probability $\mathbf{P}(\hat{H}_{0},E_{0}|H_{0})$ is given by
+The correct estimation probability $\mathbold{P}(\hat{H}_{0},E_{0}|H_{0})$ is given by
 \begin{equation}\label{PH0E0H0}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{0},E_{0}|H_{0}) & = & \mathbf{P}\left(P\leq p^{*}_{E_{0}},\text{\ttfamily{SINR}}>\gamma|H_{0}\right)\\
-& = & \mathbf{P}\left(Y\leq p^{*}_{E_{0}},Y>N\gamma\right)\\
-& = & \mathbf{P}\left(N\gamma<Y\leq p^{*}_{E_{0}}\right)\\
+\mathbold{P}(\hat{H}_{0},E_{0}|H_{0}) & = & \mathbold{P}\left(P\leq p^{*}_{E_{0}},\text{\ttfamily{SINR}}>\gamma|H_{0}\right)\\
+& = & \mathbold{P}\left(Y\leq p^{*}_{E_{0}},Y>N\gamma\right)\\
+& = & \mathbold{P}\left(N\gamma<Y\leq p^{*}_{E_{0}}\right)\\
 & = & \displaystyle\int_{N\gamma}^{p^{*}_{E_{0}}}f_{Y}(y)dy
 \end{array}
 \end{equation}
 which, in the case of Rayleigh fading equals $e^{-N\gamma/p_{ss}}-e^{-p^{*}_{E_{0}}/p_{ss}}$.
-The Type I error $\mathbf{P}(\hat{H}_{0},E_{0}|H_{0})$ is 
+The Type I error $\mathbold{P}(\hat{H}_{0},E_{0}|H_{0})$ is 
 \begin{equation}\label{PH1E0H0}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{1},E_{0}|H_{0}) & = & \mathbf{P}\left(P>p^{*}_{E_{0}}, \text{\ttfamily{SINR}}>\gamma|H_{0}\right)\\
-& = & \mathbf{P}\left(Y>p^{*}_{E_{0}},Y>N\gamma\right)\\
-& = & \mathbf{P}\left(Y>\text{max}\left(p^{*}_{E_{0}},N\gamma\right)\right)\\
-& = & \mathbf{P}\left(Y>p^{*}_{E_{0}}\right)\\
+\mathbold{P}(\hat{H}_{1},E_{0}|H_{0}) & = & \mathbold{P}\left(P>p^{*}_{E_{0}}, \text{\ttfamily{SINR}}>\gamma|H_{0}\right)\\
+& = & \mathbold{P}\left(Y>p^{*}_{E_{0}},Y>N\gamma\right)\\
+& = & \mathbold{P}\left(Y>\text{max}\left(p^{*}_{E_{0}},N\gamma\right)\right)\\
+& = & \mathbold{P}\left(Y>p^{*}_{E_{0}}\right)\\
 & = & \displaystyle\int_{p^{*}_{E_{0}}}^{\infty}f_{Y}(y)dy
 \end{array}
 \end{equation}
-For Rayleigh fading $\mathbf{P}(\hat{H}_{1},E_{0}|H_{0})=e^{-p^{*}_{E_{0}}/p_{ss}}$.
+For Rayleigh fading $\mathbold{P}(\hat{H}_{1},E_{0}|H_{0})=e^{-p^{*}_{E_{0}}/p_{ss}}$.
 The correct estimation probability at the $E_{1}$ event is
 \begin{equation}\label{PH0E1H0}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{0},E_{1}|H_{0}) & = & \mathbf{P}\left(P\leq p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{0}\right)\\
-& = & \mathbf{P}\left(Y\leq p^{*}_{E_{1}},Y\leq N\gamma\right)\\
-& = & \mathbf{P}\left(Y\leq\text{min}\left(N\gamma+X\gamma,p^{*}_{E_{1}}\right)\right)\\
-& = & \mathbf{P}\left(Y\leq p^{*}_{E_{1}}\right)\\
+\mathbold{P}(\hat{H}_{0},E_{1}|H_{0}) & = & \mathbold{P}\left(P\leq p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{0}\right)\\
+& = & \mathbold{P}\left(Y\leq p^{*}_{E_{1}},Y\leq N\gamma\right)\\
+& = & \mathbold{P}\left(Y\leq\text{min}\left(N\gamma+X\gamma,p^{*}_{E_{1}}\right)\right)\\
+& = & \mathbold{P}\left(Y\leq p^{*}_{E_{1}}\right)\\
 & = & \displaystyle\int_{0}^{p^{*}_{E_{1}}}f_{Y}(y)dy
 \end{array}
 \end{equation}
 which for Rayleigh fading is $1-e^{-p^{*}_{E_{1}}/p_{ss}}$. Finally the Type I error probability at the $E_{1}$ event is
 \begin{equation}\label{PH1E1H0}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{1},E_{1}|H_{0}) & = & \mathbf{P}\left(P>p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{0}\right)\\
-& = & \mathbf{P}\left(Y>p^{*}_{E_{1}},Y\leq N\gamma\right)\\
-& = & \mathbf{P}\left(p^{*}_{E_{1}}<Y\leq N\gamma\right)\\
+\mathbold{P}(\hat{H}_{1},E_{1}|H_{0}) & = & \mathbold{P}\left(P>p^{*}_{E_{1}}, \text{\ttfamily{SINR}}\leq\gamma|H_{0}\right)\\
+& = & \mathbold{P}\left(Y>p^{*}_{E_{1}},Y\leq N\gamma\right)\\
+& = & \mathbold{P}\left(p^{*}_{E_{1}}<Y\leq N\gamma\right)\\
 & = & \displaystyle\int_{p^{*}_{E_{1}}}^{N\gamma}f_{Y}(y)dy
 \end{array}
 \end{equation}
@@ -455,31 +455,31 @@ The expression for $P_{c}(n)$ is given by
 P_{c}(n) = \displaystyle\frac{1}{n+1}\displaystyle\sum_{i=1}^{n}\phi_{i}(2)
 \end{equation}
 
-Defining $\mathbf{P}(E_{0}|H_{0})$ as the probability of correctly receiving an SU packet in the absence of collision, and $\mathbf{P}(E_{0}|H_{1})$ as the probability of $E_{0}$ in a time-slot with collision, $T(n)$ is given by the following equation
+Defining $\mathbold{P}(E_{0}|H_{0})$ as the probability of correctly receiving an SU packet in the absence of collision, and $\mathbold{P}(E_{0}|H_{1})$ as the probability of $E_{0}$ in a time-slot with collision, $T(n)$ is given by the following equation
 \begin{equation}
-T(n) = \displaystyle\frac{1}{n+1}\left[\displaystyle\sum_{i=1}^{n}\phi_{i}(1)\mathbf{P}(E_{0}|H_{0}) + \displaystyle\sum_{i=1}^{n}\phi_{i}(2)\mathbf{P}(E_{0}|H_{1})\right]
+T(n) = \displaystyle\frac{1}{n+1}\left[\displaystyle\sum_{i=1}^{n}\phi_{i}(1)\mathbold{P}(E_{0}|H_{0}) + \displaystyle\sum_{i=1}^{n}\phi_{i}(2)\mathbold{P}(E_{0}|H_{1})\right]
 \end{equation}
-The probability $\mathbf{P}(E_{0}|H_{0})$ is obtained as follows
+The probability $\mathbold{P}(E_{0}|H_{0})$ is obtained as follows
 \begin{equation}\label{PE0H0}
 \begin{array}{lcl}
-\mathbf{P}(E_{0}|H_{0}) & = & \mathbf{P}\left(\text{\ttfamily{SINR}}>\gamma|H_{0}\right)\\
-& = & \mathbf{P}\left(Y>N\gamma\right)\\
+\mathbold{P}(E_{0}|H_{0}) & = & \mathbold{P}\left(\text{\ttfamily{SINR}}>\gamma|H_{0}\right)\\
+& = & \mathbold{P}\left(Y>N\gamma\right)\\
 & = & \displaystyle\int_{N\gamma}^{\infty}f_{Y}(y)dy
 \end{array}
 \end{equation}
 %The reception error probability under collision is 
-and $\mathbf{P}(E_{0}|H_{1})$ is given by
+and $\mathbold{P}(E_{0}|H_{1})$ is given by
 \begin{equation}\label{PE0H1}
 \begin{array}{lcl}
-\mathbf{P}(E_{0}|H_{1}) & = & \mathbf{P}\left(\text{\ttfamily{SINR}}>\gamma|H_{1}\right)\\
-& = & \mathbf{P}\left(Y>N\gamma+X\gamma\right)\\
+\mathbold{P}(E_{0}|H_{1}) & = & \mathbold{P}\left(\text{\ttfamily{SINR}}>\gamma|H_{1}\right)\\
+& = & \mathbold{P}\left(Y>N\gamma+X\gamma\right)\\
 & = & \displaystyle\int_{0}^{\infty}\displaystyle\int_{N\gamma+x\gamma}^{\infty}f_{Y}(y)f_{X}(x)dydx
 \end{array}
 \end{equation}
 For Rayleigh fading we have 
 \begin{align}{lcl}
-\mathbf{P}(E_{0}|H_{0}) & = & e^{-\frac{N\gamma}{p_{ss}}}\\
-\mathbf{P}(E_{0}|H_{1}) & = & \displaystyle\frac{p_{ss}e^{-\frac{N\gamma}{p_{ss}}}}{p_{ss} + p_{ps}\gamma}
+\mathbold{P}(E_{0}|H_{0}) & = & e^{-\frac{N\gamma}{p_{ss}}}\\
+\mathbold{P}(E_{0}|H_{1}) & = & \displaystyle\frac{p_{ss}e^{-\frac{N\gamma}{p_{ss}}}}{p_{ss} + p_{ps}\gamma}
 \end{align}
 
 \subsection{OSA With Background Detection}
@@ -506,23 +506,23 @@ Therefore, the DTMC transition probabilities are defined as
 \begin{array}{lcll}\label{BD_eq_transition_prob}
 p_{0,1} & = & 1-p &\\
 p_{0,2} & = & p &\\
-p_{2k-1,2k+1} & = & (1-p)\mathbf{P}(\hat{H}_{0}|H_{0}) &,\mbox{ for } 0<k<n\\
-p_{2k-1,2k+2} & = & p\mathbf{P}(\hat{H}_{0}|H_{0}) &,\mbox{ for } 0<k<n\\
-p_{2k-1,0} & = & 1-\mathbf{P}(\hat{H}_{0}|H_{0}) &,\mbox{ for } 0<k<n\\
-p_{2k,2k+1} & = & q\mathbf{P}(\hat{H}_{0}|H_{1}) &,\mbox{ for } 0<k<n\\
-p_{2k,2k+2} & = & (1-q)\mathbf{P}(\hat{H}_{0}|H_{1}) &,\mbox{ for } 0<k<n\\
-p_{2k,0} & = & 1-\mathbf{P}(\hat{H}_{0}|H_{1}) &,\mbox{ for } 0<k<n\\
+p_{2k-1,2k+1} & = & (1-p)\mathbold{P}(\hat{H}_{0}|H_{0}) &,\mbox{ for } 0<k<n\\
+p_{2k-1,2k+2} & = & p\mathbold{P}(\hat{H}_{0}|H_{0}) &,\mbox{ for } 0<k<n\\
+p_{2k-1,0} & = & 1-\mathbold{P}(\hat{H}_{0}|H_{0}) &,\mbox{ for } 0<k<n\\
+p_{2k,2k+1} & = & q\mathbold{P}(\hat{H}_{0}|H_{1}) &,\mbox{ for } 0<k<n\\
+p_{2k,2k+2} & = & (1-q)\mathbold{P}(\hat{H}_{0}|H_{1}) &,\mbox{ for } 0<k<n\\
+p_{2k,0} & = & 1-\mathbold{P}(\hat{H}_{0}|H_{1}) &,\mbox{ for } 0<k<n\\
 p_{n,0} & = & 1 &
 \end{array}
 \end{equation}
-where $\mathbf{P}(\hat{H}_{0}|H_{0})$ and $\mathbf{P}(\hat{H}_{0}|H_{1})$ can be obtained as follows
+where $\mathbold{P}(\hat{H}_{0}|H_{0})$ and $\mathbold{P}(\hat{H}_{0}|H_{1})$ can be obtained as follows
 \begin{equation}
 \begin{array}{lcl}
-\mathbf{P}(\hat{H}_{0}|H_{0}) & = & \mathbf{P}(\hat{H}_{0},E_{0}|H_{0}) + \mathbf{P}(\hat{H}_{0},E_{1}|H_{0})\\
-\mathbf{P}(\hat{H}_{0}|H_{1}) & = & \mathbf{P}(\hat{H}_{0},E_{0}|H_{1}) + \mathbf{P}(\hat{H}_{0},E_{1}|H_{1})
+\mathbold{P}(\hat{H}_{0}|H_{0}) & = & \mathbold{P}(\hat{H}_{0},E_{0}|H_{0}) + \mathbold{P}(\hat{H}_{0},E_{1}|H_{0})\\
+\mathbold{P}(\hat{H}_{0}|H_{1}) & = & \mathbold{P}(\hat{H}_{0},E_{0}|H_{1}) + \mathbold{P}(\hat{H}_{0},E_{1}|H_{1})
 \end{array}
 \end{equation}
-where $\mathbf{P}(\hat{H}_{0},E_{0}|H_{1})$, $\mathbf{P}(\hat{H}_{0},E_{1}|H_{1})$, $\mathbf{P}(\hat{H}_{0},E_{0}|H_{0})$, and $\mathbf{P}(\hat{H}_{0},E_{1}|H_{0})$, are obtained by (\ref{PH0E0H1}), (\ref{PH0E1H1}), (\ref{PH0E0H0}), and (\ref{PH0E1H0})respectively.
+where $\mathbold{P}(\hat{H}_{0},E_{0}|H_{1})$, $\mathbold{P}(\hat{H}_{0},E_{1}|H_{1})$, $\mathbold{P}(\hat{H}_{0},E_{0}|H_{0})$, and $\mathbold{P}(\hat{H}_{0},E_{1}|H_{0})$, are obtained by (\ref{PH0E0H1}), (\ref{PH0E1H1}), (\ref{PH0E0H0}), and (\ref{PH0E1H0})respectively.
 Figure \ref{fig:Markov} depicts the graph of the DTMC.
 
 \begin{figure}[ht]
@@ -534,7 +534,7 @@ Figure \ref{fig:Markov} depicts the graph of the DTMC.
 %thus entering state $i=1$. At any state $i>0$ the chain may return to state $i=0$ if the BD detects PU activity, or may advance to state $i+1$ if the BD does not detect PU activity. In order to establish a bound on $P_{c}$ it is necessary to define a limit $n$ on the number of consecutive SU transmissions. As in previous subsection, $n$ is set to the optimal value $n^{*}=\text{arg max}_{n}T(n)$ s.t. $P_{c}(n) \leq \alpha$.
 
 For a generic reward $r(i)$, the expected average reward is defined as 
-$\bar{r} = \underset{K\rightarrow\infty}{\text{lim }}\frac{1}{K}\sum_{k = 0}^{K}r\left(Z_{k}\right)$. For an ergodic, finite-state Markov chain, and provided that $\left|r\left(i\right)\right|$ is bounded for every $i$, the total expected average reward $\bar{r}$ is $\bar{r} = \sum_{i = 0}^{n}r\left(i\right)\pi_{i}$, where $\pi_{i}$ are the steady state probabilities of the DTMC obtained by solving the equilibrium equations $\boldsymbol{\pi} = \boldsymbol{\pi}\mathbf{T}$, $\left\|\boldsymbol{\pi}\right\| = \displaystyle\sum_{i=0}^{n}\pi_{i}=1$, where $\mathbf{T}$ is the transition matrix containing the probabilities defined in (\ref{BD_eq_transition_prob}). Let $r_{T}(i)$ and $r_{P_{c}}(i)$ denote the per-state reward for computing $T$ and $P_{c}$ respectively. According to the definitions of $T$ and $P_{c}$, and because the DTMC models consecutive SU transmissions, $\bar{r}_{T} = T$ and $\bar{r}_{P_{c}} = P_{c}$. We will use the terms $\bar{r}_{T}(n)$ and $\bar{r}_{P_{c}}(n)$ to refer to the SU throughput and collision probability when using BD and the maximum length of SU transmissions is set to $n$ time-slots. The optimal $n$ is obtained by solving the following optimization problem
+$\bar{r} = \underset{K\rightarrow\infty}{\text{lim }}\frac{1}{K}\sum_{k = 0}^{K}r\left(Z_{k}\right)$. For an ergodic, finite-state Markov chain, and provided that $\left|r\left(i\right)\right|$ is bounded for every $i$, the total expected average reward $\bar{r}$ is $\bar{r} = \sum_{i = 0}^{n}r\left(i\right)\pi_{i}$, where $\pi_{i}$ are the steady state probabilities of the DTMC obtained by solving the equilibrium equations $\boldsymbol{\pi} = \boldsymbol{\pi}\mathbold{T}$, $\left\|\boldsymbol{\pi}\right\| = \displaystyle\sum_{i=0}^{n}\pi_{i}=1$, where $\mathbold{T}$ is the transition matrix containing the probabilities defined in (\ref{BD_eq_transition_prob}). Let $r_{T}(i)$ and $r_{P_{c}}(i)$ denote the per-state reward for computing $T$ and $P_{c}$ respectively. According to the definitions of $T$ and $P_{c}$, and because the DTMC models consecutive SU transmissions, $\bar{r}_{T} = T$ and $\bar{r}_{P_{c}} = P_{c}$. We will use the terms $\bar{r}_{T}(n)$ and $\bar{r}_{P_{c}}(n)$ to refer to the SU throughput and collision probability when using BD and the maximum length of SU transmissions is set to $n$ time-slots. The optimal $n$ is obtained by solving the following optimization problem
 \begin{equation}
 \underset{n}{\mbox{max }} \bar{r}_{T}(n)\mbox{ subject to }\bar{r}_{P_{c}}(n) \leq \alpha
 \end{equation}
@@ -542,27 +542,27 @@ which is solved for integers $n \in \left\{0,1,\ldots,n_{\text{m}}\right\}$.
 Note that the trivial values for $n=0$ are $\bar{r}_{T}(0)=0$ and $\bar{r}_{P_{c}}(0)=0$. 
 If there are more than one solution, the optimal transmission limit $n^{*}$ is the lowest one attaining the maximum throughput.
 
-Let us see how to obtain $r_{T}(i)$ and $r_{P_{c}}(i)$ for every $i$. The per-stage throughput $r_{T}(i)$ is defined as the expected number of SU packets correctly received at the $i$-th SU transmission time-slot. By definition, for every $i>0$, the SU transmits one packet, therefore $r_{T}(i) = \mathbf{P}(E_{0}|i)\cdot1$, where $\mathbf{P}(E_{0}|i)$ is the probability of the $E_{0}$ event at the $i$-th time-slot, and is given by
+Let us see how to obtain $r_{T}(i)$ and $r_{P_{c}}(i)$ for every $i$. The per-stage throughput $r_{T}(i)$ is defined as the expected number of SU packets correctly received at the $i$-th SU transmission time-slot. By definition, for every $i>0$, the SU transmits one packet, therefore $r_{T}(i) = \mathbold{P}(E_{0}|i)\cdot1$, where $\mathbold{P}(E_{0}|i)$ is the probability of the $E_{0}$ event at the $i$-th time-slot, and is given by
 \begin{equation}
-\mathbf{P}(E_{0}|i) =
+\mathbold{P}(E_{0}|i) =
 \begin{cases}
-\mathbf{P}(E_{0}|H_{0}) &,\mbox{if }i\mbox{ odd}\\
-\mathbf{P}(E_{0}|H_{1}) &,\mbox{if }i\mbox{ even}
+\mathbold{P}(E_{0}|H_{0}) &,\mbox{if }i\mbox{ odd}\\
+\mathbold{P}(E_{0}|H_{1}) &,\mbox{if }i\mbox{ even}
 \end{cases}
 \end{equation}
 %By applying the law of total probability we have
 %\begin{equation}
 %\begin{array}{lcl}
-%r_{T}(i) & = & \mathbf{P}(E_{0}|i)\\
-%& = & \mathbf{P}(E_{0}|H_{0})\mathbf{P}(H_{0}|i) + \mathbf{P}(E_{0}|H_{1})\mathbf{P}(H_{1}|i)\\
-%& = & \mathbf{P}(E_{0}|H_{0})\phi_{i}(1) + \mathbf{P}(E_{0}|H_{1})\phi_{i}(2)
+%r_{T}(i) & = & \mathbold{P}(E_{0}|i)\\
+%& = & \mathbold{P}(E_{0}|H_{0})\mathbold{P}(H_{0}|i) + \mathbold{P}(E_{0}|H_{1})\mathbold{P}(H_{1}|i)\\
+%& = & \mathbold{P}(E_{0}|H_{0})\phi_{i}(1) + \mathbold{P}(E_{0}|H_{1})\phi_{i}(2)
 %\end{array}
 %\end{equation}
-for $i>0$, where $\mathbf{P}(E_{0}|H_{0})$ and $\mathbf{P}(E_{0}|H_{1})$ are given by (\ref{PE0H0}) and (\ref{PE0H1}) respectively. Similarly, the per-stage collision probability is $r_{P_{c}}(i)~=~0$ when $i$ is odd, and $r_{P_{c}}(i)~=~1$ when $i$ is even. For $i=0$ we have $r_{T}(0)~=~0$ and $r_{P_{c}}(0)~=~0$. 
+for $i>0$, where $\mathbold{P}(E_{0}|H_{0})$ and $\mathbold{P}(E_{0}|H_{1})$ are given by (\ref{PE0H0}) and (\ref{PE0H1}) respectively. Similarly, the per-stage collision probability is $r_{P_{c}}(i)~=~0$ when $i$ is odd, and $r_{P_{c}}(i)~=~1$ when $i$ is even. For $i=0$ we have $r_{T}(0)~=~0$ and $r_{P_{c}}(0)~=~0$. 
 
-The specific structure of matrix $\mathbf{T}$ allows an efficient computation of the steady-state probability vector $\boldsymbol{\pi}$. Let us express $\mathbf{T}$ in a block-matrix form
+The specific structure of matrix $\mathbold{T}$ allows an efficient computation of the steady-state probability vector $\boldsymbol{\pi}$. Let us express $\mathbold{T}$ in a block-matrix form
 \begin{equation}
-\mathbf{T} =
+\mathbold{T} =
 \begin{pmatrix}
 			\textbf{B}_{0,0} & \textbf{B}_{0,1}  & \textbf{0} & \textbf{0} & \cdots \textbf{0} \\
 			\textbf{B} & \textbf{0} & \textbf{A} & \textbf{0} & \cdots \textbf{0} \\
@@ -574,53 +574,53 @@ The specific structure of matrix $\mathbf{T}$ allows an efficient computation of
 where $\textbf{B}_{0,0} = (0, 0)$, $\textbf{B}_{0,1} = ((1-p), p)$, and
 \begin{equation}
 \begin{array}{lcl}
-\mathbf{A} & = &
+\mathbold{A} & = &
 \begin{pmatrix}
-			(1-p)\mathbf{P}(\hat{H}_{0}|H_{0}) & p\mathbf{P}(\hat{H}_{0}|H_{0})\\
-			q\mathbf{P}(\hat{H}_{0}|H_{1}) & (1-q)\mathbf{P}(\hat{H}_{0}|H_{1})\\
+			(1-p)\mathbold{P}(\hat{H}_{0}|H_{0}) & p\mathbold{P}(\hat{H}_{0}|H_{0})\\
+			q\mathbold{P}(\hat{H}_{0}|H_{1}) & (1-q)\mathbold{P}(\hat{H}_{0}|H_{1})\\
 			\end{pmatrix}\\
-\mathbf{B} & = &
+\mathbold{B} & = &
 \begin{pmatrix}
-			1-\mathbf{P}(\hat{H}_{0}|H_{0})\\
-			1-\mathbf{P}(\hat{H}_{0}|H_{1})\\
+			1-\mathbold{P}(\hat{H}_{0}|H_{0})\\
+			1-\mathbold{P}(\hat{H}_{0}|H_{1})\\
 			\end{pmatrix}\\
-\mathbf{1} & = &
+\mathbold{1} & = &
 \begin{pmatrix}
 			1\\
 			1\\
 			\end{pmatrix}\\			
 \end{array}
 \end{equation}
-Let us define $\boldsymbol{\pi}_{k}~=~(\pi_{2k-1}, \pi_{2k})$, denoting the probability of the events $H_{0}$ and $H_{1}$ at the $k$-th transmission slot. Applying the equilibrium equations we have $\pi_{0}~=~\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{B} + \boldsymbol{\pi}_{n}\mathbf{1}$, $\boldsymbol{\pi}_{1}~=~\pi_{0}\textbf{B}_{0,1}$, and $\boldsymbol{\pi}_{k}$ can be expressed in the matrix-geometric form $\boldsymbol{\pi}_{k}~=~\boldsymbol{\pi}_{1}\mathbf{A}^{k-1}~=~\pi_{0}\textbf{B}_{0,1}\mathbf{A}^{k-1}$. The normalization condition is $\pi_{0}+\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{1} + \boldsymbol{\pi}_{n}\mathbf{1}~=~1$, which combined with the equilibrium equations results in the following expression for $\pi_{0}$
+Let us define $\boldsymbol{\pi}_{k}~=~(\pi_{2k-1}, \pi_{2k})$, denoting the probability of the events $H_{0}$ and $H_{1}$ at the $k$-th transmission slot. Applying the equilibrium equations we have $\pi_{0}~=~\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{B} + \boldsymbol{\pi}_{n}\mathbold{1}$, $\boldsymbol{\pi}_{1}~=~\pi_{0}\textbf{B}_{0,1}$, and $\boldsymbol{\pi}_{k}$ can be expressed in the matrix-geometric form $\boldsymbol{\pi}_{k}~=~\boldsymbol{\pi}_{1}\mathbold{A}^{k-1}~=~\pi_{0}\textbf{B}_{0,1}\mathbold{A}^{k-1}$. The normalization condition is $\pi_{0}+\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{1} + \boldsymbol{\pi}_{n}\mathbold{1}~=~1$, which combined with the equilibrium equations results in the following expression for $\pi_{0}$
 \begin{equation}\label{pi_0_basic}
-\pi_{0} = \displaystyle\frac{1}{2+\sum_{k=1}^{n-1}\textbf{B}_{0,1}\mathbf{A}^{k-1}(\mathbf{1}-\textbf{B})}
+\pi_{0} = \displaystyle\frac{1}{2+\sum_{k=1}^{n-1}\textbf{B}_{0,1}\mathbold{A}^{k-1}(\mathbold{1}-\textbf{B})}
 \end{equation}
-Because $\mathbf{A}$ is strictly positive we know, by the Perron-Frobenius theorem, that it has one positive eigenvalue, with multiplicity 1, which is strictly higher than all other eigenvalues. Since the dimension of $\mathbf{A}$ is $2\times2$, it has only two eigenvalues and thus we conclude that $\mathbf{A}$ has two distinct eigenvalues, $\lambda_{1}$ and $\lambda_{2}$ (with their corresponding eigenvectors $\mathbf{e}_{1}$ and $\mathbf{e}_{2}$). This implies that $\mathbf{A}$ can be expressed as $\mathbf{A}~=~\mathbf{M}\boldsymbol\Lambda\mathbf{M}^{-1}$ where $\mathbf{M}~=~\left[\mathbf{e}_{1} \mathbf{e}_{2}\right]$ and $\boldsymbol\Lambda$ is a diagonal matrix containing $(\lambda_{1}, \lambda_{2})$ in its diagonal. Then
+Because $\mathbold{A}$ is strictly positive we know, by the Perron-Frobenius theorem, that it has one positive eigenvalue, with multiplicity 1, which is strictly higher than all other eigenvalues. Since the dimension of $\mathbold{A}$ is $2\times2$, it has only two eigenvalues and thus we conclude that $\mathbold{A}$ has two distinct eigenvalues, $\lambda_{1}$ and $\lambda_{2}$ (with their corresponding eigenvectors $\mathbold{e}_{1}$ and $\mathbold{e}_{2}$). This implies that $\mathbold{A}$ can be expressed as $\mathbold{A}~=~\mathbold{M}\boldsymbol\Lambda\mathbold{M}^{-1}$ where $\mathbold{M}~=~\left[\mathbold{e}_{1} \mathbold{e}_{2}\right]$ and $\boldsymbol\Lambda$ is a diagonal matrix containing $(\lambda_{1}, \lambda_{2})$ in its diagonal. Then
 \begin{equation}
-\mathbf{A}^{k-1} = 
-\mathbf{M}\begin{pmatrix}
+\mathbold{A}^{k-1} = 
+\mathbold{M}\begin{pmatrix}
 \lambda_{1}^{k-1}&0\\
 0&\lambda_{2}^{k-1}
 \end{pmatrix}
-\mathbf{M}^{-1}
+\mathbold{M}^{-1}
 \end{equation}
 which allows us to express (\ref{pi_0_basic}) in the following closed form
 \begin{equation}
-\pi_{0} = \left(2+\textbf{B}_{0,1}\mathbf{M}
+\pi_{0} = \left(2+\textbf{B}_{0,1}\mathbold{M}
 \begin{pmatrix}
 \frac{1-\lambda_{1}^{n-1}}{1-\lambda_{1}}&0\\
 0&\frac{1-\lambda_{2}^{n-1}}{1-\lambda_{2}}
 \end{pmatrix}
-\mathbf{M}^{-1}(\mathbf{1}-\textbf{B})\right)^{-1}
+\mathbold{M}^{-1}(\mathbold{1}-\textbf{B})\right)^{-1}
 \end{equation}
-which enables an efficient computation of $\boldsymbol{\pi}_{k}~=~\pi_{0}\textbf{B}_{0,1}\mathbf{A}^{k-1}$, for $k = 1,\ldots,n$.
+which enables an efficient computation of $\boldsymbol{\pi}_{k}~=~\pi_{0}\textbf{B}_{0,1}\mathbold{A}^{k-1}$, for $k = 1,\ldots,n$.
 %and the matrix-geometric form of $\boldsymbol{\pi}_{k}$ as
 %\begin{equation}
-%\boldsymbol{\pi}_{k}=\pi_{0}\textbf{B}_{0,1}\mathbf{M}\begin{pmatrix}
+%\boldsymbol{\pi}_{k}=\pi_{0}\textbf{B}_{0,1}\mathbold{M}\begin{pmatrix}
 %\lambda_{1}^{(k-1)}&0\\
 %0&\lambda_{2}^{(k-1)}
 %\end{pmatrix}
-%\mathbf{M}^{-1}
+%\mathbold{M}^{-1}
 %\end{equation}
 %$\boldsymbol\Lambda~=~\left[\begin{pmatrix}\lambda_{1}&0\\0&\lambda_{2}\end{pmatrix}\right]$
 
@@ -630,7 +630,7 @@ To assess the impact of using BD on the performance and, especially, on the robu
 \begin{equation}
 p_{ps} = \displaystyle\frac{p_{p}(h_{t}h_{r})^2g_{t}g_{r}}{d_{ps}^{-4}}
 \end{equation}
-which equals -70.5 dBm. Assuming that the SU Tx antenna height and gain are 1.5 m and 4 dB respectively and that the distance between SU Tx and the SU Rx is $d_{ss} =250$ m, we obtain $p_{ss} = -72.9$ dBm. Considering a channel bandwidth $B = 2$ MHz, and an SU Rx noise figure equal to 18 dB, the total noise power is $N = -103$ dBm. The cognitive pair transmits at a rate of 2 Mbit/s using BPSK modulation and, as explained in Section \ref{BD_sec_system}, each packet is assumed to arrive correctly if BER$<10^{-3}$, therefore the SINR threshold is $\gamma=7$ dB. The PU traffic parameters are $p = 10^{-3}$ and $q = 2\cdot10^{-3}$, resulting in an occupation probability $\mathbf{P}\left(H_{1}\right) = \frac{1}{3}$. With these parameters we obtain the following thresholds for Rayleigh fading: $p^{*}_{E_{0}} = -61.8$ dBm and $p^{*}_{E_{1}} = -95.9$ dBm. The type I and type II error probabilities are $\mathbf{P}(\hat{H}_{1}|H_{0}) = 2.65\cdot10^{-6}$ and $\mathbf{P}(\hat{H}_{0}|H_{1}) = 0.1026$ respectively. The main parameters are summarized in Table \ref{BD_table_parameters}.
+which equals -70.5 dBm. Assuming that the SU Tx antenna height and gain are 1.5 m and 4 dB respectively and that the distance between SU Tx and the SU Rx is $d_{ss} =250$ m, we obtain $p_{ss} = -72.9$ dBm. Considering a channel bandwidth $B = 2$ MHz, and an SU Rx noise figure equal to 18 dB, the total noise power is $N = -103$ dBm. The cognitive pair transmits at a rate of 2 Mbit/s using BPSK modulation and, as explained in Section \ref{BD_sec_system}, each packet is assumed to arrive correctly if BER$<10^{-3}$, therefore the SINR threshold is $\gamma=7$ dB. The PU traffic parameters are $p = 10^{-3}$ and $q = 2\cdot10^{-3}$, resulting in an occupation probability $\mathbold{P}\left(H_{1}\right) = \frac{1}{3}$. With these parameters we obtain the following thresholds for Rayleigh fading: $p^{*}_{E_{0}} = -61.8$ dBm and $p^{*}_{E_{1}} = -95.9$ dBm. The type I and type II error probabilities are $\mathbold{P}(\hat{H}_{1}|H_{0}) = 2.65\cdot10^{-6}$ and $\mathbold{P}(\hat{H}_{0}|H_{1}) = 0.1026$ respectively. The main parameters are summarized in Table \ref{BD_table_parameters}.
 
 \begin{table}
 \begin{tabular}{|c|l|} \hline
@@ -641,11 +641,11 @@ $N$&-103 dBm\\\hline
 $\gamma$& 7 dBm\\\hline
 $p$ & $10^{-3}$\\\hline
 $q$ & $2\cdot10^{-3}$\\\hline
-$\mathbf{P}\left(H_{1}\right)$ & 1/3\\\hline
+$\mathbold{P}\left(H_{1}\right)$ & 1/3\\\hline
 $p^{*}_{E_{0}}$ & -61.8 dBm\\\hline
 $p^{*}_{E_{1}}$ & -95.9 dBm\\\hline
-$\mathbf{P}(\hat{H}_{1}|H_{0})$ & $2.65\cdot10^{-6}$\\\hline
-$\mathbf{P}(\hat{H}_{0}|H_{1})$ & 0.1026\\\hline
+$\mathbold{P}(\hat{H}_{1}|H_{0})$ & $2.65\cdot10^{-6}$\\\hline
+$\mathbold{P}(\hat{H}_{0}|H_{1})$ & 0.1026\\\hline
 \end{tabular}
 \centering
 \caption{Parameter setting of the reference scenario used in numerical evaluations}
