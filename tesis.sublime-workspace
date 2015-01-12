@@ -11,35 +11,24 @@
 			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 918,
+				"buffer_size": 945,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\\ProvidesPackage{mystyle}\n\n% Layout\n\\settrims{0pt}{0pt}\n\\settypeblocksize{0.8\\stockheight}{0.7\\stockwidth}{*}\n\\setlrmargins{*}{*}{1} %								1.2 when printed\n\\setulmargins{*}{*}{1}\n\\checkandfixthelayout[nearest]\n\n% Heading\n\\nouppercaseheads\n\\makeheadrule{headings}{\\textwidth}{0.3pt}\n\\addtopsmarks{headings}{}{\n	\\createmark{chapter}{both}{shownumber}{}{. \\space}\n}\n\\pagestyle{headings}\n\n% Chapter style\n\\chapterstyle{veelo}\n\n% Fonts\n\\usepackage{cmbright}\n%\\usepackage[bitstream-charter]{mathdesign} % For the printed version?\n%\\usepackage[T1]{fontenc}					% In case of needing accents\n\\usepackage{amssymb}\n\\usepackage{amsmath}\n\n% Caption\n\\captiontitlefont{\\small\\itshape}\n\\captionnamefont{\\small\\itshape}\n\\captionstyle[]{\\centerlastline}\n\\changecaptionwidth\n\\captionwidth{0.8\\textwidth}\n\n% Other\n\\usepackage{url}\n\\usepackage{hyperref}\n\\usepackage{array}\n\\usepackage{enumerate}\n\\usepackage{pdflscape}			\n\\usepackage{algorithmic}\n\\usepackage{algorithm}\n\\usepackage{threeparttable}\n\\usepackage{tabulary}\n%\\usepackage[latin1]{inputenc}		% Input accents and the like. Needed by BR?\n%\\usepackage{subfig}				% Class memoir Warning. Memoir has its own methods\n%\\usepackage{epsfig}\n\n% Re-definitions\n\\DeclareMathOperator*{\\argmax}{arg\\,max}	% Operator \"arg max\"\n\\renewcommand{\\vec}[1]{\\mathbold{#1}}		% Vector\n\\newcommand*{\\mat}[1]{\\mathbf{#1}}			% Matrix\n\n%% Notes\n% IMPROVE\n",
+			"file": "tex/Abstract.tex",
+			"settings":
+			{
+				"buffer_size": 1124,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "mystyle.sty",
-			"file_size": 1347,
-			"file_write_time": 130634669790000000,
 			"settings":
 			{
-				"buffer_size": 1368,
+				"buffer_size": 1346,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "bibtex/thesisBib.tex",
-			"settings":
-			{
-				"buffer_size": 48200,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tex/SPEC_MAN.tex",
-			"settings":
-			{
-				"buffer_size": 101869,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -95,23 +84,24 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/mariol/Documents/git/TESIS",
-		"/Users/mariol/Documents/git/TESIS/bibtex",
-		"/Users/mariol/Documents/git/TESIS/other",
-		"/Users/mariol/Documents/git/TESIS/tex"
+		"/Users/mariol/Documents/git/TESIS"
 	],
 	"file_history":
 	[
+		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
+		"/Users/mariol/Documents/git/TESIS/main.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
+		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/RSM.tex",
 		"/Users/mariol/Documents/git/TESIS/other/memman.pdf",
 		"/Users/mariol/Documents/git/TESIS/other/untitled.py",
 		"/Users/mariol/Documents/git/TESIS/latexdiff_help.sty",
 		"/Users/mariol/Documents/git/TESIS/tex/RSM_diff.tex",
-		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/img/RSM/evolution3D.eps",
 		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
-		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/RSM.aux",
@@ -121,7 +111,6 @@
 		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.aux",
 		"/Users/mariol/Documents/git/TESIS/main/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/main/main.tex",
-		"/Users/mariol/Documents/git/TESIS/main.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.fdb_latexmk",
 		"/Users/mariol/Documents/git/TESIS/tex/BR.aux",
 		"/Users/mariol/Documents/git/TESIS/tesis.sublime-project",
@@ -131,7 +120,6 @@
 		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
 		"/Users/mariol/Documents/git/TESIS/originals/RSM_ISWCS/Dual_Tesselation_Temporal_Access_v1.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
 		"/Users/mariol/Documents/git/TESIS/tesisBib",
 		"/Users/mariol/Documents/git/TESIS/BR/capacity_cognitive_paper.tex",
@@ -408,7 +396,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -417,15 +405,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 918,
+						"buffer_size": 945,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								462,
-								462
+								525,
+								525
 							]
 						],
 						"settings":
@@ -433,87 +421,32 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 560.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "mystyle.sty",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1368,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1152,
-								1152
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/TeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 836.0,
+						"translation.y": 177.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "bibtex/thesisBib.tex",
+					"buffer": 1,
+					"file": "tex/Abstract.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 48200,
+						"buffer_size": 1124,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39374,
-								39374
+								649,
+								649
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 18772.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "tex/SPEC_MAN.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 101869,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								387,
-								387
-							]
-						],
-						"settings":
-						{
+							"spell_check": true,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -521,6 +454,34 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "mystyle.sty",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								240,
+								240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/TeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
