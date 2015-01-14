@@ -16,6 +16,14 @@
 			}
 		},
 		{
+			"file": "tex/Intro.tex",
+			"settings":
+			{
+				"buffer_size": 10657,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "tex/Abstract.tex",
 			"settings":
 			{
@@ -24,18 +32,10 @@
 			}
 		},
 		{
-			"file": "tex/Intro.tex",
+			"file": "bibtex/thesisBib.tex",
 			"settings":
 			{
-				"buffer_size": 2276,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "mystyle.sty",
-			"settings":
-			{
-				"buffer_size": 1346,
+				"buffer_size": 48766,
 				"line_ending": "Unix"
 			}
 		}
@@ -98,12 +98,14 @@
 	],
 	"file_history":
 	[
+		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
 		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
+		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Intro.aux",
 		"/Users/mariol/Documents/git/TESIS/main.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/RSM.tex",
 		"/Users/mariol/Documents/git/TESIS/other/memman.pdf",
@@ -127,7 +129,6 @@
 		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/Default (OSX).sublime-keymap",
 		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
 		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/LaTeXTools/README.markdown",
-		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
 		"/Users/mariol/Documents/git/TESIS/originals/RSM_ISWCS/Dual_Tesselation_Temporal_Access_v1.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
@@ -188,6 +189,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"motivation",
+			"2006",
+			"Ay",
+			"benefit",
 			"atopwith",
 			"fig:seq",
 			"fig:comp",
@@ -311,11 +316,7 @@
 			"fig",
 			"table1",
 			"table",
-			"magaz",
-			"proc",
-			"pproc",
-			"magazine",
-			"ICC"
+			"magaz"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -406,7 +407,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -422,23 +423,54 @@
 						"selection":
 						[
 							[
-								564,
-								564
+								658,
+								658
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 336.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "tex/Intro.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6115,
+								6115
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 610.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "tex/Abstract.tex",
 					"semi_transient": false,
 					"settings":
@@ -450,77 +482,49 @@
 						"selection":
 						[
 							[
-								1209,
-								1209
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"spell_check": true,
+							"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 283.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "tex/Intro.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2276,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1219,
-								1219
-							]
-						],
-						"settings":
-						{
-							"spell_check": true,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 136.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "mystyle.sty",
+					"file": "bibtex/thesisBib.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1346,
+						"buffer_size": 48766,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								240,
-								240
+								394,
+								378
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/TeX.tmLanguage"
+							"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
