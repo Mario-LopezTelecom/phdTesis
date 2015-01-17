@@ -8,10 +8,6 @@ Opportunistic spectrum access (OSA) has been identified as a key technology to s
 In the last years, there has been a considerable research interest in the design and evaluation of OSA protocols for decentralized, ad-hoc cognitive networks.
 One of the most usual scenarios consists of an overlay of two networks: one is the owner of the spectrum license, and its nodes are referred to as \textit{primary users} (PUs). The other one is the cognitive network whose nodes, known as \textit{secondary users} (SUs), need to detect PU activity before transmitting to avoid harmful interference on PU receivers. We focus on systems with a dedicated control channel allowing the SUs to exchange control information.
 Despite the amount of contributions done on this technology so far, there are still many open challenges. Let us describe which ones are addressed in this work.
-%One of the most usual scenarios consists of two overlay networks, a cognitive and a licesed one. 
-%Qué es opportunistic spectrum access.
-%Qué tipo de acceso consideramos.
-%Qué tipo de sistems consideramos.
 
 \subsection{Preliminaries and Motivation}
 One of the main research issues is how to preserve the quality of service (QoS) experienced by PUs while offering a reasonable grade of service to SUs.
@@ -38,13 +34,12 @@ In a real system, where sensing results are not fully reliable, this uncertainty
 %In this scenario it is easy to see the importance of the PU's spectrum usage pattern.
 %In this scenario we can foresee the impact of the PU's spectrum usage pattern in OSA performance.
 We can anticipate the impact of the channel allocation scheme for PUs on OSA performance.
-%If each channel is randomly assigned to a PU, the probability of collision with SU transmissions is the same in any channel and post-scanning uncertainty increases equally for every channel.
-%If each channel is randomly assigned to a PU, every channel has the same collision probability and post-scanning uncertainty increases equally for every channel.
 If each channel is randomly occupied by a PU, both the collision probability and the post-scanning uncertainty variation over time is the same for every channel.
 However, it is possible for PUs to access the spectrum with a different pattern, more suitable for coexistence with OSA nodes, especially if the access system for PUs is centralized, which is usual in licensed networks.
-We will see that a simple sequential channel assignment for PUs dramatically increases the performance of both PUs and SUs. In addition, if the licensed network has the ability to aggregate channels with ongoing PU sessions into a compacted spectrum block, the performance improvement is even higher.
-%While this improvement is expectable, this is the first work that proposes and evaluates it.
-%Clearly, this OSA framework requires the SU nodes to know the PU channel assignment procedure and PU traffic descriptors. 
+Specifically, we will see that a simple sequential channel assignment for PUs reduces collisions with SUs. In addition, if the licensed network has the ability to aggregate channels with ongoing PU sessions into a compacted spectrum block (\textit{spectrum merging}), the reduction is even greater.
+It is easy to see that SUs' throughput will be dramatically improved. 
+On the other hand, the licensed network loses the ability to exploit the channels with best instantaneous propagation conditions. Its negative impact in PUs' throughput, however, is compensated, under certain traffic intensities, by the effect of the reduced collisions, as we showed in \cite{ref:Alcaraz2013} and it is highlighted in \cite{ref:ElSawy2013}. For other traffic scenarios, the reduction in PUs' throughput due to spectrum merging is minimal.
+
 Obviously, this OSA framework requires the SU nodes to have a previous knowledge of PU traffic descriptors. 
 It could be argued that this requirement is a drawback since traffic prediction inaccuracies may result in degraded performance.
 %We address this issue showing that this is not completely true. 
@@ -59,7 +54,7 @@ However, it may not be completely true. In fact, our results show that the diffe
 %Hablar de aspectos prácticos. Multichannel access (the majority of the proposed protocols operate in a multichannel way). Retardo entre el channel scanning y el access. (scanning increases the overhead since nodes cannot transmit when they are scanning) Añadir a esto unreliable detection.
 %Tradeoff colisión, SU grade of service.
 
-%Influencia de PU activity. Ha sido estudiado en \cite{ref:QoS} Sin embargo PU spectrum use pattern no ha sido tratado de forma rigurosa.
+%Influencia de PU activity. Ha sido estudiado en \cite{ref:Pawelczak2008} Sin embargo PU spectrum use pattern no ha sido tratado de forma rigurosa.
 
 %PU detection errors and channel availability variation, have a strong impact on the design of opportunistic medium access protocols, and the goal of this paper is to study the performance of PU spectrum use pattern in the context of OSA. 
 
@@ -92,78 +87,43 @@ However, it may not be completely true. In fact, our results show that the diffe
 \subsection{Related Work}\label{SPEC_MAN_sec_related_work}
 
 Opportunistic spectrum access for cognitive radio has been an active area of research in recent years, and many different approaches have been addressed so far.
-A comprehensive and up-to-date overview of cognitive MAC protocols can be found in \cite{ref:SurveyMACs}.
-%To focus our attention, we restrict our interest to the case of a decentralized ad-hoc cognitive network whose nodes exchange control information on a dedicated control channel. The cognitive network overlays on a licensed spectrum, so that SUs need to detect PU activity before transmitting to avoid harmful interference on PU receivers.
-%Focusing our attention on the type of OSA systems previously described, 
-%The type of OSA systems previously described are surveyed in \cite{ref:QoS}. 
+Comprehensive and up-to-date overviews of cognitive MAC protocols can be found in \cite{ref:Gavrilovska2015,ref:Domenico2012}. 
 As previously stated, we focus on decentralized, multichannel, ad-hoc OSA systems.
-Medium Access Control (MAC) protocols for these systems are surveyed and classified in \cite{ref:QoS} and \cite{ref:compartivaMAC}.
-Regarding MAC design, it is especially interesting the research line initiated in \cite{ref:HCMAC}, which takes into consideration hardware limitations of cognitive nodes, specifically: (1) fine sensing can only be conducted within a small portion of spectrum (\textit{sensing constraint}) and requires a non-negligible time; (2) the spectrum used by an SU has a limited bandwidth (\textit{transmission constraint}) and (3) SUs are equipped with a single cognitive radio which cannot sense and transmit simultaneously.
+Medium Access Control (MAC) protocols for these systems are surveyed and classified in \cite{ref:Pawelczak2008} and \cite{ref:Pawelczak2009}.
 
-Regarding the impact on PU communications, \cite{ref:HCMAC} used a worst case approach, setting a fixed duration of $T$ seconds for SU transmissions, where $T$ was the maximum overlap time with SU activity that a PU receiver could tolerate. 
-However \cite{ref:HCMAC} focused only on optimizing SU's throughput and did not provide a method to compute the actual overlapping time which is one of the objectives of our model.
-
-Multichannel access with sensing constraint is also considered in \cite{ref:DiscoveringOpportunities}, \cite{ref:MultichannelMultistage} and \cite{ref:StoppingRule}. The proposal in \cite{ref:DiscoveringOpportunities} optimizes the discovery of spectrum opportunities. In contrast to our model, the system in \cite{ref:DiscoveringOpportunities} is assumed to be collision free. In \cite{ref:MultichannelMultistage}, the focus is on optimizing the sensing phase considering, among other aspects, the trade-off between its duration (and reliability) and collision probability. As we will explain later, our model incorporates similar considerations, but in the design of access policies that include not only the sensing phase but also the number of channels to transmit in. Finally, the approach in \cite{ref:StoppingRule} is perhaps the closest to ours, although there are two significant differences: first, \cite{ref:StoppingRule} aimed to optimize SU's throughput without quantifying the effect on PU's performance. Second, our formulation incorporates the variation of channel observation uncertainty over time, which is crucial for evaluating the effect of PU channel allocation schemes.
-
-%generally the sensing delay overhead, but have also set protection objectives for PU transmissions. Most works \cite{ref:PacketConstraints}, \cite{ref:OpportunisticAccess} and \cite{ref:POMDP} use packet collision probability as the PU protection requirement.
-
-In works where PU's QoS is addressed, it is usually characterized by collision probability: \cite{ref:MultichannelMultistage}, \cite{ref:PacketConstraints}, \cite{ref:POMDP} and \cite{ref:OptimalStrategies}. 
-Much fewer works \cite{ref:OpportunisticAccess} incorporate also overlapping time which,
-as stated in \cite{ref:OptimalStrategies}, is closely related to packet collision probability. It is a common assumption to consider any overlapping time equivalent to a packet collision. However, a more precise conversion involves many features such as capture effect, bit interleaving and forward error control techniques. 
+This work is inspired by our previous one in \cite{ref:Alcaraz2013}, in which we studied the impact of PU bandwidth reservation on OSA performance. 
+The results we obtained in \cite{ref:Alcaraz2013} showed that the benefits of reduced PU-SU collisions outweigh the negative consequences of a more limited selection of channels available to the PUs. 
+This allows us to focus on avoiding collisions in this work and therefore, to safely simplify the PU's QoS metric to the overlapping time, as opposed to more complex but preferred metrics \cite{ref:Sun2012} such as interference level at PU receivers or PN Shannon capacity. 
+In works where PU's QoS is addressed, it is usually characterized by collision probability: \cite{ref:Gabran2011,ref:Jung2012,ref:Zhao2007_dec,ref:Huang2009,ref:Jung2012}. 
+Much fewer works \cite{ref:Huang2008_opp} incorporate also overlapping time which,
+as stated in \cite{ref:Huang2009}, is closely related to packet collision probability. 
+It is a common assumption to consider any overlapping time equivalent to a packet collision. 
+However, a more precise conversion involves many features such as capture effect, bit interleaving and forward error control techniques. 
 Therefore, because of its greater generality, we adopt overlapping time as the PU's QoS parameter.
-%Therefore, we adopt overlapping time, as done in \cite{ref:OpportunisticAccess}, as the PU's QoS parameter because of its greater generality.
 
-%PU QoS characterization in OSA is a by means of the overlapping time of PU and SU activity periods, as done in \cite{ref:OpportunisticAccess}. As stated in \cite{ref:OptimalStrategies}, overlapping time is closely related to packet collision probability. Although it is a common assumption to consider any overlapping time equivalent to a packet collision, a more precise conversion implies considering many features such as capture effect, bit interleaving and forward error control techniques. Therefore, we adopt overlapping time as the PU's QoS parameter because of its greater generality.
-%Several physical layer features such as capture effect, bit interleaving and forward error control techniques, may allow a PU receiver to correctly decode data packets. Obviously, the longer the overlap period, the higher the probability of incorrect detection at the PU receiver. Therefore, we consider as the PU QoS measure the \textit{collision time}
+Both \cite{ref:Alcaraz2013} and this work are in line with the recent increase of interest in non-transparent access of SUs to PUs' spectrum \cite{ref:Mao2010,ref:Tang2009_per}. This trend is in constrast to the traditional approach maintained since the origin of cognitive radio \cite{ref:Mitola2000}, specially under the spectrum overlay OSA model \cite{ref:Zhao2007_dec}. 
+Such change of paradigm is probably motivated by the application of OSA techniques to heterogeneous cellular networks (HetNets). 
+HetNets also imply overlay networks (small cells, often with cognitive abilities, over the macro-cell network), but their main difference is that their users are all primary and thus, QoS must be guaranteed for both the macro and the small cell users. 
+Because of this, it makes sense for the macro-cell network to manage its spectrum in a different way despite the cognition of the small cells. 
 
-%As stated in \cite{ref:OptimalStrategies}, overlapping time is closely related to packet collision probability. 
+Indeed, the most similar works \cite{ref:Lima2012,ref:ElSawy2013} to ours are found in the context of HetNets. 
+In \cite{ref:ElSawy2013}, H. ElSawy and E. Hossain study a random and a sequential channel assignment strategy for macro-cell users in a two-tier network. 
+Apart from the different context, other important differences with our work are that: their cell deployment model is based on stochastic geometry, and inter-cell interferences must be taken into account; we additionally propose the novel spectrum merging strategy; they do not model the users' access strategies; and they assume perfect spectrum sensing.
+Resource allocation strategies are also studied in \cite{ref:Lima2012} but it is focused in the small cells' actions and no sensing capabilities are considered.  
 
-%However it is not necessary true in every scenario, since several physical layer features, e.g. capture effect, bit interleaving, forward error control techniques, may allow a PU receiver to correctly decode data packets even when an SU transmits within its range. Obviously, the longer the overlap period, the higher the probability of incorrect detection at the PU receiver. Therefore, we consider as the PU QoS measure the \textit{collision time}, defined as the expected total time of PU and SU simultaneous activity on every channel. 
-
-% Entre otras cosas, \cite{ref:HCMAC} no evaluaba el impacto de la transmisión en la QoS de los PU ya que asumía... Otros trabajos han incorporado algunas de los aspectos hardwara introducidos en \cite{ref:HCMAC} pero sin embargo han planteado el diseño de OSA estableciento ganrantías en la QoS de los PUs, generally characterized by packet collision prob \cite{ref:PacketConstraints}, \cite{ref:OpportunisticAccess} and \cite{ref:POMDP}. Nosotros consideramos el overlap time que es algo más general.
-
-%En contraste con los trabajos anteriores nuestro trabajo también está interesado en evaluar cómo influye la actividad de los PU en el overall performance. Por ello ciertos aspectos del modelo han sido considerados en un alto grado de detalle: timescale, actividad conjunta, sensing delay y tipo de tráfico.
+In the framework of spectrum trading (which is also non-transparent to the PN), a recent work \cite{ref:Wu2012} proposed a system in which the PN reserves a set of channels for dynamic spectrum auction. That work follows the concept of spectrum pooling, where secondary users temporarily rent from a pool of spectrum resources from primary users \cite{ref:Biglieri2012}. This approach requires the implementation of new protocols to support the required PU-SU signaling and makes the spectrum sensing no longer needed. It is therefore essentially different to the opportunistic access framework of our proposal. Also in the spectrum trading context, \cite{ref:Maille2009} features a competitive duopoly where the operators have license to transmit in a fixed spectrum band and can access a shared unlicensed one under congestion. This can be seen as a sort of sequential allocation. However, the objective of the paper is significantly different to ours. It addresses the equilibrium of the operators' pricing strategies and its effect on their profits and their suscribers' welfare. 
 
 We are also interested in evaluating the effect of PU spectrum usage on the overall performance, therefore we devote special attention to aspects related to PU activity characterization.
 The first one is the timescale associated to each type of users. When SUs are assumed to operate in a much faster timescale than PUs, the spectral environment is treated as static. On the contrary, we consider that PU and SU activity periods have similar timescales, similarly to the works previously cited.
-The second aspect is the time structure of PU communications, that can be slotted as in \cite{ref:MultichannelMultistage}, \cite{ref:StoppingRule}, \cite{ref:POMDP}, \cite{ref:OptimalStrategies} and \cite{ref:SensingMultichannel} where PUs are assumed to arrive and depart at discrete times that are multiples of the slot duration.
-Other works such as \cite{ref:DiscoveringOpportunities}, \cite{ref:PacketConstraints} and \cite{ref:OpportunisticAccess}, consider unslotted time.
+The second aspect is the time structure of PU communications, that can be slotted as in \cite{ref:Gabran2011}, \cite{ref:Cheng2011}, \cite{ref:Zhao2007_dec}, \cite{ref:Huang2009} and \cite{ref:Park2011} where PUs are assumed to arrive and depart at discrete times that are multiples of the slot duration.
+Other works such as \cite{ref:Kim2008}, \cite{ref:Jung2012} and \cite{ref:Huang2008_opp}, consider unslotted time.
 We adopt this approach, despite its higher analytic complexity, because it is suitable for general delays and transmission times, it does not imply PU and SU synchronization and is more accurate for computing overlapping time.
-The third aspect is PU traffic characterization and scope. For traffic modeling we use the exponential distribution, historically used to characterize call durations in communication systems, and considered also suitable to model PU channel holding times as done in \cite{ref:DiscoveringOpportunities}, \cite{ref:OpportunisticAccess} and \cite{ref:Modelling}. 
-Regarding the scope of PU activity model, most works restrict it only to the channel where the SU is operating (\textit{e.g.} \cite{ref:DiscoveringOpportunities}, \cite{ref:SensingMultichannel}) while fewer ones (\cite{ref:MultichannelMultistage} ,\cite{ref:POMDP}) extend the model to all the channels in the spectrum band. However, every mentioned work essentially assumes that each channel can be randomly and independently occupied by a PU. In contrast, our research objectives require modeling all the channels but considering different occupation patterns. 
+The third aspect is PU traffic characterization and scope. For traffic modeling we use the exponential distribution, historically used to characterize call durations in communication systems, and considered also suitable to model PU channel holding times as done in \cite{ref:Kim2008}, \cite{ref:Huang2008_opp} and \cite{ref:Tang2009_mod}. 
+Regarding the scope of PU activity model, most works restrict it only to the channel where the SU is operating (\textit{e.g.} \cite{ref:Kim2008}, \cite{ref:Park2011}) while fewer ones (\cite{ref:Gabran2011} ,\cite{ref:Zhao2007_dec}) extend the model to all the channels in the spectrum band. However, every mentioned work essentially assumes that each channel can be randomly and independently occupied by a PU. In contrast, our research objectives require modeling all the channels but considering different occupation patterns. 
 
-%we have to jointly model all the channels in the network, as done in \cite{ref:MultichannelMultistage}, \cite{ref:SensingMultichannel} instead of using an independent ON-OFF model for each channel \cite{ref:DiscoveringOpportunities}, \cite{ref:POMDP}. The exponential distribution, extensively used to characterize call durations in communication systems, is also suitable to model PU channel holding times as done in \cite{ref:OpportunisticAccess}, \cite{ref:DiscoveringOpportunities} and \cite{ref:Modelling}.
+With regard to MAC design, it is especially interesting the research line initiated in \cite{ref:Jia2008_HC} and followed by several others \cite{ref:Park2011,ref:Li2012}, which takes into consideration hardware limitations of cognitive nodes, specifically: (1) fine sensing can only be conducted within a small portion of spectrum (\textit{sensing constraint}) and requires a non-negligible time; (2) the spectrum used by an SU has a limited bandwidth (\textit{transmission constraint}) and (3) SUs are equipped with a single cognitive radio which cannot sense and transmit simultaneously. However \cite{ref:Jia2008_HC} focused only on optimizing SU's throughput and did not provide a method to compute the actual overlapping time which is one of the objectives of our model. In addition, it uses a worst case approach, setting a fixed duration of $T$ seconds for SU transmissions, where $T$ is the maximum overlap time with SU activity that a PU receiver could tolerate.
 
-% timescale, delay, traffic model and channel allocation.
-
-%PU activity
-%When characterizing PU activity, the most extended approach considers slotted time \cite{ref:POMDP}, \cite{ref:MultichannelMultistage}, \cite{ref:SensingMultichannel} \textit{i.e.} PUs are assumed to arrive and depart at discrete times that are multiples of $\tau$, where $\tau$ is the slot length in seconds. The unslotted structure for PU activity is used in fewer works \cite{ref:OpportunisticAccess}, \cite{ref:PacketConstraints}, \cite{ref:OptimalStrategies}. 
-%Some works model the activity of a single PU, many times by an ON-OFF model, while other works characterize the whole PU network. The activity periods are generally characterized by means of exponential distributions.
-
-%Given the time scales of the activity periods considered in our system, the unslotted structure is more realistic than the slotted one and provides higher accuracy in computing collision times. Since we are interested in studying the impact of PU channel allocation in cognitive access performance, we have to jointly model all the channels in the network, as done in \cite{ref:MultichannelMultistage}, \cite{ref:SensingMultichannel} instead of using an independent ON-OFF model for each channel \cite{ref:DiscoveringOpportunities}, \cite{ref:POMDP}. The exponential distribution, extensively used to characterize call durations in communication systems, is also suitable to model PU channel holding times as done in \cite{ref:OpportunisticAccess}, \cite{ref:DiscoveringOpportunities} and \cite{ref:Modelling}.
-
-% Imperfect sensing.
-
-% Otros trabajos que consideren la actividad de los PUs.
-
-% Sensing Delay
-
-% Amplicación: Imperfect sensing.
-
-% Caracterización del QoS de los PU Colisión / tiempo de solape
-
-% Caracterizacion de la actividad de los PU
-
-%Interference temperature is no longer considered a standard performance metric for cognitive radio (ref a la FCC). In consequence, recent works focus on characterizing the overlap of SU and PU activity periods. For example, \cite{ref:PacketConstraints}, \cite{ref:OpportunisticAccess} and \cite{ref:POMDP} use packet collision probability as the PU protection requirement. On the other hand \cite{ref:HCMAC} proposed a fixed duration of $T$ seconds for SU activity periods, where $T$ is the maximum collision time that the PU network can tolerate. However \cite{ref:HCMAC} did not provide a method to compute the actual collision time and focused just on optimizing the SU throughput.
-%In the system considered in our work, PU activity periods correspond to call holding times (\textit{session}). The duration of each session is in the order of tens of seconds and may contain, in general, several packets. As in \cite{ref:HCMAC}, SU transmissions last for $T$ seconds. Therefore, we use collision time instead of packet collision probability as the performance metric. %JUSTIFICAR QUE ESTO NO SE HABÍA HECHO AÚN
-
-%Several works measure QoS of PU communications in terms of packet collision probability. This implies that any overlap of SU and PU activity periods is considered a packet collision. However it is not necessary true in every scenario, since several physical layer features, e.g. capture effect, bit interleaving, forward error control techniques, may allow a PU receiver to correctly decode data packets even when an SU transmits within its range. Obviously, the longer the overlap period, the higher the probability of incorrect detection at the PU receiver. Therefore, we consider as the PU QoS measure the \textit{collision time}, defined as the expected total time of PU and SU simultaneous activity on every channel. 
-
-%The SU scanning and access capabilities is one of the more relevant aspects in opportunistic spectrum access. In this work we consider a hardware-constrained system, similar to the one described in \cite{ref:HCMAC} which identifies three main hardware limitations: (1) fine sensing can only be conducted within a small portion of spectrum (\textit{sensing constraint}) and requires a non-negligible time; (2) the spectrum used by a SU has maximum bandwidth (\textit{transmission constraint}) and (3) SUs are equipped with a single cognitive radio which cannot sense and transmit simultaneously. 
-
-%Imperfect sensing. The activity of PUs is not always detected by SUs.
-%Sensing overhead.
-%Conocimiento del SU activity. Retardos y limitaciones técnicas.
+Multichannel access with sensing constraint is also considered in \cite{ref:Kim2008}, \cite{ref:Gabran2011} and \cite{ref:Cheng2011}. The proposal in \cite{ref:Kim2008} optimizes the discovery of spectrum opportunities. In contrast to our model, the system in \cite{ref:Kim2008} is assumed to be collision-free. In \cite{ref:Gabran2011}, the focus is on optimizing the sensing phase considering, among other aspects, the trade-off between its duration (and reliability) and collision probability. As we will explain later, our model incorporates similar considerations, but in the design of access policies that include not only the sensing phase but also the number of channels to transmit in. Finally, the approach in \cite{ref:Cheng2011} is perhaps the closest to ours, although there are two significant differences: first, \cite{ref:Cheng2011} aimed to optimize SU's throughput without quantifying the effect on PU's performance. Second, our formulation incorporates the variation of channel observation uncertainty over time, which is crucial for evaluating the effect of PU channel allocation schemes.
 
 \subsection{Our Contribution}
 The goal of this work is to find and characterize OSA policies for SUs with the hardware limitations described previously and to evaluate the impact of PU channel allocation mechanisms.
@@ -194,7 +154,7 @@ Note that the computational overhead of solving the MDP may be unfeasible for an
 %Estudio de la sensibilidad al traffic estimation accuracy. 
 
 
-%In consequence, recent work focus on characterizing the overlap activity of SU and PU. For example, \cite{ref:PacketConstraints} uses packet collision probability to measure the impact on PUs and \cite{HC-MAC} considers that the PU communications can tolerate up to a maximum collision time $T$ with a SU transmission.
+%In consequence, recent work focus on characterizing the overlap activity of SU and PU. For example, \cite{ref:Jung2012} uses packet collision probability to measure the impact on PUs and \cite{HC-MAC} considers that the PU communications can tolerate up to a maximum collision time $T$ with a SU transmission.
 %That work considered $T$ as a worst-case so that SU transmissions lasted exactly $T$ seconds, but did not compute the actual collision time and therefore
 
 
@@ -203,7 +163,7 @@ Note that the computational overhead of solving the MDP may be unfeasible for an
 The system under study consists of two overlay wireless networks. The licensed one operates with centralized access coordinated by an access node (AN). The spectrum used by this network comprises $N$ adjacent narrowband channels. %Upon a PU arrival, the AN assigns one of these channels, if available, to the incoming PU.
 Upon each PU arrival, the AN assigns an available channel to the incoming PU.
 SU activity is not detected by either the PUs or the AN, therefore a PU may occupy a channel with an ongoing SU transmission.
-Similarly to many related works (\textit{e.g.} \cite{ref:POMDP}, \cite{ref:DiscoveringOpportunities}, \cite{ref:Modelling}), PU traffic is assumed to follow a Poisson model: PU inter-arrival time characterized by an exponential random variable with rate $\lambda$ and channel holding time described by an exponential random variable with rate $\mu$.
+Similarly to many related works (\textit{e.g.} \cite{ref:Zhao2007_dec}, \cite{ref:Kim2008}, \cite{ref:Tang2009_mod}), PU traffic is assumed to follow a Poisson model: PU inter-arrival time characterized by an exponential random variable with rate $\lambda$ and channel holding time described by an exponential random variable with rate $\mu$.
 
 The criteria for PU channel allocation depend on the system, \textit{e.g.} the AN may assign them according to channel quality measurements reported by the PUs. So far, in OSA research it has been usually assumed that channels are occupied by PUs according to independent identically distributed (i.i.d.) processes. In this model, every channel can be assigned to an incoming PU with the same probability. We refer to this scheme as \textit{random allocation}.
 However, when the same spectrum band is accessed by opportunistic nodes, this allocation scheme is not optimal in terms of collision probability. In this work we investigate the benefits of using different spectrum management strategies for allocating channels to PUs.  Therefore, we consider two additional schemes:
@@ -222,7 +182,7 @@ Many wireless access systems, \textit{e.g.} OFDMA-based systems, allow both sequ
 However, in some cases, sequential allocation may imply assigning channels whose propagation conditions are not optimal for the incoming PUs. 
 Note that this problem can be alleviated by the following considerations: (1) Since, OSA is supposed to operate under light PU traffic conditions, an incoming PU could be assigned a wider bandwidth in order to meet its quality requirements. This may cause the traffic model to differ from the one explained, but this is not such an important issue as we show in section \ref{ref:Results}. (2) In the case of merged spectrum for PUs, the AN's scheduling algorithm could optimize the channel distribution within the spectrum band occupied by the PUs.
 
-In any case, the impact of OSA activity on PU's performance is notably reduced when the resource management scheme of the licensed network facilitate spectrum sharing, while the performance of SU communication is improved, as shown in section \ref{ref:Results}. However, a more general study of the trade-offs between the potential drawbacks and the benefits of non-random channel allocation for PUs is an issue for further research.
+In any case, the impact of OSA activity on PU's performance is notably reduced when the resource management scheme of the licensed network facilitate spectrum sharing, while the performance of SU communication is improved, as shown in section \ref{ref:Results} and backed by the more general study we did in \cite{ref:Alcaraz2013} and by other works such as \cite{ref:ElSawy2013}.
 
 %PU inter-arrival time is characterized by an exponential random variable with rate $\lambda$. Upon arrival each PU occupies one channel, if available. The channel holding time is described by an exponential random variable with rate $\mu$. 
 %Note that, in contrast to many previous works, the model does not assume slotted time. 
@@ -237,14 +197,14 @@ Secondary nodes are constrained to some hardware limitations:
 (3) Once a cognitive pair decides to start a transmission, it can use up to $M$ noncontiguous channels simultaneously.
 %Once a cognitive pair decides to start a transmission, the sender SU can use several channels simultaneously. There is, however a limit on the width of the spectrum aggregated in a SU transmission. This limit is set to $M$ channels.
 
-%The SUs implement the MAC protocol (HC-MAC) described in \cite{ref:HCMAC} with a different sensing and accessing decision policy. 
+%The SUs implement the MAC protocol (HC-MAC) described in \cite{ref:Jia2008_HC} with a different sensing and accessing decision policy. 
 %HC-MAC comprises three phases that we briefly summarize here:
 %\begin{enumerate}
 %	\item \textit{Contention}: When an SU sender wants to establish a connection it listens the dedicated control channel to assess ongoing SU activity. If no SU is reporting activity, the sender node transmits a contention message (C-RTS) to the target node on the control channel. The receiver node then replies with a C-CTS. This procedure allows the cognitive pair to reserve time for the following sensing and transmission phases as well as to synchronize both nodes.
 %	\item \textit{Sensing}: After winning the contention, both the sender and the receiver SUs start to scan the spectrum in consecutive, synchronized stages (\textit{sensing slots}). During a sensing slot both nodes listen to the same single channel and share the sensing results by exchanging S-RTS/S-CTS messages. After each sensing slot the cognitive pair decides whether to finish or to continue the sensing phase. 
 %	\item \textit{Transmission}: Once the cognitive pair finishes the sensing phase the sender node begins to use a set of available channels to transmit data packets during a period of $T$ units of time. After finishing the transmission, both nodes exchange T-RTS/T-CTS packets notifying neighboring nodes the release of the reserved resources. Upon receiving this notification, neighboring nodes listening the control channel will contend after a random backoff period.
 %\end{enumerate}
-The SUs implement the MAC protocol described in \cite{ref:HCMAC} (HC-MAC) with a different sensing and accessing decision policy. Summarizing, HC-MAC comprises three consecutive phases: \textit{contention}, \textit{sensing} and \textit{transmission}. 
+The SUs implement the MAC protocol described in \cite{ref:Jia2008_HC} (HC-MAC) with a different sensing and accessing decision policy. Summarizing, HC-MAC comprises three consecutive phases: \textit{contention}, \textit{sensing} and \textit{transmission}. 
 The contention procedure allows a pair of SUs (sender and receiver) to reserve the use of the spectrum in a certain area avoiding collisions with other SU transmissions. 
 After winning a contention, the cognitive pair starts to sense the spectrum in fixed-duration sensing slots.
 %during which both the sender and the receiver sense the same channel and exchange the sensing result. Let $\tau$ denote the duration of a sensing slot. 
@@ -253,7 +213,7 @@ During the $\tau$ seconds of each slot both the sender and the receiver sense th
 At the end of every slot, a decision is made whether to sense the next channel or to transmit using one or more of the available channels detected. 
 Because of the information exchange, the cognitive pair acts as a single entity when making the transmission decision provided that both nodes operate under the same policy.
 %RTS/CTS exchange procedures in each phase prevent collisions among SU transmissions.
-Similarly to \cite{ref:HCMAC} and \cite{ref:SensingMultichannel}, in case of overlapping with PU activity, the SU transmission is considered to be successful since, in our model, SU's transmission power is much higher than interference from PUs.
+Similarly to \cite{ref:Jia2008_HC} and \cite{ref:Park2011}, in case of overlapping with PU activity, the SU transmission is considered to be successful since, in our model, SUs establish close \textit{ad-hoc} connections and thus, the received power at a SU receiver from a SU transmitter is much higher than interference from PUs.
 
 The OSA policy considered in this work differs from the one in HC-MAC in its decision space and its computation procedure.
 We use an extended decision space such that instead of using the total number of available channels, the sender may use any smaller number, including quitting the sensing process without transmitting. 
@@ -262,11 +222,11 @@ We use an extended decision space such that instead of using the total number of
 The differences in policy computation result from a more general formulation incorporating aforementioned aspects, namely: observation uncertainty due to imperfect sensing and delay overhead; modeling PU activity on the whole spectrum band with diverse channel allocation strategies; and PU's QoS characterization in terms of overlapping time.
 Fig. \ref{fig:access} depicts a simplified example of SU access incurring in an overlapping event. 
 %Reducing the expected duration of the overlapping periods is one of the goals of OSA policy design.
-% \begin{figure}
-% \centering
-% \includegraphics[scale=1]{access.eps}
-% \caption[]{OSA example. After sensing channels 1 to 4, the CP decides to transmit in channels 1 and 2, resulting in an overlapping event on channel 2.}\label{fig:access}
-% \end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=1]{access.eps}
+\caption[]{OSA example. After sensing channels 1 to 4, the CP decides to transmit in channels 1 and 2, resulting in an overlapping event on channel 2.}\label{fig:access}
+\end{figure}
 %EXPLICAR QUE ANTE UN OVERLAP SE ASUME QUE EL SU RECIBE LOS PAQUETES.
 %SE PUEDE TRANSMITIR EN HASTA M NONCONTIGUOUS BANDS
 %SOLO SE PUEDE TRANSMITIR O SENSORIZAR EN UN SLOT
@@ -291,7 +251,7 @@ Fig. \ref{fig:access} depicts a simplified example of SU access incurring in an 
 %En nuestro sistema se propone emplear tiempo de colisión al considerarlo más general que probabilidad de colisión ya que en muchos casos, las técnicas FEC permiten recuperar el mensaje cuando el número de símbolos erroneos es pequeño. Por tanto, a mayor tiempo de colisión mayor es el número de símbolos erróneos. Además, el el número de bits por símbolo puede variar de un PU a otro, por lo que la probabilidad de error de bit también varia. 
 %En cualquier caso, si se minimiza el tiempo total esperado en el que se solapan las actividades de los PU y los SU se garantiza la calidad de servicio de los PU.
 \section{Markovian Models}\label{sec:Models}
-%Diferenciar entre el modelo de red y el modelo del cognitive user. Procesos Y(t): spectrum state y X_{k}. 
+%Diferenciar entre el modelo de red y el modelo del cognitive user. Procesos Y(t): spectrum state y \vec{X}_{k}. 
 %Porceso de llegada y salidas de los usuarios primarios a la red tipo Poisson.
 %Definir tasa de llegadas $\lambda$ y tasa de salidas $s$.
 
@@ -299,73 +259,67 @@ Fig. \ref{fig:access} depicts a simplified example of SU access incurring in an 
 %due to the significant involvement of the delay analysis, the model is limited to throughput assessment only. In addition, this work is limited to a single collision domain, and effects such as hidden/exposed terminals are not modeled.
 
 \subsection{Licensed Network Models}
-%Network models
-\subsubsection{Random channel allocation}
-Let $i$, $j$ $\in \mathcal{S}$ be two state values of the continuous-time Markov chain (CTMC) $Y(t)$ corresponding to the random allocation scheme. 
-Let $\left(i\right)_{2}$ denote the binary representation of $i$ as an $N$-tuple, \textit{i.e.} $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, where $i_{n} = 1$ if the $n$-th channel is occupied by a primary user and $i_{n} = 0$ otherwise. The complementary of $\left(i\right)_{2}$ is denoted by $\overline{\left(i\right)_{2}}$.
+We denote by $Y(t)$ the continuous-time Markov chain (CTMC) corresponding to any of the allocation schemes. The set of states of $Y(t)$ is indicated by $\mathcal{S}$. Let $i$, $j$ $\in \mathcal{S}$ be two states of $Y(t)$ and let $\left(i\right)_{2}$ denote the binary representation of $i$ as an $N$-tuple, \textit{i.e.} $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, where $i_{k} = 1$ if the $k$-th channel is occupied by a primary user and $i_{k} = 0$ otherwise. We will also refer to $i_k$ as the state of channel $k$. The complementary of $\left(i\right)_{2}$ is denoted by $\overline{\left(i\right)_{2}}$.
 The 1-norm of $\left(i\right)_{2}$ is defined as
 \begin{equation}\label{1Norm}
-\left\|\left(i\right)_{2}\right\|_{1}=\displaystyle\sum_{n=1}^{N}\left|i_{n}\right|.
+\left\|\left(i\right)_{2}\right\|_{1}=\displaystyle\sum_{k=1}^{N}\left|i_{k}\right|
 \end{equation}
 Note that previous expression provides the number of occupied channels in the system while $\left\|\overline{\left(i\right)_{2}}\right\|_{1}$ yields the number of free channels.
-The infinitesimal generator $Q$ characterizing $Y(t)$ under random channel allocation is given by 
-\begin{equation}\label{Qrandom}
-	  q_{ij} =
-	  \begin{cases}
-		\frac{\lambda}{\left\|\overline{\left(i\right)_{2}}\right\|_{1}}, & \mbox{if} \quad \sum_{n=1}^{N}\left(j_{n}-i_{n}\right) = 1\\
-	
-		\mu, & \mbox{if} \quad \sum_{n=1}^{N}\left(i_{n}-j_{n}\right) = 1 \\
 
-	 	-\lambda - \left\|\left(i\right)_{2}\right\|_{1}\mu, & \mbox{if} \quad i = j\\
-	 	
-	 	0, & \mbox{otherwise}\\
+We summarize $\mathcal{S}$, and the components of the infinitesimal generator $\mat{Q}$ characterizing $Y(t)$, $q_{ij}$, for each scheme in table \ref{Table_markovian_models}.
+
+\begin{table*}
+\begin{tabular}{|l|c|c|} 
+\hline
+& $\mathcal{S}$ & $q_{ij}$\\\hline
+Random & 
+$\mathcal{S} = \left\{0,1,\ldots,2^N\right\}$ &
+\parbox{7cm}{\begin{equation*}\label{Qrandom}
+    q_{ij} =
+    \begin{cases}
+    \frac{\lambda}{\left\|\overline{\left(i\right)_{2}}\right\|_{1}}, & \mbox{if} \quad \sum_{n=1}^{N}\left(j_{n}-i_{n}\right) = 1\\
+  
+    \mu, & \mbox{if} \quad \sum_{n=1}^{N}\left(i_{n}-j_{n}\right) = 1 \\
+
+    -\lambda - \left\|\left(i\right)_{2}\right\|_{1}\mu, & \mbox{if} \quad i = j\\
+    
+    0, & \mbox{otherwise}\\
+    \end{cases}
+\end{equation*}}\\\hline
+Sequential &
+$\mathcal{S} = \left\{0,1,\ldots,2^N\right\}$ &
+\parbox{7cm}{\begin{equation*}\label{Qordered}
+    q_{ij} =
+    \begin{cases}
+    \lambda, & \mbox{if} \quad j = i + 1\\
+  
+    \mu, & \mbox{if} \quad \sum_{n=1}^{N}\left(i_{n}-j_{n}\right) = 1 \\
+
+    -\lambda - \left\|\left(i\right)_{2}\right\|_{1}\mu, & \mbox{if} \quad i = j\\
+    
+    0, & \mbox{otherwise}\\
  \end{cases}
-\end{equation}
+\end{equation*}}\\\hline
+Merged & 
+$\mathcal{S} = \left\{0,1,\ldots,N\right\}$ &
+\parbox{5cm}{\begin{equation*}\label{Qcompacted}
+    q_{ij} =
+    \begin{cases}
+    \lambda, & \mbox{if} \quad j = i + 1\\
+  
+    i\mu, & \mbox{if} \quad j = i - 1\\
 
-\subsubsection{Sequential channel allocation}
-Similarly to previous case, the state space for the ordered channel allocation scheme is $\mathcal{S} = \left\{0,1,\ldots,2^N\right\}$. Let us consider two states $i$, $j$ $\in \mathcal{S}$, with their corresponding binary representations $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$ and $\left(j\right)_{2} = \left(j_{1},\ldots,j_{N}\right)$.
-The elements of the infinitesimal generator $Q$ for the ordered allocation scheme can be computed as follows
-\begin{equation}\label{Qordered}
-	  q_{ij} =
-	  \begin{cases}
-		\lambda, & \mbox{if} \quad j = i + 1\\
-	
-		\mu, & \mbox{if} \quad \sum_{n=1}^{N}\left(i_{n}-j_{n}\right) = 1 \\
-
-	 	-\lambda - \left\|\left(i\right)_{2}\right\|_{1}\mu, & \mbox{if} \quad i = j\\
-	 	
-	 	0, & \mbox{otherwise}\\
+    -\lambda - i\mu, & \mbox{if} \quad i = j\\
+    
+    0, & \mbox{otherwise}\\
  \end{cases}
-\end{equation}
-Consider as an example state $i=1$. Its binary representation is $\left(i\right)_{2} = \left(0,\ldots,0,1\right)$. Therefore, channels are occupied in decreasing order starting from $N$.
+\end{equation*}}\\\hline 
+\end{tabular}
+\centering
+\caption{State space $\mathcal{S}$ and components of the infinitesimal generator $\mat{Q}$ characterizing $Y(t)$ for random channel allocation, sequential channel allocation, and sequential allocation with spectrum merging.}
+\label{Table_markovian_models}
+\end{table*}
 
-\subsubsection{Sequential allocation with spectrum merging}
-This allocation scheme is also sequential, but the AN is capable of aggregating discontinuous spectrum occupied by PUs. Therefore, a channel $n$ cannot be occupied if there is any idle channel $n'$ such that $n'>n$. In consequence, the state space of $Y(t)$ reduces to $\mathcal{S} = \left\{0,1,\ldots,N\right\}$, where each state represents the number of occupied channels. Therefore, $\left(i\right)_{2}$ = $\left(i_{1},\ldots,i_{N}\right)$ should be redefined as follows
-\begin{equation}
-\begin{array}{lcl}
-%\left(i\right)_{2} & = & \left(i_{1},\ldots,i_{N}\right)\\
-%&\mbox{where}&\\
-i_{n} & = &
-\begin{cases}
-0, \quad \mbox{if } n \leq N-i\\
-1, \quad \mbox{if } n > N-i
-\end{cases}
-\end{array}
-\end{equation}
-The components of the infinitesimal generator $Q$ for this scheme are identical to an M/M/n/n system.
-\begin{equation}\label{Qcompacted}
-	  q_{ij} =
-	  \begin{cases}
-		\lambda, & \mbox{if} \quad j = i + 1\\
-	
-		i\mu, & \mbox{if} \quad j = i - 1\\
-
-	 	-\lambda - i\mu, & \mbox{if} \quad i = j\\
-	 	
-	 	0, & \mbox{otherwise}\\
- \end{cases}
-\end{equation}
-%state reduction 
 \subsection{MDP Model of the Cognitive Pair}
 In this subsection we formulate the opportunistic access problem as a finite-horizon Markov decision process with imperfect state information. We follow a top-down approach to describe the model. Therefore the formulation is more generic in this section in order to provide a general understanding of the MDP framework, and becomes more specific in next section.
 
@@ -383,25 +337,25 @@ $R$& data rate of a single channel\\
 $Y(t)$& state of the spectrum process at time $t$\\
 $Y_{k}$& value of $Y(t)$ at the end of $k$-th scanning slot\\
 $\mathcal{S}$& state space of $Y(t)$ (and $Y_{k}$)\\
-$Q$& infinitesimal generator of $Y(t)$ \\
-$q_{ij}$& elements of $Q$\\
+$\mat{Q}$& infinitesimal generator of $Y(t)$ \\
+$q_{ij}$& elements of $\mat{Q}$\\
 $\lambda$& arrival rate for PU population\\
 $\mu$& PU departure rate\\
-$P$ & transition probability matrix for $Y_{k}$ \\
-$p_{ij}$ & elements of $P$\\
-$Z_{k}$ & outcome of the observation process\\
-$X_{k}$ & information vector at the CP\\
+$\mat{P}$ & transition probability matrix for $Y_{k}$ \\
+$p_{ij}$ & elements of $\mat{P}$\\
+$Z_{k}$ & sensing outcome on channel (and slot) $k$\\
+$\vec{X}_{k}$ & information vector at the CP\\
 $X^{*}_{k}$ & state of the CP system\\
-$\mathcal{S}(k,z_{k})$ & states in $\mathcal{S}$ where observing channel $k$ yields $z_{k}$ \\
+$\mathcal{S}(k,s_{k})$ & states in $\mathcal{S}$ such that channel $k$ is in state $s_k$\\
 $\mathcal{X}_{k}$ & state space of the information vector\\
 $\mathcal{X}^{*}_{k}$ & state space of the CP system\\
 $p_{\bar{p}}$ & probability of false positive detection\\
 $p_{\bar{n}}$ & probability of false negative detection\\
 $d_{k}$& CP decision at stage $k$\\
 $u_{k}$ & scanning decision\\
-$m_{k}$ & vector with the channels to transmit in \\
+$\vec{m}_{k}$ & vector with the channels to transmit in \\
 $\mathcal{U}_{k}$ & control space for $u_{k}$\\
-$\mathcal{M}_{k}(x_{k})$ & control space for $m_{k}$\\
+$\mathcal{M}_{k}(x_{k})$ & control space for $\vec{m}_{k}$\\
 $\mathcal{D}_{k}(x_{k})$ & control space for $d_{k}$\\
 $\mu_{k}(x_{k})$ & function mapping CP states to decisions\\
 $g_{k}\left(x_{k},d_{k}\right)$ & per-stage cost of the CP system\\
@@ -410,18 +364,18 @@ $J_{\eta}$ & cost function for policy $\eta$ \\
 $J^{*}$ & optimal cost for the CP system\\
 %$p_{k}\left(x_{k+1} | x_{k}, u_{k}\right)$ & transition probability of the CP system\\
 $p_{k}\left(\ast|\ast\right)$ & transition probability of the CP system\\
-%$P\left(X_{k}=x_{k}|x_{k-1}\right)$ & transition probabilities for $X_{k}$\\
-$\pi_{x_{k}}$ & \textit{a posteriori} estimation of $Y_{k}$ given $x_{k}$\\
-$\hat{\pi}_{x_{k}}$ & \textit{a priori} estimation of $Y_{k+1}$ given $x_{k}$\\
+%$P\left(\vec{X}_{k}=x_{k}|x_{k-1}\right)$ & transition probabilities for $\vec{X}_{k}$\\
+$\vec{\pi}_{x_{k}}$ & \textit{a posteriori} estimation of $Y_{k}$ given $x_{k}$\\
+$\hat{\vec{\pi}}_{x_{k}}$ & \textit{a priori} estimation of $Y_{k+1}$ given $x_{k}$\\
 $b_{\text{max}}$ & maximum achievable throughput by the CP\\
-$b_{k}(m_{k})$ & throughput attained with decision $m_{k}$\\
+$b_{k}(\vec{m}_{k})$ & throughput attained with decision $\vec{m}_{k}$\\
 $c_{\text{max}}$ & maximum overlapping time\\
-$c_{k}(x_{k},m_{k})$ & expected overlapping time given $x_{k}$ and $m_{k}$\\
-$L_{i|x_{k}}(t)$ & expected time of $Y(t)$ in $i$ given $x_{k}$\\\hline
+$c_{k}(x_{k},\vec{m}_{k})$ & expected overlapping time given $x_{k}$ and $\vec{m}_{k}$\\
+$l_{i,x_{k}}(t)$ & expected time of $Y(t)$ in $i$ given $x_{k}$\\\hline
 \end{tabular}
 \centering
 \caption{Summary of notation}
-\label{SPEC_MAN_table_notation}
+\label{Table1}
 \end{table}
 
 \subsubsection{Processes and State Spaces}
@@ -432,7 +386,7 @@ The cognitive pair \textit{observes} $Y(t)$ in consecutive periods (scanning slo
 %During each scanning slot only one of the channels of the spectrum is observed.
 %, \textit{i.e.} only one element of the binary representation $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$ is observed. 
 %At the end of the $k$-th scanning slot an observation $z_{k}$ is obtained. 
-During the $k$-th scanning slot only the $k$-th channel of the spectrum is sensed. At the end of this slot an observation $z_{k}$ is obtained.
+During the $k$-th scanning slot only the $k$-th channel of the spectrum is sensed. At the end of this slot an observation $z_{k}$, the sensing result, is obtained.
 Because decisions should be made according to these observations, this is a clear case of MDP with \textit{imperfect state information}.
 
 %descripción del proceso Z_{n}
@@ -440,15 +394,15 @@ Let us define the \textit{observation process} $Z_{k}$. We assume that the chann
 \begin{equation}
 Y_{k} = Y\left(k\tau\right), \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}
-The observations are generated, in general as
+The observations are originated, in general as
 \begin{equation}
 Z_{k} = h_{k}\left(Y_{k}\right), \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}
-Assuming perfect detection and $Y_{k} = i$, with binary representation $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, the function on the right hand side has the following form
+The observation $Z_{k}$ belongs to the observation space $\left\{0,1\right\}$. Assuming perfect detection and $Y_{k} = i$, with binary representation $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, the function on the right hand side has the following form:
 \begin{equation}
 h_{k}\left(i\right) = i_{k}, \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}
-The observation $Z_{k}$ belongs to the observation space $\left\{0,1\right\}$. In case the detection process is subject to errors such as false positive and false negative detections characterized by the probabilities $p_{\bar{p}}$ and $p_{\bar{n}}$ respectively, the function $h_{k}\left(i\right)$ provides random values in the observation space according to the following conditional distribution:
+In case the detection process is subject to errors such as false positive and false negative detections characterized by the probabilities $p_{\bar{p}}$ and $p_{\bar{n}}$ respectively, the function $h_{k}\left(i\right)$ provides random values in the observation space according to the following conditional distribution:
 \begin{equation}
 \begin{array}{lcl}
 P\left(h_{k}\left(i\right)=1|i_{k}=1\right) & = & 1 - p_{\bar{n}}\\
@@ -457,20 +411,39 @@ P\left(h_{k}\left(i\right)=1|i_{k}=0\right) & = & p_{\bar{p}}\\
 P\left(h_{k}\left(i\right)=0|i_{k}=0\right) & = & 1 - p_{\bar{p}}
 \end{array}
 \end{equation}
-for $k$ = $1,\ldots,N$. For the sake of simplicity we restrict the forthcoming discussion to the perfect detection case and generalize to imperfect detection in Annex I. 
+for $k$ = $1,\ldots,N$.
 
-The observation process $Z_{k}$ is a DTMC. To show it, let us define the set $\mathcal{S}(k,z_{k})$ containing the states in $S$ such that observation $z_{k}$ can be obtained
+The observation process $Z_{k}$ is a DTMC. To show it, let us define the set $\mathcal{S}(k,s_{k})$ containing the states in $S$ such that channel $k$ is in state $s_k$:
 \begin{equation}\label{setS}
-\begin{array}{lcl}
-\mathcal{S}(k,z_{k}) %& = & \left\{i \in \mathcal{S}|k\text{-th element in }(i)_{2} = z_{k}\right\}\\
-										& = & \left\{i \in \mathcal{S}|i_{k} = z_{k}\right\}\\
-\end{array}
+\mathcal{S}(k,s_{k}) = \left\{i \in \mathcal{S}|i_{k} = s_{k}\right\}\\
 \end{equation}
-The probability distribution of $Z_{k}$ is given by
+For the case of perfect detection, the probability distribution of $Z_{k}$ is given by
+\begin{equation}
+P\left(Z_{k}=z_k\right) = P\left(Y_{k} \in \mathcal{S}(k,z_k)\right)
+\end{equation}
+with $z_k$ representing a particular sensing result on channel $k$. For the case of imperfect detection, $Z_{k}$ is given by
 \begin{equation}
 \begin{array}{lcl}
-P\left(Z_{k}=1\right) & = & P\left(Y_{k} \in \mathcal{S}(k,1)\right)\\
-P\left(Z_{k}=0\right) & = & P\left(Y_{k} \in \mathcal{S}(k,0)\right)
+P\left(Z_{k}=1\right) & = & P\left(Y_{k} \in \mathcal{S}(k,1)\right)\left(1-p_{\bar{n}}\right)\\ 
+											&&	+ P\left(Y_{k} \in \mathcal{S}(k,0)\right)p_{\bar{p}}\\
+P\left(Z_{k}=0\right) & = & P\left(Y_{k} \in \mathcal{S}(k,0)\right)\left(1-p_{\bar{p}}\right)\\
+											&&	+ P\left(Y_{k} \in \mathcal{S}(k,1)\right)p_{\bar{n}}
+\end{array}
+\end{equation}
+which can be written more compactly as
+\begin{equation}
+\begin{array}{lcl}
+%P\left(Z_{k}=z_{k}\right) & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})\right)\left(1-z_{k}p_{\bar{n}}- \left(1-z_{k}\right)p_{\bar{p}}\right) +\\ 
+%													&  &P\left(Y_{k} \in \mathcal{S}^{c}(k,z_{k})\right)\left(1-z_{k}p_{\bar{p}}- \left(1-z_{k}\right)p_{\bar{n}}\right)
+P\left(Z_{k}=z_{k}\right) & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})\right)p_{c}(z_{k}) + \\
+													&& P\left(Y_{k} \in \mathcal{S}^{c}(k,z_{k})\right)p_{i}(z_{k})
+\end{array}
+\end{equation}
+where $\mathcal{S}^{c}(k,z_{k})$ denotes the complementary of $\mathcal{S}(k,z_{k})$, and the functions $p_{c}(z_{k})$ and $p_{i}(z_{k})$ represent the probabilities of correct and incorrect detection respectively, and have the following expressions
+\begin{equation}
+\begin{array}{lcl}
+p_{c}(z_{k}) & = & 1-z_{k}p_{\bar{n}}- \left(1-z_{k}\right)p_{\bar{p}}\\
+p_{i}(z_{k}) & = & 1-z_{k}p_{\bar{p}}- \left(1-z_{k}\right)p_{\bar{n}}
 \end{array}
 \end{equation}
 Then, since $Y_{k}$ is a DTMC, $Z_{k}$ is also a DTMC.
@@ -478,13 +451,13 @@ Then, since $Y_{k}$ is a DTMC, $Z_{k}$ is also a DTMC.
 
 %Descripción del proceso X_{n}
 
-Let us denote by $X_{k}$ the amount of information available to the cognitive pair at the end of slot $k$ and call it the \textit{information vector}. Assuming an initial information $X_{0}$, the information vector is generated iteratively as
+Let us denote by $\vec{X}_{k}$ the amount of information available to the cognitive pair at the end of slot $k$ and call it the \textit{information vector}. Assuming an initial information $X_{0}$ (\textit{e.g.} $X_{0} = 0$ in case of no initial information at the beginning of the sensing process) the information vector is generated iteratively as
 \begin{equation}
-X_{k} = I\left(Z_{k},X_{k-1}\right), \quad \mbox{for }k = 1,\ldots,N.
+\vec{X}_{k} = I\left(Z_{k},\vec{X}_{k-1}\right), \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}
-%The sequence of observations up to stage $k$ is called the \textit{information vector}, $X_{k}$, which is itself a DTMC.  
+%The sequence of observations up to stage $k$ is called the \textit{information vector}, $\vec{X}_{k}$, which is itself a DTMC.  
 
-%Considering particular values $Z_{k}$ = $z_{k}$ and $X_{k-1}$ = $x_{k-1}$, the function on the right hand side is defined as
+%Considering particular values $Z_{k}$ = $z_{k}$ and $\vec{X}_{k-1}$ = $x_{k-1}$, the function on the right hand side is defined as
 %\begin{equation}
 %I\left(z_{k},x_{k-1}\right) = 
 %\begin{cases}
@@ -493,37 +466,36 @@ X_{k} = I\left(Z_{k},X_{k-1}\right), \quad \mbox{for }k = 1,\ldots,N.
 %\end{cases}
 %\end{equation}
 %Therefore, an information vector $x_{k}$ contains the position of the channels that have been observed idle up to stage $k$.
-The function $I\left(Z_{k},X_{k-1}\right)$ is defined as
+The function $I\left(Z_{k},\vec{X}_{k-1}\right)$ is defined as
 \begin{equation}
-I\left(Z_{k},X_{k-1}\right) = 
+I\left(Z_{k},\vec{X}_{k-1}\right) = 
 \begin{cases}
-X_{k-1},& \quad \mbox{if } Z_{k} = 1\\
-\left(k, X_{k-1}\right),& \quad \mbox{if } Z_{k} = 0\\
+\vec{X}_{k-1},& \quad \mbox{if } Z_{k} = 1\\
+\left(k, \vec{X}_{k-1}\right),& \quad \mbox{if } Z_{k} = 0\\
 \end{cases}
 \end{equation}
-Therefore, the information vector $X_{k}$ contains the position of the channels that have been observed idle up to stage $k$, and takes values from the set
+Therefore, the information vector $\vec{X}_{k}$ contains the position of the channels that have been observed idle up to stage $k$, and takes values from the set
 \begin{equation}
 \begin{array}{lcl}
-\mathcal{X}_{k} & = &\{\left(x(1),\ldots,x(r)\right)| x(i) \in \mathbb{Z}^{+}, r\leq k,\\
-								&   & 1 \leq x(i) \leq x(j) \leq k, \mbox{for } i \leq j\}\cup \{0\}
+\mathcal{X}_{k} & = &\{\left(x(1),\ldots,x(r)\right)| x(a) \in \mathbb{Z}^{+}, r\leq k,\\
+&   & 1 \leq x(a) \leq x(b) \leq k, \mbox{for $a \leq b\}\cup \{0\}$}
 \end{array}
 \end{equation}   
-%Considering a generic value $x_{k}$ for $X_{k}$, we represent $x_{k}$ as a vector containing the channels that are believed to be idle, \textit{e.g.} $x_{3} = \left(1,3\right)$ means that, of the three channels sensed, the second one is believed to be occupied and the other two have been sensed idle.
+%Considering a generic value $x_{k}$ for $\vec{X}_{k}$, we represent $x_{k}$ as a vector containing the channels that are believed to be idle, \textit{e.g.} $x_{3} = \left(1,3\right)$ means that, of the three channels sensed, the second one is believed to be occupied and the other two have been sensed idle.
 where ${0}$ is included to account for the case that no idle channel has been detected.
-Because the cognitive pair must make the $k$-th decision with all the information available and not only with the $k$-th observation, $Z_{k}$, we could use the information vector $X_{k}$ as the state for the system describing the cognitive pair (\textit{CP system}). This approach, known as \textit{state augmentation}, reduces the imperfect state information problem to a perfect state information one as explained in \cite{ref:Bertsekas}. The state space of the CP system should include a special \textit{termination} state, denoted by $F$, corresponding to the data transmission from the cognitive transmitter. 
-%To avoid confusion with the elements in $\mathcal{X}_{k}$, the termination state is represented by $F$. 
-At time $k$, the state of the CP system, including the termination state, is denoted by $X^{*}_{k}$, and takes values from the following set
+Because the cognitive pair must make the $k$-th decision with all the information available and not only with the $k$-th observation, $Z_{k}$, we could use the information vector $\vec{X}_{k}$ as the state for the system describing the cognitive pair (\textit{CP system}). Following this approach, known as \textit{state augmentation}, the imperfect state information problem is reformulated as a fully observable state information one as explained in \cite{ref:Bertsekas2012}. The state space of the CP system should include a special \textit{termination} state, denoted by $F$, corresponding to the data transmission from the cognitive transmitter, or to the transmitter quitting the medium without transmitting. In Markov modeling terms, the termination state $F$ is an absorbing state.
+ 
+At time $k$, the state of the CP system is denoted by $X^{*}_{k}$, and takes values $x_k$ from the set $\mathcal{X}_{k}^{*}$:
 \begin{equation}
-\mathcal{X}_{k}^{*} = \mathcal{X}_{k} \cup \left\{F\right\}, \quad \mbox{for }k = 1,\ldots,N.
+X^{\ast}_{k} = x_k \in \mathcal{X}_{k}^{*} = \mathcal{X}_{k} \cup \left\{F\right\}, \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}  
-%As explained in \cite{ref:Bertsekas}, using the information vector $x_{k}$ as the system state instead of $z_{k}$, is an \textit{state augmentation} strategy reducing the imperfect state information problem to a perfect state information one.
-In Markov modeling terms, the termination state $F$ is an absorbing state.
+%As explained in \cite{ref:Bertsekas2012}, using the information vector $x_{k}$ as the system state instead of $z_{k}$, is an \textit{state augmentation} strategy reducing the imperfect state information problem to a perfect state information one.
 %, \textit{i.e.} the CP state remains at $F$ up to the end of the CP process ($k=N$). 
 
 \subsubsection{Decisions and Policies}
-Based on $x_{k} \in \mathcal{X}^{*}_{k}$, the access algorithm selects a decision $d_{k} = \left(u_{k}, m_{k}\right)$, where $u_{k} = 1$ if the decision is to continue scanning and $u_{k}=0$ otherwise. The second component, $m_{k}$, is a vector containing the channels selected to transmit in. The amount of selected channels is denoted by $n\leq M$. Note that, if $u_{k}=0$ and $m_{k}=0$, the decision made is to quit the medium access process after scanning the $k$-th channel without transmitting.
-%($m_{k}=\emptyset$), the decision made is to quit the medium access process after scanning the $k$-th channel. 
-At each stage, the decision variables $u_{k}$ and $m_{k}$ are constrained to take values from the sets $\mathcal{U}_{k}$ and $\mathcal{M}_{k}(x_{k})$, defined as follows
+Based on $x_{k} \in \mathcal{X}_{k}$, the access algorithm selects a decision $d_{k} = \left(u_{k}, \vec{m}_{k}\right)$,\footnote{For $x_{k} = F$ there is no decision to be made.} where $u_{k} = 1$ if the decision is to continue scanning and $u_{k}=0$ otherwise. The second component, $\vec{m}_{k}$, is a vector containing the channels selected to transmit in. The amount of selected channels is denoted by $n\leq M$. Note that, if $u_{k}=0$ and $\vec{m}_{k}=0$, the decision made is to quit the medium access process after scanning the $k$-th channel without transmitting.
+%($\vec{m}_{k}=\emptyset$), the decision made is to quit the medium access process after scanning the $k$-th channel. 
+At each stage, the decision variables $u_{k}$ and $\vec{m}_{k}$ are constrained to take values from the sets $\mathcal{U}_{k}$ and $\mathcal{M}_{k}(x_{k})$, defined as follows
 \begin{equation}
 \mathcal{U}_{k} = 
 \begin{cases}
@@ -544,11 +516,11 @@ A \textit{policy} is a rule that gives the decision to be applied for every stat
 \end{equation}
 %costes.
 Such a policy is called \textit{admissible}. For compactness we will use $\mathcal{D}_{k}(x_{k})$ to refer to $\mathcal{U}_{k}\times\mathcal{M}_{k}(x_{k})$.
-As an example, Fig. \ref{fig:states} illustrates the diagram of a small system with only two channels. Arrows ending at the termination state $F$ denote transitions associated to $u_{k}=0$. The sets ${M}_{k}(x_{k})$ for these transitions are explicitly stated.
+As an example, Fig. \ref{fig:states} illustrates the diagram of a small system with only two channels. 
 \begin{figure}
 \centering
 \includegraphics[scale=1]{states.eps}
-\caption[]{States and transitions of the MDP for a two-channel spectrum.}\label{fig:states}
+\caption[]{States and transitions of the MDP for a two-channel spectrum. Arrows ending at the termination state $F$ denote transitions associated to $u_{k}=0$. The sets ${M}_{k}(x_{k})$ for these transitions are explicitly stated.}\label{fig:states}
 \end{figure}
 
 \subsubsection{Per-Stage Costs and Cost Function} 
@@ -557,8 +529,8 @@ For the special case that $x_{k}=F$ (termination state) the per-stage cost equal
 \begin{equation}\label{generalcost}
 g_{k}\left(x_{k},d_{k}\right) =
 \begin{cases}
-0 &, \mbox{if} \quad x_{k} = F\\
-\tilde{g}_{k}\left(x_{k},d_{k}\right) &, \mbox{if} \quad x_{k} \in \mathcal{X}_{k}\\
+0, & \mbox{if} \quad x_{k} = F\\
+\tilde{g}_{k}\left(x_{k},d_{k}\right), & \mbox{if} \quad x_{k} \in \mathcal{X}_{k}\\
 \end{cases}
 \end{equation}
 Because the termination state is absorbing, no additional cost is accumulated when the CP system reaches it.
@@ -568,9 +540,9 @@ The formulation of the objectives and therefore the computation of the per-stage
 
 The objective of the finite-horizon MDP is to find an admissible policy $\eta=\left\{\mu_{0},\mu_{1},\ldots,\mu_{N}\right\}$ that minimizes the \textit{cost function}
 \begin{equation}\label{totalCost}
-J_{\eta} = \underset{\begin{subarray}{c} X^{*}_{k}\\k=0,\ldots,N\end{subarray}}{E}\left\{\displaystyle\sum_{k=0}^{N}g_{k}\left(X^{*}_{k},\mu_{k}\left(X^{*}_{k}\right)\right)\right\}
-%J_{\eta} = \underset{X_{k}}{E}
-%\left\{\displaystyle\sum_{k=0}^{N}g_{k}\left(X_{k},\mu_{k}\left(X_{k}\right)\right)\right\}
+J_{\eta} = \underset{X^{*}_0,\ldots,X^{*}_N}{\mathbb{E}}\left\{\displaystyle\sum_{k=0}^{N}g_{k}\left(X^{*}_{k},\mu_{k}\left(X^{*}_{k}\right)\right)\right\}
+%J_{\eta} = \underset{\vec{X}_{k}}{E}
+%\left\{\displaystyle\sum_{k=0}^{N}g_{k}\left(\vec{X}_{k},\mu_{k}\left(\vec{X}_{k}\right)\right)\right\}
 \end{equation}
 In compact notation the MDP problem consists of finding the optimal cost $J^{*}$
 \begin{equation}\label{MDPproblem}
@@ -578,7 +550,7 @@ J^{*} = \underset{\eta}{\mbox{min }} J_{\eta}
 \end{equation}
 
 %probabilidades de transición.
-The computation of the expectation on the right hand side of (\ref{totalCost}) relies on the transition probabilities $p_{k}\left(x_{k+1} | x_{k}, d_{k}\right)$, providing the probability of making a transition from state $x_{k}$ in time $k$ to state $x_{k+1}$ in time $k+1$ when the decision is $d_{k}=\left(u_{k},\ast\right)$ (note that $m_{k}$ does not affect the transition probabilities of $X^{*}_{k}$).
+The computation of the expectation on the right hand side of (\ref{totalCost}) relies on the transition probabilities $p_{k}\left(x_{k+1} | x_{k}, d_{k}\right)$, providing the probability of making a transition from state $x_{k}$ in time $k$ to state $x_{k+1}$ in time $k+1$ when the decision is $d_{k}=\left(u_{k},\cdot\right)$.\footnote{Note that $\vec{m}_{k}$ does not affect the transition probabilities of $x_{k}$.}
 %Let us see how to compute these probabilities.
 %The finite-horizon MDP consist of finding the optimal cost $J^{*}$
 %\begin{equation}\label{totalCost}
@@ -588,10 +560,10 @@ The computation of the expectation on the right hand side of (\ref{totalCost}) r
 %g_{k}\left(x_{k},\mu_{k}\left(x_{k}\right)\right)
 %\end{equation}
 
-%Therefore, we have to characterize the transition probabilities for $X_{k}$. 
+%Therefore, we have to characterize the transition probabilities for $\vec{X}_{k}$. 
 
 \subsubsection{Computing Transition Probabilities}
-The transition probabilities $p_{k}\left(x_{k+1} | x_{k}, u_{k}\right)$ = $p_{k}\left(x_{k+1} | x_{k}, \left(u_{k},\ast\right)\right)$, for every $x_{k}\in \mathcal{X}_{k}^{*}$, $u_{k}\in \mathcal{U}_{k}$, $k$ = $0,\ldots,N-1$, are%can be expressed in the following way
+The transition probabilities $p_{k}\left(x_{k+1} | x_{k}, u_{k}\right)$  for every $x_{k},x_{k+1}\in \mathcal{X}_{k}^{*}$, $u_{k}\in \mathcal{U}_{k}$, $k$ = $0,\ldots,N-1$, are:
 \begin{equation}
 p_{k}\left(x_{k+1} | x_{k}, u_{k}\right) =
 \begin{cases}
@@ -604,57 +576,78 @@ u_{k}P\left(X_{k+1}=x_{k+1}|x_{k}\right), \mbox{otherwise}\\
 \end{cases}
 \end{equation}
 where $P\left(X_{k+1}=x_{k+1}|x_{k}\right)$ denotes the probability that the information vector equals $x_{k+1}$ at stage $k+1$ conditioned on its value $x_{k}$ at previous stage.
-Let us see how to compute $P\left(X_{k+1}=x_{k+1}|x_{k}\right)$.
-%$X_{k} = x_{k}$, for $x_{k+1}  \in \mathcal{X}_{k+1}$ and $x_{k} \in \mathcal{X}_{k}$.
+Let us describe how to compute $P\left(X_{k+1}=x_{k+1}|x_{k}\right)$.
+%$\vec{X}_{k} = x_{k}$, for $x_{k+1}  \in \mathcal{X}_{k+1}$ and $x_{k} \in \mathcal{X}_{k}$.
 
 Recall that each state $x_{k}$ depends on the observed process $Y_{k}$. 
-At the initial state $x_{0}$, where no observation is still available, $Y_{0}$ is a random variable, characterized by a probability distribution that we will denote by $\pi_{0}$. Because the spectrum process $Y(t)$ is active long before secondary users attempt to access the spectrum, the probability distribution $\pi_{0}$ can be assumed to be the steady-state probability distribution (\textit{probability vector}) of $Y_{k}$.
-
-The transition probability matrix of $Y_{k}$ from the infinitesimal generator $Q$ of $Y(t)$ is obtained from the Kolmogorov \textit{forward} equation
+At the initial state $x_{0}$, where no observation is still available, $Y_{0}$ is a random variable, characterized by a probability distribution that we will denote by $\vec{\pi}_{0}$. Because the spectrum process $Y(t)$ is active long before secondary users attempt to access the spectrum, the probability distribution $\vec{\pi}_{0}$ can be assumed to be the steady-state probability distribution (\textit{probability vector}) of $Y_{k}$. The transition probability matrix of $Y_{k}$, $\mat{P}(t)$, is obtained from the Kolmogorov \textit{forward} equation
 \begin{equation}\label{Kolmogorov}
-\displaystyle\frac{dP\left(t\right)}{dt}=P(t)Q
+\displaystyle\frac{d\mat{P}\left(t\right)}{dt}=\mat{P}(t)\mat{Q}
 \end{equation}
-where $P(t) = \left[p_{i,j}\left(0,t\right)\right]$, \textit{i.e.} $P(t)$ provides the transition probabilities between any pair of states, $i$, $j$ $\in \mathcal{S}$ of $Y(t)$ when the process runs for $t$ units of time. Since $Y_{k}$ = $Y\left(k\tau\right)$, the transition matrix for $Y_{k}$ is $P = P(\tau)$. The solution of (\ref{Kolmogorov}) is $P(t)=e^{tQ}$, therefore
+The elements $p_{ij}(t)$ of $\mat{P}(t)$ provide the transition probabilities between any pair of states, $i$, $j$ $\in \mathcal{S}$ of $Y(t)$ when the process runs for $t$ units of time. Since $Y_{k}$ = $Y\left(k\tau\right)$, the transition matrix for $Y_{k}$ is $\mat{P} = \mat{P}(\tau)$. The solution of (\ref{Kolmogorov}) is $\mat{P}(t)=e^{t\mat{Q}}$, therefore:
 \begin{equation}\label{TransitionMatrix}
-P = P(\tau)=e^{\tau Q}
+\mat{P} = \mat{P}(\tau)=e^{\tau \mat{Q}}
 \end{equation}
-
-The probability vector $\pi_{0}$ is the unique solution to the equations below:
+The probability vector $\vec{\pi}_{0}$ is the unique solution to the equations below:
 \begin{equation}\label{linearEquation}
-\pi_{0} = \pi_{0}P, \quad \left\|\pi_{0}\right\|_{1}=1
+\vec{\pi}_{0} = \vec{\pi}_{0}\mat{P}, \quad \left\|\vec{\pi}_{0}\right\|_{1}=1
 \end{equation} 
 
-%Let us define two additional probability distributions associated to each state $x_{k}$ of the scanning process, required to obtain the transition probability $P\left(X_{k}=x_{k}|x_{k-1}\right)$.
-Let us define two additional probability distributions required to obtain $P\left(X_{k}=x_{k}|x_{k-1}\right)$.  
-First, let $\pi_{x_{k}}$ denote the probability distribution of $Y_{k}$ given the information vector $x_{k}$:
+%Let us define two additional probability distributions associated to each state $x_{k}$ of the scanning process, required to obtain the transition probability $P\left(\vec{X}_{k}=x_{k}|x_{k-1}\right)$.
+Let us define two additional probability distributions required to obtain $P\left(X_{k+1}=x_{k+1}|x_{k}\right)$.  
+First, let $\vec{\pi}_{x_{k}}$ denote the probability distribution of $Y_{k}$ given the information vector $x_{k}$:
 \begin{equation}
-\pi_{x_{k}}(i) = P\left(Y_{k}=i | x_{k}\right), \quad \text{for } i \in \mathcal{S}
+\vec{\pi}_{x_{k}}(i) = P\left(Y_{k}=i | x_{k}\right), \quad \text{for } i \in \mathcal{S}
 \end{equation}
-Second, let $\hat{\pi}_{x_{k}}$ denote the probability distribution of $Y_{k+1}$ estimated when the available information is $x_{k}$:
+Second, let $\hat{\vec{\pi}}_{x_{k}}$ denote the probability distribution of $Y_{k+1}$ estimated when the available information is $x_{k}$:
 \begin{equation}
-\hat{\pi}_{x_{k}}(i) = P\left(Y_{k+1}=i | x_{k}\right), \quad \text{for } i \in \mathcal{S}
+\hat{\vec{\pi}}_{x_{k}}(i) = P\left(Y_{k+1}=i | x_{k}\right), \quad \text{for } i \in \mathcal{S}
 \end{equation}
-Essentially, $\hat{\pi}_{x_{k}}$ is an \textit{a priori} estimate of the distribution of $Y_{k+1}$, \textit{i.e.} before receiving the observation $z_{k+1}$ at stage $k+1$.
-Once $z_{k+1}$ is known, it is possible to compute the \textit{a posteriori} estimate of $Y_{k+1}$, $\pi_{x_{k+1}}$. 
-The conditional probability $P\left(X_{k}=x_{k}|x_{k-1}\right)$ is related to $\hat{\pi}_{x_{k}}$ by the following equation
+Essentially, $\hat{\vec{\pi}}_{x_{k}}$ is an \textit{a priori} estimate of the distribution of $Y_{k+1}$, \textit{i.e.} before receiving the observation $z_{k+1}$ at stage $k+1$.
+Once $z_{k+1}$ is known, it is possible to compute the \textit{a posteriori} estimate of $Y_{k+1}$, $\vec{\pi}_{x_{k+1}}$. 
+
+For the perfect detection case, the conditional probability $P\left(X_{k+1}=x_{k+1}|x_{k}\right)$ is related to $\hat{\vec{\pi}}_{x_{k}}$ by the following equation:
 \begin{equation}\label{conditional}
 \begin{array}{lcl}
-P\left(X_{k}=x_{k}|x_{k-1}\right) & = & P\left(Z_{k}=z_{k}|x_{k-1}\right)\\
- & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})|x_{k-1}\right)\\
-& = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}P\left(Y_{k} = j|x_{k-1}\right)\\
-& = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\pi}_{x_{k-1}}(j)
+P\left(X_{k+1}=x_{k+1}|x_{k}\right) & = & P\left(Z_{k+1}=z_{k+1}|x_{k}\right)\\
+ & = & P\left(Y_{k+1} \in \mathcal{S}(k+1,z_{k+1})|x_{k}\right)\\
+& = & \displaystyle\sum_{j \in \mathcal{S}(k+1,z_{k+1})}P\left(Y_{k+1} = j|x_{k}\right)\\
+& = & \displaystyle\sum_{j \in \mathcal{S}(k+1,z_{k+1})}\hat{\vec{\pi}}_{x_{k}}(j)
 \end{array}
 \end{equation}
 
-Now we see how to compute the conditional distributions $\pi_{x_{k}}$ and $\hat{\pi}_{x_{k}}$.
-For the particular case of $x_{0}$ we have, by definition
-\begin{equation}
-\pi_{x_{0}}(i) = P\left(Y_{0}=i\right) = \pi_{0}(i), \quad \text{for } i \in \mathcal{S}
+For the imperfect detection case, the conditional probability $P\left(\vec{X}_{k}=x_{k}|x_{k-1}\right)$ is given by
+\begin{equation}\label{conditionalcomplete}
+\begin{array}{lcl}
+P\left(\vec{X}_{k}=x_{k}|x_{k-1}\right) & = & P\left(Z_{k}=z_{k}|x_{k-1}\right)\\
+ & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})|x_{k-1}\right)p_{c}(z_{k}) + \\
+ && P\left(Y_{k} \in \mathcal{S}^{c}(k,z_{k})|x_{k-1}\right)p_{i}(z_{k}) \\
+ & = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}P\left(Y_{k} = j|x_{k-1}\right)p_{c}(z_{k}) +\\
+ && \displaystyle\sum_{j \in \mathcal{S}^{c}(k,z_{k})}P\left(Y_{k} = j|x_{k-1}\right)p_{i}(z_{k}) \\
+ & = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\vec{\pi}}_{x_{k-1}}(j)p_{c}(z_{k}) + \\
+ && \displaystyle\sum_{j \in \mathcal{S}^{c}(k,z_{k})}\hat{\vec{\pi}}_{x_{k-1}}(j)p_{i}(z_{k})
+\end{array}
 \end{equation}
-and, for $k=1,\ldots,N$ we have
+
+Now we specify how to compute the conditional distributions $\hat{\vec{\pi}}_{x_{k}}$ and $\vec{\pi}_{x_{k}}$.
+The conditional distribution $\hat{\vec{\pi}}_{x_{k}}$ can be obtained from the \textit{a posteriori} estimate of previous stage $\vec{\pi}_{x_{k-1}}$  
 \begin{equation}
 \begin{array}{lcl}
-\pi_{x_{k}}(i) &=& P\left(Y_{k}=i | x_{k}\right)\\
+\hat{\vec{\pi}}_{x_{k}}(i) & = & P\left(Y_{k+1}=i | x_{k}\right) \\
+										& = & \sum_{j\in \mathcal{S}}P\left(Y_{k+1}=i | Y_{k}=j\right)P\left(Y_{k}=j | x_{k-1}\right)\\
+										& = & \sum_{j\in \mathcal{S}}p_{ji}\vec{\pi}_{x_{k-1}}(j)
+\end{array}
+\end{equation}
+for $i\in \mathcal{S}$, where $p_{ji}$ are the elements of the transition matrix $P$ obtained in (\ref{TransitionMatrix}). Using vector notation we have $\hat{\vec{\pi}}_{x_{k}} = \vec{\pi}_{x_{k}}P$.
+
+Regarding $\vec{\pi}_{x_{k}}$, for the particular case of $x_{0}$ we have, by definition
+\begin{equation}
+\vec{\pi}_{x_{0}}(i) = P\left(Y_{0}=i\right) = \vec{\pi}_{0}(i), \quad \text{for } i \in \mathcal{S}
+\end{equation}
+and, for $k=1,\ldots,N$ we have, for the perfect detection case: 
+\begin{equation}
+\begin{array}{lcl}
+\vec{\pi}_{x_{k}}(i) &=& P\left(Y_{k}=i | x_{k}\right)\\
 					 &=& P\left(Y_{k}=i | z_{k}, x_{k-1}\right)\\
 					 &=& \displaystyle\frac{P\left(Y_{k}=i, Z_{k}=z_{k} | x_{k-1}\right)}{P\left(Z_{k}=z_{k} | x_{k-1}\right)}\\
 					 &=& 
@@ -664,38 +657,44 @@ and, for $k=1,\ldots,N$ we have
 \end{cases}\\
 \end{array}
 \end{equation}
-where $P\left(Z_{k}=z_{k} | x_{k-1}\right)$ is given by (\ref{conditional}).
-%\begin{equation}
-%\begin{array}{lcl}
-%P\left(Z_{k}=z_{k}|x_{k-1}\right) & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})|x_{k-1}\right)\\
-%& = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}P\left(Y_{k} = j|x_{k-1}\right)\\
-%& = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\pi}_{x_{k-1}}(j)
-%\end{array}
-%\end{equation}
-
-The conditional distribution $\hat{\pi}_{x_{k}}$ can be obtained from the \textit{a posteriori} estimate of previous stage $\pi_{x_{k-1}}$  
+where $P\left(Y_{k}=i | x_{k-1}\right) = \hat{\vec{\pi}}_{x_{k-1}}(i)$, and $P\left(Z_{k}=z_{k} | x_{k-1}\right)$ is given by (\ref{conditional}). And for the imperfect detection case: 
 \begin{equation}
 \begin{array}{lcl}
-\hat{\pi}_{x_{k}}(i) & = & P\left(Y_{k+1}=i | x_{k}\right) \\
-										& = & \sum_{j\in \mathcal{S}}P\left(Y_{k+1}=i | Y_{k}=j\right)P\left(Y_{k}=j | x_{k-1}\right)\\
-										& = & \sum_{j\in \mathcal{S}}p_{ji}\pi_{x_{k-1}}(j)
+\vec{\pi}_{x_{k}}(i) &=& P\left(Y_{k}=i | x_{k}\right)\\
+					 &=& P\left(Y_{k}=i | z_{k}, x_{k-1}\right)\\
+					 &=& \displaystyle\frac{P\left(Y_{k}=i, Z_{k}=z_{k} | x_{k-1}\right)}{P\left(Z_{k}=z_{k} | x_{k-1}\right)}\\
+					 &=& 
+\begin{cases}
+\displaystyle\frac{P\left(Y_{k}=i | x_{k-1}\right)p_{c}(z_{k})}{P\left(Z_{k}=z_{k} | x_{k-1}\right)},& \mbox{if} \quad i \in \mathcal{S}(k,z_{k})\\
+\displaystyle\frac{P\left(Y_{k}=i | x_{k-1}\right)p_{i}(z_{k})}{P\left(Z_{k}=z_{k} | x_{k-1}\right)},& \mbox{if} \quad i \in \mathcal{S}^{c}(k,z_{k})\\
+\end{cases}\\
 \end{array}
 \end{equation}
-for $i\in \mathcal{S}$, where $p_{ji}$ are the elements of the transition matrix $P$ obtained in (\ref{TransitionMatrix}). Using vector notation we have $\hat{\pi}_{x_{k}} = \pi_{x_{k}}P$.
-
-Summarizing, the conditional distributions $\hat{\pi}_{x_{k}}$ and $\pi_{x_{k}}$ can be recursively generated starting with
+where $P\left(Y_{k}=i | x_{k-1}\right) = \hat{\vec{\pi}}_{x_{k-1}}(i)$, and $P\left(Z_{k}=z_{k} | x_{k-1}\right)$ is given by (\ref{conditionalcomplete}).
+Summarizing, the conditional distributions $\hat{\vec{\pi}}_{x_{k}}$ and $\vec{\pi}_{x_{k}}$ can be recursively generated starting with
 \begin{equation}
-\pi_{x_{0}} = \pi_{0},
+\vec{\pi}_{x_{0}} = \vec{\pi}_{0},
 \end{equation}
-
-and using the following equations
+and using the following equations. For the perfect detection case: 
 \begin{equation}\label{recursive}
 \begin{array}{lcl}
-\hat{\pi}_{x_{k-1}} & = & \pi_{x_{k-1}}P,\\
-\pi_{x_{k}}(i) &=& 
+\hat{\vec{\pi}}_{x_{k-1}} & = & \vec{\pi}_{x_{k-1}}\mat{P},\\
+\vec{\pi}_{x_{k}}(i) &=& 
 \begin{cases}
-\displaystyle\frac{\hat{\pi}_{x_{k-1}}(i)}{\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\pi}_{x_{k-1}}(j)},& \mbox{if} \quad i \in \mathcal{S}(k,z_{k})\\
+\displaystyle\frac{\hat{\vec{\pi}}_{x_{k-1}}(i)}{\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\vec{\pi}}_{x_{k-1}}(j)},& \mbox{if} \quad i \in \mathcal{S}(k,z_{k})\\
 0, & \mbox{otherwise}\\
+\end{cases}\\
+\end{array}
+\end{equation}
+for $k = 1,\ldots,N$. And for the imperfect detection case: 
+\begin{equation}
+\begin{array}{lcl}
+\hat{\vec{\pi}}_{x_{k-1}} & = & \vec{\pi}_{x_{k-1}}\mat{P},\\ 
+\vec{\pi}_{x_{k}}(i) & = &\\ 
+\hspace{2em}&&\hspace{-6em}\begin{cases}
+\displaystyle\frac{\hat{\vec{\pi}}_{x_{k-1}}(i)p_{c}(z_{k})}{\displaystyle
+{\sum_{\mathrlap{j \in \mathcal{S}(k,z_{k})}}}\hat{\vec{\pi}}_{x_{k-1}}(j)p_{c}(z_{k}) + \displaystyle{\sum_{\mathclap{j \in \mathcal{S}^{c}(k,z_{k})}}}\hat{\vec{\pi}}_{x_{k-1}}(j)p_{i}(z_{k})},& \mbox{if} \quad i \in \mathcal{S}(k,z_{k})\\
+\displaystyle\frac{\hat{\vec{\pi}}_{x_{k-1}}(i)p_{i}(z_{k})}{\displaystyle{\sum_{\mathrlap{j \in \mathcal{S}(k,z_{k})}}}\hat{\vec{\pi}}_{x_{k-1}}(j)p_{c}(z_{k}) + \displaystyle{\sum_{\mathclap{j \in \mathcal{S}^{c}(k,z_{k})}}}\hat{\vec{\pi}}_{x_{k-1}}(j)p_{i}(z_{k})},& \mbox{if} \quad i \in \mathcal{S}^{c}(k,z_{k})\\
 \end{cases}\\
 \end{array}
 \end{equation}
@@ -704,24 +703,24 @@ for $k = 1,\ldots,N$.
 %\begin{equation}\label{setS}
 %\mathcal{S}(k,z_{k}) = \left\{i \in \mathcal{S}|k\text{-th element in }(i)_{2} = z_{k}\right\}
 %\end{equation}
-%Finally, the conditional probability $P\left(X_{k}=x_{k}|x_{k-1}\right)$ is given by
+%Finally, the conditional probability $P\left(\vec{X}_{k}=x_{k}|x_{k-1}\right)$ is given by
 %\begin{equation}\label{conditional}
 %\begin{array}{lcl}
-%P\left(X_{k}=x_{k}|x_{k-1}\right) & = & P\left(Z_{k}=z_{k}|x_{k-1}\right)\\
-%& = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\pi}_{x_{k-1}}(j)
+%P\left(\vec{X}_{k}=x_{k}|x_{k-1}\right) & = & P\left(Z_{k}=z_{k}|x_{k-1}\right)\\
+%& = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\vec{\pi}}_{x_{k-1}}(j)
 %\end{array}
 %\end{equation}
 
-%The conditional distributions $\hat{\pi}_{x_{k}}$ and $\pi_{x_{k}}$ can be recursively generated starting with
+%The conditional distributions $\hat{\vec{\pi}}_{x_{k}}$ and $\vec{\pi}_{x_{k}}$ can be recursively generated starting with
 %\begin{equation}
-%\pi_{x_{0}} = \pi_{0},
+%\vec{\pi}_{x_{0}} = \vec{\pi}_{0},
 %\end{equation}
 %
 %and using the following equations, for $k = 1,\ldots,N$
 %\begin{equation}\label{recursive}
 %\begin{array}{lcl}
-%\hat{\pi}_{x_{k-1}} & = & \pi_{x_{k-1}}P,\\
-%\pi_{x_{k}} &=& P\left(Y_{k}=i | x_{k}\right)\\
+%\hat{\vec{\pi}}_{x_{k-1}} & = & \vec{\pi}_{x_{k-1}}P,\\
+%\vec{\pi}_{x_{k}} &=& P\left(Y_{k}=i | x_{k}\right)\\
 %					 &=& P\left(Y_{k}=i | z_{k}, x_{k-1}\right)\\
 %					 &=& \displaystyle\frac{P\left(Y_{k}=i, Z_{k}=z_{k} | x_{k-1}\right)}{P\left(Z_{k}=z_{k} | x_{k-1}\right)}\\
 %					 &=& 
@@ -731,26 +730,26 @@ for $k = 1,\ldots,N$.
 %\end{cases}\\
 %					  &=& 
 %\begin{cases}
-%\displaystyle\frac{\hat{\pi}_{x_{k-1}}(i)}{\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\pi}_{x_{k-1}}(j)}&, \mbox{if} \quad i \in \mathcal{S}(k,z_{k})\\
+%\displaystyle\frac{\hat{\vec{\pi}}_{x_{k-1}}(i)}{\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\vec{\pi}}_{x_{k-1}}(j)}&, \mbox{if} \quad i \in \mathcal{S}(k,z_{k})\\
 %0 &, \mbox{otherwise}\\
 %\end{cases}\\
 %\end{array}
 %\end{equation}
 %where $P$ is the transition matrix obtained in (\ref{TransitionMatrix}).
 
-The transition probabilities (\ref{conditional}) and the conditional distributions in (\ref{recursive}) can be generalized to contemplate imperfect detection. See Annex I for a detailed formulation of this case.
 %Let us assume that the observations are taken from the values taken by $Y\left(t)$ at the end of each slot, represented by the discrete-time Markov chain $Y_{k}$ = $Y\left(k\tau)$. 
 
 %MDP Model for the cognitive user: describimos el modelo con un coste ``genérico''. Problema con Imperfect State Information. Total Expected Cost. Finite Horizon.
 
+\
 \section{Obtaining Pareto-Optimal Policies}\label{sec:Policies}
 \subsection{Cost Function}
 %In cognitive radio access there is, in general, a trade-off between secondary user transmission rate (\textit{throughput}) and collision probability with licensed users. 
-The cost function $\tilde{g}_{k}(x_{k},d_{k})$ represent a convex combination of two opposite objectives:  the throughput $b_{k}(m_{k})$ and the average overlapping time $c_{k}(x_{k},m_{k})$:
+The cost function $\tilde{g}_{k}(x_{k},d_{k})$ represent a convex combination of two opposite objectives:  the throughput $b_{k}(\vec{m}_{k})$ and the average overlapping time $c_{k}(x_{k},\vec{m}_{k})$:
 \begin{equation}\label{cost}
-\tilde{g}_{k}(x_{k},d_{k}) = \left[\alpha \frac{c_{k}(x_{k},m_{k})}{c_{\text{max}}} + (\alpha -1)\frac{b_{k}(m_{k})}{b_{\text{max}}}\right](1-u_{k})
+\tilde{g}_{k}(x_{k},d_{k}) = \left[\alpha \frac{c_{k}(x_{k},\vec{m}_{k})}{c_{\text{max}}} + (\alpha -1)\frac{b_{k}(\vec{m}_{k})}{b_{\text{max}}}\right](1-u_{k})
 \end{equation}
-where $0\leq \alpha \leq 1$. The objectives are divided by their maximum values $c_{\text{max}}$ and $b_{\text{max}}$ in order to obtain dimensionless (normalized) values. Note that $b_{k}(x_{k},m_{k})$ is added with negative sign in the convex combination because the cost function is minimized in problem (\ref{MDPproblem}). According to multi-objective optimization theory, given a value of $\alpha$, the solution of the finite-horizon MDP with the cost defined in (\ref{cost}) yields a Pareto-optimal solution regarding these two opposite objectives, \textit{i.e.} a solution for which there does not exists any policy such that one objective can be improved without worsening the other. The set of Pareto-optimal solutions is referred to as the Pareto-front of the problem and we can estimate it by iteratively solving the MDP for a representative discrete range of $\alpha$ values.
+where $0\leq \alpha \leq 1$. The objectives are divided by their maximum values $c_{\text{max}}$ and $b_{\text{max}}$ in order to obtain dimensionless (normalized) values. Note that $b_{k}(x_{k},\vec{m}_{k})$ is added with negative sign in the convex combination because the cost function is minimized in problem (\ref{MDPproblem}). According to multi-objective optimization theory, given a value of $\alpha$, the solution of the finite-horizon MDP with the cost defined in (\ref{cost}) yields a Pareto-optimal solution regarding these two opposite objectives, \textit{i.e.} a solution for which there does not exists any policy such that one objective can be improved without worsening the other. The set of Pareto-optimal solutions is referred to as the Pareto-front of the problem and we can estimate it by iteratively solving the MDP for a representative discrete range of $\alpha$ values.
 \subsubsection{Throughput}
 The maximum throughput is attained when $M$ channels are found idle in the first $M$ scanning slots and the decision made is to transmit using these $M$ channels. Given a transmission rate $R$ and scanning and transmission times equal to $\tau$ and $T$ respectively, the maximum throughput is
 \begin{equation}
@@ -758,48 +757,46 @@ b_{\text{max}} = \frac{MRT}{M\tau + T}.
 \end{equation}
 When the access algorithm decides to transmit in $n$ channels at stage $k$ the throughput is
 \begin{equation}
-b_{k}(m_{k}) = \frac{nRT}{k\tau + T}.
+b_{k}(\vec{m}_{k}) = \frac{nRT}{k\tau + T},\text{ } n \leq k
 \end{equation}
 \subsubsection{Average Overlapping Time}
 The maximum average overlapping time occurs when, after selecting $M$ channels to transmit in, these $M$ channels turn out to be occupied by PUs when the SU starts to transmit and remain occupied for at least $T$ seconds. Therefore, in the worst case of having $M$ collisions lasting for $T$ seconds, the total overlapping time is:
 \begin{equation}
 c_{\text{max}} = MT.
 \end{equation}
-Accordingly, given a vector $m_{k}$ selecting $n$ channels to transmit in after the $k$-th scanning slot, the average overlapping time is given by
+Accordingly, given a vector $\vec{m}_{k}$ selecting $n$ channels to transmit in after the $k$-th scanning slot, the average overlapping time is given by
 \begin{equation}\label{collision}
-c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{subarray}{c} Y(t)\\t\in[k\tau, k\tau + T)\end{subarray}}{E}\Bigl[t \text{ in }\mathcal{S}(m_{k}(j),1)\Big|x_{k}\Bigr]
-%c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\underset{t\in[k\tau, k\tau + T)}{Y(t)}}{E}\Bigl[t \text{ in }\mathcal{S}(m_{k}(j),1)\Big|x_{k}\Bigr]
-%c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{array}{c}_{t\in[k\tau, k\tau + T)}\\_{Y(t)}\end{array}}{\text{\large E}}\Bigl[t \text{ in }\mathcal{S}(m_{k}(j),1)\Big|x_{k}\Bigr]
+c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{subarray}{c} Y(t)\\t\in[k\tau, k\tau + T)\end{subarray}}{E}\Bigl[t \text{ in }\mathcal{S}(\vec{m}_{k}(j),1)\Big|x_{k}\Bigr]
+%c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\underset{t\in[k\tau, k\tau + T)}{Y(t)}}{E}\Bigl[t \text{ in }\mathcal{S}(\vec{m}_{k}(j),1)\Big|x_{k}\Bigr]
+%c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{array}{c}_{t\in[k\tau, k\tau + T)}\\_{Y(t)}\end{array}}{\text{\large E}}\Bigl[t \text{ in }\mathcal{S}(\vec{m}_{k}(j),1)\Big|x_{k}\Bigr]
 \end{equation}
-where the expectation operation calculates the expected total time that the spectrum process $Y(t)$ spends in the set of states $\mathcal{S}(m_{k}(j),1)$ during the period $[k\tau, k\tau + T)$. Recall that, according to its definition in (\ref{setS}), $\mathcal{S}(m_{k}(j),1)$ corresponds to the set of states in $\mathcal{S}$, such that channel $m_{k}(j)$ is occupied by a PU. Therefore, (\ref{collision}) is the sum of the expected overlapping times on each of the $n$ channels selected. 
-%These expected times depends on the expected trajectory of the spectrum process $Y(t)$ within the period $[k\tau, k\tau + T)$. 
-The expectation in (\ref{collision}) is a known performance parameter of Markov models (see \cite{ref:QueueingNets}) defined as
+where the expectation operation calculates the expected total time that the spectrum process $Y(t)$ spends in the set of states $\mathcal{S}(\vec{m}_{k}(j),1)$ during the period $[k\tau, k\tau + T)$. 
+Recall that, according to its definition in (\ref{setS}), $\mathcal{S}(\vec{m}_{k}(j),1)$ corresponds to the set of states in $\mathcal{S}$, such that channel $\vec{m}_{k}(j)$ is occupied by a PU. 
+Therefore, (\ref{collision}) is the sum of the expected overlapping times on each of the $n$ channels selected. Let us denote by $l_{i,x_k}(\Delta t)$ the expected total time that $Y(t)$ spends in state $i \in \mathcal{S}$ during the interval $[k\tau, k\tau+\Delta t]$ given the observations $x_k$. Then, 
 \begin{equation}
-L(t) = \int_{0}^{t}\pi(t)dt,
+c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\displaystyle\sum_{i\in\mathcal{S}(\vec{m}_{k}(j),1)}l_{i,x_{k}}(T)
 \end{equation}
-where $\pi(t)$ is the transient state probability vector of $Y(t)$. Then, $L_{i}(t)$ denotes the expected total time that $Y(t)$ spends in state $i\in\mathcal{S}$ during the interval $[0, t)$. An efficient way to calculate vector $L(t)$ is by solving the differential equation
+The expected total time spent in a state, $l_{i,x_k}(\Delta t)$, is a known performance parameter of Markov models (see \cite{ref:Bolch2006}). Let $\vec{L}_{x_k}(\Delta t)$ indicate the vector whose elements are $l_{i,x_k}(\Delta t)$. $\vec{L}_{x_k}(\Delta t)$ can be obtained from the transient state probability vector of $Y(t)$ conditioned on $x_k$, $\vec{\pi}'_{x_k}(t)$, as follows:
+\begin{equation}
+\vec{L}_{x_k}(\Delta t) = \int_{k\tau}^{k\tau+\Delta t}\vec{\pi}'_{x_k}(t) d\Delta t,
+\end{equation}
+An efficient way to calculate vector $\vec{L}_{x_k}(\Delta t)$ is by solving the differential equation
 \begin{equation}\label{diffEq}
-\frac{dL(t)}{dt} = L(t)Q + \pi(0), \quad L_{i}(0)=0 \quad \mbox{for } i\in\mathcal{S}  
+\frac{d\vec{L}_{x_k}(\Delta t)}{d\Delta t} = \vec{L}_{x_k}(\Delta t)\mat{Q} + \vec{\pi}'_{x_k}(k\tau), \quad l_{i,x_k}(0)=0 \quad \forall i\in\mathcal{S}  
 \end{equation}
-At time $k\tau$, the value of $Y(t)$ is given by $Y(k\tau) = Y_{k}$, whose probability distribution conditioned on $x_{k}$ is $\pi_{x_{k}}$. Therefore, obtaining $L(k\tau, k\tau+t)$ is equivalent to solving 
+At time $k\tau$, the value of $Y(t)$ is given by $Y(k\tau) = Y_{k}$, whose probability distribution conditioned on $x_{k}$ is $\vec{\pi}_{x_{k}}$. Therefore, obtaining $\vec{L}_{x_k}(\Delta t)$ is equivalent to solving 
 \begin{equation}\label{timeL}
-\frac{dL(t)}{dt} = L(t)Q + \pi_{x_{k}}, \quad L_{i}(0)=0 \quad \mbox{for } i\in\mathcal{S}.  
+\frac{d\vec{L}_{x_k}(\Delta t)}{d\Delta t} = \vec{L}_{x_k}(\Delta t)\mat{Q} + \vec{\pi}_{x_{k}}, \quad l_{i,x_k}(0)=0 \quad \forall i\in\mathcal{S} 
 \end{equation}
-%We will use the notation $L_{i|x_{k}}(t)$ to refer to the $i$-th element of the solution of (\ref{timeL}). Therefore the overlapping time $c_{k}(x_{k},m_{k})$ in (\ref{collision}) can be written as
-Denoting by $L_{i|x_{k}}(t)$ the $i$-th element of the solution of (\ref{timeL}), the overlapping time $c_{k}(x_{k},m_{k})$ in (\ref{collision}) can be written as
-\begin{equation}\label{collisionDetailed}
-c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\displaystyle\sum_{i\in\mathcal{S}(m_{k}(j),1)}L_{i|x_{k}}(T)
-\end{equation}
-%Definición y cómputo de los costes y beneficios
 \subsection{Backward Induction Algorithm}
 %Comentarios sobre las políticas (HD,RD...), existencia de políticas etc. Backward induction algorithm. Estimar el coste computacional.
-Once the MDP with imperfect state estimation has been reduced to a perfect state estimation one and given that the horizon is finite, the MDP problem can be solved by means of the backward induction algorithm, also known as dynamic programming (DP) algorithm.
-In addition, because both the state and the control spaces are finite, there exists at least one deterministic Markovian policy which is optimal \cite{ref:Puterman}.
+Once the MDP with imperfect state estimation has been reformulated as a fully observable state estimation one, and given that the horizon is finite, the MDP problem can be solved by means of the backward induction algorithm, also known as dynamic programming (DP) algorithm.
+In addition, because both the state and the control spaces are finite, there exists at least one deterministic Markovian policy which is optimal \cite{ref:Puterman2005}.
 This is the type of policies that we have defined in (\ref{policies}), where each function $\mu_{k}$ maps states (and not past histories) into decisions, \textit{i.e.} $\mu_{k}$ is Markovian. Similarly, $\mu_{k}(x_{k})$ always gives the same outcome with probability 1, \textit{i.e.} $\mu_{k}$ is deterministic.
 
-The algorithm to find optimal Markovian deterministic policies for the MDP problem (\ref{MDPproblem}) is the following
+The algorithm to find optimal Markovian deterministic policies for the MDP problem (\ref{MDPproblem}) is the following:
 
-\textbf{1. }Set $k=N$ and
+\noindent\textbf{1. }Set $k=N$ and
 	\begin{equation}
 	J^{*}_{N}\left(x_{N}\right) = \underset{d\in\mathcal{D}_{N}(x_{N})}
 	{\mbox{min }}g_{N}\left(x_{N},d\right) \mbox{ for all } x_{N} \in \mathcal{X}^{*}_{N}
@@ -828,21 +825,21 @@ Note that both (\ref{muNpolicy}) and (\ref{mukpolicy}) may result in more than o
 \subsection{Computational Cost}
 This subsection is concerned with the computational cost of obtaining an optimal OSA policy.
 %Let us estimate the computational cost of obtaining an optimal policy for the CP. 
-This cost can be divided into three parts: (i) the cost of obtaining the conditional distributions $\hat{\pi}_{x_{k}}$ and $\pi_{x_{k}}$; (ii) the cost of solving differential equation (\ref{timeL}); and (iii) the cost of executing the dynamic programming algorithm.
+This cost can be divided into three parts: (i) the cost of obtaining the conditional distributions $\hat{\vec{\pi}}_{x_{k}}$ and $\vec{\pi}_{x_{k}}$; (ii) the cost of solving differential equation (\ref{timeL}); and (iii) the cost of executing the dynamic programming algorithm.
 
-The first part comprises solving the linear equation (\ref{linearEquation}) to obtain $\pi_{0}$, computing $P$ by means of the matrix exponential in (\ref{TransitionMatrix}) and solving recursive equations (\ref{recursive}). Note that the amount of required multiplications depends on the numerical methods and the matrix structure. Assuming that $\pi_{0}$ and $P$ are obtained by Gaussian elimination and block diagonal methods respectively, the cost of computing all $\pi_{x_{k}}$ and $\hat{\pi}_{x_{k}}$ vectors is approximately $\frac{55}{3}2^{3N}-\frac{7}{3}2^{N}$ multiplications. In the case of spectrum merging this number reduces to $\frac{55}{3}N^{3}-\frac{7}{3}N$.
+The first part comprises solving the linear equation (\ref{linearEquation}) to obtain $\vec{\pi}_{0}$, computing $P$ by means of the matrix exponential in (\ref{TransitionMatrix}) and solving recursive equations (\ref{recursive}). Note that the amount of required multiplications depends on the numerical methods and the matrix structure. Assuming that $\vec{\pi}_{0}$ and $P$ are obtained by Gaussian elimination and block diagonal methods respectively, the cost of computing all $\vec{\pi}_{x_{k}}$ and $\hat{\vec{\pi}}_{x_{k}}$ vectors is approximately $\frac{55}{3}2^{3N}-\frac{7}{3}2^{N}$ multiplications. In the case of spectrum merging this number reduces to $\frac{55}{3}N^{3}-\frac{7}{3}N$.
 
-%The initial estimate $\pi_{0}$ is obtained by solving the linear equation (\ref{linearEquation}), which has $2^{N}$ unknowns (only $N$ for the case of merged spectrum for PUs). Solving it with the Gaussian elimination method would require $\frac{2^{3N}}{3}+2^{2N}-\frac{2^{N}}{3}$ multiplications \cite{}. Previously, we have to compute the transition matrix $P$ by means of the matrix exponential in (\ref{TransitionMatrix}). This matrix function can be solved in many ways with very diverse computational costs. As a reference, let us consider block diagonal methods \cite{}, whose cost, for a $2^{N}\times2^{N}$ matrix, is approximately $17\times2^{3N}$ multiplications. Note that this is a worst case estimation since, in our case, $Q$ is a sparse matrix.
+%The initial estimate $\vec{\pi}_{0}$ is obtained by solving the linear equation (\ref{linearEquation}), which has $2^{N}$ unknowns (only $N$ for the case of merged spectrum for PUs). Solving it with the Gaussian elimination method would require $\frac{2^{3N}}{3}+2^{2N}-\frac{2^{N}}{3}$ multiplications \cite{}. Previously, we have to compute the transition matrix $P$ by means of the matrix exponential in (\ref{TransitionMatrix}). This matrix function can be solved in many ways with very diverse computational costs. As a reference, let us consider block diagonal methods \cite{}, whose cost, for a $2^{N}\times2^{N}$ matrix, is approximately $17\times2^{3N}$ multiplications. Note that this is a worst case estimation since, in our case, $Q$ is a sparse matrix.
 
-%The recursive equations (\ref{recursive}) provide the vectors $\pi_{x_{1}},\ldots,\pi_{x_{N}}$ and $\hat{\pi}_{x_{1}},\ldots,\hat{\pi}_{x_{N-1}}$. 
-%According to these equations, computing $\pi_{x_{k}}$ requires $2^{N-1}$ multiplications for each possible state $x_{k}$. Because each stage $k$ comprises $2^{k}$ possible $x_{k}$ values, the total number of operations required to obtain all $\pi_{x_{k}}$ vectors is 
+%The recursive equations (\ref{recursive}) provide the vectors $\vec{\pi}_{x_{1}},\ldots,\vec{\pi}_{x_{N}}$ and $\hat{\vec{\pi}}_{x_{1}},\ldots,\hat{\vec{\pi}}_{x_{N-1}}$. 
+%According to these equations, computing $\vec{\pi}_{x_{k}}$ requires $2^{N-1}$ multiplications for each possible state $x_{k}$. Because each stage $k$ comprises $2^{k}$ possible $x_{k}$ values, the total number of operations required to obtain all $\vec{\pi}_{x_{k}}$ vectors is 
 %\begin{equation}
 %\begin{array}{lcl}
 %2^{N-1}\displaystyle\sum_{k=1}^{N}2^{k} & = & 2^{N-1}\left(2^{N+1} - 2\right)\\
 %																				& = & 2^{2N} - 2^{N}
 %\end{array}
 %\end{equation} 
-%Similarly, at each $x_{k}$, $\hat{\pi}_{x_{k}}$ is obtained multiplying $P$ by a vector, therefore computing all $\hat{\pi}_{x_{k}}$ vectors implies the following number of multiplications 
+%Similarly, at each $x_{k}$, $\hat{\vec{\pi}}_{x_{k}}$ is obtained multiplying $P$ by a vector, therefore computing all $\hat{\vec{\pi}}_{x_{k}}$ vectors implies the following number of multiplications 
 %\begin{equation}
 %\begin{array}{lcl}
 %2^{2N}\displaystyle\sum_{k=1}^{N-1}2^{k} & = & 2^{2N}\left(2^{N} - 2\right)\\
@@ -850,7 +847,7 @@ The first part comprises solving the linear equation (\ref{linearEquation}) to o
 %\end{array}
 %\end{equation}
 %
-%Summarizing, the cost of computing all $\pi_{x_{k}}$ and $\hat{\pi}_{x_{k}}$ vectors is $\frac{55}{3}2^{3N}-\frac{7}{3}2^{N}$ multiplications. In the case of merged PU spectrum this number reduces to $\frac{55}{3}N^{3}-\frac{7}{3}N$.
+%Summarizing, the cost of computing all $\vec{\pi}_{x_{k}}$ and $\hat{\vec{\pi}}_{x_{k}}$ vectors is $\frac{55}{3}2^{3N}-\frac{7}{3}2^{N}$ multiplications. In the case of merged PU spectrum this number reduces to $\frac{55}{3}N^{3}-\frac{7}{3}N$.
 
 Solving differential equation (\ref{timeL}) numerically may have very diverse costs depending on the method applied. Considering, as a reference, a 4-th order Runge-Kutta (RK4) with an integration time divided into 10 intervals, this operation implies $40\times2^{2N}$ multiplications ($40\times N^{2}$ for spectrum merging).
 
@@ -866,7 +863,7 @@ Finally, let us estimate the computational cost of the DP algorithm in our probl
 %\end{array}
 %\end{equation}
 
-Summing up these contributions, the estimated number of multiplications required to obtain an optimal policy is $\frac{55}{3}2^{3N}+\frac{120}{3}2^{2N}-\frac{7}{3}2^{N}$. Clearly, this procedure is, in general, not feasible for practical implementation at SU nodes (except for the case of spectrum merging for PUs in which the cost is only $\frac{55}{3}N^{3}+\frac{120}{3}N^{2}-\frac{7}{3}N$). However, depending on $N$ it is possible to compute the optimal policy off-line and store it on the SUs. Considering the decision tree structure of the MDP (see Fig. \ref{fig:states}) an SU only needs to store the decisions associated to the states where a transmission decision has to be made. The worst case implies storing $2^{N}$ decisions. Table \ref{SPEC_MAN_table_computational_randomseq} compares memory requirements and computational costs, including computation time in a 50 Gflops processor, for different spectrum bandwidths.
+Summing up these contributions, the estimated number of multiplications required to obtain an optimal policy is $\frac{55}{3}2^{3N}+\frac{120}{3}2^{2N}-\frac{7}{3}2^{N}$. Clearly, this procedure is, in general, not feasible for practical implementation at SU nodes (except for the case of spectrum merging for PUs in which the cost is only $\frac{55}{3}N^{3}+\frac{120}{3}N^{2}-\frac{7}{3}N$). However, depending on $N$ it is possible to compute the optimal policy off-line and store it on the SUs. Considering the decision tree structure of the MDP (see Fig. \ref{fig:states}) an SU only needs to store the decisions associated to the states where a transmission decision has to be made. The worst case implies storing $2^{N}$ decisions. Table \ref{Table2} compares memory requirements and computational costs, including computation time in a 50 Gflops processor, for different spectrum bandwidths.
 
 \begin{table}
 \begin{tabular}{|c|c|c|c|} \hline
@@ -880,7 +877,7 @@ Summing up these contributions, the estimated number of multiplications required
 \end{tabular}
 \centering
 \caption{Off-line computational effort and SU memory requirements for OSA under random or sequential PU channel assignment}
-\label{SPEC_MAN_table_computational_randomseq}
+\label{Table2}
 \end{table}
 
 \begin{table}
@@ -895,18 +892,18 @@ Summing up these contributions, the estimated number of multiplications required
 \end{tabular}
 \centering
 \caption{Off-line computational effort and SU memory requirements for OSA under spectrum merging for PUs}
-\label{SPEC_MAN_table_computational_merge}
+\label{Table3}
 \end{table}
 
 Even if the policy is computed off-line, the computational effort becomes cumbersome for a spectrum size of around 20 channels. The SU's storage requirement results impractical around this value too.
 %It is clear that an OSA MDP-based policy becomes impractical when the number of channels is around 20 or above because of the computational effort to obtain the policy off-line and the storage requirements.
 %When using merged PU's spectrum the number of operations reduces to $\frac{55}{3}N^{3}+\frac{120}{3}N^{2}-\frac{7}{3}N$ and the SU has to reserve memory space for up to $N$ decisions.
 Therefore, for larger $N$ values, approximation methods should be explored. For example, an approximate evaluation of matrix $P$ or state aggregation \textit{e.g.} by modeling PU channel occupation in blocks of channels instead of individual ones. This issue lies beyond the scope of this work and is considered for future research.
-On the other hand, with the merged spectrum strategy, the implementation requirements of OSA reduce dramatically as shown in Table \ref{SPEC_MAN_table_computational_merge}. This advantage adds to the ones shown in following section.
+On the other hand, with the merged spectrum strategy, the implementation requirements of OSA reduce dramatically as shown in Table \ref{Table3}. This advantage adds to the ones shown in following section.
 
 \section{Numerical Results}\label{ref:Results}
 \subsection{Performance Evaluation}
-In this subsection we compare the performance of Pareto-optimal OSA policies for the three PU channel allocation strategies previously explained: random, sequential and sequential with spectrum merging for PUs. The parameter settings of the evaluation scenario are shown in table \ref{SPEC_MAN_table_parameters}.
+In this subsection we compare the performance of Pareto-optimal OSA policies for the three PU channel allocation strategies previously explained: random, sequential and sequential with spectrum merging for PUs. The parameter settings of the evaluation scenario are shown in table \ref{Table4}.
 
 \begin{table}[ht]
 \begin{tabular}{|c|c|c|} \hline
@@ -920,16 +917,16 @@ $\tau$ & 500& $ms$\\\hline
 \end{tabular}
 \centering
 \caption{Parameter settings}
-\label{SPEC_MAN_table_parameters}
+\label{Table4}
 \end{table}
 
 As explained in previous section, the per-stage cost function (\ref{cost}) consists of a convex combination of two opposite parameters: throughput and overlapping time. For a given weight $\alpha$ in (\ref{cost}), a policy $\eta^{*}$ solving the MDP problem yields an expected normalized throughput, denoted by $J_{\text{th}}$ and an expected total overlapping time denoted by $J_{c}$. The policy $\eta^{*}$ is Pareto-optimal because $J_{\text{th}}$ cannot be improved by any other policy without worsening $J_{c}$ and \textit{vice versa}.
-For any policy $\eta = \left\{\mu_{0},\ldots,\mu_{N}\right\}$, $J_{\text{th}}$ is obtained by the following recursive equations
+For any policy $\eta = \left\{\mu_{0},\ldots,\mu_{N}\right\}$, $J_{\text{th}}$ is obtained by the following recursive equations:
 %the policy solving the MDP problem yields a point in the Pareto-front, implying that the throughput obtained by this policy cannot be improved by any other policy without worsening the collision time and \textit{vice versa}.
 \begin{equation}
 \begin{array}{lcl}
 	J_{\text{th},k}\left(x_{k}\right) & = & g_{\text{th},k}\left(x_{k},\mu_{k}\left(x_{k}\right)\right) +\\
-																		&   &	\displaystyle\sum_{j\in\mathcal{X}^{*}_{k}}
+	&   &	\displaystyle\sum_{j\in\mathcal{X}^{*}_{k}}
 	p_{k}\left(j|x_{k},\mu_{k}\left(x_{k}\right)\right)J_{\text{th},k+1}\left(j\right)
 	\end{array}
 \end{equation}
@@ -957,8 +954,8 @@ To show the benefit of MDP-based policies let us consider, as a reference, a fam
 %	0 &, \mbox{otherwise}\\
 %	\end{cases}	
 %\end{equation}
-The integer parameter $r > 0$ represents a bandwidth safety margin to reduce collisions. Fig. \ref{fig:comparative} compares the performance of reference policies $\eta^{r}$ for $r = 0,\ldots,N-1$ (in dotted line) to MDP-based policies under each PU channel management scheme. Although MDP-based policies outperform the reference ones in every scenario, it is interesting how close the reference performance is to the Pareto front in the merged spectrum scenario, suggesting that, in this case, it may be acceptable to use a simple set of rules similar to $\eta^{r}$, alleviating the need to solve the MDP problem off-line.
-This also illustrates the utility of Pareto front computations for evaluating OSA policies.
+The integer parameter $r > 0$ represents a bandwidth safety margin to reduce collisions. Fig. \ref{fig:comparative} compares the performance of reference policies $\eta^{r}$ for $r = 0,\ldots,N-1$ (in dotted line) to MDP-based policies under each PU channel management scheme. Note that the lower the safety margin $r$, the greater the throughput, at the cost of an increased overlapping time. Although MDP-based policies outperform the reference ones in every scenario, it is interesting how close the reference performance is to the Pareto front in the merged spectrum scenario, suggesting that, in this case, it may be acceptable to use a simple set of rules similar to $\eta^{r}$, alleviating the need to solve the MDP problem off-line.
+This also illustrates the utility of Pareto front computations for evaluating OSA policies. The performance of both sets of policies is also similar under every PU strategy for the case in which the overlapping time is of no importance ($\alpha = 0$), since both decide to transmit over the maximum $M$ channels (if $M$ or more channels are available). 
 %suggesting that the Pareto-optimal policies in this case can be reduced to a simple set of rules similar to $\eta^{r}$. 
 
 \begin{figure}[ht]
@@ -978,8 +975,8 @@ Next subsection addresses this issue.
 This subsection evaluates the sensitivity of each performance figure to drifts on the values of PU traffic descriptors $\lambda$ and $\mu$. By drift we refer to the difference between the value used for off-line policy computation (estimated value) and the value that actually describes PU traffic (nominal value). 
 Drifts are positive when PU traffic is larger than the estimated one, and negative otherwise.
 
-%To perform this evaluation we selected, for each PU channel assignment scheme, a Pareto-optimal policy computed using the $\lambda$ and $\mu$ values specified in Table \ref{SPEC_MAN_table_parameters}.
-We consider again three PU channel management scenarios. The OSA policy used in each scenario is computed using the nominal $\lambda$ and $\mu$ values specified in Table \ref{SPEC_MAN_table_parameters}.
+%To perform this evaluation we selected, for each PU channel assignment scheme, a Pareto-optimal policy computed using the $\lambda$ and $\mu$ values specified in Table \ref{Table4}.
+We consider again three PU channel management scenarios. The OSA policy used in each scenario is computed using the nominal $\lambda$ and $\mu$ values specified in Table \ref{Table4}.
 Then, at each scenario, we evaluated the performance of the OSA policy in terms of throughput and overlapping time for drifts ranging from negative to positive values.
 In OSA, the main concern is to keep PU's QoS degradation at low values.
 %CONSIDERAR: explicar como se ha computado cada parámetro (recursivamente, etc).
@@ -1018,45 +1015,23 @@ This is not always the case in systems with spectrum merging for PUs, which is e
 
 \begin{figure}[ht]
 \centering
-\subfloat[Throughput]{
-\includegraphics[scale=0.6, clip]{ThroughputRandom.eps}
-\label{SPEC_MAN_fig_throughput_random}
-}
-\subfloat[Overlapping time]{
-\includegraphics[scale=0.6, clip]{CollisionRandom.eps}
-\label{SPEC_MAN_fig_collision_random}
-}
-\caption[]{Normalized SU throughput \subref{SPEC_MAN_fig_throughput_random} and expected overlapping time \subref{SPEC_MAN_fig_collision_random} with random channel assignment for PUs.}\label{fig:random}
+\includegraphics[scale=0.6,clip]{ThroughputRandom.eps}
+\includegraphics[scale=0.6,clip]{CollisionRandom.eps}
+\caption[]{Normalized SU throughput and expected overlapping time with random channel assignment for PUs.}\label{fig:random}
 \end{figure}
-
-%%
 
 \begin{figure}[ht]
 \centering
-\subfloat[Throughput]{
-\includegraphics[scale=0.6, clip]{ThroughputSeq.eps}
-\label{SPEC_MAN_fig_throughput_sequential}
-}
-\subfloat[Overlapping time]{
-\includegraphics[scale=0.6, clip]{CollisionSeq.eps}
-\label{SPEC_MAN_fig_collision_sequential}
-}
-\caption[]{Normalized SU throughput \subref{SPEC_MAN_fig_throughput_sequential} and expected overlapping time \subref{SPEC_MAN_fig_collision_sequential} with sequential channel assignment for PUs.}\label{fig:seq}
+\includegraphics[scale=0.6,clip]{ThroughputSeq.eps}
+\includegraphics[scale=0.6,clip]{CollisionSeq.eps}
+\caption[]{Normalized SU throughput and expected overlapping time with sequential channel assignment for PUs.}\label{fig:seq}
 \end{figure}
-
-%%
 
 \begin{figure}[ht]
 \centering
-\subfloat[Throughput]{
-\includegraphics[scale=0.6, clip]{ThroughputComp.eps}
-\label{fig:subfig1}
-}
-\subfloat[Overlapping time]{
-\includegraphics[scale=0.6, clip]{CollisionComp.eps}
-\label{fig:subfig2}
-}
-\caption[]{Normalized SU throughput \subref{fig:subfig1} and expected overlapping time \subref{fig:subfig2} with spectrum merging for PUs.}\label{fig:comp}
+\includegraphics[scale=0.6,clip]{ThroughputComp.eps}
+\includegraphics[scale=0.6,clip]{CollisionComp.eps}
+\caption[]{Normalized SU throughput and expected overlapping time with spectrum merging for PUs.}\label{fig:comp}
 \end{figure}
 
 \section{Conclusions}\label{SPEC_MAN_sec_conclusion}
@@ -1075,60 +1050,3 @@ However, the results presented in this paper suggest that, in situations of low 
 %it is convenient for the licensed network to implement spectrum management policies facilitating coexistence with cognitive devices.
 %El rendimiento de las políticas óptimas mejora notablemente cuando a los PU se les asignan los canales no aleatoriamente, sino de forma secuencial y aún más si las comunicaciones PU siempre se restringen a canales adjacentes. Este resultado, auqnue esperable, no se había cuantificado y se ha comprobado que ambos parámetros mejoran simultáneamente. Además, las políticas resultan robustas ante errores de predicción del tráfico PU.
 %Quedan por investigar un estudio más amplio de los costes / beneficios de modificar las polítcas de gestión de espectro un situaciones de overlay con secondary users. Sin embargo, los resultados obtenidos sugieren que en situaciones de baja carga, en las que OSA tiene sentido, resulta muy conveniente tanto para los PUs como para los SU implmentar politícas de gestion que favorezcan la coexistencia.
-
-\section{Transition probabilities under imperfect spectrum sensing}
-In this case, the probability distribution of $Z_{k}$ is given by
-\begin{equation}
-\begin{array}{lcl}
-P\left(Z_{k}=1\right) & = & P\left(Y_{k} \in \mathcal{S}(k,1)\right)\left(1-p_{\bar{n}}\right)\\ 
-											&&	+ P\left(Y_{k} \in \mathcal{S}(k,0)\right)p_{\bar{p}}\\
-P\left(Z_{k}=0\right) & = & P\left(Y_{k} \in \mathcal{S}(k,0)\right)\left(1-p_{\bar{p}}\right)\\
-											&&	+ P\left(Y_{k} \in \mathcal{S}(k,1)\right)p_{\bar{n}}
-\end{array}
-\end{equation}
-which can be written more compactly as
-\begin{equation}
-\begin{array}{lcl}
-%P\left(Z_{k}=z_{k}\right) & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})\right)\left(1-z_{k}p_{\bar{n}}- \left(1-z_{k}\right)p_{\bar{p}}\right) +\\ 
-%													&  &P\left(Y_{k} \in \mathcal{S}^{c}(k,z_{k})\right)\left(1-z_{k}p_{\bar{p}}- \left(1-z_{k}\right)p_{\bar{n}}\right)
-P\left(Z_{k}=z_{k}\right) & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})\right)p_{c}(z_{k}) + \\
-													&& P\left(Y_{k} \in \mathcal{S}^{c}(k,z_{k})\right)p_{i}(z_{k})
-\end{array}
-\end{equation}
-where $\mathcal{S}^{c}(k,z_{k})$ denotes the complementary of $\mathcal{S}(k,z_{k})$, and the functions $p_{c}(z_{k})$ and $p_{i}(z_{k})$ represent the probabilities of correct and incorrect detection respectively, and have the following expressions
-\begin{equation}
-\begin{array}{lcl}
-p_{c}(z_{k}) & = & 1-z_{k}p_{\bar{n}}- \left(1-z_{k}\right)p_{\bar{p}}\\
-p_{i}(z_{k}) & = & 1-z_{k}p_{\bar{p}}- \left(1-z_{k}\right)p_{\bar{n}}
-\end{array}
-\end{equation}
-
-The transition probabilities $P\left(X_{k}=x_{k}|x_{k-1}\right)$ for every $x_{k}\in \mathcal{X}_{k}$, $k = 1,\ldots,N$ are given by
-\begin{equation}\label{conditionalcomplete}
-\begin{array}{lcl}
-P\left(X_{k}=x_{k}|x_{k-1}\right) & = & P\left(Z_{k}=z_{k}|x_{k-1}\right)\\
- & = & P\left(Y_{k} \in \mathcal{S}(k,z_{k})|x_{k-1}\right)p_{c}(z_{k}) + \\
- && P\left(Y_{k} \in \mathcal{S}^{c}(k,z_{k})|x_{k-1}\right)p_{i}(z_{k}) \\
- & = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}P\left(Y_{k} = j|x_{k-1}\right)p_{c}(z_{k}) +\\
- && \displaystyle\sum_{j \in \mathcal{S}^{c}(k,z_{k})}P\left(Y_{k} = j|x_{k-1}\right)p_{i}(z_{k}) \\
- & = & \displaystyle\sum_{j \in \mathcal{S}(k,z_{k})}\hat{\pi}_{x_{k-1}}(j)p_{c}(z_{k}) + \\
- && \displaystyle\sum_{j \in \mathcal{S}^{c}(k,z_{k})}\hat{\pi}_{x_{k-1}}(j)p_{i}(z_{k})
-\end{array}
-\end{equation}
-%\section*{Acknowledgment}
-
-The equations to recursively generate $\hat{\pi}_{x_{k}}$ and $\pi_{x_{k}}$ are
-\begin{equation}
-\begin{array}{lcl}
-\hat{\pi}_{x_{k-1}} & = & \pi_{x_{k-1}}P,\\
-\pi_{x_{k}}(i) &=& P\left(Y_{k}=i | x_{k}\right)\\
-					 &=& P\left(Y_{k}=i | z_{k}, x_{k-1}\right)\\
-					 &=& \displaystyle\frac{P\left(Y_{k}=i, Z_{k}=z_{k} | x_{k-1}\right)}{P\left(Z_{k}=z_{k} | x_{k-1}\right)}\\
-					 &=& 
-\begin{cases}
-\displaystyle\frac{P\left(Y_{k}=i | x_{k-1}\right)p_{c}(z_{k})}{P\left(Z_{k}=z_{k} | x_{k-1}\right)}&, \mbox{if} \quad i \in \mathcal{S}(k,z_{k})\\
-\displaystyle\frac{P\left(Y_{k}=i | x_{k-1}\right)p_{i}(z_{k})}{P\left(Z_{k}=z_{k} | x_{k-1}\right)}&, \mbox{if} \quad i \in \mathcal{S}^{c}(k,z_{k})\\
-\end{cases}\\
-\end{array}
-\end{equation}
-for $k = 1,\ldots,N$, starting with $\pi_{x_{0}} = \pi_{0}$. The probability $P\left(Z_{k}=z_{k} | x_{k-1}\right)$ is given in (\ref{conditionalcomplete}).

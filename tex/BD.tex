@@ -51,11 +51,13 @@ After the reception of an SU data packet, the SU Rx can obtain two observations:
 
 The BD scheme is essentially a binary hypothesis testing mechanism conducted during SU transmission to decide on the most feasible value of a random variable $\Theta$, which takes two possible values $\left\{0,1\right\}$ at each SU packet reception. The event $\Theta = 1$ indicates that there has been PU interference during the packet reception, and $\Theta = 0$ indicates that the reception was free of PU interference.
 %whether or not there has been PU interference during the reception of an SU data packet. These two hypotheses are referred to as $H_{1}$ (PU activity) and $H_{0}$ (no PU activity). 
-The probability density functions (PDF) of $Y$ and $X$ are $f_{Y}(y)$ and $f_{X}(x)$ respectively. In case that both the SU Tx and the PU BS signals experience Rayleigh fading over their respective links to the SU Rx, we have 
-\begin{align}{lcl}
-f_{Y}(y) & = & \displaystyle\frac{1}{p_{ss}}e^{-\frac{y}{p_{ss}}}\\
-f_{X}(x) & = & \displaystyle\frac{1}{p_{ps}}e^{-\frac{x}{p_{ps}}} 
+The probability density functions (PDF) of $Y$ and $X$ are $f_{Y}(y)$ and $f_{X}(x)$ respectively. In case that both the SU Tx and the PU BS signals experience Rayleigh fading over their respective links to the SU Rx, we have
+
+\begin{align}
+f_{Y}(y) & = \frac{1}{p_{ss}}e^{-\frac{y}{p_{ss}}}\\
+f_{X}(x) & = \frac{1}{p_{ps}}e^{-\frac{x}{p_{ps}}} 
 \end{align}
+
 where $p_{ss}$ is the average power received from the SU Tx and $p_{ps}$ is the average power received from the PU BS. Both distributions, as well as the average powers can be obtained from the previous sensing history of the SUs. 
 Similarly, this sensing history provides information about the PU traffic profile and intensity on the scanned channels.
 One basic metric is the probability of PU activity during the transmission time of an SU packet ($\mathbold{P}\left(\Theta = \theta\right)$), with $\theta = \left\{0,1\right\}$.
@@ -255,9 +257,9 @@ And in the $E_{0}$ event, the corresponding equation is
 
 Let us determine the power thresholds for the case of Rayleigh fading. 
 Considering exponential distributions for $X$ and $Y$ in (\ref{thresholdE1}), we obtain the following two equations for $E_{1}$
-\begin{align}{lccl}
-\mathbold{P}\left(H_{0}\right)\cdot0 & = & \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{\left(-\frac{p_{r}}{p_{ss}}+ \frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)} \right)} }{p_{ps}-p_{ss}} &,\mbox{if }p_{r}>N\gamma \label{E1ThresholdEq1} \\
-\mathbold{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}}& = & \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{-\frac{p_{r}}{p_{ss}}}}{p_{ps}-p_{ss}} &,\mbox{if }p_{r}\leq N\gamma \label{E1ThresholdEq2}
+\begin{align}
+\mathbold{P}\left(H_{0}\right)\cdot0 & = \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{\left(-\frac{p_{r}}{p_{ss}}+ \frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)} \right)} }{p_{ps}-p_{ss}} &,\mbox{if }p_{r}>N\gamma \label{E1ThresholdEq1} \\
+\mathbold{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}}& = \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ps}}} - e^{-\frac{p_{r}}{p_{ss}}}}{p_{ps}-p_{ss}} &,\mbox{if }p_{r}\leq N\gamma \label{E1ThresholdEq2}
 \end{align}
 The first equation (\ref{E1ThresholdEq1}) only holds for $p_{r}=\infty$. Therefore, whenever $p_{r}>N\gamma$, the MAP rule selects the hypothesis $H_{1}$, which is rational because if $p_{r}>N\gamma$, the hypothesis $H_{0}$ implies that $\text{\ttfamily{SINR}}>\gamma$ which is inconsistent with $E_{1}$. In other words, if $p_{r}>N\gamma$, $E_{1}$ is caused by PU interference. 
 It can be checked that the solution of second equation (\ref{E1ThresholdEq2}) is
@@ -267,9 +269,9 @@ p^{*} = \displaystyle\frac{p_{ss}p_{ps}}{p_{ps}-p_{ss}}\text{log}\left(\displays
 If $p^{*}$ is a real number and $p^{*}\leq N\gamma$, then $p^{*}_{E_{1}}$ = $p^{*}$ is the threshold below which the MAP rule selects the hypothesis $H_{0}$ in the event $E_{1}$. In case (\ref{E1ThresholdEq2}) has no solution in $\left(0,N\gamma\right]$, then $p^{*}_{E_{1}}$ = $N\gamma$ if the left hand side of (\ref{E1ThresholdEq2}) is larger than the right hand side, and $p^{*}_{E_{1}}$ = 0 otherwise.
 
 Considering Rayleigh fading, the equation for $E_{0}$, (\ref{thresholdE0}) results in the following two equations
-\begin{align}{lccl}
-\mathbold{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}} & = & \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}} \left(e^{\frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)}}-1\right)}{p_{ps}-p_{ss}} &,\mbox{if }p_{r}>N\gamma \label{E0ThresholdEq1} \\
-\mathbold{P}\left(H_{0}\right)\cdot0 & = & \mathbold{P}\left(H_{1}\right)\cdot0 &,\mbox{if }p_{r}\leq N\gamma \label{E0ThresholdEq2}
+\begin{align}
+\mathbold{P}\left(H_{0}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}}}{p_{ss}} & = \mathbold{P}\left(H_{1}\right)\displaystyle\frac{e^{-\frac{p_{r}}{p_{ss}}} \left(e^{\frac{\left(p_{ps}-p_{ss}\right)\left(p_{r}-N\gamma\right)}{p_{ps}p_{ss}\left(1+\gamma\right)}}-1\right)}{p_{ps}-p_{ss}}, &\mbox{if }p_{r}>N\gamma \label{E0ThresholdEq1} \\
+\mathbold{P}\left(H_{0}\right)\cdot0 & = \mathbold{P}\left(H_{1}\right)\cdot0, &\mbox{if }p_{r}\leq N\gamma \label{E0ThresholdEq2}
 \end{align}
 The second equation (\ref{E0ThresholdEq2}) is trivially held for every $p_{r}\leq N\gamma$ because it corresponds to an unfeasible event: the absence of error when $p_{r}\leq N\gamma$ i.e. when $\text{\ttfamily{SINR}}\leq\gamma$. For $p_{r}>N\gamma$ equation (\ref{E0ThresholdEq1}) has the following solution
 \begin{equation}
@@ -677,4 +679,7 @@ Another critical aspect in the BD scheme is the channel characterization. In the
 \includegraphics[scale=1]{PerformanceVsPower_simulated.eps}
 \caption[]{Throughput and collision performance with and without BS vs. the inaccuracy on the estimation of the traffic intensity}\label{fig:performance_power}
 \end{figure}
-\section{Conclusions}\label{BD_sec_conclusion}
+\section{Conclusions}\label{BD_sec_conclusion
+}
+We have considered the problem of interference caused by transmission overlap in OSA. On top of the existing approach of optimized periodic sensing, we have introduced a novel mechanism called Background Detection. This scheme operates at the SU receiver and uses a Maximum \textit{A Posteriori} estimator to decide, upon each SU packet reception, if there has been collision with a PU, aborting transmission if necessary. Our results showed that BD allows for longer SU transmission periods, improving SU throughput while reducing collision probability. In addition, although BD is also reliant on traffic estimations, it enhances the robustness of the OSA protocol against estimation inaccuracies, especially in terms of collision probability.
+BD shows promising results and it is a simple mechanism to implement (not requiring additional hardware or signaling). 

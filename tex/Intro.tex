@@ -22,7 +22,7 @@ Cognitive capability refers to the ability of the radio to become aware of its s
 % Añadir la tipica figura de los huecos.
 
 In the most typical scenario, secondary users (SUs, unlicensed), equipped with cognitive radios, would look for unused fragments of spectrum and would use them for their transmissions subject to interference constraints for the protection of primary users (PUs, licensed). 
-This situation corresponds to the “Hierarchical Access Model”, also known as "Opportunistic Spectrum Access", one of the possible coexistence approaches under “Dynamic Spectrum Access” (DSA) but there are others \cite{ref:Zhao2007}. 
+This situation corresponds to the “Hierarchical Access Model”, also known as "Opportunistic Spectrum Access", one of the possible coexistence approaches under “Dynamic Spectrum Access” (DSA) but there are others \cite{ref:Zhao2007_sur}. 
 Along the lines of current regulation models is the “Dynamic Exclusive Use Model”, which considers leasing or selling licenses but at a smaller time-scale, even real-time and free choice of technology.
 Lastly, the “Spectrum Commons Model”  assumes open sharing with no categories of users.
 % ¿Añadir grafico con los tipos de modelos?
@@ -61,7 +61,12 @@ In consequence, we think that \emph{time consumption should be regarded as a key
 
 % OTROS
 % ¿Por que consideramos siempre single radios?
+
+
+
+
 \section{Contributions and thesis structure}
+
 Our contribution can be divided into two main blocks, coincident with the structure of the thesis. 
 Part \ref{part_OSA} features our works in the field of Opportunistic Spectrum Access. 
 These works are focused on protecting the PUs from interference caused by SUs access to spectrum, while trying to increase the spectrum usage efficiency. 
@@ -74,17 +79,24 @@ Our proposal exploits local characterization of the PU activity, power levels an
 Based on these data, we develop a Maximum \textit{A Posteriori} (MAP) estimator as the basis for the collision detection system. We describe the general methodology to build this estimator, and study the system's robustness against parameter misestimations. 
 The proposed scheme can be incorporated to existing OSA protocols. 
 Our results show a notable throughput improvement for the SUs while assuring a lower collision probability with PU transmissions in most cases, even under severe estimation inaccuracies.
+
+\bibentry{ref:Alcaraz2015_BD}
+
 \item Chapter \ref{BR_chap}: Bandwidth Reservation as a Coexistence Strategy in Opportunistic Spectrum Access Environments. We study a bandwidth reservation (BR) scheme by which the PN keeps a set of adjacent channels free of PU transmissions. 
 These reserved channels only accommodate PU traffic when all the non-reserved channels are used, and the SUs only occupy available channels within the reserved spectrum.
 From the point of view of the PN, BR entails a tradeoff between the benefits of an improved coexistence with SUs, and the capacity reduction associated to having fewer options for PU channel allocation.
 The SUs are characterized by a hardware limited radio, imperfect spectrum sensing, bayesian estimation of PU activity and multichannel access. 
 By means of a Markov-reward model, we compute the expected PU capacity with and without BR, considering propagation effects, interference and random locations.
 The results show that, in a non-congested PN with SU activity, the interference reduction capability of BR increases the overall capacity of the PN compared to not using BR.
+
+\bibentry{ref:Alcaraz2014_BR}
 \item Chapter \ref{SPEC_MAN_chap}: On the Impact of Licensed Users Management on the Efficiency of Opportunistic Spectrum Access.
 The main contribution of this work is to evaluate resource management strategies for licensed users that are intuitively more suitable for coexistence with OSA nodes, but not implying a direct cooperation with them.
 We also develop an OSA policy optimization procedure handling partial and unreliable spectrum observations at the SUs.
 The formulation combines SU throughput and PU performance degradation, characterized by the overlapping time with SU activity which is a more general parameter than collision probability.    
 Although it may raise some concerns about the robustness of this approach, our results show that estimation inaccuracies have a very small effect on the quality of service attained by the PUs.
+
+\bibentry{ref:Alcaraz2015_SPEC_MAN}
 \item Chapter \ref{RSM_chap}. Response Surface Methodology for Efficient Spectrum Reuse in Cellular Networks.
 As cellular network technology evolves, the operators deploy new generation networks while maintaining their legacy networks, since not all users upgrade their terminals at the same pace.
 Therefore, the spectrum associated to these legacy networks becomes gradually underused.
@@ -93,7 +105,8 @@ We propose a semi-decentralized scheme in which a cellular operator guides the s
 The mechanism dynamically learns the optimal parameters by means of a response surface methodology (RSM), implying a very small signalling overhead.
 Our results show a notable capacity improvement compared to the classical approaches of exploiting spatial or temporal opportunities.
 \end{itemize}  
-
+\bibentry{ref:Alcaraz2014_RSM}
+\bibentry{ref:Alcaraz2015_RSM}
 Part \ref{part_auto} of the thesis contains those works in the field of automated spectrum trading. 
 It is especially in this part where the our low-complexity-intention has a greater significance, since most previous works are dealing with great convoluted markets and neglecting the importance of real-time adaptation, as our survey in chapter \ref{Survey_chap} shows. 
 Our contribution in this topic can be summarized as follows:
@@ -105,14 +118,18 @@ We identify the specific aspects that make spectrum different from conventional 
 We discuss past, current approaches and future research lines, highlighting their advantages and disadvantages. 
 Each sub-topic is presented and developed explicitly with references to previous works where each aspect has been considered or addressed.
 Finally, as a conclusion of the surveying effort, we highlight overlooked issues of automated spectrum trading, with a special focus on practical implementation.
+\bibentry{ref:Mario2014}
 \item Chapter \ref{Sarnoff_chap} An MDP Framework for Centralized Dynamic Spectrum Auction.
 This work addresses the design of centralized DSA MAC protocols comprising dynamic spectrum auction. We explore the possibilities of a formal design based on a Markov decision process (MDP) formulation. We propose a design framework to balance the grade-of-service (given by the blocking probability for LUs) and the expected economic revenue provided by the SUs' accepted bids. 
 This trade-off can be managed in two ways. One consists of computing a single objective value given by a combination of the blocking probability and the expected revenue. 
 The weights assigned to each objective determine the point in the Pareto front where the obtained policy lies. The other approach, consists of solving for one of the objectives and setting constraints on the remaining ones.
 Our paper focuses on centralized trading in which we explore the use of MDP and CMDP formulations to balance benefit and grade of service for LUs. 
 The main advantages of this approach is that it assures operating at global optimum and reduces the computational effort at SUs.
+\bibentry{ref:Alcaraz2012}
 \item Chapter \ref{MAB_CSSA_chap}. A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing. In this last work we focus on Cooperative Spectrum Sharing (CSS). CSS is is an appealing approach for primary users (PUs) to share spectrum with secondary users (SUs) because it increases the transmission range or rate of the PUs. Most previous works are focused on developing complex algorithms which may not be fast enough for real-time variations such as channel availability and/or assume perfect information about the network. Instead, we develop a learning mechanism for a PU to enable CSS in a strongly incomplete information scenario with low computational overhead. Our mechanism is based on a Markovian variant of multi-armed bandits (MABs) called superprocess, enhanced with the concept of Upper Confidence Bound (UCB) from stochastic MABs. By means of Monte-Carlo simulations we show that, despite its low computational overhead, it converges to the optimal solution and outperforms previous approaches such as $\epsilon$-greedy. This algorithm can be extended to include more sophisticated features while maintaining its desirable properties such as low computational overhead and fast speed of convergence. 
 \end{itemize}
+\bibentry{ref:Mario2015_MAB_CSSA_1}
+\bibentry{ref:Mario2015_MAB_CSSA_2}
 
 \section{Methodology}
 

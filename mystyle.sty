@@ -34,7 +34,8 @@
 
 % Other
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage{hyperref}		% For PDF navigation
+\usepackage{bookmark}		% ''
 \usepackage{array}
 \usepackage{enumerate}
 \usepackage{pdflscape}			
@@ -42,6 +43,9 @@
 \usepackage{algorithm}
 \usepackage{threeparttable}
 \usepackage{tabulary}
+\usepackage{bibentry} 		%Add full in-text citation
+\usepackage{mathtools}
+\nobibliography*
 %\usepackage[latin1]{inputenc}		% Input accents and the like. Needed by BR?
 %\usepackage{subfig}				% Class memoir Warning. Memoir has its own methods
 %\usepackage{epsfig}
@@ -50,3 +54,5 @@
 \DeclareMathOperator*{\argmax}{arg\,max}	% Operator "arg max"
 \renewcommand{\vec}[1]{\mathbold{#1}}		% Vector
 \newcommand*{\mat}[1]{\mathbf{#1}}		% Matrix
+% Centered column type with desired length
+\newcolumntype{H}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}

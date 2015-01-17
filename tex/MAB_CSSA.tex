@@ -4,7 +4,7 @@
 \section{Introduction}
 
 The demand for wireless communications has kept growing in the recent years, to the point of making the traditional fixed licensing process obsolete \cite{ref:Valletti2001,ref:Jorswieck2013}. 
-In an effort to devise more efficient management of spectrum access, dynamic spectrum access (DSA) policies have been proposed \cite{ref:Zhao2007}. 
+In an effort to devise more efficient management of spectrum access, dynamic spectrum access (DSA) policies have been proposed \cite{ref:Zhao2007_sur}. 
 DSA allows secondary users (SUs) without license to opportunistically access the spectrum, sparsely used by the primary users (PUs). 
 A subset of these policies, spectrum trading policies \cite{ref:Mario2014}, aim to create a highly dynamic market of spectrum.
 Among other proposed solutions, spectrum trading has a key advantage: it provides the primary users with economic and/or any other incentives to allow access to their resources. 
@@ -46,7 +46,7 @@ Our solution is not only directly implementable, without strong assumptions, but
 \begin{table*}
 \begin{threeparttable}
 \caption{Summary of related works}
-\label{Table1}
+\label{MAB_CSSA_table_related_work}
 \begin{tabular}{|p{1.7cm}|*{7}{p{1.75cm}|}}
 \hline
     & Our work & \cite{ref:Feng2014} & \cite{ref:Duan2014} & \cite{ref:Yan2013} & \cite{ref:Zhang2012_Fair} & \cite{ref:Yi2010} &  \cite{ref:Yuan2013} \\\hline
@@ -76,7 +76,7 @@ Other approaches like the ones proposed in \cite{ref:Yuan2013,ref:Han2010,ref:Li
 Although it is possible to design mechanisms that provide incentives to selfish SUs to collaborate with the PT (cooperation in terms of game theory \cite{ref:Zhang2012_Fair}), they require the exchange of several messages between these individuals, and therefore a loss in transmission efficiency, as pointed out in \cite{ref:Niyato2008}.
 
 These selfish entities, however, do have incentives to make strategies and/or collude against the PT. 
-In our proposal the PT employs one-to-one bargaining instead of broadcast offers, as \cite{ref:Yan2013}, but we consider more than one SU. The benefits of one-to-one transactions versus broadcast mechanisms \cite{ref:Feng2014,ref:Duan2014,ref:Jayaweera2011,ref:Zhang2009,ref:Simeone2008} are: the reduction of the strategic power of the SUs, as they cannot overhear public offers or other information about their competitors; their robustness against collusions of SUs \cite{ref:Alcaraz2014}; and the reduction of the communication overhead on the control channels in comparison to widespread mechanisms such as auctions \cite{ref:Feng2014, ref:Jayaweera2011} (\textit{e.g.,} multiple rounds of bidding messages).
+In our proposal the PT employs one-to-one bargaining instead of broadcast offers, as \cite{ref:Yan2013}, but we consider more than one SU. The benefits of one-to-one transactions versus broadcast mechanisms \cite{ref:Feng2014,ref:Duan2014,ref:Jayaweera2011,ref:Zhang2009,ref:Simeone2008} are: the reduction of the strategic power of the SUs, as they cannot overhear public offers or other information about their competitors; their robustness against collusions of SUs \cite{ref:Alcaraz2014_coa}; and the reduction of the communication overhead on the control channels in comparison to widespread mechanisms such as auctions \cite{ref:Feng2014, ref:Jayaweera2011} (\textit{e.g.,} multiple rounds of bidding messages).
  
 Auction mechanisms are also a popular approach to handle the incomplete information issues in CSS.
 Truthful auctions allow optimal solutions without assuming the knowledge of private information, but at the cost of complex winner-selection algorithms and/or increased communication overheads. 
@@ -96,7 +96,7 @@ Other related works explore alternative flavors of CSS. For example \cite{ref:Tr
 The work in \cite{ref:Shao2014} shows the optimal strategy of a SU which is allowed to dynamically decide whether it enters a CSSs or a spectrum leasing market. A close related topic to CSS is the overlay cognitive radio network paradigm \cite{ref:Goldsmith2009}, by which a SU acts as relay for the PU and, at the same time, transmits its own message. 
 The interference constraint on the SU transmission is enlarged thanks to the cooperative transmission and the use of interference cancellation techniques \cite{ref:Han2010}. 
 
-Table \ref{Table1} summarizes the most significant features of our paper and compares it to previous works. 
+Table \ref{MAB_CSSA_table_related_work} summarizes the most significant features of our paper and compares it to previous works. 
 Note that for those works analyzing different configurations, we select and compare to the one closest to our proposal. 
 
 \section{System Model}\label{sec:Sys}

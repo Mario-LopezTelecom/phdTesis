@@ -47,7 +47,7 @@ This strategy results in a constrained MDP formulation (CMDP) and the policies o
 %\subsection{Centralized access}
 
 Centralized dynamic spectrum trading has been addressed in previous works. In the proposal by Yu \textit{et. al.} \cite{ref:Yu2007}, the spectrum broker controls the access of SUs based on a threshold rule computed by means of an MDP formulation with the objective of minimizing the blocking probability of secondary users. In order to cope with the non-stationarity of traffic conditions, the authors propose a finite horizon MDP instead of an infinite horizon one. The drawback is that the policy cannot be computed off-line, imposing a high computational overhead on the system.
-Tang \textit{et. al.} study in \cite{ref:Tang2009} several admission control schemes at a centralized spectrum manager. The objective is to meet the traffic demands of SUs, increasing spectrum utilization efficiency while assuring a grade of service in terms of blocking probability to primary users. Among the schemes analyzed, the best performing one is based on a constrained Markov decision process (CMDP).
+Tang \textit{et. al.} study in \cite{ref:Tang2009_per} several admission control schemes at a centralized spectrum manager. The objective is to meet the traffic demands of SUs, increasing spectrum utilization efficiency while assuring a grade of service in terms of blocking probability to primary users. Among the schemes analyzed, the best performing one is based on a constrained Markov decision process (CMDP).
 
 %Centralized access has received less attention than decentralized access in cognitive radio research in general and in the application of MDP in particular. On the one hand, decentralized access constitutes a harder research challenge because each agent only has partial and sometimes unreliable information about the wireless network and the spectrum bands. 
 %This leads to the harder POMDP problems. 
@@ -279,7 +279,7 @@ Note that both the offered prices and their probability distributions are static
 %\centerline{\psfig{figure=MDPauction1030.eps,width=3cm} }
 \label{fig:subfig3auction}
 }
-\caption[]{Pareto fronts obtained for the auction-based access in scenario 1 \subref{fig:subfig1auction}, scenario 2 \subref{fig:subfig2auction} and scenario 3 \subref{fig:subfig3auction}.}\label{fig:MDPauction}
+\caption[]{Pareto fronts obtained for the auction-based access in scenario 1, scenario 2 and scenario 3.}\label{fig:MDPauction}
 \end{figure}
 
 Figure \ref{fig:MDPauction} shows the Pareto fronts for the auction-based system in the three scenarios. It can be observed that, for the same traffic intensity (the three scenarios receive 40 calls per unit of time) when the traffic share of the SUs is higher, the income obtained from SUs increases at the time that the blocking probability of the LUs diminishes. It is interesting to check that, especially in scenarios 2 and 3, a very small increment of LU blocking probability can multiply the benefit obtained from spectrum leasing by a factor of 2 or 3. On the other hand, these figures also indicate that once the income surpasses certain threshold, Pareto-optimal policies can only produce small increments of the income by dramatically rising LU blocking probability.
@@ -301,7 +301,7 @@ Figure \ref{fig:MDPauction} shows the Pareto fronts for the auction-based system
 %\centerline{\psfig{figure=Policy3010.eps,width=3cm} }
 \label{fig:subfig3policy}
 }
-\caption[]{Graphical representation of policies attaining 0.04 LU blocking probability for the auction-based access in scenario 1 \subref{fig:subfig1policy}, scenario 2 \subref{fig:subfig2policy} and scenario 3 \subref{fig:subfig3policy}.}\label{fig:Policies}
+\caption[]{Graphical representation of policies attaining 0.04 LU blocking probability for the auction-based access in scenario 1, scenario 2, and scenario 3.}\label{fig:Policies}
 \end{figure}
 
 %A graphical representation of three policies of the first scenario can be observed in Fig. \ref{fig:Policies}. 
