@@ -133,3 +133,21 @@ The main advantages of this approach is that it assures operating at global opti
 
 \section{Methodology}
 
+This thesis is part of the project “ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM)",funded by the Spanish Ministry of Economy and Competitiveness. The CALM project is organized as a set of objectives interrelating key technologies for the Future Internet, with a special focus on mathematical tools for the development, analysis and improvement of networks and protocols. 
+
+%Regarding the field of applicability, we are focused on the issues at the link-layer of cognitive networks. 
+
+We strongly rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson model as traffic generation model. Such models have been widely used and validated on previous literature [CITE A BOOK]. 
+
+Our proposed coexistence mechanisms and policies in this thesis are grounded in Markov Decision Processes (MDPs) (chapters \ref{BD_chap,SPEC_MAN_chap,Sarnoff_chap,MAB_CSSA_chap} \cite{ref:Puterman2005}. The suitability of this tool for our scenario is straightforward to see: Markov models "are applicable to any dynamic system whose evolution over time involves uncertainty" \cite{ref:Bertsekas}.
+
+Towards the end of my Ph.D. studies, however, our focus gradually shifted to on-line learning algorithms, employing tools like statistical inference (chapter \ref{BD_chap}) and reinforcement learning approaches \ref{Survey_chap,RSM_chap,MAB_CSSA_chap}, with the latter being a natural step for us because its closeness to MDPs [chapter 1.6. SUTTON AND BARTO]. Such change was, indeed, motivated by our growing interest in addressing incomplete information scenarios, those for which some of the parameters of its stochastic models are not known or are not stationary. Trying to characterize incomplete information scenarios for all the possible values of the unknown parameters is computationally infeasible with MDPs, effect known as "the curse of dimensionality". [CITE SUTTON AND BARTO U OTRO].
+
+Some of these tools like Response Surface Methodology (RSM) \ref{RSM_chap} or Multi-Armed bandits (MABs) \ref{MAB_CSSA_chap} [CITATION] are of new applicability to coexistence issues in cognitive radio and are becoming hot topics, not only in the research community [CITATION] but also outside of it [CITATION].
+
+Regarding the analysis and numerical evaluation of our mechanisms, Markov reward processes were used, mainly in their discrete form, but in chapter \ref{BR_chap}, a numerical evaluation of a coexistence scheme, by means of a continuous Markov process, is the central result. Either accompanying the previous tools as in chapters \ref{BD_chap, BR_chap} or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation [CITATION] [DEEPER EXPLANATION]. 
+
+Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked in MATLAB [CITE], Mathematica [CITE] for mathematical derivations, and the OMNET simulator [CITE] in the particular  case of chapter \ref{BR_chap} (used for numerical evaluation). However, toward the end of my Ph.D. studies, we started using other development platforms such as Python with SciPy [CITE] and R, because of its great community support and because they are open source.
+
+
+
