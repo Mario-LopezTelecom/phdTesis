@@ -16,7 +16,18 @@
 				"main.lot",
 				"main.out",
 				"main.synctex.gz",
-				"main.toc"
+				"main.toc",
+				"tex/BD.aux",
+				"tex/BD.fdb_latexmk",
+				"tex/BD.log",
+				"tex/Intro.fdb_latexmk",
+				"tex/Intro.log",
+				"tex/SPEC_MAN.aux",
+				"tex/SPEC_MAN.fdb_latexmk",
+				"tex/SPEC_MAN.log",
+				"main.bbl",
+				"main.blg",
+				"tex/Intro.aux"
 			],
 			"path": "."
 		}

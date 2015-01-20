@@ -11,15 +11,7 @@
 			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 1062,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tex/Intro.tex",
-			"settings":
-			{
-				"buffer_size": 21701,
+				"buffer_size": 1039,
 				"line_ending": "Unix"
 			}
 		}
@@ -77,13 +69,13 @@
 	"expanded_folders":
 	[
 		"/Users/mariol/Documents/git/TESIS",
-		"/Users/mariol/Documents/git/TESIS/bibtex",
-		"/Users/mariol/Documents/git/TESIS/originals",
 		"/Users/mariol/Documents/git/TESIS/tex"
 	],
 	"file_history":
 	[
 		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
+		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
 		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
@@ -92,7 +84,6 @@
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
 		"/Users/mariol/Documents/git/TESIS/tesis.sublime-project",
 		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
 		"/Users/mariol/Documents/git/TESIS/originals/BD_ICC/background_detection.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Intro.aux",
@@ -185,6 +176,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"table",
+			"Bertsekas",
 			"Alcaraz",
 			"Alcaraz2014",
 			"Table1",
@@ -310,9 +303,7 @@
 			"BR_fi",
 			"fig:",
 			"table",
-			"mab_table_related_work",
-			"table1",
-			"Table1"
+			"mab_table_related_work"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -425,15 +416,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1062,
+						"buffer_size": 1039,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								143,
-								143
+								161,
+								161
 							]
 						],
 						"settings":
@@ -447,41 +438,7 @@
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "tex/Intro.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 21701,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21697,
-								21697
-							]
-						],
-						"settings":
-						{
-							"spell_check": true,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 9493.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -502,18 +459,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.742601154375,
 			1.0
 		],
 		"rows":

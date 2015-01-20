@@ -61,8 +61,8 @@ In consequence, we think that \emph{time consumption should be regarded as a key
 
 % OTROS
 % ¿Por que consideramos siempre single radios?
-
-
+% Regarding the field of applicability, we are focused on the issues at the link-layer of cognitive networks. 
+% Incomplete information scenarios: those for which some of the parameters of its stochastic models are not known or are not stationary. 
 
 
 \section{Contributions and thesis structure}
@@ -132,22 +132,34 @@ The main advantages of this approach is that it assures operating at global opti
 \bibentry{ref:Mario2015_MAB_CSSA_2}
 
 \section{Methodology}
+This thesis is part of the project “ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM), funded by the Spanish Ministry of Economy and Competitiveness. The CALM project is organized as a set of objectives interrelating key technologies for the Future Internet, \emph{with a special focus on mathematical tools} for the development, analysis and improvement of networks and protocols.
 
-This thesis is part of the project “ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM)",funded by the Spanish Ministry of Economy and Competitiveness. The CALM project is organized as a set of objectives interrelating key technologies for the Future Internet, with a special focus on mathematical tools for the development, analysis and improvement of networks and protocols. 
+Most of our proposed coexistence mechanisms and policies in this thesis are grounded in Markov Decision Processes (MDPs) \cite{ref:Puterman2005}. The suitability of this tool for our scenario is straightforward to see: Markov models "are applicable to any dynamic system whose evolution over time involves uncertainty" \cite{ref:Bertsekas}, as it happens with the spectrum occupancy over time. The constrained-MDP (CMDP) used in chapter \ref{Sarnoff_chap} and the MDP formulated in chapter \ref{SPEC_MAN_chap}, derived from a Continuous Time Markov Chain (CTMC), are especially remarkable because of their far from common applicability in coexistence scenarios.  
 
-%Regarding the field of applicability, we are focused on the issues at the link-layer of cognitive networks. 
+Trying to characterize incomplete information scenarios, taking into account all the possible values of the unknown parameters is computationally infeasible with MDPs, effect known as "the curse of dimensionality" [CITE SUTTON AND BARTO or similar]. 
+In the chapters devoted to dealing with incomplete information, we focus on the development on-line learning algorithms, employing tools like statistical inference (chapter \ref{BD_chap}) and reinforcement learning approaches (chapters \ref{Survey_chap},\ref{RSM_chap},\ref{MAB_CSSA_chap}). Some of these tools like Response Surface Methodology (RSM) (chapter \ref{RSM_chap}) or Multi-Armed bandits (MABs) (chapter \ref{MAB_CSSA_chap}) are of new applicability to coexistence issues in cognitive radio and are becoming hot topics, not only in the research community [CITATION] but also outside of it [CITATION].
 
-We strongly rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson model as traffic generation model. Such models have been widely used and validated on previous literature [CITE A BOOK]. 
+Regarding the analysis and numerical evaluation of our mechanisms, Markov reward processes were used, mainly in their discrete form as Discrete Time Markov Chains (DTMC). Either accompanying the previous tool or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation [CITATION] [DEEPER EXPLANATION]. 
 
-Our proposed coexistence mechanisms and policies in this thesis are grounded in Markov Decision Processes (MDPs) (chapters \ref{BD_chap,SPEC_MAN_chap,Sarnoff_chap,MAB_CSSA_chap} \cite{ref:Puterman2005}. The suitability of this tool for our scenario is straightforward to see: Markov models "are applicable to any dynamic system whose evolution over time involves uncertainty" \cite{ref:Bertsekas}.
+We rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson model as traffic generation model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2}
+\begin{table}.
+\begin{tabular}{|m{5cm}|H{3.5cm}|H{3.5cm}|} \hline
+& \textbf{Tools used by proposed mechanisms} & \textbf{Numerical Evaluation}\\\hline
+Background Detection of Primary User Activity in Opportunistic Spectrum Access & Statistical inference,\newline MDP & DTMC,\newline Monte-Carlo sim.\\\hline
+Bandwidth Reservation as a Coexistence Strategy in Opportunistic Spectrum Access Environments & - & Stochastic model, DTMC, Monte-Carlo sim.\\\hline
+On the Impact of Licensed Users Management on the Efficiency of Opportunistic Spectrum Access
+ & MDP (from a CTMC) & DTMC \\\hline
+Response Surface Methodology for Efficient Spectrum Reuse in Cellular Networks & Reinforcement learning (RSM) & MC sim.\\\hline
+An MDP Framework for Centralized Dynamic Spectrum Auction & CMDP & DTMC \\\hline
+A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing & Reinforcement learning (MABs),\newline MDP & Monte-Carlo sim. \\\hline
+\end{tabular}
+\centering
+\caption{Relation of mathematical tools and thesis chapters}
+\label{intro_table_math_tools}
+\end{table}
 
-Towards the end of my Ph.D. studies, however, our focus gradually shifted to on-line learning algorithms, employing tools like statistical inference (chapter \ref{BD_chap}) and reinforcement learning approaches \ref{Survey_chap,RSM_chap,MAB_CSSA_chap}, with the latter being a natural step for us because its closeness to MDPs [chapter 1.6. SUTTON AND BARTO]. Such change was, indeed, motivated by our growing interest in addressing incomplete information scenarios, those for which some of the parameters of its stochastic models are not known or are not stationary. Trying to characterize incomplete information scenarios for all the possible values of the unknown parameters is computationally infeasible with MDPs, effect known as "the curse of dimensionality". [CITE SUTTON AND BARTO U OTRO].
 
-Some of these tools like Response Surface Methodology (RSM) \ref{RSM_chap} or Multi-Armed bandits (MABs) \ref{MAB_CSSA_chap} [CITATION] are of new applicability to coexistence issues in cognitive radio and are becoming hot topics, not only in the research community [CITATION] but also outside of it [CITATION].
-
-Regarding the analysis and numerical evaluation of our mechanisms, Markov reward processes were used, mainly in their discrete form, but in chapter \ref{BR_chap}, a numerical evaluation of a coexistence scheme, by means of a continuous Markov process, is the central result. Either accompanying the previous tools as in chapters \ref{BD_chap, BR_chap} or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation [CITATION] [DEEPER EXPLANATION]. 
-
-Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked in MATLAB [CITE], Mathematica [CITE] for mathematical derivations, and the OMNET simulator [CITE] in the particular  case of chapter \ref{BR_chap} (used for numerical evaluation). However, toward the end of my Ph.D. studies, we started using other development platforms such as Python with SciPy [CITE] and R, because of its great community support and because they are open source.
+Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB [CITE], Mathematica [CITE] for mathematical derivations, and the OMNET simulator [CITE] in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy [CITE] and R, because of its great community support and because they are open source.
 
 
 
