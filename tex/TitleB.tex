@@ -1,0 +1,55 @@
+\graphicspath{ {img/} }
+\definecolor{titlepagecolor}{cmyk}{0,0,0,1}
+\backgroundsetup{
+scale=1,
+angle=0,
+opacity=1,
+contents={\begin{tikzpicture}[remember picture,overlay]
+ \path [fill=titlepagecolor] (current page.west)rectangle (current page.north east); 
+ \draw [color=white, very thick] (6,0)--(6,0.5\paperheight);
+\end{tikzpicture}}
+}
+
+\makeatletter                   
+\def\printauthor{%                  
+    {\large \@author}}          
+\makeatother
+
+\author{%
+
+    }
+\begin{titlingpage}
+\BgThispage
+\newgeometry{left=0.5cm,right=4cm,bottom=2cm}
+\vspace*{0.25\textheight}
+\noindent
+\includegraphics{logo.eps}\\\\ 
+\textcolor{white}{\Huge\textbf{{Coexistence policies in cognitive radio}}}\vspace*{0.25cm}\\
+\noindent
+\hspace*{1cm}\textcolor{white}{\normalsize{Ph.D. dissertation (draft)}}
+\vspace*{3cm}\par
+\noindent
+\hspace*{3.5cm}
+\begin{minipage}{0.35\linewidth}
+    \begin{flushright}
+    Supervised by: \\
+    \textbf{Juan J. Alcaraz}\\
+    \texttt{juan.alcaraz@upct.es}
+    \vspace*{1cm}\\
+    Department of Information and Communication Techonlogies\\
+    \end{flushright}
+\end{minipage} \hspace{15pt}
+%
+\begin{minipage}{0.02\linewidth}
+    \rule{1pt}{175pt}
+\end{minipage} \hspace{0pt}
+%
+\begin{minipage}{0.63\linewidth}
+\vspace{8pt}
+    \Large{Mario L\'{o}pez-Mart\'{i}nez} \\
+    \large\texttt{mario.lopez@upct.es} \\
+\end{minipage}
+\vfill
+\hspace{0.5\linewidth}January 2015
+\end{titlingpage}
+\restoregeometry

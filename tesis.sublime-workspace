@@ -11,15 +11,7 @@
 			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 1039,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tex/Abstract.tex",
-			"settings":
-			{
-				"buffer_size": 2069,
+				"buffer_size": 1020,
 				"line_ending": "Unix"
 			}
 		},
@@ -27,7 +19,32 @@
 			"file": "tex/Intro.tex",
 			"settings":
 			{
-				"buffer_size": 24158,
+				"buffer_size": 26495,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mystyle.sty",
+			"settings":
+			{
+				"buffer_size": 1718,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tex/TitleB.tex",
+			"settings":
+			{
+				"buffer_size": 1785,
+				"line_ending": "Unix",
+				"name": "\\usepackage{geometry}"
+			}
+		},
+		{
+			"file": "bibtex/aux_thesisBib.tex",
+			"settings":
+			{
+				"buffer_size": 59276,
 				"line_ending": "Unix"
 			}
 		}
@@ -90,6 +107,8 @@
 	],
 	"file_history":
 	[
+		"/Users/mariol/Documents/git/TESIS/tex/Title.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
@@ -115,7 +134,6 @@
 		"/Users/mariol/Documents/git/TESIS/tex/RSM.tex",
 		"/Users/mariol/Documents/git/MAB_CSSA_manuscript/macICC15.tex",
 		"/Users/mariol/Library/Application Support/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
-		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/TESIS/main.tex",
 		"/Users/mariol/Documents/git/TESIS/other/memman.pdf",
 		"/Users/mariol/Documents/git/TESIS/other/untitled.py",
@@ -193,6 +211,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"DSA",
+			"dynamic spectrum access",
 			"Reinforceme",
 			"Sutton",
 			"Golds",
@@ -318,9 +338,7 @@
 			"{figure}[",
 			"Effect of PU",
 			"\\label{BR_fig_Interference}",
-			"\\label{BR_fig_I",
-			"\\label{BR_",
-			"BR_fi"
+			"\\label{BR_fig_I"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -424,7 +442,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -433,15 +451,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1039,
+						"buffer_size": 1020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								158,
-								158
+								490,
+								490
 							]
 						],
 						"settings":
@@ -450,55 +468,27 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "tex/Abstract.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2069,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								962,
-								962
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 326.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "tex/Intro.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 24158,
+						"buffer_size": 26495,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23061,
-								23061
+								32,
+								0
 							]
 						],
 						"settings":
@@ -506,10 +496,97 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 9038.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "mystyle.sty",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								127,
+								127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/TeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tex/TitleB.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1785,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								790,
+								790
+							]
+						],
+						"settings":
+						{
+							"auto_name": "\\usepackage{geometry}",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 519.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "bibtex/aux_thesisBib.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 59276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1872,
+								1872
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2986.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
