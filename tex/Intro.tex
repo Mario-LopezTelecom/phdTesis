@@ -2,13 +2,13 @@
 \chapter{Introduction}
 \section{Why Coexistence Policies?}
 Wireless communications need, among other resources, radio-electric spectrum, which is finite. 
-Government agencies, such as the FCC in the United States or the Electronic Communications Committee (ECC) through national administrations in Europe, grant access to it through fixed, long-term licenses on large geographical areas, in what is called the "command-and-control" management scheme. 
-Licenses were given to operators in national lotteries and comparative hearings first, and later through spectrum auctions. % Al principio, de hecho, las concedian en un first-come-first-served. Cuando la demanda creció, loterias y concursos. Finalmente, por aquello de que parece un procedimiento menos manipulable, las subastas.
+Government agencies, such as the FCC in the United States or the Electronic Communications Committee (ECC) through national administrations in Europe, grant access to it through fixed, long-term licenses on large geographical areas, in what is called the \enquote{command-and-control} management scheme. 
+Licenses were given to operators in a first-come-first-served basis initially. As the demand of spectrum grew, the procedure changed to national lotteries and comparative hearings. Nowadays, licenses are granted through spectrum auctions generating large revenues to the public administration. %Por aquello de que parece un procedimiento menos manipulable.
 Nevertheless, the ever-growing demand of spectrum due to the popularization of mobile services has left these traditional policies obsolete since almost all the spectrum has already been assigned. % Add figure (the typical with the spectrum assignments).
 
-However, several reports have been pointing out that most of the licensed spectrum show very little use. In 2002, the FCC Spectrum Policy Task Force \cite{ref:FCC2002} highlighted that typical channel occupancy of some public safety community, for example, could be less than 15\%. The European Commission, in 2007, also stated that "some users hold large amounts of valuable spectrum that they do not use to its full capacity" \cite{ref:Commission2007}.
+However, several reports have been pointing out that most of the licensed spectrum show very little use. In 2002, the FCC Spectrum Policy Task Force highlighted that the typical channel occupancy of a public safety community, for example, could be less than 15\% \cite{ref:FCC2002}. The European Commission, in 2007, also stated that \enquote{some users hold large amounts of valuable spectrum that they do not use to its full capacity} \cite{ref:Commission2007}.
 
-From early on, experts suggested \cite{ref:Valletti2001} it would be necessary to switch to a more flexible management to improve spectrum efficiency. In the US, the FCC started allowing license holders to lease their licenses under different constraints in 2003 \cite{ref:Mayo2010}, whereas in Europe is taking some more time: by 2011, only 9 out of 22 european countries surveyed by the Electronic Communications Committee (ECC) allowed spectrum leasing \cite{ref:ECC2011}. %OJO a la referencia a Mayo, explicitar a que estamos linkando mejor (no a ninguna ley de 2003).
+From early on, experts suggested it would be necessary to switch to a more flexible management to improve spectrum efficiency \cite{ref:Valletti2001}. In the US, the FCC started allowing license holders to lease their licenses under different constraints in 2003 \cite{ref:Mayo2010}, whereas in Europe is taking some more time: by 2011, only 9 out of 22 european countries surveyed by the ECC allowed spectrum leasing \cite{ref:ECC2011}. %OJO a la referencia a Mayo, explicitar a que estamos linkando mejor (no a ninguna ley de 2003).
 %¿Cual es la situacion actual en cuanto a regulacion y por que? Chequear:
 % - "Enabling efficient wireless communications..."(2010,paper)
 % - "The Spectrum Handbook" (2013, book)
@@ -21,48 +21,57 @@ A \emph{cognitive radio} has two main characteristics \cite{ref:Akyildiz2006}: c
 Cognitive capability refers to the ability of the radio to become aware of its surrounding radio environment. Reconfigurability refers to the ability of the radio of changing its transmission parameters dynamically.
 % Añadir la tipica figura de los huecos.
 
-In the most typical scenario, secondary users (SUs, unlicensed), equipped with cognitive radios, would look for unused fragments of spectrum and would use them for their transmissions subject to interference constraints for the protection of primary users (PUs, licensed). 
-This situation corresponds to the “Hierarchical Access Model”, also known as "Opportunistic Spectrum Access", one of the possible coexistence approaches under “Dynamic Spectrum Access” (DSA) but there are others \cite{ref:Zhao2007_sur}. 
-Along the lines of current regulation models is the “Dynamic Exclusive Use Model”, which considers leasing or selling licenses but at a smaller time-scale, even in real-time basis and with a free choice of technology.
+In the most typical scenario, secondary users (SUs, unlicensed), equipped with cognitive radios, would look for unused fragments of spectrum in licensed bands and would use them for their transmissions subject to interference constraints for the protection of primary users (PUs, licensed). That is, PUs and SUs will coexist in some areas.
+This situation corresponds to the “Hierarchical Access Model”, also known as \emph{Opportunistic Spectrum Access (OSA)}, one of the possible coexistence approaches under \emph{Dynamic Spectrum Access (DSA)} but there are others \cite{ref:Zhao2007_sur}. 
+Along the lines of current regulation models is the Dynamic Exclusive Use Model, also called \emph{spectrum trading}, which considers leasing or selling licenses but at a smaller time-scale, even in real-time basis and with a free choice of technology.
 Lastly, the “Spectrum Commons Model”  assumes open sharing with no categories of users.
 % ¿Añadir grafico con los tipos de modelos?
 
 DSA has recently gained popularity because of the TV digitalization, in order to take advantage of the spectrum opportunities it has generated. % Añadir año. Explicar que se libera espectro procedente de las teles analogicas pero se nombra a algunos usuarios particulares como primarios.
 Therefore, the last few years have seen some DSA standards such as IEEE 802.22 [9], ECMA-392 [10], 802.11af [12], 802.19.1 [11] and IEEE SCC41 [13].
 
-No matter which model is considered, spectrum sharing is still annoying to licensed operators at present, because it implies additional costs to them such as changes in their infrastructures, QoS impairments due to interferences, or profit reduction due to increased competition, while they have already paid for their licenses. %Una cita de los operadores hablando de cog. radio? 
-Protecting and creating incentives for PUs instead of forcing them avoids that actual spectrum owners, as well as prospective ones, feel discouraged from investing in new spectrum technologies and services: "why am I going to spend money in spectrum if the government is going to give it for free to others?".
+No matter which model is considered, DSA is still annoying to licensed operators at present, because it implies additional costs to them such as changes in their infrastructures, QoS impairments due to interferences, or profit reduction due to increased competition, while they have already paid for their licenses. %Una cita de los operadores hablando de cog. radio? 
+Protecting and creating incentives for PUs instead of forcing them avoids that actual spectrum owners, as well as prospective ones, feel discouraged from investing in new spectrum technologies and services: \enquote{why am I going to spend money in spectrum if the government is going to give it for free to others?}.
 
-Therefore, it is needed that these operators believe in an automated mechanism that controls their profits. But this idea alone is scary. "Is there any security on obtaining benefit"? It is hard to convince the telecommunications industry to adopt automated dynamic spectrum management mechanisms if there is no strong evidence that these algorithms do not lead to economic loses (due to disadaptation to real time, for example). Optimality, then, remains in the background.
+It is needed that these operators believe in an automated mechanism that controls their profits. But this idea alone is scary: \enquote{How big is the risk of experiencing a great economic loss?}. Especially if they take into account incidents like the one experienced in 2012 by the Knight Capital Group in the related
+field of High Frequency Trading of stocks \cite{web:Silver2012} where the firm's algorithms caused a loss of \$440 million in 30 minutes (four times its net income from 2011).
 
-\subsection{Thesis Motivation and Objectives}
+It is hard to convince the telecommunications industry to adopt automated dynamic spectrum management mechanisms if there is no strong evidence that these algorithms are safe againist wrong decisions (due to disadaptation to real time, for example). We believe that optimality, then, should be considered as a secondary objective.
 
-As discussed in previous section, while DSA has been widely accepted as the most promising approach to address the spectrum inefficiency problem, there are still some concerns that hinder its fully adoption in the telecom industry \cite{ref:Kelly2012}.
-% Añadir cita que corrobore esto. De momento... 
+\section{Motivation and Objectives}
 
-Spectrum holders demand a higher level of protection for PU communications, and a better incentive design. In consequence, our\footnote{I will be using the first person plural voice by default throughout my thesis. Most of the ideas and work is a team effort involving my supervisor and other authors. This should not be detrimental of showing off my autonomy, but even my personal decisions where strongly inspired by others' opinions. Meaningful research is not done (should not be done) by a single person in a vacuum. Thus, I consider artificial the use of "I" here. In other parts of this work, such first person plural will also include the reader, primarily when describing mathematical derivations, as a natural way of walking him through the process.} \emph{motivation} in this thesis is, therefore, \emph{to develop dynamic spectrum access mechanisms with a strong focus on the protection and creation of incentives to the PUs.}. We directed our attention to the Opportunistic Spectrum Access (OSA) framework, as it is more conservative regarding PU's protection, and spectrum trading in the search of incentives.
-Improvements in the Spectrum Commons Model is out of the scope of this thesis, since it removes property rights over spectrum and its challenges are significantly different. There is a long ongoing debate of whether such a drastic change of paradigm is convenient \cite{ref:Peha2005} given the success witnessed in unlicensed bands (e.g. ISM bands).
+As discussed in the previous section, while DSA has been widely accepted as the most promising approach to address the spectrum inefficiency problem, there are still some concerns that hinder its fully adoption in the telecom industry \cite{ref:Kelly2012}.
+% Añadir cita que corrobore esto. De momento se queda la que hay.
 
-More specifically, we have identified the following unresolved issues in OSA: 
+Spectrum holders and regulators alike demand a higher level of protection for PU communications, and a better incentive design. In consequence, our\footnote{I will be using the first person plural by default throughout my thesis. Most of the ideas and work is a team effort involving my supervisor and other authors. This should not be considered as something that works against showing my autonomy, but even my personal decisions where strongly inspired by others' opinions. Meaningful research is not done (or should not be done) by a single person in a vacuum \cite{ref:Mihaly2013}. Thus, I consider artificial the use of singular forms here. In other parts of this thesis, such first person plural also includes the reader, primarily when describing mathematical derivations, as a natural way of walking him through the process.} \emph{motivation} in this thesis is, \emph{to develop dynamic spectrum access mechanisms with a strong focus on the protection and creation of incentives to the PUs.}. We directed our attention to the Opportunistic Spectrum Access framework, as it is more conservative regarding PU's protection, and to spectrum trading in our search for incentives.
+Improvements in the Spectrum Commons Model are out of the scope of this thesis, since it removes property rights over spectrum and its challenges are significantly different.\footnote{There has been a long ongoing debate about whether such a drastic change of paradigm is convenient \cite{ref:Peha2005}, given the success witnessed in unlicensed bands (e.g. in the ISM band).}
+
+More specifically, we set the following sub-objectives regarding unresolved issues in OSA: 
 \begin{itemize}
-\item Established bounds on the primary performance degradation have been heterogeneous in nature and difficult to assess.
-\item The sensing-throughput trade-off could be enhanced significantly 
-\item Exploring the options available to the primary operators for easing the coexistence with secondary devices.
-\item Proposing an application of OSA with practical interest to the telecommunications industry, and therefore motivating its adoption.
+\item Improving existing MAC protocols for single-radio transceivers (addressed in chapters \ref{BD_chap} and \ref{SPEC_MAN_chap}).
+\item Assessing the impact of the secondary activity on primary users' performance. Established bounds in the OSA literature have been heterogeneous in nature and difficult to assess (chapters \ref{BR_chap} and \ref{SPEC_MAN_chap}).
+\item Exploring the options available to the primary operators for easing the coexistence with secondary devices (chapters \ref{BR_chap} and \ref{SPEC_MAN_chap}).
+\item Proposing an application of OSA with practical interest to the telecommunications industry, and therefore motivating its adoption (chapter \ref{RSM_chap}).
 \end{itemize}
 
-With respect to open challenges in spectrum trading:
+With respect to the open challenges in spectrum trading, we pursued the following sub-goals:
 \begin{itemize}
-\item It lacked an unified, structured and critic view of its characteristic challenges and proposed solutions so far.
-\item Most previous works were focused on economic transactions., However, other trades could add non-sustituable value to the trading and enhance spectrum efficiency.
-\item  The main tendency of previous (and contemporaneous) solutions in the area has been building increasingly complex models. Nonetheless, the resources required to reach such elaborated solutions have not been considered enough, specially time.
+\item Providing an unified, structured and critic view of its characteristic challenges and proposed solutions so far, not done before (chapter \ref{Survey_chap}).
+\item Balancing PUs' QoS with the economic revenue obtained by selling spectrum opportunities to SUs (chapter \ref{Sarnoff_chap}). 
+\item Exploring mechanisms not based on monetary values. Most previous works are focused on economic transactions. However, other types of trades could add non-substitutable value such as trading spectrum opportunities for relay services (chapter \ref{MAB_CSSA_chap}).
 \end{itemize}
-This last item is pervasie in all our proposed mechanisms.
-Previous works' trend was to deal with more issues of spectrum in more convoluted scenarios, and aiming to solve them optimally and often neglecting computational and / or communication overhead.
-Time consumption is a relevant issue because multiple important parameters in spectrum experience rapid variations over time: spectrum opportunities, demand (unplanned peaks of traffic), valuation of the spectrum (changes in channel gains, mobility of entities), etc.
-In consequence, we believe that \emph{time consumption should be regarded as a key feature in spectrum management algorithms}: if obtaining an optimal solution takes so long that the system’s parameters vary significantly during the computation time, this solution will be not optimal when applied. 
+
+We also have two common sub-objectives for OSA and spectrum trading:
+\begin{itemize}
+\item Dealing with imperfect information scenarios. That is, those for which some of the parameters of their stochastic models are not known or are not stationary (chapters \ref{RSM_chap} and \ref{MAB_CSSA_chap}). 
+\item Keeping complexity low. The main tendency of previous (and contemporaneous) solutions in the area has been building increasingly complex models. Nonetheless, the resources required to reach such elaborated solutions have not been considered enough, specially time.
+\end{itemize}
+This last item pervades all our proposed mechanisms.
+Previous works' trend was to deal with more  issues of DSA in more convoluted scenarios, aiming to solve them optimally and often neglecting computational and / or communication overhead.
+Nevertheless, multiple parameters in DSA experience rapid variations over time: spectrum availability, demand (unplanned peaks of traffic), valuation of the spectrum (changes in channel gains, mobility of entities), etc.
+In consequence, we believe that \emph{time consumption should be regarded as a key feature in DSA algorithms}: if obtaining an optimal solution takes so long that the system’s parameters vary significantly during the computation time, this solution may render inefficient. 
 In addition, the more time devoted to negotiation among the agents, the less time used in transmission. 
-For that reason, it is more practical to design models that may not fully exploit spectrum in a particular moment (for example, by not taking into account spectrum geographical reuse) but that are capable of reducing the uncertainty due to the changes over time, and thus, providing higher guarantees on the agents’ satisfaction. 
+For that reason, it is more practical to design models that may not fully exploit spectrum in a particular moment (for example, by not taking into account spectrum geographical reuse) but that are capable of reducing the uncertainty due to the changes over time, and thus, providing higher guarantees on the agents’ benefit. 
 
 % OSA 
 % Para unos existe solo underlay y overlay (Zhao2007) y para otros interweave, underlay y overlay (Heng2012).
@@ -87,13 +96,13 @@ For that reason, it is more practical to design models that may not fully exploi
 % Incomplete information scenarios: those for which some of the parameters of its stochastic models are not known or are not stationary. 
 
 
-\section{Contributions and Thesis structure}
+\section{Contributions and Structure}
 
 Our contribution can be divided into two main blocks, coincident with the structure of the thesis. 
 Part \ref{part_OSA} features our contributions in the field of Opportunistic Spectrum Access. 
 This part is focused on protecting the PUs from interference caused by SUs access to spectrum, while trying to increase the spectrum usage efficiency. 
 The most common approach in previous literature is to study the sensing and access from the SUs perspective, that is, focusing exclusively on the design of SU access protocols (independently if the works are addressing the impact on PUs or on SUs).
-The original concept of cognitive radios, especially under an OSA approach, was to use such cognitive capabilities to make SUs access transparent (or as transaparent as possible) to the PUs. 
+The original concept of cognitive radios, especially under an OSA approach, was to use such cognitive capabilities to make SUs access transparent (or as transparent as possible) to the PUs. 
 However, we introduce the novel approach of allowing the primary network to adapt its resource allocation strategy in order to better coexist with cognitive devices. 
 
 In particular, the contributions described in every chapter and publications are as follows:
@@ -127,7 +136,7 @@ This chapter comprises two main contributions: first we develop an optimal SU ac
 The formulation combines SU throughput and PU performance degradation, characterized by the overlapping time with SU activity which is a more general parameter than collision probability.    
 As most OSA protocols, our approach requires the SU to characterize the traffic profile of the PUs. The results of this chapter also illustrate the robustness of our approach to misestimation of PU traffic intensity.
 
-Published as: sJ.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro, ``On the impact of licensed users management on the efficiency of
+Published as: J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro, ``On the impact of licensed users management on the efficiency of
   opportunistic spectrum access,'' \emph{{IEEE} Transactions on Cognitive
   Communications and Networking}, 2015.
 
@@ -146,7 +155,7 @@ Published as:
   in cellular systems,'' in \emph{11th International Symposium on Wireless
   Communications Systems ({ISWCS})}, Aug. 2014, pp. 486--490.
 
-\item J.~Alcaraz, J.~Ayala-Romero, M.~L\'{o}pez-Mart\'{i}nezz, and J.~Vales-Alonso, ``Response surface methodology for efficient spectrum reuse in cellular
+\item J.~Alcaraz, J.~Ayala-Romero, M.~L\'{o}pez-Mart\'{i}nez, and J.~Vales-Alonso, ``Response surface methodology for efficient spectrum reuse in cellular
   networks,'' in \emph{{IEEE} International Conference on Communications
   {ICC}}, 2015.
 \end{itemize}  
@@ -164,7 +173,7 @@ We discuss past, current approaches and future research lines, highlighting thei
 Each sub-topic is presented and developed explicitly with references to previous works where each aspect has been considered or addressed.
 Finally, as a conclusion of the surveying effort, we highlight overlooked issues of automated spectrum trading, with a special focus on practical implementation.
 
-Published as: M.~L\'{o}pez-Mart\'{i}nez, J.~J. Alcaraz, J.~Vales-Alonso, and J.~Garcia-Haro,
+Published as: M.~L\'{o}pez-Mart\'{i}nez, J.Alcaraz, J.~Vales-Alonso, and J.~Garcia-Haro,
   ``Automated spectrum trading mechanisms: understanding the big picture,''
   \emph{Wireless Networks}, 2014.
 \item Chapter \ref{Sarnoff_chap} An MDP Framework for Centralized Dynamic Spectrum Auction.
@@ -183,25 +192,30 @@ Published as J.~Alcaraz, J.~Ayala-Romero, M.~L\'{o}pez-Mart\'{i}nez, and J.~Vale
   ``Multi-armed bandits with dependent arms for cooperative spectrum sharing,''
   in \emph{{IEEE} International Conference on Communications {ICC}}, 2015.
 
-Submitted to: M.~L\'{o}pez-Mart\'{i}nez, J.~J. Alcaraz, B.~L., and M.~Zorzi, ``A superprocess with
+Submitted to: M.~L\'{o}pez-Mart\'{i}nez, J. Alcaraz, B.~L., and M.~Zorzi, ``A superprocess with
   upper confidence bounds for cooperative spectrum sharing,'' \emph{{IEEE}
   Trans. Mobile Comput.}.
 \end{itemize}
 
 \section{Methodology}
-This thesis is part of the project “ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM), funded by the Spanish Ministry of Economy and Competitiveness. The CALM project is organized as a set of objectives interrelating key technologies for the Future Internet, \emph{with a special focus on mathematical tools} for the development, analysis and improvement of networks and protocols.
+This thesis is part of the project “ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM), funded by the Spanish Ministry of Economy and Competitiveness. 
+The CALM project is organized as a set of objectives interrelating key technologies for the Future Internet, \emph{with a special focus on mathematical tools} for the development, analysis and improvement of networks and protocols.
 
-Most of our proposed coexistence mechanisms and policies in this thesis are grounded in Markov Decision Processes (MDPs) \cite{ref:Puterman2005}. The suitability of this tool for our scenario is straightforward to see: Markov models "are applicable to any dynamic system whose evolution over time involves uncertainty" \cite{ref:Bertsekas}, as it happens with the spectrum occupancy over time. The constrained-MDP (CMDP) used in chapter \ref{Sarnoff_chap} and the MDP formulated in chapter \ref{SPEC_MAN_chap}, derived from a Continuous Time Markov Chain (CTMC), are especially remarkable because of their far from common applicability in coexistence scenarios.  
+Most of our proposed coexistence mechanisms and policies in this thesis are grounded in Markov Decision Processes (MDPs) \cite{ref:Puterman2005}. 
+The suitability of this tool for our scenario is straightforward to see: Markov models \enquote{are applicable to any dynamic system whose evolution over time involves uncertainty} \cite{ref:Bertsekas}, as is the case of spectrum occupancy over time. 
+The constrained-MDP (CMDP) formulated in chapter \ref{Sarnoff_chap}, and the MDP derived from a Continuous Time Markov Chain (CTMC) in chapter \ref{SPEC_MAN_chap}, are especially remarkable because of their far-from-common presence in previous DSA works. 
 
-Trying to characterize incomplete information scenarios, taking into account all the possible values of the unknown parameters is computationally infeasible with MDPs, effect known as "the curse of dimensionality" [CITE SUTTON AND BARTO or similar]. 
-In the chapters devoted to dealing with incomplete information, we focus on the development on-line learning algorithms, employing tools like statistical inference (chapter \ref{BD_chap}) and reinforcement learning approaches (chapters \ref{Survey_chap},\ref{RSM_chap},\ref{MAB_CSSA_chap}). Some of these tools like Response Surface Methodology (RSM) (chapter \ref{RSM_chap}) or Multi-Armed bandits (MABs) (chapter \ref{MAB_CSSA_chap}) are of new applicability to coexistence issues in cognitive radio and are becoming hot topics, not only in the research community [CITATION] but also outside of it [CITATION].
+Trying to characterize incomplete information scenarios, by taking into account all the possible values of the (often continuous) unknown parameters, is computationally infeasible with MDPs. 
+This is known as \enquote{the curse of dimensionality} \cite{ref:Powell}. 
+In the chapters devoted to these scenarios, we resort to reinforcement learning approaches. Some of the tools used in this thesis like Response Surface Methodology (RSM) (chapter \ref{RSM_chap}) or Multi-Armed bandits (MABs) (chapter \ref{MAB_CSSA_chap}) are of new applicability to coexistence issues in cognitive radio and are becoming hot topics, not only in the research community \cite{ref:Bkassiny2013} but also in highly profitable businesses like online advertisement \cite{ref:White2012}. 
 
-Regarding the analysis and numerical evaluation of our mechanisms, Markov reward processes were used, mainly in their discrete form as Discrete Time Markov Chains (DTMC). Either accompanying the previous tool or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation [CITATION] [DEEPER EXPLANATION]. 
+Regarding the analysis and numerical evaluation of our mechanisms, we used Markov reward processes, mainly in their discrete form as Discrete Time Markov Chains (DTMC). Either accompanying the previous tool or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation.
+% ¿Incluir cita?
 
 We rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson model as traffic generation model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2}
 \begin{table}.
 \begin{tabular}{|m{5cm}|H{3.5cm}|H{3.5cm}|} \hline
-& \textbf{Tools used by proposed mechanisms} & \textbf{Numerical Evaluation}\\\hline
+\textbf{Chapters} & \textbf{Tools used by proposed mechanisms} & \textbf{Numerical Evaluation}\\\hline
 Background Detection of Primary User Activity in Opportunistic Spectrum Access & Statistical inference,\newline MDP & DTMC,\newline Monte-Carlo sim.\\\hline
 Bandwidth Reservation as a Coexistence Strategy in Opportunistic Spectrum Access Environments & - & Stochastic model, DTMC, Monte-Carlo sim.\\\hline
 On the Impact of Licensed Users Management on the Efficiency of Opportunistic Spectrum Access
@@ -216,7 +230,7 @@ A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing & R
 \end{table}
 
 
-Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB [CITE], Mathematica [CITE] for mathematical derivations, and the OMNET simulator [CITE] in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy [CITE] and R, because of its great community support and because they are open source.
+Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB \cite{ref:MATLAB}, Mathematica \cite{ref:Mathematica} for mathematical derivations, and the OMNET simulator \cite{ref:Omnet} in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy \cite{ref:SciPy} and R \cite{ref:RStudio}, because of their great community support and because they are open source.
 
 
 

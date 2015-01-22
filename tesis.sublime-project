@@ -27,7 +27,13 @@
 				"tex/SPEC_MAN.log",
 				"main.bbl",
 				"main.blg",
-				"tex/Intro.aux"
+				"tex/Intro.aux",
+				"tex/Abstract.aux",
+				"tex/Abstract.fdb_latexmk",
+				"tex/Abstract.log",
+				"tex/TitleB.aux",
+				"tex/TitleB.fdb_latexmk",
+				"tex/TitleB.log"
 			],
 			"path": "."
 		}

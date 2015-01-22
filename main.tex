@@ -9,17 +9,17 @@
 
 \begin{document}
 
-%\title
-
 \input{./tex/TitleB}
 \frontmatter
+%\clearpage
+\begin{KeepFromToc}
+  \tableofcontents
+\end{KeepFromToc}
 \clearpage
-\tableofcontents
-\clearpage
-\listoffigures
-\clearpage
-\listoftables
-\clearpage
+%\listoffigures
+%\clearpage
+%\listoftables
+%\clearpage
 \input{./tex/Abstract}
 
 \mainmatter
@@ -31,7 +31,7 @@
 \input{./tex/RSM}
 
 
-\part{Automated spectrum trading}\label{part_auto}
+\part{Automated Spectrum Trading}\label{part_auto}
 \input{./tex/Survey}
 \input{./tex/Sarnoff}
 \input{./tex/MAB_CSSA}
