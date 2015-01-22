@@ -36,6 +36,15 @@ Dealing with imperfect information makes optimal resource allocation more comple
 
 \subsection{Our contribution}
 \newcolumntype{x}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+Our contribution is summarized as follows:
+\begin{enumerate}[I]
+\item Our work is unique in its scope, focusing on automated spectrum trading as the most promising mechanism to solve spectrum scarcity.
+\item We identify the specific aspects that make spectrum different from conventional goods and the impact that these features have on automatic trading.
+\item We discuss past, current approaches and future research lines, highlighting their advantages and disadvantages. 
+\item Each sub-topic is presented and developed explicitly with references to previous works where each aspect has been considered or addressed.
+\item This work can serve as an introduction to the field for novel researchers, and is useful to experienced ones for its critical discussion of the most recent trends.
+\item Finally, as a conclusion of the surveying effort, we highlight overlooked issues of automated spectrum trading, with a special focus on practical implementation.
+\end{enumerate}
 \begin{landscape}
 \begin{table*}
 \caption{Summary of related works.''E'' means the topic is developed explicitly, ``I'' means the topic is developed implicitly, ``M'' means the topic is mentioned but not developed, ``X'' means the topic is not present. }
@@ -72,16 +81,6 @@ Protection against malfunctions					&	\textbf{E} 		& \textbf{E} 							& X 					
 \end{tabular}
 \end{table*}
 \end{landscape}
-Our contribution is summarized as follows:
-\begin{enumerate}[I]
-\item Our work is unique in its scope, focusing on automated spectrum trading as the most promising mechanism to solve spectrum scarcity.
-\item We identify the specific aspects that make spectrum different from conventional goods and the impact that these features have on automatic trading.
-\item We discuss past, current approaches and future research lines, highlighting their advantages and disadvantages. 
-\item Each sub-topic is presented and developed explicitly with references to previous works where each aspect has been considered or addressed.
-\item This work can serve as an introduction to the field for novel researchers, and is useful to experienced ones for its critical discussion of the most recent trends.
-\item Finally, as a conclusion of the surveying effort, we highlight overlooked issues of automated spectrum trading, with a special focus on practical implementation.
-\end{enumerate}
-
 Compared to previous works in this area such as \cite{ref:Maharjan2011,ref:Niyato2008_Spec,ref:Hossain2009,ref:Huang2013,ref:Zhang2013,ref:Akkara2011,ref:Zhang2012}, our work covers a broader range of aspects, as summarized in Table \ref{survey_table_related_work}.
 Although the scope of \cite{ref:Maharjan2011} claims to be ``economic approaches'', it devotes part of the survey to dynamic spectrum access, which has its own particularities. 
 In addition, it is structured around a classification of related works where the items are a mix of mathematical tools and market principles, specially focusing on game theory, while our work extends the classification including further aspects in spectrum trading such as its objectives, mechanisms, possible market forms, etc. 
@@ -127,7 +126,7 @@ When there are multiple sellers and buyers in an area,  the conflict between sel
 \begin{table}
 \caption{Classification of different works by their economic objective}
 \label{Survey_table_economic_obj}
-\begin{tabular}{|c|x{4cm}|} 
+\begin{tabular}{|c|H{8cm}|} 
 \hline
 Main economic objective & Works \\
 \hline
@@ -287,7 +286,7 @@ In this section, we explain which and how the characteristics of the spectrum tr
 \begin{table}
 \caption{Classification of papers by market mechanism and formulation framework}
 \label{Survey_table_market_formulation}
-\begin{tabular}{|x{1,5cm}|x{2cm}|x{3cm}|}
+\begin{tabular}{|H{2cm}|H{4cm}|H{7,5cm}|}
 \hline
 Market mechanism & Formulation framework & Works \\
 \hline
@@ -498,9 +497,9 @@ Other models rely entirely on optimization, such as \cite{ref:Mutlu2008}. In tha
 A fully decentralized approach is presented in \cite{ref:Wang2008}, where SUs are modeled in a non-cooperative game to determine the amount of power they are using to transmit (power is the traded good), given a price, which is computed by each user in a distributed fashion, using only local information (e.g, channel gains of its neighbors), avoiding the need of global information. The monopoly part of \cite{ref:Yang2011} proposes a distributed optimization similar to \cite{ref:Wang2008} among the monopolist and the SUs, where the monopolist computes part of the parameters for the pricing and broadcasts them to the SUs, which infer the rest. 
 
 \begin{table}
-\caption{Classification of papers by market form}
+\caption{Classification of papers by market form.}
 \label{Survey_table_market_form}
-\begin{tabular}{|c|x{5cm}|} 
+\begin{tabular}{|c|H{11cm}|} 
 \hline
 Market forms & Works \\
 \hline

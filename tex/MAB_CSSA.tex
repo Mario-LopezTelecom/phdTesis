@@ -43,11 +43,27 @@ Our solution is not only directly implementable, without strong assumptions, but
 % Because in a realistic setting the situation around the PT can change quickly (\textit{e.g.,} SUs arriving and leaving the system), our proposals aim to achieve a balance between the time devoted by the PT to exploration of options and the time spent exploiting the best alternative known so far, to maximize the PT's payoff over time.
 
 \section{Related Work}\label{sec:Rel}
+Many previous works in CSS such as \cite{ref:Simeone2008,ref:Zhang2009,ref:Yi2010,ref:Nadkar2011} consider perfect information scenarios. 
+They assume global knowledge of the network, actions and payoffs of other entities present in the system, and even private information like the value an entity gives to the traded good.
+It is unlikely that the SUs belonging to a different operator would reveal private information to the PT, taking into account that they may obtain higher payoffs by hiding it or even lying, at the cost of worsening the whole system. 
+Some of this private information, in addition, is non-mensurable. For example, if a PT suspects an SU is lying about its transmission power, it could check what the transmission power of an SU is, but there is no way to know how much battery it has left. 
+Our incomplete information scenario is stronger than most works addressing this issue. 
+For example, we do not assume any value range for received powers unlike \cite{ref:Feng2014}, and completely rely on learning to discover them. 
+
+Other approaches like the ones proposed in \cite{ref:Yuan2013,ref:Han2010,ref:Li2011} consider cooperation between networks belonging to different operators. 
+Although it is possible to design mechanisms that provide incentives to selfish SUs to collaborate with the PT (cooperation in terms of game theory \cite{ref:Zhang2012_Fair}), they require the exchange of several messages between these individuals, and therefore a loss in transmission efficiency, as pointed out in \cite{ref:Niyato2008}.
+
+These selfish entities, however, do have incentives to make strategies and/or collude against the PT. 
+In our proposal the PT employs one-to-one bargaining instead of broadcast offers, as \cite{ref:Yan2013}, but we consider more than one SU. The benefits of one-to-one transactions versus broadcast mechanisms \cite{ref:Feng2014,ref:Duan2014,ref:Jayaweera2011,ref:Zhang2009,ref:Simeone2008} are: the reduction of the strategic power of the SUs, as they cannot overhear public offers or other information about their competitors; their robustness against collusions of SUs \cite{ref:Alcaraz2014_coa}; and the reduction of the communication overhead on the control channels in comparison to widespread mechanisms such as auctions \cite{ref:Feng2014, ref:Jayaweera2011} (\textit{e.g.,} multiple rounds of bidding messages).
+
+Auction mechanisms are also a popular approach to handle the incomplete information issues in CSS.
+Truthful auctions allow optimal solutions without assuming the knowledge of private information, but at the cost of complex winner-selection algorithms and/or increased communication overheads. 
+\begin{landscape}
 \begin{table*}
 \begin{threeparttable}
 \caption{Summary of related works}
 \label{MAB_CSSA_table_related_work}
-\begin{tabular}{|p{1.7cm}|*{7}{p{1.75cm}|}}
+\begin{tabular}{|p{2.5cm}|*{7}{p{2.5cm}|}}
 \hline
     & Our work & \cite{ref:Feng2014} & \cite{ref:Duan2014} & \cite{ref:Yan2013} & \cite{ref:Zhang2012_Fair} & \cite{ref:Yi2010} &  \cite{ref:Yuan2013} \\\hline
 
@@ -61,25 +77,11 @@ Objective & \textbf{Max. PU reward} & \textbf{Max. PU reward} & \textbf{Max. PU 
 Year & \textbf{2014} & \textbf{2014} & \textbf{2014} & 2013 & 2012 & 2010 & 2013\\\hline
 \end{tabular}
 \begin{tablenotes}
-\item \hspace{5em} N/A = Not applicable, PN = Primary Network, SN = Secondary Network, MILP = Mixed Integer Linear Programming
+\item \hspace{1em} N/A = Not applicable, PN = Primary Network, SN = Secondary Network, MILP = Mixed Integer Linear Programming
 \end{tablenotes}
 \end{threeparttable}
 \end{table*}
-Many previous works in CSS such as \cite{ref:Simeone2008,ref:Zhang2009,ref:Yi2010,ref:Nadkar2011} consider perfect information scenarios. 
-They assume global knowledge of the network, actions and payoffs of other entities present in the system, and even private information like the value an entity gives to the traded good.
-It is unlikely that the SUs belonging to a different operator would reveal private information to the PT, taking into account that they may obtain higher payoffs by hiding it or even lying, at the cost of worsening the whole system. 
-Some of this private information, in addition, is non-mensurable. For example, if a PT suspects an SU is lying about its transmission power, it could check what the transmission power of an SU is, but there is no way to know how much battery it has left. 
-Our incomplete information scenario is stronger than most works addressing this issue. 
-For example, we do not assume any value range for received powers unlike \cite{ref:Feng2014}, and completely rely on learning to discover them. 
-
-Other approaches like the ones proposed in \cite{ref:Yuan2013,ref:Han2010,ref:Li2011} consider cooperation between networks belonging to different operators. 
-Although it is possible to design mechanisms that provide incentives to selfish SUs to collaborate with the PT (cooperation in terms of game theory \cite{ref:Zhang2012_Fair}), they require the exchange of several messages between these individuals, and therefore a loss in transmission efficiency, as pointed out in \cite{ref:Niyato2008}.
-
-These selfish entities, however, do have incentives to make strategies and/or collude against the PT. 
-In our proposal the PT employs one-to-one bargaining instead of broadcast offers, as \cite{ref:Yan2013}, but we consider more than one SU. The benefits of one-to-one transactions versus broadcast mechanisms \cite{ref:Feng2014,ref:Duan2014,ref:Jayaweera2011,ref:Zhang2009,ref:Simeone2008} are: the reduction of the strategic power of the SUs, as they cannot overhear public offers or other information about their competitors; their robustness against collusions of SUs \cite{ref:Alcaraz2014_coa}; and the reduction of the communication overhead on the control channels in comparison to widespread mechanisms such as auctions \cite{ref:Feng2014, ref:Jayaweera2011} (\textit{e.g.,} multiple rounds of bidding messages).
- 
-Auction mechanisms are also a popular approach to handle the incomplete information issues in CSS.
-Truthful auctions allow optimal solutions without assuming the knowledge of private information, but at the cost of complex winner-selection algorithms and/or increased communication overheads. 
+\end{landscape} 
 This may not be suitable for spectrum trading in short timescales. There are other mechanisms such as \cite{ref:Duan2014}, in which the authors do not assume perfect information and are concerned about the complexity of the algorithm. They develop a stochastic optimization based on contract theory. Nevertheless, in contrast to our proposal, they do not implement any learning process from successive interactions with SUs. Independent learning is a key feature of self-organizing networks and scalability, as indicated in the survey on market mechanisms assuming incomplete information for CSS in \cite{ref:Huang2013}.
 
 Our work is inspired by \cite{ref:Yan2013}, where the authors consider CSS between a PU and a cognitive SU pair in a repeated bargaining game. 
@@ -705,7 +707,7 @@ We summarize the information taken into account by each algorithm in Table \ref{
 \begin{threeparttable}
 \caption{Summary of the information exploited by each algorithm}
 \label{Table:info}
-\begin{tabulary}{8.5cm}{|l|C|C|C|C|}
+\begin{tabulary}{8.5cm}{|l|C|C|H{5cm}|H{5cm}|}
 \hline
 & $\overline\gamma_s$ & $\sigma_{\gamma_s}$ & Possible SU types for SU selection & Possible SU types for offer selection \\ \hline
 $\epsilon$-greedy & \checkmark & $\times$ & / & / \\ \hline
@@ -714,7 +716,7 @@ MAB-MDP           & \checkmark & \checkmark & / & \checkmark \\ \hline
 Super-UCB         & \checkmark & \checkmark & \checkmark & \checkmark \\ \hline
 \end{tabulary}
 \begin{tablenotes}
-\item \hspace{2em} \checkmark = exploited, / = partly exploited, $\times$ = not exploited
+\item \hspace{4em} \checkmark = exploited, / = partly exploited, $\times$ = not exploited
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
