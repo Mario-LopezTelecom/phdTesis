@@ -1,82 +1,36 @@
 % FALTA el grafico access.eps
 \graphicspath{ {img/SPEC_MAN/} }
 
-\chapter[On the Impact of Licensed Users Management on the Efficiency of Opportunistic Spectrum Access][Impact of Licensed Users Management on OSA]{On the Impact of Licensed Users Management on the Efficiency of Opportunistic Spectrum Access}\label{SPEC_MAN_chap}
+\chapter[Uncertainty-Aware Opportunistic Spectrum Access in Coexistence-Friendly Systems][Uncertainty-Aware OSA in Coexistence-Friendly Systems]{Uncertainty-Aware Opportunistic Spectrum Access in Coexistence-Friendly Systems}\label{SPEC_MAN_chap}
 
 \section{Introduction}\label{SPEC_MAN_sec_intro}
-One of the main research issues is how to preserve the quality of service (QoS) experienced by PUs while offering a reasonable grade of service to SUs.
-%To protect the PU's QoS, the SUs need to accurately detect the presence of the PUs and access the spectrum causing low harm to PU transmissions.
+A central issue in OSA is how to preserve the quality of service (QoS) experienced by PUs while offering a reasonable grade of service to SUs.
 Let us consider a system where a cognitive transmitter intends to transfer some data to a cognitive receiver using one or several narrowband channels within certain licensed spectrum band (\textit{multichannel} access). 
 After a contention phase, these SUs (cognitive pair) start to scan the spectrum in consecutive periods (scanning slots) in order to detect which channels are free of PU activity and thus available for transmission. 
-%During each scanning slot, only one channel can be sensed by the cognitive pair. 
-%The duration of the scanning slot comprises the sensing time and the time required by the cognitive pair to exchange messages containing the observation outcomes.
 During each scanning slot, the cognitive pair (CP) senses only one channel and the SUs exchange messages informing each other about the observation outcome.
-%Therefore scanning slots imply time overhead has to be considered in the protocol design.
 Therefore, each scanning slot introduces a time overhead that needs to be considered in the OSA protocol design.
 After each scanning slot, the cognitive pair has to decide whether to continue scanning or to transmit (and how many channels to transmit in).
 %Optimizing this process is challenging because of the tradeoff between SU throughput and expected collision time.
 
 Optimizing this process is challenging because several issues are involved.  
-%First, finding more available channels allows the SU to transmit in more channels simultaneously, potentially achieving higher throughput.
 First, sensing more channels allows the SU to find more available channels to transmit in, potentially achieving higher throughput.
-%Second, the scanning time overhead increases as more channels are sensed, which is contrary to the throughput goal.
 Second, the scanning time overhead increases as more channels are sensed, which is contrary to the throughput goal.
-Third, because of the scanning delay, using many scanning slots implies more uncertainty about the information obtained in earlier slots.
+Third, because of the scanning delay, using many scanning slots implies \textit{more uncertainty about the information obtained in earlier slots}.
 In a real system, where sensing results are not fully reliable, this uncertainty is even higher.
-%We have just highlighted another important trade-off: with more scanning slots the SU obtains more spectrum information but part of this information becomes less reliable.
+This last aspect has been largely ignored in the existing literature, and is the first key issue addressed in this paper. 
 
-%In this scenario it is easy to see the importance of the PU's spectrum usage pattern.
-%In this scenario we can foresee the impact of the PU's spectrum usage pattern in OSA performance.
-We can anticipate the impact of the channel allocation scheme for PUs on OSA performance.
+The second key issue is to evaluate the impact of the channel allocation scheme for PUs on OSA performance.
 If each channel is randomly occupied by a PU, both the collision probability and the post-scanning uncertainty variation over time is the same for every channel.
 However, it is possible for PUs to access the spectrum with a different pattern, more suitable for coexistence with OSA nodes, especially if the access system for PUs is centralized, which is usual in licensed networks.
-Specifically, we will see that a simple sequential channel assignment for PUs reduces collisions with SUs. In addition, if the licensed network has the ability to aggregate channels with ongoing PU sessions into a compacted spectrum block (\textit{spectrum merging}), the reduction is even greater.
+Specifically, we show that a simple sequential channel assignment for PUs reduces collisions with SUs. In addition, if the licensed network has the ability to aggregate channels with ongoing PU sessions into a compacted spectrum block (\textit{spectrum merging}), the reduction is even greater.
 It is easy to see that SUs' throughput will be dramatically improved. 
-On the other hand, the licensed network loses the ability to exploit the channels with best instantaneous propagation conditions. Its negative impact in PUs' throughput, however, is compensated, under certain traffic intensities, by the effect of the reduced collisions, as we showed in \cite{ref:Alcaraz2013} and it is highlighted in \cite{ref:ElSawy2013}. For other traffic scenarios, the reduction in PUs' throughput due to spectrum merging is minimal.
+On the other hand, the primary network has less ability to exploit the channels with best instantaneous propagation conditions. Its negative impact in PUs' throughput, however, is compensated, under certain traffic intensities, by the effect of the reduced collisions, as we showed in \cite{ref:Alcaraz2013} and is also highlighted in \cite{ref:ElSawy2013}. For other traffic scenarios, the reduction in PUs' throughput due to spectrum merging is minimal.
 
 Obviously, this OSA framework requires the SU nodes to have a previous knowledge of PU traffic descriptors. 
-It could be argued that this requirement is a drawback since traffic prediction inaccuracies may result in degraded performance.
-%We address this issue showing that this is not completely true. 
-However, it may not be completely true. In fact, our results show that the difference between estimated and real PU traffic parameters has a surprisingly low impact on PU performance.
- 
-%Similarly, after a channel is sensed, the uncertainty about its current state increases with time.  
-
-%the more available channels found, more channels can be used for transmission and therefore the higher the throughput of the SUs. However, scanning slots increase the time overhead which reduces throughput and, more importantly, because of the scanning delay, 
-
-%The length of the scanning slot must be long enough to detect the PU activity with high reliability and to allow the cognitive pair to exchange their detection results.
-
-%Hablar de aspectos prácticos. Multichannel access (the majority of the proposed protocols operate in a multichannel way). Retardo entre el channel scanning y el access. (scanning increases the overhead since nodes cannot transmit when they are scanning) Añadir a esto unreliable detection.
-%Tradeoff colisión, SU grade of service.
-
-%Influencia de PU activity. Ha sido estudiado en \cite{ref:Pawelczak2008} Sin embargo PU spectrum use pattern no ha sido tratado de forma rigurosa.
-
-%PU detection errors and channel availability variation, have a strong impact on the design of opportunistic medium access protocols, and the goal of this paper is to study the performance of PU spectrum use pattern in the context of OSA. 
-
-%POSIBLEMENTE SE QUITE / REDUZCA / MUEVA ESTE PÁRRAFO
-%We model the scanning and spectrum access decision problem as a finite-horizon Markov decision process (MDP) with imperfect state estimation.
-%Objetivo: evaluar la influencia del PU channel occupation pattern on the PU and SU QoS.
-%Our main goal is to evaluate the influence of PU channel occupation patterns on the QoS of both PUs and SUs.
-%Because the MDP problem comprises two opposite objectives, SU throughput and overlapping time, solving the MDP implies finding Pareto-optimal policies. A policy is Pareto-optimal if one of the objectives can only be improved by worsening the other.
-%A very suitable way to compare different PU spectrum usage patterns is by means of Pareto fronts, showing the best achievable performances within the OSA framework.
-%While computing the Pareto front requires solving the MDP problem several times, in practice just one policy would be required. 
-%In many cases, the computational overhead of solving the MDP may be unfeasible for an SU. Nevertheless it is not required in practice, since the optimal policy can be computed off-line and simply stored in every SU station. 
-
-%This implies that the traffic parameters are known in advance, which raises the issue of performance's sensitivity to traffic estimation inaccuracies. Previous works have shown their concerns about this issue, and we directly address it by directly evaluating the effect of the differences between the estimated traffic parameters and the real ones.
-
-%Computational overhead
-
-%Related work
-
-%our contribution
-
-%In addition, each part of this paper contains novel aspects that should be highlighted.
-%\begin{itemize}
-%	\item 
-%	\item 
-%	\item
-%\end{itemize}
-%Section \ref{SPEC_MAN_sec_conclusion} summarizes the contributions of this work and discusses its applicability.
-
+This is a typical requirement for OSA protocols, and multiple previous works offer solutions to this problem.  
+However, traffic estimations are generally imperfect.
+Therefore, we also evaluate the impact of the difference between estimated and real PU traffic parameter. 
+Our findings show that this difference has a surprisingly low impact on PU performance.
 
 \subsection{Related Work}\label{SPEC_MAN_sec_related_work}
 
@@ -85,17 +39,18 @@ Comprehensive and up-to-date overviews of cognitive MAC protocols can be found i
 As previously stated, we focus on decentralized, multichannel, ad-hoc OSA systems.
 Medium Access Control (MAC) protocols for these systems are surveyed and classified in \cite{ref:Pawelczak2008} and \cite{ref:Pawelczak2009}.
 
-This work is inspired by our previous one in \cite{ref:Alcaraz2013}, in which we studied the impact of PU bandwidth reservation on OSA performance. 
-The results we obtained in \cite{ref:Alcaraz2013} showed that the benefits of reduced PU-SU collisions outweigh the negative consequences of a more limited selection of channels available to the PUs. 
-This allows us to focus on avoiding collisions in this work and therefore, to safely simplify the PU's QoS metric to the overlapping time, as opposed to more complex but preferred metrics \cite{ref:Sun2012} such as interference level at PU receivers or PN Shannon capacity. 
+This paper continues the line initiated in \cite{ref:Alcaraz2013}, where we studied the impact of PU bandwidth reservation on OSA performance. 
+The results in \cite{ref:Alcaraz2013} showed that the benefits of reduced PU-SU collisions outweigh the negative consequences of a more limited selection of channels available to the PUs. 
+%This allows us to focus on avoiding collisions in this work and therefore, to safely simplify the PU's QoS metric to the overlapping time, as opposed to more complex but preferred metrics \cite{ref:Sun2012} such as interference level at PU receivers or PN Shannon capacity.
 In works where PU's QoS is addressed, it is usually characterized by collision probability: \cite{ref:Gabran2011,ref:Jung2012,ref:Zhao2007_dec,ref:Huang2009,ref:Jung2012}. 
-Much fewer works \cite{ref:Huang2008_opp} incorporate also overlapping time which,
+Fewer works \cite{ref:Huang2008_opp} consider overlapping time which,
 as stated in \cite{ref:Huang2009}, is closely related to packet collision probability. 
-It is a common assumption to consider any overlapping time equivalent to a packet collision. 
-However, a more precise conversion involves many features such as capture effect, bit interleaving and forward error control techniques. 
-Therefore, because of its greater generality, we adopt overlapping time as the PU's QoS parameter.
+%It is a common assumption to consider any overlapping time equivalent to a packet collision. 
+%However, a more precise conversion involves many features such as capture effect, bit interleaving and forward error control techniques.
+We use the overlapping time to characterize the PU's QoS, since it is more general than other metrics such as signal to interference ratio, or packet error probability. Note that not all the overlapping time results in harmful interference or packet reception errors at the PU receivers, therefore using this metric enables a worst-case approach.
+%Therefore, because of its greater generality, we adopt overlapping time as the PU's QoS parameter.
 
-Both \cite{ref:Alcaraz2013} and this work are in line with the recent increase of interest in non-transparent access of SUs to PUs' spectrum \cite{ref:Mao2010,ref:Tang2009_per}. This trend is in constrast to the traditional approach maintained since the origin of cognitive radio \cite{ref:Mitola2000}, specially under the spectrum overlay OSA model \cite{ref:Zhao2007_dec}. 
+Both \cite{ref:Alcaraz2013} and this paper are in line with the recent increase of interest in non-transparent access of SUs to PUs' spectrum \cite{ref:Mao2010,ref:Tang2009_per}. This trend is in constrast to the traditional approach maintained since the origin of cognitive radio \cite{ref:Mitola2000}, specially under the spectrum overlay OSA model \cite{ref:Zhao2007_dec}. 
 Such change of paradigm is probably motivated by the application of OSA techniques to heterogeneous cellular networks (HetNets). 
 HetNets also imply overlay networks (small cells, often with cognitive abilities, over the macro-cell network), but their main difference is that their users are all primary and thus, QoS must be guaranteed for both the macro and the small cell users. 
 Because of this, it makes sense for the macro-cell network to manage its spectrum in a different way despite the cognition of the small cells. 
@@ -120,36 +75,31 @@ With regard to MAC design, it is especially interesting the research line initia
 Multichannel access with sensing constraint is also considered in \cite{ref:Kim2008}, \cite{ref:Gabran2011} and \cite{ref:Cheng2011}. The proposal in \cite{ref:Kim2008} optimizes the discovery of spectrum opportunities. In contrast to our model, the system in \cite{ref:Kim2008} is assumed to be collision-free. In \cite{ref:Gabran2011}, the focus is on optimizing the sensing phase considering, among other aspects, the trade-off between its duration (and reliability) and collision probability. As we will explain later, our model incorporates similar considerations, but in the design of access policies that include not only the sensing phase but also the number of channels to transmit in. Finally, the approach in \cite{ref:Cheng2011} is perhaps the closest to ours, although there are two significant differences: first, \cite{ref:Cheng2011} aimed to optimize SU's throughput without quantifying the effect on PU's performance. Second, our formulation incorporates the variation of channel observation uncertainty over time, which is crucial for evaluating the effect of PU channel allocation schemes.
 
 \subsection{Our Contribution}
-The goal of this work is to find and characterize OSA policies for SUs with the hardware limitations described previously and to evaluate the impact of PU channel allocation mechanisms.
-Existing research had addressed the trade-off imposed by the scanning delay: scanning more channels allows the SU to transmit in more channels simultaneously but also increases the delay overhead.
-Part of our contribution is to include another key element into the model: the effect of the scanning delay on the reliability of the observations, which is crucial when considering PU activity in all the spectrum band.
+%The goal of this work is to find and characterize OSA policies for SUs with the hardware limitations described previously and to evaluate the impact of PU channel allocation mechanisms.
+This paper comprises the following main contributions: 
+\begin{enumerate}
+\item We develop an optimal SU access strategy that considers the effect of scanning delay in the uncertainty of the information available at the SUs. This effect has been largely ignored in the design of OSA protocols for hardware limited radios. \item The OSA scheme is designed and evaluated for different levels of \textit{coexistence friendliness} at the spectrum owner, reflected on its spectrum management strategies.
+\end{enumerate}
+
+%Existing research had addressed the trade-off imposed by the scanning delay: scanning more channels allows the SU to transmit in more channels simultaneously but also increases the delay overhead.
+%Part of our contribution is to include another key element into the model: the effect of the scanning delay on the reliability of the observations, which is crucial when considering PU activity in all the spectrum band.
 %the effect of the scanning delay on the reliability of the observations. 
-In addition, our contribution comprises the following items:
-\begin{itemize}
-	\item Formulating the CP decision problem as a finite horizon Markov decision process (MDP) with imperfect state estimation, handling the partial and unreliable knowledge that the SU has about the spectrum occupation.
-	\item Characterizing QoS of PUs by means of the activity overlap with SU communications (\textit{overlapping time}) and studying the trade-off with SU throughput.
+%In addition, our contribution comprises the following items:
+%\begin{itemize}
+	%\item Formulating the CP decision problem as a finite horizon Markov decision process (MDP) with imperfect state estimation, handling the partial and unreliable knowledge that the SU has about the spectrum occupation.&	\item Characterizing QoS of PUs by means of the activity overlap with SU communications (\textit{overlapping time}) and studying the trade-off with SU throughput.
 	%\item Analyzing computational and memory overhead of the proposed OSA framework.
-	\item Quantifying the influence of PU channel management strategies on global performance.
-	\item Evaluating the robustness of OSA policies to PU traffic estimation inaccuracies.
+	%\item Quantifying the influence of PU channel management strategies on global performance.
+	%\item Evaluating the robustness of OSA policies to PU traffic estimation inaccuracies.
 	%\item Extending the model to imperfect spectrum sensing.
-\end{itemize}
+%\end{itemize}
 
-Because the MDP problem comprises two opposite objectives, SU throughput and overlapping time, solving the MDP implies finding Pareto-optimal policies. A policy is Pareto-optimal if one of the objectives can only be improved by worsening the other.
-We make use of Pareto fronts to compare policies and spectrum management schemes as well as to quantify the trade-off between QoS parameters.
-Note that the computational overhead of solving the MDP may be unfeasible for an SU. Nevertheless it is not required in practice, since the optimal policy can be computed off-line and simply stored in every SU. 
-%A very suitable way to compare different PU spectrum usage patterns is by means of Pareto fronts, showing the best achievable performances within the OSA framework.
-%While computing the Pareto front requires solving the MDP problem several times, in practice just one policy would be required. 
-%In many cases, the computational overhead of solving the MDP may be unfeasible for an SU. Nevertheless it is not required in practice, since the optimal policy can be computed off-line and simply stored in every SU station. 
+Designing the optimal OSA protocol implies solving a Partially Observable Markov Decision Process (POMDP) with finite horizon. This is a challenging task because of the inherent complexity of POMDPs, which is increased by adding the effect of the scanning delay on the reliability of past observations. As we show, the spectrum management policy of the primary operator plays a crucial role on this effect.
 
-%Caracterizar el QoS de los PU por medio de overlap activity y estudiar el tradeoff con respecto al throughput de los SU
-%Scanning delay y las restricciones hardware formuladas como finite horizon MDP con imperfect state estimation.
-%Análisis del coste computacional.
-%Estudio del impacto de las políticas de asignación de canales a PU e el rendimiento global.
-%Estudio de la sensibilidad al traffic estimation accuracy. 
+%In the existing literature this delay had been associated to one relevant trade-off: more scanning time allows the SU to discover more available bandwidth but also increases the delay overhead. We refine this trade-off by adding the effect of the delay on the information uncertainty.
 
-
-%In consequence, recent work focus on characterizing the overlap activity of SU and PU. For example, \cite{ref:Jung2012} uses packet collision probability to measure the impact on PUs and \cite{HC-MAC} considers that the PU communications can tolerate up to a maximum collision time $T$ with a SU transmission.
-%That work considered $T$ as a worst-case so that SU transmissions lasted exactly $T$ seconds, but did not compute the actual collision time and therefore
+%Because the MDP problem comprises two opposite objectives, SU throughput and overlapping time, solving the MDP implies finding Pareto-optimal policies. A policy is Pareto-optimal if one of the objectives can only be improved by worsening the other.
+%We make use of Pareto fronts to compare policies and spectrum management schemes as well as to quantify the trade-off between QoS parameters.
+%Note that the computational overhead of solving the MDP may be unfeasible for an SU. Nevertheless it is not required in practice, since the optimal policy can be computed off-line and simply stored in every SU. 
 
 
 \section{System Description}\label{SPEC_MAN_sec_system}
@@ -173,10 +123,11 @@ Fig. \ref{fig:allocation} illustrates the arrival and departures of PUs under th
 \caption[]{Channel allocation schemes for PUs.}\label{fig:allocation}
 \end{figure}
 Many wireless access systems, \textit{e.g.} OFDMA-based systems, allow both sequential allocation of channels (subcarriers) and channel rearrangement for ongoing communications.
-However, in some cases, sequential allocation may imply assigning channels whose propagation conditions are not optimal for the incoming PUs. 
-Note that this problem can be alleviated by the following considerations: (1) Since, OSA is supposed to operate under light PU traffic conditions, an incoming PU could be assigned a wider bandwidth in order to meet its quality requirements. This may cause the traffic model to differ from the one explained, but this is not such an important issue as we show in section \ref{ref:Results}. (2) In the case of merged spectrum for PUs, the AN's scheduling algorithm could optimize the channel distribution within the spectrum band occupied by the PUs.
+However, in some cases, sequential allocation may imply assigning channels whose propagation conditions are not optimal for the incoming PUs.
+This issue was largely addressed in \cite{ref:Alcaraz2013}, where it was concluded that the benefits of easing secondary access overcome its drawbacks when the primary traffic intensity is below certain threshold (see \cite{ref:Alcaraz2013} for details). Therefore, the use of a coexistence-friendly spectrum management scheme implies the implicit assumption that the PU traffic intensity is below that threshold, which is reasonable since OSA is conceived to increase the efficiency of underused spectrum of, e.g. legacy networks.
+%Note that this problem can be alleviated by the following considerations: (1) Since, OSA is supposed to operate under light PU traffic conditions, an incoming PU could be assigned a wider bandwidth in order to meet its quality requirements. This may cause the traffic model to differ from the one explained, but this is not such an important issue as we show in section \ref{ref:Results}. (2) In the case of merged spectrum for PUs, the AN's scheduling algorithm could optimize the channel distribution within the spectrum band occupied by the PUs.
 
-In any case, the impact of OSA activity on PU's performance is notably reduced when the resource management scheme of the licensed network facilitate spectrum sharing, while the performance of SU communication is improved, as shown in section \ref{ref:Results} and backed by the more general study we did in \cite{ref:Alcaraz2013} and by other works such as \cite{ref:ElSawy2013}.
+%In any case, the impact of OSA activity on PU's performance is notably reduced when the resource management scheme of the licensed network facilitate spectrum sharing, while the performance of SU communication is improved, as shown in section \ref{ref:Results} and backed by the more general study we did in \cite{ref:Alcaraz2013} and by other works such as \cite{ref:ElSawy2013}.
 
 %PU inter-arrival time is characterized by an exponential random variable with rate $\lambda$. Upon arrival each PU occupies one channel, if available. The channel holding time is described by an exponential random variable with rate $\mu$. 
 %Note that, in contrast to many previous works, the model does not assume slotted time. 
@@ -184,14 +135,14 @@ In any case, the impact of OSA activity on PU's performance is notably reduced w
 \subsection{Secondary Network}
 The unlicensed or secondary network operates in a decentralized, ad-hoc fashion. 
 Communication is always performed between pairs of SUs (\textit{cognitive pairs}) consisting of one sender and one receiver.
-Every SU is assumed to be under the coverage area of the same licensed access node, thus the objective is to transmit data using one or several of the $N$ licensed channels causing the less possible interference to PU communications.
+Every SU is assumed to be under the coverage area of the same licensed access node, thus the SU's objective is to transmit data using one or several of the $N$ licensed channels causing the less possible interference to PU communications.
 Secondary nodes are constrained to some hardware limitations:
 (1) Each SU is equipped with a single radio that can either transmit or receive, but not at the same time.
 (2) When sensing the spectrum to detect PU activity, an SU can only sense one of the $N$ channels.
 (3) Once a cognitive pair decides to start a transmission, it can use up to $M$ noncontiguous channels simultaneously.
 %Once a cognitive pair decides to start a transmission, the sender SU can use several channels simultaneously. There is, however a limit on the width of the spectrum aggregated in a SU transmission. This limit is set to $M$ channels.
 
-%The SUs implement the MAC protocol (HC-MAC) described in \cite{ref:Jia2008_HC} with a different sensing and accessing decision policy. 
+%The SUs implement the MAC protocol (HC-MAC) described in \cite{ref:Jia2008} with a different sensing and accessing decision policy. 
 %HC-MAC comprises three phases that we briefly summarize here:
 %\begin{enumerate}
 %	\item \textit{Contention}: When an SU sender wants to establish a connection it listens the dedicated control channel to assess ongoing SU activity. If no SU is reporting activity, the sender node transmits a contention message (C-RTS) to the target node on the control channel. The receiver node then replies with a C-CTS. This procedure allows the cognitive pair to reserve time for the following sensing and transmission phases as well as to synchronize both nodes.
@@ -244,7 +195,7 @@ Fig. \ref{fig:access} depicts a simplified example of SU access incurring in an 
 
 %En nuestro sistema se propone emplear tiempo de colisión al considerarlo más general que probabilidad de colisión ya que en muchos casos, las técnicas FEC permiten recuperar el mensaje cuando el número de símbolos erroneos es pequeño. Por tanto, a mayor tiempo de colisión mayor es el número de símbolos erróneos. Además, el el número de bits por símbolo puede variar de un PU a otro, por lo que la probabilidad de error de bit también varia. 
 %En cualquier caso, si se minimiza el tiempo total esperado en el que se solapan las actividades de los PU y los SU se garantiza la calidad de servicio de los PU.
-\section{Markovian Models}\label{sec:Models}
+\section{POMDP Formulation}\label{sec:Models}
 %Diferenciar entre el modelo de red y el modelo del cognitive user. Procesos Y(t): spectrum state y \vec{X}_{k}. 
 %Porceso de llegada y salidas de los usuarios primarios a la red tipo Poisson.
 %Definir tasa de llegadas $\lambda$ y tasa de salidas $s$.
@@ -252,19 +203,27 @@ Fig. \ref{fig:access} depicts a simplified example of SU access incurring in an 
 %our model possesses the same limitations as those in \cite{ref:compartivaMAC}.
 %due to the significant involvement of the delay analysis, the model is limited to throughput assessment only. In addition, this work is limited to a single collision domain, and effects such as hidden/exposed terminals are not modeled.
 
-\subsection{Licensed Network Models}
-We denote by $Y(t)$ the continuous-time Markov chain (CTMC) corresponding to any of the allocation schemes. The set of states of $Y(t)$ is indicated by $\mathcal{S}$. Let $i$, $j$ $\in \mathcal{S}$ be two states of $Y(t)$ and let $\left(i\right)_{2}$ denote the binary representation of $i$ as an $N$-tuple, \textit{i.e.} $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, where $i_{k} = 1$ if the $k$-th channel is occupied by a primary user and $i_{k} = 0$ otherwise. We will also refer to $i_k$ as the state of channel $k$. The complementary of $\left(i\right)_{2}$ is denoted by $\overline{\left(i\right)_{2}}$.
+In this section we formulate the opportunistic access problem as a POMDP with finite horizon and obtain an equivalent MDP by means of a \textit{state augmentation} approach. 
+The formulation in this section uses a generic objective, and therefore it is applicable to any optimization criterion, e.g. increasing SU throughput, capacity, etc. Section \ref{sec:Policies} describes the computation of a specific cost function balancing SU throughput and overlapping time.
+%We follow a top-down approach to describe the model. 
+%We use in this section in order to provide a general understanding of the POMDP framework, and becomes more specific in Section \ref{sec:Policies}.
+
+\subsection{The Spectrum Process}
+Considering only PU activity, each of the $N$ channels can be in two states: $1$, when the channel is assigned to one PU, and $0$ when the channel is unassigned.
+Let $Y(t)$ denote the aggregate state of the $N$ channels at time $t$. $Y(t)$ is a continuous-time Markov chain (CTMC) that we refer to as the \textit{spectrum process}. Each channel allocation scheme results in a different stochastic behavior for $Y(t)$.
+The set of (countable) values that $Y(t)$ can take, is denoted by $\mathcal{S}$. Let $i$, $j$ $\in \mathcal{S}$ be two states of $Y(t)$ and let $\left(i\right)_{2}$ denote the binary representation of $i$ as an $N$-tuple, \textit{i.e.} $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, where $i_{k} = 1$ if the $k$-th channel is occupied by a primary user and $i_{k} = 0$ otherwise. We will also refer to $i_k$ as the state of channel $k$. The complementary of $\left(i\right)_{2}$ is denoted by $\overline{\left(i\right)_{2}}$.
 The 1-norm of $\left(i\right)_{2}$ is defined as
 \begin{equation}\label{1Norm}
 \left\|\left(i\right)_{2}\right\|_{1}=\displaystyle\sum_{k=1}^{N}\left|i_{k}\right|
 \end{equation}
 Note that previous expression provides the number of occupied channels in the system while $\left\|\overline{\left(i\right)_{2}}\right\|_{1}$ yields the number of free channels.
 
-We summarize $\mathcal{S}$, and the components of the infinitesimal generator $\mat{Q}$ characterizing $Y(t)$, $q_{ij}$, for each scheme in table \ref{Table_markovian_models}.
+Table \ref{Table_markovian_models} summarizes, for each channel allocation scheme, the set $\mathcal{S}$, and the elements $q_{ij}$ of infinitesimal generator, $\mat{Q}$, of $Y(t)$.
+%We summarize $\mathcal{S}$, and the components of the infinitesimal generator $\mat{Q}$ characterizing $Y(t)$, $q_{ij}$, for each scheme in table \ref{Table_markovian_models}.
 
-\begin{landscape}
 \begin{table*}
-\begin{tabular}{|l|c|H{15cm}|} 
+\small
+\begin{tabular}{|l|c|H{9cm}|} 
 \hline
 & $\mathcal{S}$ & $q_{ij}$\\\hline
 Random & 
@@ -314,9 +273,8 @@ $\mathcal{S} = \left\{0,1,\ldots,N\right\}$ &
 \caption{State space $\mathcal{S}$ and components of the infinitesimal generator $\mat{Q}$ characterizing $Y(t)$ for random channel allocation, sequential channel allocation, and sequential allocation with spectrum merging.}
 \label{Table_markovian_models}
 \end{table*}
-\end{landscape}
-\subsection{MDP Model of the Cognitive Pair}
-In this subsection we formulate the opportunistic access problem as a finite-horizon Markov decision process with imperfect state information. We follow a top-down approach to describe the model. Therefore the formulation is more generic in this section in order to provide a general understanding of the MDP framework, and becomes more specific in next section.
+
+%\subsection{POMDP Model of the Cognitive Pair}
 
 %Let us briefly summarize the medium access strategy of the secondary users (SUs). This strategy is basically divided into three consecutive periods: \textit{contention}, \textit{sensing} and \textit{transmission}. After winning a contention, a pair of secondary users (sender and receiver) starts to sense the spectrum in fixed-duration sensing slots, during which both the sender and the receiver sense the same channel and exchange the sensing result. Let $\tau$ denote the length of a sensing slot. After each slot a decision is made whether to sense the next channel or to transmit using one or more of the available channels detected. Because of the information exchange at each sensing slot, the cognitive pair acts as a single entity when making the transmission decision provided that both nodes operate with the same policy.
 
@@ -348,9 +306,9 @@ $p_{\bar{p}}$ & probability of false positive detection\\
 $p_{\bar{n}}$ & probability of false negative detection\\
 $d_{k}$& CP decision at stage $k$\\
 $u_{k}$ & scanning decision\\
-$\vec{m}_{k}$ & vector with the channels to transmit in \\
+$m_{k}$ & vector with the channels to transmit in \\
 $\mathcal{U}_{k}$ & control space for $u_{k}$\\
-$\mathcal{M}_{k}(x_{k})$ & control space for $\vec{m}_{k}$\\
+$\mathcal{M}_{k}(x_{k})$ & control space for $m_{k}$\\
 $\mathcal{D}_{k}(x_{k})$ & control space for $d_{k}$\\
 $\mu_{k}(x_{k})$ & function mapping CP states to decisions\\
 $g_{k}\left(x_{k},d_{k}\right)$ & per-stage cost of the CP system\\
@@ -363,9 +321,9 @@ $p_{k}\left(\ast|\ast\right)$ & transition probability of the CP system\\
 $\vec{\pi}_{x_{k}}$ & \textit{a posteriori} estimation of $Y_{k}$ given $x_{k}$\\
 $\hat{\vec{\pi}}_{x_{k}}$ & \textit{a priori} estimation of $Y_{k+1}$ given $x_{k}$\\
 $b_{\text{max}}$ & maximum achievable throughput by the CP\\
-$b_{k}(\vec{m}_{k})$ & throughput attained with decision $\vec{m}_{k}$\\
+$b_{k}(m_{k})$ & throughput attained with decision $m_{k}$\\
 $c_{\text{max}}$ & maximum overlapping time\\
-$c_{k}(x_{k},\vec{m}_{k})$ & expected overlapping time given $x_{k}$ and $\vec{m}_{k}$\\
+$c_{k}(x_{k},m_{k})$ & expected overlapping time given $x_{k}$ and $m_{k}$\\
 $l_{i,x_{k}}(t)$ & expected time of $Y(t)$ in $i$ given $x_{k}$\\\hline
 \end{tabular}
 \centering
@@ -373,19 +331,25 @@ $l_{i,x_{k}}(t)$ & expected time of $Y(t)$ in $i$ given $x_{k}$\\\hline
 \label{Table1}
 \end{table}
 
-\subsubsection{Processes and State Spaces}
+\subsection{Partial Observations and the Information Vector}
 %Definir mejor z, Z, x, X y los espacios de estados en los que están definidos.
-As explained in previous subsection, the \textit{spectrum process} is a CTMC denoted by $Y(t)$. At time $t$, $Y(t)$ can be at any state $i \in \mathcal{S}$. 
+%As explained in previous subsection, the \textit{spectrum process} is a CTMC denoted by $Y(t)$. At time $t$, $Y(t)$ can be at any state $i \in \mathcal{S}$.
 %We used $i_{n} \in {0,1}$ with $n \leq N$ to refer to the $n$-th element of the binary representation $\left(i\right)_{2}$ of state $i$, and denotes the state (idle or occupied) of the $n$-th channel.
-The cognitive pair \textit{observes} $Y(t)$ in consecutive periods (scanning slots) of $\tau$ seconds. 
+The cognitive pair \textit{partially observes} $Y(t)$ in consecutive periods (scanning slots) of $\tau$ seconds.
+%However, it only observes $Y(t)$ \textit{partially}.  
 %During each scanning slot only one of the channels of the spectrum is observed.
 %, \textit{i.e.} only one element of the binary representation $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$ is observed. 
 %At the end of the $k$-th scanning slot an observation $z_{k}$ is obtained. 
-During the $k$-th scanning slot only the $k$-th channel of the spectrum is sensed. At the end of this slot an observation $z_{k}$, the sensing result, is obtained.
-Because decisions should be made according to these observations, this is a clear case of MDP with \textit{imperfect state information}.
+In particular, during the $k$-th scanning slot, only the $k$-th channel of the spectrum is sensed.
+At the end of the sensing slot, the CP obtains the sensing result $z_{k}$: $z_{k}=1$ if the $k$-th channel is estimated to be occupied, or $z_k=0$ otherwise.
+Therefore, $z_k$ is a partial (and possibly unreliable) observation of $Y(t)$.
+%At the end of this slot an observation $z_{k}$, the sensing result, is obtained.
+%OSA decisions should be made according to these partial observations. 
+Hence, we face a POMDP problem, which implies that decisions should be based on \textit{imperfect state information}.
+Moreover, note that the observations $z_k$ obtained in consecutive scanning slots $k=1,2,\ldots$, correspond to samples of $Y(t)$ taken in different instants. Let us formalize this aspects and its implications.
 
 %descripción del proceso Z_{n}
-Let us define the \textit{observation process} $Z_{k}$. We assume that the channel activity detection depends on the values of the spectrum process at the end of each slot. Therefore we define the discrete-time Markov chain (DTMC)
+Let us define the \textit{observation process} $Z_{k}$ taking values from the observation space $\left\{0,1\right\}$. We assume that the channel activity detection depends on the values of the spectrum process at the end of each slot. Therefore we define the discrete-time Markov chain (DTMC)
 \begin{equation}
 Y_{k} = Y\left(k\tau\right), \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}
@@ -393,7 +357,8 @@ The observations are originated, in general as
 \begin{equation}
 Z_{k} = h_{k}\left(Y_{k}\right), \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}
-The observation $Z_{k}$ belongs to the observation space $\left\{0,1\right\}$. Assuming perfect detection and $Y_{k} = i$, with binary representation $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, the function on the right hand side has the following form:
+%The observation $Z_{k}$ belongs to the observation space $\left\{0,1\right\}$. 
+Assuming perfect detection and $Y_{k} = i$, with binary representation $\left(i\right)_{2} = \left(i_{1},\ldots,i_{N}\right)$, the function on the right hand side has the following form:
 \begin{equation}
 h_{k}\left(i\right) = i_{k}, \quad \mbox{for }k = 1,\ldots,N.
 \end{equation}
@@ -408,7 +373,7 @@ P\left(h_{k}\left(i\right)=0|i_{k}=0\right) & = & 1 - p_{\bar{p}}
 \end{equation}
 for $k$ = $1,\ldots,N$.
 
-The observation process $Z_{k}$ is a DTMC. To show it, let us define the set $\mathcal{S}(k,s_{k})$ containing the states in $S$ such that channel $k$ is in state $s_k$:
+The observation process $Z_{k}$ is a DTMC. To show this fact, let us define the set $\mathcal{S}(k,s_{k})$ containing the states in $S$ such that channel $k$ is in state $s_k$:
 \begin{equation}\label{setS}
 \mathcal{S}(k,s_{k}) = \left\{i \in \mathcal{S}|i_{k} = s_{k}\right\}\\
 \end{equation}
@@ -446,9 +411,9 @@ Then, since $Y_{k}$ is a DTMC, $Z_{k}$ is also a DTMC.
 
 %Descripción del proceso X_{n}
 
-Let us denote by $\vec{X}_{k}$ the amount of information available to the cognitive pair at the end of slot $k$ and call it the \textit{information vector}. Assuming an initial information $X_{0}$ (\textit{e.g.} $X_{0} = 0$ in case of no initial information at the beginning of the sensing process) the information vector is generated iteratively as
+Let $X_{k}$ denote the amount of information available to the cognitive pair at the end of slot $k$ and call it the \textit{information vector}. Assuming an initial information $X_{0}$ (\textit{e.g.} $X_{0} = 0$ in case of no initial information at the beginning of the sensing process) the information vector is generated iteratively as
 \begin{equation}
-\vec{X}_{k} = I\left(Z_{k},\vec{X}_{k-1}\right), \quad \mbox{for }k = 1,\ldots,N.
+X_{k} = I\left(Z_{k},X_{k-1}\right), \quad \mbox{for }k = 1,\ldots,N,
 \end{equation}
 %The sequence of observations up to stage $k$ is called the \textit{information vector}, $\vec{X}_{k}$, which is itself a DTMC.  
 
@@ -461,36 +426,36 @@ Let us denote by $\vec{X}_{k}$ the amount of information available to the cognit
 %\end{cases}
 %\end{equation}
 %Therefore, an information vector $x_{k}$ contains the position of the channels that have been observed idle up to stage $k$.
-The function $I\left(Z_{k},\vec{X}_{k-1}\right)$ is defined as
+where $I\left(Z_{k},X_{k-1}\right)$ is defined as
 \begin{equation}
-I\left(Z_{k},\vec{X}_{k-1}\right) = 
+I\left(Z_{k},X_{k-1}\right) = 
 \begin{cases}
-\vec{X}_{k-1},& \quad \mbox{if } Z_{k} = 1\\
-\left(k, \vec{X}_{k-1}\right),& \quad \mbox{if } Z_{k} = 0\\
+X_{k-1},& \quad \mbox{if } Z_{k} = 1\\
+\left(k, X_{k-1}\right),& \quad \mbox{if } Z_{k} = 0\\
 \end{cases}
 \end{equation}
-Therefore, the information vector $\vec{X}_{k}$ contains the position of the channels that have been observed idle up to stage $k$, and takes values from the set
-\begin{equation}
-\begin{array}{lcl}
-\mathcal{X}_{k} & = &\{\left(x(1),\ldots,x(r)\right)| x(a) \in \mathbb{Z}^{+}, r\leq k,\\
-&   & 1 \leq x(a) \leq x(b) \leq k, \mbox{for $a \leq b\}\cup \{0\}$}
-\end{array}
-\end{equation}   
+Therefore, the information vector $X_{k}$ contains the position of the channels that have been observed idle up to stage $k$. Let $\mathcal{X}_{k}$ be the set of possible values for $\mathcal{X}_{k}$.
+%\begin{equation}
+%\begin{array}{lcl}
+%\mathcal{X}_{k} & = &\{\left(x(1),\ldots,x(r)\right)| x(a) \in \mathbb{Z}^{+}, r\leq k,\\
+%&   & 1 \leq x(a) \leq x(b) \leq k, \mbox{for $a \leq b\}\cup \{0\}$}
+%\end{array}
+%\end{equation}   
 %Considering a generic value $x_{k}$ for $\vec{X}_{k}$, we represent $x_{k}$ as a vector containing the channels that are believed to be idle, \textit{e.g.} $x_{3} = \left(1,3\right)$ means that, of the three channels sensed, the second one is believed to be occupied and the other two have been sensed idle.
-where ${0}$ is included to account for the case that no idle channel has been detected.
-Because the cognitive pair must make the $k$-th decision with all the information available and not only with the $k$-th observation, $Z_{k}$, we could use the information vector $\vec{X}_{k}$ as the state for the system describing the cognitive pair (\textit{CP system}). Following this approach, known as \textit{state augmentation}, the imperfect state information problem is reformulated as a fully observable state information one as explained in \cite{ref:Bertsekas2012}. The state space of the CP system should include a special \textit{termination} state, denoted by $F$, corresponding to the data transmission from the cognitive transmitter, or to the transmitter quitting the medium without transmitting. In Markov modeling terms, the termination state $F$ is an absorbing state.
+%where ${0}$ is included to account for the case that no idle channel has been detected.
+Because the cognitive pair must make the $k$-th decision with all the information available and not only with the $k$-th observation, $Z_{k}$, it can use the information vector $X_{k}$ as the state for the system describing the cognitive pair (\textit{CP system}). Following this approach, known as \textit{state augmentation}, the imperfect state information problem casts into a fully observable state information one, as explained in \cite{ref:Bertsekas2012}. The state space of the CP system is then $\mathcal{X}_{k}$, in which we must include a special \textit{termination} state, denoted by $F$, corresponding to the data transmission from the cognitive transmitter, or to the transmitter quitting the medium without transmitting. In Markov modeling terms, the termination state $F$ is an absorbing state.
  
-At time $k$, the state of the CP system is denoted by $X^{*}_{k}$, and takes values $x_k$ from the set $\mathcal{X}_{k}^{*}$:
-\begin{equation}
-X^{\ast}_{k} = x_k \in \mathcal{X}_{k}^{*} = \mathcal{X}_{k} \cup \left\{F\right\}, \quad \mbox{for }k = 1,\ldots,N.
-\end{equation}  
+%At time $k$, the state of the CP system is denoted by $X^{*}_{k}$, and takes values $x_k$ from the set $\mathcal{X}_{k}^{*}=\mathcal{X}_{k} \cup \left\{F\right\}$.
+%\begin{equation}
+%X^{\ast}_{k} = x_k \in \mathcal{X}_{k}^{*} = \mathcal{X}_{k} \cup \left\{F\right\}, \quad \mbox{for }k = 1,\ldots,N.
+%\end{equation}  
 %As explained in \cite{ref:Bertsekas2012}, using the information vector $x_{k}$ as the system state instead of $z_{k}$, is an \textit{state augmentation} strategy reducing the imperfect state information problem to a perfect state information one.
 %, \textit{i.e.} the CP state remains at $F$ up to the end of the CP process ($k=N$). 
 
-\subsubsection{Decisions and Policies}
-Based on $x_{k} \in \mathcal{X}_{k}$, the access algorithm selects a decision $d_{k} = \left(u_{k}, \vec{m}_{k}\right)$,\footnote{For $x_{k} = F$ there is no decision to be made.} where $u_{k} = 1$ if the decision is to continue scanning and $u_{k}=0$ otherwise. The second component, $\vec{m}_{k}$, is a vector containing the channels selected to transmit in. The amount of selected channels is denoted by $n\leq M$. Note that, if $u_{k}=0$ and $\vec{m}_{k}=0$, the decision made is to quit the medium access process after scanning the $k$-th channel without transmitting.
-%($\vec{m}_{k}=\emptyset$), the decision made is to quit the medium access process after scanning the $k$-th channel. 
-At each stage, the decision variables $u_{k}$ and $\vec{m}_{k}$ are constrained to take values from the sets $\mathcal{U}_{k}$ and $\mathcal{M}_{k}(x_{k})$, defined as follows
+\subsection{Decisions and Policies}\label{Policies}
+Based on $x_{k} \in \mathcal{X}_{k}$, the access algorithm selects a decision $d_{k} = \left(u_{k}, m_{k}\right)$,\footnote{For $x_{k} = F$ there is no decision to be made.} where $u_{k} = 1$ if the decision is to continue scanning and $u_{k}=0$ otherwise. The second component, $m_{k}$, contains the channels selected to transmit in. The amount of selected channels is denoted by $n\leq M$. Note that, if $u_{k}=0$ and $m_{k}=0$, the decision made is to quit the medium access process after scanning the $k$-th channel without transmitting.
+%($m_{k}=\emptyset$), the decision made is to quit the medium access process after scanning the $k$-th channel.
+The decision variables $u_{k}$ and $m_{k}$ take values from the sets $\mathcal{U}_{k}$ and $\mathcal{M}_{k}(x_{k})$, where
 \begin{equation}
 \mathcal{U}_{k} = 
 \begin{cases}
@@ -498,19 +463,20 @@ At each stage, the decision variables $u_{k}$ and $\vec{m}_{k}$ are constrained 
 \left\{0\right\}, & \mbox{if} \quad k = N\\
 \end{cases}
 \end{equation}
-and
-\begin{equation}
-\mathcal{M}_{k}\left(x_{k}\right) = \left\{\left(x_{k}\left(1\right),\ldots,x_{k}\left(n\right)\right) | n \leq M\right\}
-\end{equation}
+and $\mathcal{M}_{k}(x_{k})$ is the set containing all the partitions of $x_k$. For compactness we define $\mathcal{D}_{k}(x_{k})=\mathcal{U}_{k}\times\mathcal{M}_{k}(x_{k})$.
+%\begin{equation}
+%\mathcal{M}_{k}\left(x_{k}\right) = \left\{\left(x_{k}\left(1\right),\ldots,x_{k}\left(n\right)\right) | n \leq M\right\}
+%\end{equation}
 %In the last definition, $n$ denotes the number of channels selected for transmission, therefore the empty set is implicit and corresponds to the case of $n=0$.
 %When $n=0$, then $M_{k}\left(x_{k}\right)=\emptyset$.
 
-A \textit{policy} is a rule that gives the decision to be applied for every state $x_{k} \in \mathcal{X}^{*}_{k}$, and consists of a sequence of functions $\eta=\left\{\mu_{0},\mu_{1},\ldots,\mu_{N}\right\}$, where each function $\mu_{k}$ maps $x_{k}$ into the set of possible decisions,
-\begin{equation}\label{policies}
-\mu_{k}\left(x_{k}\right) \in \mathcal{U}_{k}\times \mathcal{M}_{k}(x_{k}),\quad \mbox{for } x_{k} \in \mathcal{X}^{*}_{k}, k = 0,\ldots,N
-\end{equation}
+A \textit{policy} $\eta$ is a mapping providing the decision $d_k\in\mathcal{D}_{k}(x_{k})$ to be applied given the information $x_{k}\in\mathcal{X}_{k}$ available at time $k$. That is, $\eta=\left\{\mu_{0},\mu_{1},\ldots,\mu_{N}\right\}$, where each function $\mu_{k}\left(x_{k}\right):\mathcal{X}_{k}\rightarrow\mathcal{D}_{k}(x_{k})$ for $k = 0,\ldots,N$.
+%\begin{equation}\label{policies}
+%\mu_{k}\left(x_{k}\right) \in \mathcal{U}_{k}\times \mathcal{M}_{k}(x_{k}),\quad \mbox{for } x_{k} \in \mathcal{X}^{*}_{k}, k = 0,\ldots,N
+%\end{equation}
 %costes.
-Such a policy is called \textit{admissible}. For compactness we will use $\mathcal{D}_{k}(x_{k})$ to refer to $\mathcal{U}_{k}\times\mathcal{M}_{k}(x_{k})$.
+%Such a policy is called \textit{admissible}.
+% For compactness we will use $\mathcal{D}_{k}(x_{k})$ to refer to $\mathcal{U}_{k}\times\mathcal{M}_{k}(x_{k})$.
 As an example, Fig. \ref{fig:states} illustrates the diagram of a small system with only two channels. 
 \begin{figure}
 \centering
@@ -518,7 +484,7 @@ As an example, Fig. \ref{fig:states} illustrates the diagram of a small system w
 \caption[]{States and transitions of the MDP for a two-channel spectrum. Arrows ending at the termination state $F$ denote transitions associated to $u_{k}=0$. The sets ${M}_{k}(x_{k})$ for these transitions are explicitly stated.}\label{fig:states}
 \end{figure}
 
-\subsubsection{Per-Stage Costs and Cost Function} 
+\subsection{The Equivalent MDP Problem} 
 At the $k$-th stage each pair state-decision is associated to a \textit{per-stage cost}, denoted by $g_{k}\left(x_{k},d_{k}\right)$ which accumulates over time.
 For the special case that $x_{k}=F$ (termination state) the per-stage cost equals $0$, therefore we can define an auxiliary function $\tilde{g}_{k}\left(x_{k},d_{k}\right)$, such that
 \begin{equation}\label{generalcost}
@@ -533,7 +499,7 @@ Because the termination state is absorbing, no additional cost is accumulated wh
 In our context, $\tilde{g}_{k}\left(x_{k},d_{k}\right)$ may estimate the overlapping time, the throughput or a combination of both. 
 The formulation of the objectives and therefore the computation of the per-stage cost is addressed in Section \ref{sec:Policies}.
 
-The objective of the finite-horizon MDP is to find an admissible policy $\eta=\left\{\mu_{0},\mu_{1},\ldots,\mu_{N}\right\}$ that minimizes the \textit{cost function}
+The objective of the finite-horizon MDP is to find a policy $\eta=\left\{\mu_{0},\mu_{1},\ldots,\mu_{N}\right\}$ that minimizes the \textit{cost function}
 \begin{equation}\label{totalCost}
 J_{\eta} = \underset{X^{*}_0,\ldots,X^{*}_N}{\mathbb{E}}\left\{\displaystyle\sum_{k=0}^{N}g_{k}\left(X^{*}_{k},\mu_{k}\left(X^{*}_{k}\right)\right)\right\}
 %J_{\eta} = \underset{\vec{X}_{k}}{E}
@@ -545,7 +511,7 @@ J^{*} = \underset{\eta}{\mbox{min }} J_{\eta}
 \end{equation}
 
 %probabilidades de transición.
-The computation of the expectation on the right hand side of (\ref{totalCost}) relies on the transition probabilities $p_{k}\left(x_{k+1} | x_{k}, d_{k}\right)$, providing the probability of making a transition from state $x_{k}$ in time $k$ to state $x_{k+1}$ in time $k+1$ when the decision is $d_{k}=\left(u_{k},\cdot\right)$.\footnote{Note that $\vec{m}_{k}$ does not affect the transition probabilities of $x_{k}$.}
+The computation of the expectation on the right hand side of (\ref{totalCost}) relies on the transition probabilities $p_{k}\left(x_{k+1} | x_{k}, d_{k}\right)$, providing the probability of making a transition from state $x_{k}$ in time $k$ to state $x_{k+1}$ in time $k+1$ when the decision is $d_{k}=\left(u_{k},\cdot\right)$.\footnote{Note that $m_{k}$ does not affect the transition probabilities of $x_{k}$.}
 %Let us see how to compute these probabilities.
 %The finite-horizon MDP consist of finding the optimal cost $J^{*}$
 %\begin{equation}\label{totalCost}
@@ -557,8 +523,8 @@ The computation of the expectation on the right hand side of (\ref{totalCost}) r
 
 %Therefore, we have to characterize the transition probabilities for $\vec{X}_{k}$. 
 
-\subsubsection{Computing Transition Probabilities}
-The transition probabilities $p_{k}\left(x_{k+1} | x_{k}, u_{k}\right)$  for every $x_{k},x_{k+1}\in \mathcal{X}_{k}^{*}$, $u_{k}\in \mathcal{U}_{k}$, $k$ = $0,\ldots,N-1$, are:
+\subsection{Computing the Transition Probabilities}
+The transition probabilities $p_{k}\left(x_{k+1} | x_{k}, u_{k}\right)$  for every $x_{k},x_{k+1}\in \mathcal{X}_{k}$, $u_{k}\in \mathcal{U}_{k}$, $k$ = $0,\ldots,N-1$, are:
 \begin{equation}
 p_{k}\left(x_{k+1} | x_{k}, u_{k}\right) =
 \begin{cases}
@@ -682,7 +648,7 @@ and using the following equations. For the perfect detection case:
 \end{array}
 \end{equation}
 for $k = 1,\ldots,N$. And for the imperfect detection case: 
-\begin{equation}
+\begin{equation}\label{recursive2}
 \begin{array}{lcl}
 \hat{\vec{\pi}}_{x_{k-1}} & = & \vec{\pi}_{x_{k-1}}\mat{P},\\ 
 \vec{\pi}_{x_{k}}(i) & = &\\ 
@@ -740,11 +706,11 @@ for $k = 1,\ldots,N$.
 \section{Obtaining Pareto-Optimal Policies}\label{sec:Policies}
 \subsection{Cost Function}
 %In cognitive radio access there is, in general, a trade-off between secondary user transmission rate (\textit{throughput}) and collision probability with licensed users. 
-The cost function $\tilde{g}_{k}(x_{k},d_{k})$ represent a convex combination of two opposite objectives:  the throughput $b_{k}(\vec{m}_{k})$ and the average overlapping time $c_{k}(x_{k},\vec{m}_{k})$:
+The cost function $\tilde{g}_{k}(x_{k},d_{k})$ represents a convex combination of two opposite objectives:  the throughput $b_{k}(m_{k})$ and the average overlapping time $c_{k}(x_{k},m_{k})$:
 \begin{equation}\label{cost}
-\tilde{g}_{k}(x_{k},d_{k}) = \left[\alpha \frac{c_{k}(x_{k},\vec{m}_{k})}{c_{\text{max}}} + (\alpha -1)\frac{b_{k}(\vec{m}_{k})}{b_{\text{max}}}\right](1-u_{k})
+\tilde{g}_{k}(x_{k},d_{k}) = \left[\alpha \frac{c_{k}(x_{k},m_{k})}{c_{\text{max}}} + (\alpha -1)\frac{b_{k}(m_{k})}{b_{\text{max}}}\right](1-u_{k})
 \end{equation}
-where $0\leq \alpha \leq 1$. The objectives are divided by their maximum values $c_{\text{max}}$ and $b_{\text{max}}$ in order to obtain dimensionless (normalized) values. Note that $b_{k}(x_{k},\vec{m}_{k})$ is added with negative sign in the convex combination because the cost function is minimized in problem (\ref{MDPproblem}). According to multi-objective optimization theory, given a value of $\alpha$, the solution of the finite-horizon MDP with the cost defined in (\ref{cost}) yields a Pareto-optimal solution regarding these two opposite objectives, \textit{i.e.} a solution for which there does not exists any policy such that one objective can be improved without worsening the other. The set of Pareto-optimal solutions is referred to as the Pareto-front of the problem and we can estimate it by iteratively solving the MDP for a representative discrete range of $\alpha$ values.
+where $0\leq \alpha \leq 1$. The objectives are divided by their maximum values $c_{\text{max}}$ and $b_{\text{max}}$ in order to obtain dimensionless (normalized) values. Note that $b_{k}(x_{k},m_{k})$ is added with negative sign in the convex combination because the cost function is minimized in problem (\ref{MDPproblem}). According to multi-objective optimization theory, given a value of $\alpha$, the solution of the finite-horizon MDP with the cost defined in (\ref{cost}) yields a Pareto-optimal solution regarding these two opposite objectives, \textit{i.e.} a solution for which there does not exists any policy such that one objective can be improved without worsening the other. The set of Pareto-optimal solutions is referred to as the Pareto-front of the problem and we can estimate it by iteratively solving the MDP for a representative discrete range of $\alpha$ values.
 \subsubsection{Throughput}
 The maximum throughput is attained when $M$ channels are found idle in the first $M$ scanning slots and the decision made is to transmit using these $M$ channels. Given a transmission rate $R$ and scanning and transmission times equal to $\tau$ and $T$ respectively, the maximum throughput is
 \begin{equation}
@@ -752,42 +718,42 @@ b_{\text{max}} = \frac{MRT}{M\tau + T}.
 \end{equation}
 When the access algorithm decides to transmit in $n$ channels at stage $k$ the throughput is
 \begin{equation}
-b_{k}(\vec{m}_{k}) = \frac{nRT}{k\tau + T},\text{ } n \leq k
+b_{k}(m_{k}) = \frac{nRT}{k\tau + T},\text{ } n \leq k
 \end{equation}
 \subsubsection{Average Overlapping Time}
 The maximum average overlapping time occurs when, after selecting $M$ channels to transmit in, these $M$ channels turn out to be occupied by PUs when the SU starts to transmit and remain occupied for at least $T$ seconds. Therefore, in the worst case of having $M$ collisions lasting for $T$ seconds, the total overlapping time is:
 \begin{equation}
 c_{\text{max}} = MT.
 \end{equation}
-Accordingly, given a vector $\vec{m}_{k}$ selecting $n$ channels to transmit in after the $k$-th scanning slot, the average overlapping time is given by
+Accordingly, given a vector $m_{k}$ selecting $n$ channels to transmit in after the $k$-th scanning slot, the average overlapping time is given by
 \begin{equation}\label{collision}
-c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{subarray}{c} Y(t)\\t\in[k\tau, k\tau + T)\end{subarray}}{E}\Bigl[t \text{ in }\mathcal{S}(\vec{m}_{k}(j),1)\Big|x_{k}\Bigr]
-%c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\underset{t\in[k\tau, k\tau + T)}{Y(t)}}{E}\Bigl[t \text{ in }\mathcal{S}(\vec{m}_{k}(j),1)\Big|x_{k}\Bigr]
-%c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{array}{c}_{t\in[k\tau, k\tau + T)}\\_{Y(t)}\end{array}}{\text{\large E}}\Bigl[t \text{ in }\mathcal{S}(\vec{m}_{k}(j),1)\Big|x_{k}\Bigr]
+c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{subarray}{c} Y(t)\\t\in[k\tau, k\tau + T)\end{subarray}}{E}\Bigl[t \text{ in }\mathcal{S}(m_{k}(j),1)\Big|x_{k}\Bigr]
+%c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\underset{t\in[k\tau, k\tau + T)}{Y(t)}}{E}\Bigl[t \text{ in }\mathcal{S}(m_{k}(j),1)\Big|x_{k}\Bigr]
+%c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\underset{\begin{array}{c}_{t\in[k\tau, k\tau + T)}\\_{Y(t)}\end{array}}{\text{\large E}}\Bigl[t \text{ in }\mathcal{S}(m_{k}(j),1)\Big|x_{k}\Bigr]
 \end{equation}
-where the expectation operation calculates the expected total time that the spectrum process $Y(t)$ spends in the set of states $\mathcal{S}(\vec{m}_{k}(j),1)$ during the period $[k\tau, k\tau + T)$. 
-Recall that, according to its definition in (\ref{setS}), $\mathcal{S}(\vec{m}_{k}(j),1)$ corresponds to the set of states in $\mathcal{S}$, such that channel $\vec{m}_{k}(j)$ is occupied by a PU. 
-Therefore, (\ref{collision}) is the sum of the expected overlapping times on each of the $n$ channels selected. Let us denote by $l_{i,x_k}(\Delta t)$ the expected total time that $Y(t)$ spends in state $i \in \mathcal{S}$ during the interval $[k\tau, k\tau+\Delta t]$ given the observations $x_k$. Then, 
+where the expectation operation calculates the expected total time that the spectrum process $Y(t)$ spends in the set of states $\mathcal{S}(m_{k}(j),1)$ during the period $[k\tau, k\tau + T)$. 
+Recall that, according to its definition in (\ref{setS}), $\mathcal{S}(m_{k}(j),1)$ corresponds to the set of states in $\mathcal{S}$, such that channel $m_{k}(j)$ is occupied by a PU. 
+Therefore, (\ref{collision}) is the sum of the expected overlapping times on each of the $n$ channels selected. Let us denote by $l_{i,x_k}(t')$ the expected total time that $Y(t)$ spends in state $i \in \mathcal{S}$ during the interval $[k\tau, k\tau+t']$ given the information $x_k$, after $k$ scanning slot. Then, 
 \begin{equation}
-c_{k}(x_{k},\vec{m}_{k}) = \displaystyle\sum_{j=1}^{n}\displaystyle\sum_{i\in\mathcal{S}(\vec{m}_{k}(j),1)}l_{i,x_{k}}(T)
+c_{k}(x_{k},m_{k}) = \displaystyle\sum_{j=1}^{n}\displaystyle\sum_{i\in\mathcal{S}(m_{k}(j),1)}l_{i,x_{k}}(T-k\tau)
 \end{equation}
-The expected total time spent in a state, $l_{i,x_k}(\Delta t)$, is a known performance parameter of Markov models (see \cite{ref:Bolch2006}). Let $\vec{L}_{x_k}(\Delta t)$ indicate the vector whose elements are $l_{i,x_k}(\Delta t)$. $\vec{L}_{x_k}(\Delta t)$ can be obtained from the transient state probability vector of $Y(t)$ conditioned on $x_k$, $\vec{\pi}'_{x_k}(t)$, as follows:
-\begin{equation}
-\vec{L}_{x_k}(\Delta t) = \int_{k\tau}^{k\tau+\Delta t}\vec{\pi}'_{x_k}(t) d\Delta t,
+The expected total time spent in a state, $l_{i,x_k}(t')$, is a known performance parameter of Markov models (see \cite{ref:Bolch2006}). Let $\vec{L}_{x_k}(t')$ indicate the vector whose elements are $l_{i,x_k}(t')$, and let $\vec{\pi}^{(t)}_{x_k}$ denote the transient state probability vector of $Y(t)$ conditioned on $x_k$.
+By definition, $\vec{L}_{x_k}(t')$ can be expressed as:
+\begin{equation}\label{integral}
+\vec{L}_{x_k}(t') = \int_{k\tau}^{k\tau+t'}\vec{\pi}^{(t)}_{x_k} dt,
 \end{equation}
-An efficient way to calculate vector $\vec{L}_{x_k}(\Delta t)$ is by solving the differential equation
-\begin{equation}\label{diffEq}
-\frac{d\vec{L}_{x_k}(\Delta t)}{d\Delta t} = \vec{L}_{x_k}(\Delta t)\mat{Q} + \vec{\pi}'_{x_k}(k\tau), \quad l_{i,x_k}(0)=0 \quad \forall i\in\mathcal{S}  
+At time $k\tau$, the value of $Y(t)$ is given by $Y(k\tau) = Y_{k}$, whose probability distribution conditioned on $x_{k}$ is $\vec{\pi}_{x_{k}}$. Therefore, $\vec{\pi}^{(k\tau)}_{x_k} = \vec{\pi}_{x_{k}}$, given by (\ref{recursive}) and (\ref{recursive2}), allowing us to compute $\vec{L}_{x_k}(t')$ as the solution of the following differential equation
+\begin{equation}\label{equation}
+\frac{d\vec{L}_{x_k}(t')}{dt'} = \vec{L}_{x_k}(t')\mat{Q} + \vec{\pi}_{x_{k}}, \quad \vec{L}_{x_k}(0)=\vec{0} 
 \end{equation}
-At time $k\tau$, the value of $Y(t)$ is given by $Y(k\tau) = Y_{k}$, whose probability distribution conditioned on $x_{k}$ is $\vec{\pi}_{x_{k}}$. Therefore, obtaining $\vec{L}_{x_k}(\Delta t)$ is equivalent to solving 
-\begin{equation}\label{timeL}
-\frac{d\vec{L}_{x_k}(\Delta t)}{d\Delta t} = \vec{L}_{x_k}(\Delta t)\mat{Q} + \vec{\pi}_{x_{k}}, \quad l_{i,x_k}(0)=0 \quad \forall i\in\mathcal{S} 
-\end{equation}
+%\begin{equation}\label{timeL}
+%\frac{d\vec{L}_{x_k}(\Delta t)}{d\Delta t} = \vec{L}_{x_k}(\Delta t)\mat{Q} + \vec{\pi}_{x_{k}}, \quad l_{i,x_k}(0)=0 \quad \forall i\in\mathcal{S} 
+%\end{equation}
 \subsection{Backward Induction Algorithm}
 %Comentarios sobre las políticas (HD,RD...), existencia de políticas etc. Backward induction algorithm. Estimar el coste computacional.
-Once the MDP with imperfect state estimation has been reformulated as a fully observable state estimation one, and given that the horizon is finite, the MDP problem can be solved by means of the backward induction algorithm, also known as dynamic programming (DP) algorithm.
+Once the POMDP has been reformulated as a fully observable state estimation one, and given that the horizon is finite, the MDP problem can be solved by means of the backward induction algorithm, also known as dynamic programming (DP) algorithm.
 In addition, because both the state and the control spaces are finite, there exists at least one deterministic Markovian policy which is optimal \cite{ref:Puterman2005}.
-This is the type of policies that we have defined in (\ref{policies}), where each function $\mu_{k}$ maps states (and not past histories) into decisions, \textit{i.e.} $\mu_{k}$ is Markovian. Similarly, $\mu_{k}(x_{k})$ always gives the same outcome with probability 1, \textit{i.e.} $\mu_{k}$ is deterministic.
+This is the type of policies defined in Subsection \ref{Policies}, where each function $\mu_{k}$ maps states (not past histories) into decisions, \textit{i.e.} $\mu_{k}$ is Markovian. Similarly, $\mu_{k}(x_{k})$ always gives the same outcome with probability 1, \textit{i.e.} $\mu_{k}$ is deterministic.
 
 The algorithm to find optimal Markovian deterministic policies for the MDP problem (\ref{MDPproblem}) is the following:
 
@@ -818,47 +784,13 @@ Note that both (\ref{muNpolicy}) and (\ref{mukpolicy}) may result in more than o
 
 %%Computational cost
 \subsection{Computational Cost}
-This subsection is concerned with the computational cost of obtaining an optimal OSA policy.
-%Let us estimate the computational cost of obtaining an optimal policy for the CP. 
-This cost can be divided into three parts: (i) the cost of obtaining the conditional distributions $\hat{\vec{\pi}}_{x_{k}}$ and $\vec{\pi}_{x_{k}}$; (ii) the cost of solving differential equation (\ref{timeL}); and (iii) the cost of executing the dynamic programming algorithm.
+%This subsection is concerned with the computational cost of obtaining an optimal OSA policy.
+Given the dimension of the problem $N$, and the spectrum management policy, it is straightforward to evaluate the computational cost of obtaining the optimal OSA policy.
+Table \ref{Table2} shows the computational costs, including computation time in a 50 Gflops processor, for the case of random or sequential channel allocations, considering different number of channels $N$. % The worst case implies storing $2^{N}$ decisions. Table \ref{Table2} table also shows the memory requirements to store the OSA policy.
+Even if the policy is computed off-line, the computational effort becomes cumbersome for a spectrum size of around 20 channels. Nevertheless, a pre-computed policy implies memory requirements too. Considering the decision tree structure of the MDP (see Fig. \ref{fig:states}) an SU only needs to store the information states where a transmission decision has to be made. Table \ref{Table2} shows the worst case, in which $2^{N}$ states should are stored. %The SU's storage requirement results impractical around this value too.
 
-The first part comprises solving the linear equation (\ref{linearEquation}) to obtain $\vec{\pi}_{0}$, computing $P$ by means of the matrix exponential in (\ref{TransitionMatrix}) and solving recursive equations (\ref{recursive}). Note that the amount of required multiplications depends on the numerical methods and the matrix structure. Assuming that $\vec{\pi}_{0}$ and $P$ are obtained by Gaussian elimination and block diagonal methods respectively, the cost of computing all $\vec{\pi}_{x_{k}}$ and $\hat{\vec{\pi}}_{x_{k}}$ vectors is approximately $\frac{55}{3}2^{3N}-\frac{7}{3}2^{N}$ multiplications. In the case of spectrum merging this number reduces to $\frac{55}{3}N^{3}-\frac{7}{3}N$.
-
-%The initial estimate $\vec{\pi}_{0}$ is obtained by solving the linear equation (\ref{linearEquation}), which has $2^{N}$ unknowns (only $N$ for the case of merged spectrum for PUs). Solving it with the Gaussian elimination method would require $\frac{2^{3N}}{3}+2^{2N}-\frac{2^{N}}{3}$ multiplications \cite{}. Previously, we have to compute the transition matrix $P$ by means of the matrix exponential in (\ref{TransitionMatrix}). This matrix function can be solved in many ways with very diverse computational costs. As a reference, let us consider block diagonal methods \cite{}, whose cost, for a $2^{N}\times2^{N}$ matrix, is approximately $17\times2^{3N}$ multiplications. Note that this is a worst case estimation since, in our case, $Q$ is a sparse matrix.
-
-%The recursive equations (\ref{recursive}) provide the vectors $\vec{\pi}_{x_{1}},\ldots,\vec{\pi}_{x_{N}}$ and $\hat{\vec{\pi}}_{x_{1}},\ldots,\hat{\vec{\pi}}_{x_{N-1}}$. 
-%According to these equations, computing $\vec{\pi}_{x_{k}}$ requires $2^{N-1}$ multiplications for each possible state $x_{k}$. Because each stage $k$ comprises $2^{k}$ possible $x_{k}$ values, the total number of operations required to obtain all $\vec{\pi}_{x_{k}}$ vectors is 
-%\begin{equation}
-%\begin{array}{lcl}
-%2^{N-1}\displaystyle\sum_{k=1}^{N}2^{k} & = & 2^{N-1}\left(2^{N+1} - 2\right)\\
-%																				& = & 2^{2N} - 2^{N}
-%\end{array}
-%\end{equation} 
-%Similarly, at each $x_{k}$, $\hat{\vec{\pi}}_{x_{k}}$ is obtained multiplying $P$ by a vector, therefore computing all $\hat{\vec{\pi}}_{x_{k}}$ vectors implies the following number of multiplications 
-%\begin{equation}
-%\begin{array}{lcl}
-%2^{2N}\displaystyle\sum_{k=1}^{N-1}2^{k} & = & 2^{2N}\left(2^{N} - 2\right)\\
-%																				& = & 2^{3N} - 2^{2N+1}
-%\end{array}
-%\end{equation}
-%
-%Summarizing, the cost of computing all $\vec{\pi}_{x_{k}}$ and $\hat{\vec{\pi}}_{x_{k}}$ vectors is $\frac{55}{3}2^{3N}-\frac{7}{3}2^{N}$ multiplications. In the case of merged PU spectrum this number reduces to $\frac{55}{3}N^{3}-\frac{7}{3}N$.
-
-Solving differential equation (\ref{timeL}) numerically may have very diverse costs depending on the method applied. Considering, as a reference, a 4-th order Runge-Kutta (RK4) with an integration time divided into 10 intervals, this operation implies $40\times2^{2N}$ multiplications ($40\times N^{2}$ for spectrum merging).
-
-%Solving differential equation (\ref{timeL}) numerically may have very diverse costs depending on the integration time $T$ and the method used. As a reference let us consider 4-th order Runge-Kutta (RK4), with an integration time divided into 10 intervals. At each interval, RK4 requires 4 evaluations of the function on the right side of (\ref{timeL}), which implies $2^{2N}$ multiplications. Therefore, the whole integration requires $40\times2^{2N}$ multiplications ($40\times N^{2}$ for merged PU spectrum).
-
-
-Finally, let us estimate the computational cost of the DP algorithm in our problem. At the $k$-th stage, the summation on the right hand side of (\ref{Jkcost}) requires the multiplication of $2^{k+1}$ transition probabilities with the corresponding value of the cost-to-go function $J^{*}_{k+1}\left(x_{k+1}\right)$ (for the case of $u_{k}=1$). These $2^{k+1}$ operations must be done for each one of the $2^{k}$ states in $\mathcal{X}_{k}$, therefore solving the MDP involves $2\frac{2^{2N}-1}{3}$ multiplications.
-%\begin{equation}
-%\begin{array}{lcl}
-%\displaystyle\sum_{k=0}^{N-1}2^{k}2^{k+1} & = & \displaystyle\sum_{k=0}^{N-1}2^{2k+1}\\
-%																					& = & 2\displaystyle\sum_{k=0}^{N-1}2^{2k}\\
-%																					& = & 2\displaystyle\frac{2^{2N}-1}{3}
-%\end{array}
-%\end{equation}
-
-Summing up these contributions, the estimated number of multiplications required to obtain an optimal policy is $\frac{55}{3}2^{3N}+\frac{120}{3}2^{2N}-\frac{7}{3}2^{N}$. Clearly, this procedure is, in general, not feasible for practical implementation at SU nodes (except for the case of spectrum merging for PUs in which the cost is only $\frac{55}{3}N^{3}+\frac{120}{3}N^{2}-\frac{7}{3}N$). However, depending on $N$ it is possible to compute the optimal policy off-line and store it on the SUs. Considering the decision tree structure of the MDP (see Fig. \ref{fig:states}) an SU only needs to store the decisions associated to the states where a transmission decision has to be made. The worst case implies storing $2^{N}$ decisions. Table \ref{Table2} compares memory requirements and computational costs, including computation time in a 50 Gflops processor, for different spectrum bandwidths.
+Therefore, for larger $N$ values, approximation methods could be applied. For example, an approximate evaluation of matrix $P$, or state aggregation \textit{e.g.} by modeling PU channel occupation in blocks of channels instead of individual ones. %This issue lies beyond the scope of this work.
+On the other hand, with the merged spectrum strategy, the implementation requirements of OSA reduce dramatically as shown in Table \ref{Table3}. This advantage adds to the ones shown in following section.
 
 \begin{table}
 \begin{tabular}{|c|c|c|c|} \hline
@@ -890,15 +822,10 @@ Summing up these contributions, the estimated number of multiplications required
 \label{Table3}
 \end{table}
 
-Even if the policy is computed off-line, the computational effort becomes cumbersome for a spectrum size of around 20 channels. The SU's storage requirement results impractical around this value too.
-%It is clear that an OSA MDP-based policy becomes impractical when the number of channels is around 20 or above because of the computational effort to obtain the policy off-line and the storage requirements.
-%When using merged PU's spectrum the number of operations reduces to $\frac{55}{3}N^{3}+\frac{120}{3}N^{2}-\frac{7}{3}N$ and the SU has to reserve memory space for up to $N$ decisions.
-Therefore, for larger $N$ values, approximation methods should be explored. For example, an approximate evaluation of matrix $P$ or state aggregation \textit{e.g.} by modeling PU channel occupation in blocks of channels instead of individual ones. This issue lies beyond the scope of this work and is considered for future research.
-On the other hand, with the merged spectrum strategy, the implementation requirements of OSA reduce dramatically as shown in Table \ref{Table3}. This advantage adds to the ones shown in following section.
-
 \section{Numerical Results}\label{ref:Results}
 \subsection{Performance Evaluation}
-In this subsection we compare the performance of Pareto-optimal OSA policies for the three PU channel allocation strategies previously explained: random, sequential and sequential with spectrum merging for PUs. The parameter settings of the evaluation scenario are shown in table \ref{Table4}.
+In this subsection we compare the performance of Pareto-optimal OSA policies for the three PU channel allocation strategies previously explained: random, sequential and sequential with spectrum merging for PUs. We use a Poisson traffic model, with 8 new PU arrivals per minute, and and average channel holding time of 1 minute, i.e. an offered traffic of 8 Erlangs over a 10-channels band.
+The parameter settings of the evaluation scenario are shown in Table \ref{Table4}.
 
 \begin{table}[ht]
 \begin{tabular}{|c|c|c|} \hline
@@ -906,7 +833,7 @@ In this subsection we compare the performance of Pareto-optimal OSA policies for
 $N$ & 10 & channels\\
 $M$ & 3 & channels\\
 $\lambda$ & $\frac{8}{60}$ & $s^{-1}$\\
-$\mu$ & $\frac{1}{60}$ & $s^{-1}$\\
+$1/\mu$ & $60$ & $s$\\
 $T$ & $10$ & $s$\\
 $\tau$ & 500& $ms$\\\hline
 \end{tabular}
@@ -915,7 +842,7 @@ $\tau$ & 500& $ms$\\\hline
 \label{Table4}
 \end{table}
 
-As explained in previous section, the per-stage cost function (\ref{cost}) consists of a convex combination of two opposite parameters: throughput and overlapping time. For a given weight $\alpha$ in (\ref{cost}), a policy $\eta^{*}$ solving the MDP problem yields an expected normalized throughput, denoted by $J_{\text{th}}$ and an expected total overlapping time denoted by $J_{c}$. The policy $\eta^{*}$ is Pareto-optimal because $J_{\text{th}}$ cannot be improved by any other policy without worsening $J_{c}$ and \textit{vice versa}.
+As explained in previous section, the per-stage cost function (\ref{cost}) consists of a convex combination of two opposite parameters: throughput and overlapping time. For a given weight $\alpha$ in (\ref{cost}), a policy $\eta^{*}$ solving the MDP problem yields an expected normalized throughput, denoted by $J_{\text{th}}$ and an expected total overlapping time denoted by $J_{c}$. %The policy $\eta^{*}$ is Pareto-optimal because $J_{\text{th}}$ cannot be improved by any other policy without worsening $J_{c}$ and \textit{vice versa}.
 For any policy $\eta = \left\{\mu_{0},\ldots,\mu_{N}\right\}$, $J_{\text{th}}$ is obtained by the following recursive equations:
 %the policy solving the MDP problem yields a point in the Pareto-front, implying that the throughput obtained by this policy cannot be improved by any other policy without worsening the collision time and \textit{vice versa}.
 \begin{equation}
@@ -941,7 +868,7 @@ Fig. \ref{fig:paretofront} shows the Pareto fronts obtained under the three PU c
 \caption[]{Pareto fronts showing the optimal combinations of normalized optimal throughput and normalized overlapping time for three different PU channel allocation patterns.}\label{fig:paretofront}
 \end{figure}
 
-To show the benefit of MDP-based policies let us consider, as a reference, a family of policies than can be considered a reasonable choice. These policies, denoted by $\eta^{r}$, decide to transmit in $M$ channels whenever the number of available channels detected is $n_{f} = M + r$. Otherwise, the CP pair keeps on scanning the spectrum. If the total number of available channels in the spectrum is $n_{f} < M + r$, then the SU node transmits in $n=\text{max}\left(n_{f}-r,0\right)$ channels.
+To show the benefit of MDP-based policies let us consider the following family of \textit{baseline policies}, $\eta^{r}$: A CP following $\eta^{r}$ decides to transmit over $M$ channels whenever the number of available channels detected is $n_{f} = M + r$. Otherwise, the CP pair keeps on scanning the spectrum. If the total number of available channels in the spectrum is $n_{f} < M + r$, then the SU node transmits in $n=\text{max}\left(n_{f}-r,0\right)$ channels.
 %\begin{equation}
 %n = 
 %	\begin{cases}
@@ -949,14 +876,14 @@ To show the benefit of MDP-based policies let us consider, as a reference, a fam
 %	0 &, \mbox{otherwise}\\
 %	\end{cases}	
 %\end{equation}
-The integer parameter $r > 0$ represents a bandwidth safety margin to reduce collisions. Fig. \ref{fig:comparative} compares the performance of reference policies $\eta^{r}$ for $r = 0,\ldots,N-1$ (in dotted line) to MDP-based policies under each PU channel management scheme. Note that the lower the safety margin $r$, the greater the throughput, at the cost of an increased overlapping time. Although MDP-based policies outperform the reference ones in every scenario, it is interesting how close the reference performance is to the Pareto front in the merged spectrum scenario, suggesting that, in this case, it may be acceptable to use a simple set of rules similar to $\eta^{r}$, alleviating the need to solve the MDP problem off-line.
+The integer parameter $r > 0$ represents a bandwidth safety margin to reduce collisions. Fig. \ref{fig:comparative} compares the performance of baseline policies $\eta^{r}$ for $r = 0,\ldots,N-1$ (in dotted line) to MDP-based policies under each PU channel management scheme. Note that the lower the safety margin $r$, the greater the throughput, at the cost of an increased overlapping time. Although MDP-based policies outperform the reference ones in every scenario, it is interesting how close the reference performance is to the Pareto front in the merged spectrum scenario, suggesting that, in this case, it may be acceptable to use a simple set of rules similar to $\eta^{r}$, alleviating the need to solve the MDP problem off-line.
 This also illustrates the utility of Pareto front computations for evaluating OSA policies. The performance of both sets of policies is also similar under every PU strategy for the case in which the overlapping time is of no importance ($\alpha = 0$), since both decide to transmit over the maximum $M$ channels (if $M$ or more channels are available). 
 %suggesting that the Pareto-optimal policies in this case can be reduced to a simple set of rules similar to $\eta^{r}$. 
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.8]{ReferencePolicies.eps}
-\caption[]{MDP-based policies \textit{vs.} reference policies $\eta^{r}$ with $r = 0,\ldots,N-1$.}\label{fig:comparative}
+\caption[]{MDP-based policies \textit{vs.} baseline policies $\eta^{r}$ with $r = 0,\ldots,N-1$.}\label{fig:comparative}
 \end{figure}
 
 One reasonable concern about the proposed procedure for obtaining OSA policies is that it may be too reliant on PU traffic estimation accuracy. 
@@ -971,7 +898,7 @@ This subsection evaluates the sensitivity of each performance figure to drifts o
 Drifts are positive when PU traffic is larger than the estimated one, and negative otherwise.
 
 %To perform this evaluation we selected, for each PU channel assignment scheme, a Pareto-optimal policy computed using the $\lambda$ and $\mu$ values specified in Table \ref{Table4}.
-We consider again three PU channel management scenarios. The OSA policy used in each scenario is computed using the nominal $\lambda$ and $\mu$ values specified in Table \ref{Table4}.
+For the three PU channel management scenarios considered so far, the OSA policy is computed using the nominal $\lambda$ and $\mu$ values specified in Table \ref{Table4}.
 Then, at each scenario, we evaluated the performance of the OSA policy in terms of throughput and overlapping time for drifts ranging from negative to positive values.
 In OSA, the main concern is to keep PU's QoS degradation at low values.
 %CONSIDERAR: explicar como se ha computado cada parámetro (recursivamente, etc).
@@ -1039,9 +966,7 @@ OSA policies need to balance SU's throughput and performance degradation of PUs,
 As expected, the overall performance improves when channels are assigned to PUs sequentially instead of randomly and improves even more if PUs always occupy adjacent channels.
 %Pareto front representations  
 We also showed the robustness of Pareto-optimal policies against inaccuracies in PU traffic estimation, supporting the use of off-line pre-computed policies.
-Depending on how the channels are assigned to PUs and the total amount of channels, approximate methods may be required to address the problem. Exploring these methods is an interesting future research issue.
-Similarly, it is still required a wider study of the costs and the benefits of modifying licensed spectrum management in overlay scenarios.
-However, the results presented in this paper suggest that, in situations of low or moderate PU traffic, in which the operation of cognitive networks is justified, it is convenient for the licensed network to adjust its own channel allocation polices to facilitate spectrum sharing with SUs. 
-%it is convenient for the licensed network to implement spectrum management policies facilitating coexistence with cognitive devices.
-%El rendimiento de las políticas óptimas mejora notablemente cuando a los PU se les asignan los canales no aleatoriamente, sino de forma secuencial y aún más si las comunicaciones PU siempre se restringen a canales adjacentes. Este resultado, auqnue esperable, no se había cuantificado y se ha comprobado que ambos parámetros mejoran simultáneamente. Además, las políticas resultan robustas ante errores de predicción del tráfico PU.
-%Quedan por investigar un estudio más amplio de los costes / beneficios de modificar las polítcas de gestión de espectro un situaciones de overlay con secondary users. Sin embargo, los resultados obtenidos sugieren que en situaciones de baja carga, en las que OSA tiene sentido, resulta muy conveniente tanto para los PUs como para los SU implmentar politícas de gestion que favorezcan la coexistencia.
+%Depending on how the channels are assigned to PUs and the total amount of channels, approximate methods may be required to address the problem. %Exploring these methods is an interesting future research issue.
+The results of this paper also reinforce the recently suggested idea that, in situations of low or moderate PU traffic in which the operation of cognitive networks is justified, it is convenient for the licensed network to adjust its own channel allocation polices to facilitate spectrum sharing with SUs. 
+%Similarly, it is still required a wider study of the costs and the benefits of modifying licensed spectrum management in overlay scenarios.
+%However, the results presented in this paper suggest that, in situations of low or moderate PU traffic, in which the operation of cognitive networks is justified, it is convenient for the licensed network to adjust its own channel allocation polices to facilitate spectrum sharing with SUs. 
