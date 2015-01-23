@@ -16,18 +16,26 @@
 			}
 		},
 		{
-			"file": "mystyle.sty",
+			"file": "tex/Intro.tex",
 			"settings":
 			{
-				"buffer_size": 1773,
+				"buffer_size": 28060,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tex/MAB_CSSA.tex",
+			"file": "bibtex/aux_thesisBib.tex",
 			"settings":
 			{
-				"buffer_size": 90577,
+				"buffer_size": 61010,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mystyle.sty",
+			"settings":
+			{
+				"buffer_size": 1773,
 				"line_ending": "Unix"
 			}
 		}
@@ -85,24 +93,23 @@
 	"expanded_folders":
 	[
 		"/Users/mariol/Documents/git/TESIS",
-		"/Users/mariol/Documents/git/TESIS/bibtex",
-		"/Users/mariol/Documents/git/TESIS/tex"
+		"/Users/mariol/Documents/git/TESIS/bibtex"
 	],
 	"file_history":
 	[
+		"/Users/mariol/Documents/git/TESIS/tex/Title.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
 		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/TESIS/main.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Title.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
 		"/Users/mariol/Documents/git/TESIS/tesis.sublime-project",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
@@ -195,6 +202,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Our contribution",
+			"On the im",
 			"MAB_CSSA_T",
 			"Survey_table",
 			"table",
@@ -320,9 +329,7 @@
 			"fig:subfig1",
 			"[h",
 			"sec:System",
-			"sec:RelatedWork",
-			"sec:Relat",
-			"ieee"
+			"sec:RelatedWork"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -442,8 +449,8 @@
 						"selection":
 						[
 							[
-								457,
-								457
+								91,
+								91
 							]
 						],
 						"settings":
@@ -451,7 +458,7 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 488.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -459,6 +466,64 @@
 				},
 				{
 					"buffer": 1,
+					"file": "tex/Intro.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28060,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20380,
+								20380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 7410.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "bibtex/aux_thesisBib.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 61010,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3671,
+								3653
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1722.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "mystyle.sty",
 					"semi_transient": false,
 					"settings":
@@ -482,41 +547,7 @@
 						"translation.y": 1355.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 2,
-					"file": "tex/MAB_CSSA.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 90577,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								288,
-								288
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 145.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -539,18 +570,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.3703978531,
 			1.0
 		],
 		"rows":
