@@ -11,15 +11,23 @@
 			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 838,
+				"buffer_size": 878,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tex/Abstract.tex",
+			"file": "mystyle.sty",
 			"settings":
 			{
-				"buffer_size": 2080,
+				"buffer_size": 1773,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tex/MAB_CSSA.tex",
+			"settings":
+			{
+				"buffer_size": 90577,
 				"line_ending": "Unix"
 			}
 		}
@@ -77,25 +85,26 @@
 	"expanded_folders":
 	[
 		"/Users/mariol/Documents/git/TESIS",
+		"/Users/mariol/Documents/git/TESIS/bibtex",
 		"/Users/mariol/Documents/git/TESIS/tex"
 	],
 	"file_history":
 	[
-		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
-		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
-		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
-		"/Users/mariol/Documents/git/TESIS/main.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Title.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
-		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
+		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
+		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
+		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
+		"/Users/mariol/Documents/git/TESIS/main.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Title.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
 		"/Users/mariol/Documents/git/TESIS/tesis.sublime-project",
-		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
 		"/Users/mariol/Documents/git/TESIS/originals/BD_ICC/background_detection.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Intro.aux",
@@ -186,6 +195,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"MAB_CSSA_T",
+			"Survey_table",
+			"table",
+			"Bkass",
+			"Multi-armed b",
+			"Wireless Communications",
+			"Opportu",
 			"Structure",
 			"Supervised",
 			"DSA",
@@ -306,14 +322,7 @@
 			"sec:System",
 			"sec:RelatedWork",
 			"sec:Relat",
-			"ieee",
-			"access.eps",
-			"access",
-			"\\subfigure",
-			"table2",
-			"table1",
-			"{figure}[",
-			"Effect of PU"
+			"ieee"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -417,7 +426,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -426,15 +435,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 838,
+						"buffer_size": 878,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								332,
-								332
+								457,
+								457
 							]
 						],
 						"settings":
@@ -442,27 +451,61 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 160.0,
+						"translation.y": 488.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "tex/Abstract.tex",
-					"semi_transient": true,
+					"file": "mystyle.sty",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2080,
+						"buffer_size": 1773,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1445,
+								1445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/TeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1355.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "tex/MAB_CSSA.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90577,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								288
 							]
 						],
 						"settings":
@@ -470,10 +513,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 145.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -496,11 +539,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.3703978531,
 			1.0
 		],
 		"rows":
