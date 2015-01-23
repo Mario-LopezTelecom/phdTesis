@@ -38,39 +38,39 @@ field of High Frequency Trading of stocks \cite{web:Silver2012} where the firm's
 
 It is hard to convince the telecommunications industry to adopt automated dynamic spectrum management mechanisms if there is no strong evidence that these algorithms are safe againist wrong decisions (due to disadaptation to real time, for example). We believe that optimality, then, should be considered as a secondary objective.
 
-\section{Motivation and Objectives}
+\section{Motivation and Objective}
 
 As discussed in the previous section, while DSA has been widely accepted as the most promising approach to address the spectrum inefficiency problem, there are still some concerns that hinder its fully adoption in the telecom industry \cite{ref:Kelly2012}.
 % Añadir cita que corrobore esto. De momento se queda la que hay.
 
-Spectrum holders and regulators alike demand a higher level of protection for PU communications, and a better incentive design. In consequence, our\footnote{I will be using the first person plural by default throughout my thesis. Most of the ideas and work is a team effort involving my supervisor and other authors. This should not be considered as something that works against showing my autonomy, but even my personal decisions where strongly inspired by others' opinions. Meaningful research is not done (or should not be done) by a single person in a vacuum \cite{ref:Mihaly2013}. Thus, I consider artificial the use of singular forms here. In other parts of this thesis, such first person plural also includes the reader, primarily when describing mathematical derivations, as a natural way of walking him through the process.} \emph{motivation} in this thesis is, \emph{to develop dynamic spectrum access mechanisms with a strong focus on the protection and creation of incentives to the PUs.}. We directed our attention to the Opportunistic Spectrum Access framework, as it is more conservative regarding PU's protection, and to spectrum trading in our search for incentives.
+Spectrum holders and regulators alike demand a higher level of protection for PU communications, and better incentives to accept coexistence with other users in their spectrum. In consequence, our\footnote{I will be using the first person plural by default throughout my thesis. Most of the ideas and work is a team effort involving my supervisor and other authors. This should not be considered as something that works against showing my autonomy, but even my personal decisions where strongly inspired by others' opinions. Meaningful research is not done (or should not be done) by a single person in a vacuum \cite{ref:Mihaly2013}. Thus, I consider artificial the use of singular forms here. In other parts of this thesis, such first person plural also includes the reader, primarily when describing mathematical derivations, as a natural way of walking him through the process.} \emph{motivation} in this thesis is, \emph{to develop dynamic spectrum access mechanisms focusing on the protection and creation of incentives to the PUs.}. We directed our attention to the Opportunistic Spectrum Access framework, as it is more conservative regarding PU's protection, and to spectrum trading in our search for incentives.
 Improvements in the Spectrum Commons Model are out of the scope of this thesis, since it removes property rights over spectrum and its challenges are significantly different.\footnote{There has been a long ongoing debate about whether such a drastic change of paradigm is convenient \cite{ref:Peha2005}, given the success witnessed in unlicensed bands (e.g. in the ISM band).}
 
 More specifically, we set the following sub-objectives regarding unresolved issues in OSA: 
 \begin{itemize}
-\item Improving existing MAC protocols for single-radio transceivers (addressed in chapters \ref{BD_chap} and \ref{SPEC_MAN_chap}).
-\item Assessing the impact of the secondary activity on primary users' performance. Established bounds in the OSA literature have been heterogeneous in nature and difficult to assess (chapters \ref{BR_chap} and \ref{SPEC_MAN_chap}).
+\item Improving existing MAC protocols for hardware-constrained radios, specifically by considering the effect of the scanning delay on the information uncertainty (addressed in chapters \ref{BD_chap} and \ref{SPEC_MAN_chap}).
+\item Allowing the secondary devices to better assess the impact of their activity on primary users' performance. The previous literature relied on OSA protocols design to keep PU performance above certain bounds that are heterogeneous in nature and difficult to assess in practice (chapters \ref{BR_chap} and \ref{SPEC_MAN_chap}).
 \item Exploring the options available to the primary operators for easing the coexistence with secondary devices (chapters \ref{BR_chap} and \ref{SPEC_MAN_chap}).
 \item Proposing an application of OSA with practical interest to the telecommunications industry, and therefore motivating its adoption (chapter \ref{RSM_chap}).
 \end{itemize}
 
 With respect to the open challenges in spectrum trading, we pursued the following sub-goals:
 \begin{itemize}
-\item Providing an unified, structured and critic view of its characteristic challenges and proposed solutions so far, not done before (chapter \ref{Survey_chap}).
+\item Providing an unified, structured and critic view of the existing solutions on this field, its specific challenges and open issues. An study with such a broad scope had not been done before (chapter \ref{Survey_chap}).
 \item Balancing PUs' QoS with the economic revenue obtained by selling spectrum opportunities to SUs (chapter \ref{Sarnoff_chap}). 
-\item Exploring mechanisms not based on monetary values. Most previous works are focused on economic transactions. However, other types of trades could add non-substitutable value such as trading spectrum opportunities for relay services (chapter \ref{MAB_CSSA_chap}).
+\item Exploring mechanisms not based on monetary values. Most previous works are focused on economic transactions. However, other types of trades could add non-substitutable value such as trading spectrum opportunities in exchange for relay services (chapter \ref{MAB_CSSA_chap}).
 \end{itemize}
 
 We also have two common sub-objectives for OSA and spectrum trading:
 \begin{itemize}
 \item Dealing with imperfect information scenarios. That is, those for which some of the parameters of their stochastic models are not known or are not stationary (chapters \ref{RSM_chap} and \ref{MAB_CSSA_chap}). 
-\item Keeping complexity low. The main tendency of previous (and contemporaneous) solutions in the area has been building increasingly complex models. Nonetheless, the resources required to reach such elaborated solutions have not been considered enough, specially time.
+\item Keeping complexity low. The main tendency of previous (and contemporaneous) solutions in the area has been building increasingly complex models. Nonetheless, the resources, especially time, required to reach such elaborated solutions have not been considered enough.
 \end{itemize}
-This last item pervades all our proposed mechanisms.
-Previous works' trend was to deal with more  issues of DSA in more convoluted scenarios, aiming to solve them optimally and often neglecting computational and / or communication overhead.
-Nevertheless, multiple parameters in DSA experience rapid variations over time: spectrum availability, demand (unplanned peaks of traffic), valuation of the spectrum (changes in channel gains, mobility of entities), etc.
-In consequence, we believe that \emph{time consumption should be regarded as a key feature in DSA algorithms}: if obtaining an optimal solution takes so long that the system’s parameters vary significantly during the computation time, this solution may render inefficient. 
-In addition, the more time devoted to negotiation among the agents, the less time used in transmission. 
+% This last item pervades most of our proposed mechanisms.
+% Previous works' trend was to deal with more  issues of DSA in more convoluted scenarios, aiming to solve them optimally and often neglecting computational and / or communication overhead.
+% Nevertheless, multiple parameters in DSA experience rapid variations over time: spectrum availability, demand (unplanned peaks of traffic), valuation of the spectrum (changes in channel gains, mobility of entities), etc.
+% In consequence, we believe that \emph{time consumption should be regarded as a key feature in DSA algorithms}: if obtaining an optimal solution takes so long that the system’s parameters vary significantly during the computation time, this solution may render inefficient. 
+% In addition, the more time devoted to negotiation among the agents, the less time used in transmission. 
 For that reason, it is more practical to design models that may not fully exploit spectrum in a particular moment (for example, by not taking into account spectrum geographical reuse) but that are capable of reducing the uncertainty due to the changes over time, and thus, providing higher guarantees on the agents’ benefit. 
 
 % OSA 
@@ -99,7 +99,7 @@ For that reason, it is more practical to design models that may not fully exploi
 \section{Contributions and Structure}
 
 Our contribution can be divided into two main blocks, coincident with the structure of the thesis. 
-Part \ref{part_OSA} features our contributions in the field of Opportunistic Spectrum Access. 
+Part \ref{part_OSA} features our contributions in the Opportunistic Spectrum Access framework.
 This part is focused on protecting the PUs from interference caused by SUs access to spectrum, while trying to increase the spectrum usage efficiency. 
 The most common approach in previous literature is to study the sensing and access from the SUs perspective, that is, focusing exclusively on the design of SU access protocols (independently if the works are addressing the impact on PUs or on SUs).
 The original concept of cognitive radios, especially under an OSA approach, was to use such cognitive capabilities to make SUs access transparent (or as transparent as possible) to the PUs. 
@@ -137,7 +137,7 @@ Our results show a notable capacity improvement compared to the classical approa
 ~\newline
 Part \ref{part_auto} of the thesis contains our contributions in the field of automated spectrum trading. 
 It is especially in this part where our low-complexity-intention has a greater significance, since the mainstream trend mostly neglects the importance of real-time adaptation, as chapter \ref{Survey_chap} shows. 
-Our contribution in this topic can be summarized as follows:
+Our contributions in this topic can be summarized as follows:
 
 \textbf{Chapter \ref{Survey_chap}. Automated spectrum trading mechanisms: understanding the big picture} \cite{ref:Mario2014}.
 This work presents a general view of automated spectrum trading.
