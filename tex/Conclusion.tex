@@ -1,2 +1,43 @@
 \chapter{Final remarks}\label{Conclusion_chap}
-The conclusion goes here.
+
+\section{Summary of conclusions}% Main points: ¿que hemos hecho?
+We were committed to improve existing solutions in Dynamic Spectrum Access (DSA), especially when it comes to the protection and incentives of licensed users, and we have done that by taking novel approaches to DSA's open challenges. 
+
+%OSA
+\textbf{OSA}. Under the framework of Opportunistic Spectrum Access (OSA), focusing on the protection issues, we have specifically explored two areas: the sensing-throughput trade-off (chapters \ref{BD_chap} and \ref{SPEC_MAN_chap}) and bandwidth reservation for coexistence-friendly SU access (chapters \ref{BR_chap}and \ref{SPEC_MAN_chap}). 
+
+We have improved the optimized periodic sensing approach by adding a background detection mechanism, showing better SU throughput while reducing collision probability with the PU (chapter \ref{BD_chap}). We have also taken into account the realibility of a sensing result in a sequential sensing process (chapter \ref{SPEC_MAN_chap}).
+
+We have proven by means of an exhaustive Markov Reward Model that, by reserving part of its spectrum for SU access (chapter \ref{BR_chap}) and / or by accessing with a particular pattern (chapter \ref{SPEC_MAN_chap}, a licensed operator generally improves its throughput, despite its inability to exploit the channels with the best instantaneous gains. This is a significant result given that the initial motivation of cognitive radio (especially under OSA) was SU transparent access [NEED CITATION].
+
+Finally, we showed an application of OSA beyond the abstract terms \enquote{PU} and \enquote{SU}: a mechanism for a operator to reuse its legacy licensed and underused cellular network (PUs) by newer cognitive terminals (SUs) (chapter \ref{RSM_chap}). Such mechanism is based on a novel manner of exploiting temporal and spatial spectrum opportunities, significantly improving the system capacity while protecting the legacy PUs. It is a promising approach since it offers a good protection to PUs without enforcing performance constraints in the formulation (which is left for future work).
+
+%Trading
+\textbf{Automated spectrum trading}. Regarding automated spectrum trading, in part II of the thesis, we proposed two mechanisms providing different types of incentives to PUs: economic (chapter \ref{Sarnoff_chap}) and of added services (chapter \ref{MAB_CSSA_chap}). The one in chapter \ref{Sarnoff_chap} is especially well-suited for scenarios in which the PUs are light-loaded and shows how to balance the blocking probability of PUs with the revenue obtained from SU's access. The one in chapter is more appropriate for heavy-loaded primary networks, since the SUs help to increase the data rate of the PUs in exchange for PU's spectrum opportunities. Both are simple to implement and to extend to more complex scenarios, do not make unrealistic assumptions and offer a dramatic improvement over baseline approaches. 
+
+In addition, we developed an extensive survey in the topic in which we evidenced our main point that the research community is not correctly addressing the incentives problem of PUs. As we stated in the introduction of the thesis, researchers have been focused on maximizing the profit of PUs, and as a consequence, building increasingly complex models that 1) are not suitable for real-time operation, and 2) are not especially concerned with the risk of loss.
+
+% So what? Implicaciones de cara al objetivo principal (+ nuevas aplicaciones: Legacy Networks, HetNets)
+\section{So what?}
+The ultimate objective of this thesis is to contribute to the increase of the spectrum efficiency by using DSA mechanisms. And in order to do so, we believe it is convenient to convince the spectrum owners. Therefore, we tackled their two main concerns: protection against interferences and directly providing incentives. 
+
+But, as we outlined in the introduction, both regulators and operators are still reticent to DSA and have only taken baby steps towards any of the possible solutions. In conclusion, after the study contained in this thesis, we should be able to answer the following questions: 1) Does DSA improves social welfare? 2) Is it beneficial for the spectrum owners? 3) Did we (both the research community and us)  successfully show its net-benefit to both operators and regulators? 4) If the answer is yes, why its poor adoption rate? If the answer is no, where should we put our efforts now?
+
+We believe our findings and the vast amount of work during the last 10 years (1367 works listed in Thompson Reuters' Web of Science) represent a clear \enquote{yes} to the first two questions. The answer to question 3, unfortunately, is \enquote{no}, as evidenced by the still expressed fears of regulators and operators \cite{ref:Kelly2012}, however this thesis represents a significant push in the right direction. It is interesting to note that, some of those fears are not well founded. It is unfair to express much concern about, for example, competition issues, spectrum hoarding, and the like, when there is also a non-negligible body of work on the microeconomics of spectrum trading (see chapter \ref{Survey_chap}).
+
+\section{Future Work}
+Where should we put our efforts now? It is a matter of directly addressing the comments of regulators and operators:
+\begin{itemize}
+\item Focus on securing the mechanisms against profit losses
+\item Incorporating more real-world issues such as incomplete information, non stationarity, misbehavior of entities, etc., while keeping complexity low, possibly paying the price of sub-optimality of solutions. 
+\item Quoting from the Report on Radio Spectrum Competition Issues, by the European Radio Spectrum Policy Group \enquote{to date there is limited practical experience} \cite{ref:RSPG2009}. There is a need of studying the practical issues of implementation, test benches, experimental runs, etc. 
+\item Not only the operators are concerned with a possible economic loss, regulator bodies are also worried since static spectrum auctions are an important source of income. 
+\item Especially in Europe, where each country has pursued its own spectrum policies, the regulators have to analyze economic research work in DSA, adopt one of the proposed (and well proven) paradigms and design and enforce suitable policies (with more or less intervention from them).
+\end{itemize}
+This does not mean that research in other sub-areas in not important, for example security in the form of Primary User Emulation (PUE) attacks, long horizon investment strategies, micro-optimization of revenues or load balancing as a primary objective, but the ones we point out are critical to start making DSA a reality. 
+
+Furthermore, work in DSA is applicable not only to its original intention of unlicensed operators, secondary markets and so on. Research in DSA is directly re-usable in recent hot topics such as heterogeneous networks (HetNets) [CITATION NEEDED] and device to device communications (D2D) [CITATION NEEDED] as different but related means to improve spectrum efficiency.
+
+
+
+
