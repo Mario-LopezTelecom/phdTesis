@@ -8,29 +8,10 @@
 	"buffers":
 	[
 		{
-			"contents": "\\begin{abstract}\n\nPublic regulatory agencies have traditionally granted access to radio-electric spectrum through fixed, long term licenses for large geographical areas. \nThe increasing demand of wireless communication has led to an almost fully assigned spectrum. \nHowever, it is sparsely and unevenly used. \nA dramatic improvement on spectrum usage efficiency is possible through the operation of cognitive radios, capable of gathering information about their surrounding spectrum environment and adapting their transmission parameters accordingly. \nCognitive radios allow unlicensed users to dynamically exploit unused fragments of spectrum.\n% Dynamic spectrum access parece ser el termino mas aceptado para describir a todos los mecanismos de coexistencia\nOur main concern in this work is protecting licensed users from interferences caused by unlicensed users' transmissions, and creating incentives for the licensed networks to implement mechanisms easing the coexistence with unlicensed users.\nAnother important guideline of our work is the focus on low-complexity algorithms that can operate at the small time-scale of the spectrum opportunities. %Este claim es dificil de soportar, porque no tenemos estudios serios de computational overhead de ningun algoritmo.\nThis thesis emphasizes the use of mathematical tools such as stochastic modeling, dynamic programming, reinforcement learning, among others, in the development of mechanisms for dynamic spectrum access. \nThe first part of this thesis focuses on Opportunistic Spectrum Access (OSA), proposing schemes that simultaneously increase spectrum efficiency and improve the protection of primary users. \nThe developed mechanisms do not require direct signaling between the primary and the secondary devices. \nIn the second part, we focus on incentives, by developing two frameworks for spectrum trading, in which the licensed users can lease unused bandwidth to unlicensed ones, in exchange of money and relay services, respectively. We also include an extensive survey on the topic, unique in its scope. \n\\end{abstract}",
-			"file": "tex/Abstract.tex",
-			"file_size": 2082,
-			"file_write_time": 130664205720000000,
+			"file": "mystyle.sty",
 			"settings":
 			{
-				"buffer_size": 2083,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tex/Conclusion.tex",
-			"settings":
-			{
-				"buffer_size": 1424,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "bibtex/aux_thesisBib.tex",
-			"settings":
-			{
-				"buffer_size": 61110,
+				"buffer_size": 1773,
 				"line_ending": "Unix"
 			}
 		}
@@ -89,24 +70,26 @@
 	[
 		"/Users/mariol/Documents/git/TESIS",
 		"/Users/mariol/Documents/git/TESIS/bibtex",
+		"/Users/mariol/Documents/git/TESIS/other",
 		"/Users/mariol/Documents/git/TESIS/tex"
 	],
 	"file_history":
 	[
+		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
+		"/Users/mariol/Documents/git/TESIS/main.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
+		"/Users/mariol/Documents/git/TESIS/main.pdf",
 		"/Users/mariol/Documents/git/SPEC_MAN/diff.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
-		"/Users/mariol/Documents/git/TESIS/main.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
-		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
 		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Title.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
 		"/Users/mariol/Documents/git/TESIS/tesis.sublime-project",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
@@ -433,99 +416,37 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "tex/Abstract.tex",
-					"semi_transient": false,
+					"file": "mystyle.sty",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2083,
+						"buffer_size": 1773,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17,
-								17
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
-							"WordCountSyntax": "latex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"WordCountSyntax": "tex",
+							"syntax": "Packages/LaTeX/TeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "tex/Conclusion.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1424,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								702,
-								702
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "latex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 606.0,
+						"translation.y": 861.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "bibtex/aux_thesisBib.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 61110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1858,
-								1858
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "latex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 785.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
