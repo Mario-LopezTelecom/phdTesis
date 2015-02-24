@@ -12,18 +12,26 @@
 	"buffers":
 	[
 		{
-			"file": "tex/TitleB.tex",
-			"settings":
-			{
-				"buffer_size": 1414,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "main.tex",
 			"settings":
 			{
 				"buffer_size": 878,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tex/Conclusion.tex",
+			"settings":
+			{
+				"buffer_size": 14011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bibtex/aux_thesisBib.tex",
+			"settings":
+			{
+				"buffer_size": 64980,
 				"line_ending": "Unix"
 			}
 		}
@@ -81,13 +89,13 @@
 	"expanded_folders":
 	[
 		"/Users/mariol/Documents/git/TESIS",
-		"/Users/mariol/Documents/git/TESIS/bibtex",
-		"/Users/mariol/Documents/git/TESIS/other",
-		"/Users/mariol/Documents/git/TESIS/tex"
+		"/Users/mariol/Documents/git/TESIS/bibtex"
 	],
 	"file_history":
 	[
 		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
+		"/Users/mariol/Documents/git/TESIS/bibtex/auxbib.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
 		"/Users/mariol/Documents/git/TESIS/main.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
@@ -101,7 +109,6 @@
 		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
 		"/Users/mariol/Documents/git/TESIS/tesis.sublime-project",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
@@ -180,7 +187,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 65.0
 	},
 	"find_in_files":
 	{
@@ -194,6 +201,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\BIBentrySTDinterwordspacing\n",
+			"\\BIBentryALTinterwordspacing",
 			"citation need",
 			"\\enquote",
 			"Jia2008",
@@ -319,9 +328,7 @@
 			"sec:results",
 			"s",
 			"transitionProbabilities",
-			"sec:system",
-			"table4",
-			"table3"
+			"sec:system"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -329,6 +336,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"ref:Huang2008_opp",
 			"ref:Tang2009_per",
 			"ref:Zhao2007_dec",
@@ -428,43 +436,11 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "tex/TitleB.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1414,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								977,
-								977
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "latex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 601.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "main.tex",
 					"semi_transient": false,
 					"settings":
@@ -476,8 +452,8 @@
 						"selection":
 						[
 							[
-								160,
-								160
+								514,
+								514
 							]
 						],
 						"settings":
@@ -487,10 +463,73 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 181.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tex/Conclusion.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10295,
+								10295
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "latex",
+							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3840.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "bibtex/aux_thesisBib.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 64980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								64760,
+								64774
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "latex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 29355.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -542,7 +581,7 @@
 	"project": "tesis.sublime-project",
 	"replace":
 	{
-		"height": 76.0
+		"height": 126.0
 	},
 	"save_all_on_build": true,
 	"select_file":
