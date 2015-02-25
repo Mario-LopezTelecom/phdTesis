@@ -1,5 +1,5 @@
 \ProvidesPackage{mystyle}
-% Intro
+% Cover
 \usepackage{geometry}
 \usepackage{xcolor}
 \usepackage{graphicx}
@@ -10,7 +10,9 @@
 \setlrmargins{*}{*}{1} %								1.2 when printed
 \setulmargins{*}{*}{1}
 \checkandfixthelayout[nearest]
-
+\raggedbottom	% LaTeX will make little attempt to keep a constant height. 
+				% But I get rid of glue spaces
+\firmlists
 % Heading
 \nouppercaseheads
 \makeheadrule{headings}{\textwidth}{0.3pt}
@@ -50,7 +52,7 @@
 \usepackage{mathtools}
 \usepackage{pdflscape}
 \usepackage{csquotes}
-\nobibliography*
+
 %\usepackage[latin1]{inputenc}		% Input accents and the like. Needed by BR?
 %\usepackage{subfig}				% Class memoir Warning. Memoir has its own methods
 %\usepackage{epsfig}

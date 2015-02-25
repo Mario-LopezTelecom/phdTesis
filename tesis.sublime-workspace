@@ -20,18 +20,18 @@
 			}
 		},
 		{
-			"file": "tex/Conclusion.tex",
+			"file": "tex/BD.tex",
 			"settings":
 			{
-				"buffer_size": 14011,
-				"line_ending": "Unix"
+				"buffer_size": 61995,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "bibtex/aux_thesisBib.tex",
 			"settings":
 			{
-				"buffer_size": 64980,
+				"buffer_size": 65898,
 				"line_ending": "Unix"
 			}
 		}
@@ -89,19 +89,22 @@
 	"expanded_folders":
 	[
 		"/Users/mariol/Documents/git/TESIS",
-		"/Users/mariol/Documents/git/TESIS/bibtex"
+		"/Users/mariol/Documents/git/TESIS/originals",
+		"/Users/mariol/Documents/git/TESIS/originals/BD_journal",
+		"/Users/mariol/Documents/git/TESIS/tex"
 	],
 	"file_history":
 	[
+		"/Users/mariol/Documents/git/TESIS/originals/BD_journal/long_background_detection.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/auxbib.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
 		"/Users/mariol/Documents/git/TESIS/main.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/TESIS/main.pdf",
 		"/Users/mariol/Documents/git/SPEC_MAN/diff.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
 		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
@@ -187,7 +190,7 @@
 	],
 	"find":
 	{
-		"height": 65.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -201,6 +204,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ieee",
+			"array",
+			"IEEEeq",
+			"vspace",
+			"CP",
+			"cognitive ",
+			"cognitive rado",
+			"OSA",
+			"paper",
 			"\\BIBentrySTDinterwordspacing\n",
 			"\\BIBentryALTinterwordspacing",
 			"citation need",
@@ -319,16 +331,7 @@
 			"Introduction",
 			"table1",
 			"sec:Model",
-			"\\subfigure",
-			"sec:Introduction",
-			"ref:OptimalStrategies",
-			"[h",
-			"table1",
-			"sec:conclusion",
-			"sec:results",
-			"s",
-			"transitionProbabilities",
-			"sec:system"
+			"\\subfigure"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -452,8 +455,8 @@
 						"selection":
 						[
 							[
-								514,
-								514
+								15,
+								15
 							]
 						],
 						"settings":
@@ -463,7 +466,7 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 181.0,
+						"translation.y": 565.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -471,30 +474,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": "tex/Conclusion.tex",
+					"file": "tex/BD.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14011,
+						"buffer_size": 61995,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10295,
-								10295
+								52155,
+								52155
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
 							"WordCountSyntax": "latex",
-							"spell_check": true,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3840.0,
+						"translation.y": 26472.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -506,15 +508,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 64980,
+						"buffer_size": 65898,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								64760,
-								64774
+								6142,
+								6142
 							]
 						],
 						"settings":
@@ -526,7 +528,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 29355.0,
+						"translation.y": 3692.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
