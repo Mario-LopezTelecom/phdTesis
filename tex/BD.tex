@@ -20,7 +20,7 @@ As in \cite{ref:TransWire2012}, our model also includes the effect of transmissi
 Additionally, we use the statistical description of the fading in the direct and interfering links to evaluate this performance.
 
 Perfect collision detection is implicitly assumed in \cite{ref:JSAC2013_PUreturn,ref:TransNet2012}. 
-In this wprk, we relax that assumption, taking into consideration the multiple factors that hinder perfect detection: path loss, fading effects, and decoding probability as a function of the modulation used and the signal-to-interference-and-noise ratio. 
+In this work, we relax that assumption, taking into consideration the multiple factors that hinder perfect detection: path loss, fading effects, and decoding probability as a function of the modulation used and the signal-to-interference-and-noise ratio. 
 To overcome these difficulties and perform an optimal collision detection, the SU receiver can make use of diverse estimations performed during the successive spectrum scanning and sensing periods. 
 As an example, an accurate PU traffic estimator is described in \cite{ref:JSAC2013_PUtraffic}. 
 
@@ -538,7 +538,7 @@ Thus, the number of consecutive transmission slots, $N_{BD}$, denotes a random v
 We also determine a maximum value for consecutive transmissions in OSA-BD, denoted by $N^{max}_{BD}$.
 
 Both OSA-ACK and OSA-BD are used on top of an optimized OSA. This implies that $N_{ACK}^{max}$ and $N_{BD}^{max}$ are set to the optimal integer solving (\ref{eq:OSA}) for each mechanism. Note that the underlying Markov process is different for each access strategy.
-Figure \ref{fig:Slots} illustrates the behavior of each scheme. Let us describe the Markov-reward model of the SU transmission process for OSA-BD.
+Fig. \ref{fig:Slots} illustrates the behavior of each scheme. Let us describe the Markov-reward model of the SU transmission process for OSA-BD.
 It consists in a discrete-time Markov chain (DTMC) in which each state is associated to a reward defined in terms of $T$ of $P_{c}$, depending on what is being computed.
 The DTMC, denoted by $Z_{k}$, characterizes a process of consecutive SU transmissions, where $k$ enumerates time-slots. 
 The integer value $i$ taken by $Z_{k}$. i.e. the state of the DTMC at the $k$-th time-slot, has the following interpretation:
@@ -667,7 +667,7 @@ The Markov model for OSA-ACK would be similar, changing the value of correct det
 \mathbf{P}(\hat{H}_{0}|H_{1}) & = & \mathbf{P}(E_{0}|H_{1})
 \end{array}
 \end{equation}
-respectively. That is to say, as we introduced previously, OSA-ACK assumes that every decoding error is due to collision with a PU, thus, a SU with OSA-ACK goes back to sensing whenever there is a packet error ($1-\mathbf{P}(E_{0}|H_{0}$) in case there is no PU activity, and $\mathbf{P}(E_{0}|H_{1}$ in case of PU activity).
+respectively. That is to say, as we introduced previously, OSA-ACK assumes that every decoding error is due to collision with a PU, thus, a SU with OSA-ACK goes back to sensing whenever there is a packet error: with probability $1-\mathbf{P}(E_{0}|H_{0}$) in case there is no PU activity, and with probability $1-\mathbf{P}(E_{0}|H_{1})$ in case of PU activity).
 \section{Numerical Results}\label{BD_sec_results}
 \begin{table}
 \begin{tabular}{c c|c c} 
