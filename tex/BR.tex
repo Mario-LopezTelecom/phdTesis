@@ -1,19 +1,17 @@
 \graphicspath{ {img/BR/} }
 \chapter[Bandwidth Reservation as a Coexistence Strategy in Opportunistic Spectrum Access Environments][Bandwidth Reservation in OSA]{Bandwidth Reservation as a Coexistence Strategy in Opportunistic Spectrum Access Environments}\label{BR_chap}
 \section{Introduction}\label{sec:Introduction}
-In the last years, there has been a considerable research interest in the design and evaluation of OSA protocols for decentralized, ad-hoc cognitive networks with multichannel access \cite{ref:SurveyMACs},  \cite{ref:comparativaMAC}.
-One of the most usual scenarios consists of an overlay of two networks: one is the owner of the spectrum license, the primary network (PN), whose nodes are referred to as \textit{primary users} (PUs). The other one is the cognitive or secondary network (SN), whose nodes, known as \textit{secondary users} (SUs), need to detect PU activity before transmitting to avoid harmful interference on PU receivers.
-However, because of hardware limitations of cognitive devices, partial and imperfect sensing and random variation of channel availability, there is always some probability of PU and SU transmission overlap and therefore some level of interference at the PUs.
-In fact, OSA relies on the idea that it makes sense to minimally reduce the QoS of the PN if it would result in a much higher spectrum efficiency \cite{ref:comparativaMAC}.
-Previous research efforts have been mainly focused on designing OSA for the best SU performance at a desired level of PU QoS protection \cite{ref:SurveyMACs}. In contrast, the PN point of view has not received enough attention and still presents several open issues. Let us describe which one is addressed in this work. 
+Because of the sensing and transmission problem described in the previous chapter, consequence of the hardware limitations of cognitive devices, there is always some probability of PU and SU transmission overlap and therefore some level of interference at the PUs.
+In fact, OSA relies on the idea that it makes sense to minimally reduce the QoS of the primary network (PN) if it would result in a much higher spectrum efficiency \cite{ref:comparativaMAC}.
+Previous research efforts have been mainly focused on designing OSA for the best SU performance at a desired level of PU QoS protection \cite{ref:SurveyMACs}. In contrast, the PN point of view has not received enough attention, let alone the consideration of the PN as an active agent collaborating in OSA. And, as we expalined in the introduction, the consent of the spectrum owners is vital to the implementation of DSA mechanisms. 
 
 \subsection{Motivation}
-The question addressed in this paper is if it is worth for the PN to reserve part of its spectrum when it is accessed opportunistically by an SN. The reserved channels will be only used by the PUs if the non-reserved ones are occupied by other PU transmissions. 
+The question addressed in this chapter is: is it worth for the PN to reserve part of its spectrum for OSA of a secondary network (SN)? The reserved channels will only be used by the PUs if the non-reserved ones are occupied by other PU transmissions. 
 Intuitively, it seems to be beneficial for the SUs, since it eases finding spectrum opportunities and assures that the free channels are adjacent, simplifying the SU's transmission hardware.
 The incentives for the PN are not so clear. On the one hand it might avoid collisions with SU transmissions, resulting in less interference at PU receivers, but on the other hand it would reduce the amount of channels available to the PN resource allocation algorithm. In a PN exploiting the channels with best instantaneous propagation conditions, the reservation scheme would reduce the achievable rate.
 Determining when the positive aspects compensate the negative ones is not a trivial question and depends on several characteristics of the system: the PU traffic, the SU traffic, the configuration of OSA parameters, the transmission parameters, etc.
 
-The situation considered is not only theoretical. There are scenarios where it would be a feasible coexistence framework. For example, in areas where the regulators allow opportunistic spectrum access in a licensed spectrum band, it would be an affordable way for the licensed operator to minimize the harmful effects of SU activity. Or if a spectrum owner decides to grant access to certain spectrum bands in exchange for a pre-established flat-rate fee for SUs. This solution could be an alternative to the more complex automatic spectrum trading mechanisms in the literature \cite{ref:Gao2011}, \cite{ref:Yu2010}, and more feasible in the early stages of cognitive radio deployment since, apart from the spectrum reservation, it is completely transparent to the licensed operator, not requiring the introduction of new protocols, interfaces, etc, as spectrum trading does \cite{ref:Yang2011}. With the scheme described in this paper, the licensed operator maintains the reserved band free of PU activity with a high probability and the cognitive users assure, by means of their sensing capabilities and short transmissions periods, a small collision probability and a low interference level with PU communications.
+The situation considered is not only theoretical. There are scenarios where it would be a feasible coexistence framework. For example, in areas where the regulators force OSA in a licensed spectrum band, it would be an affordable way for the licensed operator to minimize the harmful effects of SU activity. Or if a spectrum owner decides to grant access to certain spectrum bands in exchange for a pre-established flat-rate fee for SUs. This solution could be an alternative to the more complex automatic spectrum trading mechanisms in the literature \cite{ref:Gao2011}, \cite{ref:Yu2010}, and more feasible in the early stages of cognitive radio deployment since, not requiring the introduction of new protocols, interfaces, etc, as spectrum trading does \cite{ref:Yang2011}. With the scheme described in this chapter, the licensed operator maintains the reserved band free of PU activity with a high probability and the cognitive users assure, by means of their sensing capabilities and short transmissions periods, a small collision probability and a low interference level with PU communications.
  
 \subsection{Related Work}\label{sec:RelatedWork}
 In many networking technologies we can find examples of mechanisms for exploiting spare network resources. For example, in circuit switched networks, it is usual to use protection provisioned capacity to accommodate low-priority traffic in failure-free conditions \cite{ref:CircuitSwitched}.
@@ -38,7 +36,7 @@ In works centered on cognitive MAC, the PN is usually characterized by collision
 However, for more general evaluations of PN and SN coexistence, interference level at PU receivers or PN Shannon capacity is preferred \cite{ref:Coexistence}. In OFDM related works, performance is usually evaluated in terms of capacity or achievable rate \cite{ref:OFDMtutorial}, \cite{ref:PSD}, as we do in this work. The novelty in our analysis is obtaining closed-form analytical expressions for the capacity under OSA interference, with and without BR.
 
 \subsection{Our Contribution}
-The main contribution of this paper is to develop a detailed framework for evaluating the impact of the bandwidth reservation scheme on PU and SU performance.
+The main contribution of this chapter is to develop a detailed framework for evaluating the impact of the bandwidth reservation scheme on PU and SU performance.
 Based on the numerical results obtained, we discuss under which conditions and why it is recommendable or not to implement a PN channel reservation scheme for OSA and how to configure it.
 As we explain in Section \ref{sec:System}, the SUs are characterized by hardware-limited radio, imperfect spectrum sensing, multichannel access, and a Maximum A Posteriory (MAP) estimator of the PU activity in the scanned channels. Section \ref{sec:System} also describes the PN resource allocation model.
 In Section \ref{sec:Model} we derive the transition probabilities of the Markov model for the PU-SU channel occupation process.
@@ -98,8 +96,8 @@ Figure \ref{BR_fig_slots} shows an example of the sensing and access phases.
 Table \ref{BR_table_parameters} summarizes the most relevant parameters of the model. Some of them have been already presented in this section and others are explained in Sections \ref{sec:Model} and \ref{sec:Reward}. We also include a brief list of the abbreviations used.
 
 \begin{table}
-\begin{tabular}{|c|l|} \hline
-\textbf{Abbreviation} & \textbf{Definition}\\\hline\hline
+\begin{tabular}{ll} \hline
+\textbf{Abbreviation} & \textbf{Definition}\\\hline
 $PU$ & Primary User\\
 $PN$ & Primary Network\\
 $AN$ & Access Node\\
@@ -108,8 +106,8 @@ $OSA$ & Opportunistic Spectrum Access\\
 $BR$ & Bandwidth Reservation\\
 $MAC$ & Medium Access Control\\
 $MAP$ & Maximum A Posteriori\\
-$PSD$ & Power Spectral Density\\\hline\hline
-\textbf{Notation} & \textbf{Definition}\\\hline\hline
+$PSD$ & Power Spectral Density\\\hline
+\textbf{Notation} & \textbf{Definition}\\\hline
 $W$ & channel bandwidth\\
 $\tau$ & duration of the time-slots\\
 $\Delta$ & number of scanned channes\\
@@ -159,8 +157,7 @@ As a result, considering the SU access process in absence of PU activity, the pr
 This model describes the spectrum occupation process as a Markov chain, $Z_{t}$ with a state space consisting of a set of pairs, $\left(n_{s},n_{p}\right)$, such that $n_{s} \in \left\{0,1,\dots,n_{s,\text{max}}\right\}$ and $n_{p} \in \left\{0,1,\dots,N\right\}$. 
 The transition probabilities from state $Z_{t}=\left(n_{s},n_{p}\right)$ to $Z_{t+1}=\left(n'_{s},n'_{p}\right)$ are given by
 \begin{equation}\label{TransitionProbabilities}
-\begin{array}{l}
-P\left(n'_{s},n'_{p}|n_{s},n_{p}\right) = \\
+P\left(n'_{s},n'_{p}|n_{s},n_{p}\right) = 
 \begin{cases}
 p_{s}O_{s}\left(n'_{s},n_{p}\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}=0,\:n'_{s}\neq0\\
 q_{s}\left(n_{s}\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}\neq0,\:n'_{s} = 0\\
@@ -168,8 +165,19 @@ q_{s}\left(n_{s}\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}\neq0,\:n'
 \left(1-q_{s}\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}=n'_{s}\neq0\\
 0&\mbox{otherwise}\\
 \end{cases}
-\end{array}
 \end{equation}
+% \begin{equation}\label{TransitionProbabilities}
+% \begin{array}{l}
+% P\left(n'_{s},n'_{p}|n_{s},n_{p}\right) = \\
+% \begin{cases}
+% p_{s}O_{s}\left(n'_{s},n_{p}\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}=0,\:n'_{s}\neq0\\
+% q_{s}\left(n_{s}\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}\neq0,\:n'_{s} = 0\\
+% \left(\left(1-p_{s}\right) + p_{s}O_{s}\left(0,n_{p}\right)\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}=n'_{s}=0\\
+% \left(1-q_{s}\right)P_{p}\left(n'_{p}|n_{p}\right)&\mbox{if } n_{s}=n'_{s}\neq0\\
+% 0&\mbox{otherwise}\\
+% \end{cases}
+% \end{array}
+% \end{equation}
 The following subsections develop the derivation of $O_{s}\left(n'_{s},n_{p}\right)$ for each spectrum reservation policy.
 
 \subsection{SU Spectrum Sensing}
@@ -243,12 +251,10 @@ Let us consider the no BR and the BR cases separately for the computation of $O_
 \subsubsection{Without Spectrum Reservation}
 The probability that, in any time slot, $h$ channels out of $\Delta$ scanned channels are used by PUs, when there are $n_{p}$ PUs in the spectrum, is hypergeometrical. Therefore
 \begin{equation}\label{Os1}
-\begin{array}{l}
-O_{s}\left(n'_{s},n_{p}\right) = \\
+O_{s}\left(n'_{s},n_{p}\right) = 
 \begin{cases} \displaystyle\sum_{h=h_{\text{min}}}^{h_{\text{max}}}D_{\Delta}\left(n'_{s}+k,h\right)P_{\text{H}}\left(h;N,n_{p},\Delta\right)&\mbox{if } n'_{s}<n_{s,\text{max}}\\
 \displaystyle\sum_{a=n'_{s}+k}^{\Delta}\displaystyle\sum_{h=h_{\text{min}}}^{h_{\text{max}}}D_{\Delta}\left(a,h\right)P_{\text{H}}\left(h;N,n_{p},\Delta\right)&\mbox{if } n'_{s}=n_{s,\text{max}}
 \end{cases}
-\end{array}
 \end{equation} 
 where $h_{\text{min}} = \left(\Delta+n_{p}-N\right)^{+}$ and $h_{\text{max}} = \mbox{min}\left(\Delta,n_{p}\right)$ are the minimum and maximum number of PUs within $\Delta$.
 \subsubsection{With Spectrum Reservation}
@@ -361,9 +367,10 @@ Considering that $p_{sp}=p_{SU}K'g(r')/n_{p}$, where $r'$ is the distance betwee
 \end{equation}
 which follows from Jensen's inequality. Assuming independence between $r$ and $r'$, we have that
 \begin{equation}\label{E_SINRp}
-\begin{array}{l}
-\underset{r,r'}{\mathbf{E}}\left[\text{\ttfamily{SINR}}_{p}(r,r')\right] = \underset{r'}{\mathbf{E}}\left[\underset{r}{\mathbf{E}}\left[\text{\ttfamily{SINR}}_{p}(r,r')\right]\right] =\\
-\underset{r'}{\mathbf{E}}\left[n_{s}H^{(j)}p_{PU}K\underset{r}{\mathbf{E}}\left[g(r)\right]
+\begin{array}{ll}
+\underset{r,r'}{\mathbf{E}}\left[\text{\ttfamily{SINR}}_{p}(r,r')\right] & =
+\underset{r'}{\mathbf{E}}\left[\underset{r}{\mathbf{E}}\left[\text{\ttfamily{SINR}}_{p}(r,r')\right]\right] \\
+& = \underset{r'}{\mathbf{E}}\left[n_{s}H^{(j)}p_{PU}K\underset{r}{\mathbf{E}}\left[g(r)\right]
 \frac{\text{exp}\left(\frac{n_{s}N_{0}W}{p_{SU}K'g(r')}\right) E_{1}\left(\frac{n_{s}N_{0}W}{p_{SU}K'g(r')}\right)}{n_{p}p_{SU}K'g(r')}\right]
 \end{array}
 \end{equation}
@@ -387,12 +394,10 @@ For a pessimistic estimation of the capacity under interference, using a more st
 
 Finally, the capacity for the $j$-th PU under interference, $C^{I}_{j,N}(n_{s},n_{p})$, is given by
 \begin{equation}\label{CIjN}
-\begin{array}{l}
 C^{I}_{j,N}(n_{s},n_{p}) = \\
 W\text{log}_{2}\left(1+
 \frac{n_{s}H^{(j)}p_{PU}K\underset{r}{\mathbf{E}}\left[g(r)\right]\text{exp}\left(\text{\ttfamily{SNR}}_{s}(\bar{r}')^{-1}\right)E_{1}\left(\text{\ttfamily{SNR}}_{s}(\bar{r}')^{-1}\right)}
 {n_{p}p_{SU}K'g(\bar{r}')}\right)
-\end{array}
 \end{equation}
 Where $\text{\ttfamily{SNR}}_{s}(r') = p_{SU}K'g(r')/n_{s}N_{0}W$.
 The total capacity if all the $n_{p}$ channels experience interference is $C^{I}_{N}(n_{s},n_{p})~=~\sum_{j=1}^{n_{p}}C^{I}_{j,N}(n_{s},n_{p})$.
@@ -451,15 +456,14 @@ f_{r'}\left(r'\right) = \displaystyle\frac{4r'}{\pi R^{2}}\text{cos}^{-1}\left(\
 \end{equation}
 However, for the sake of simplicity, we present an expression for $\underset{r'}{\mathbf{E}}\left[g(r')\right]$ obtained with a close approximation of (\ref{diskLinePicking}): $\tilde{f}_{r'}\left(r'\right) = c_{1}x+c_{2}x^2+c_{3}x^{3}$. The coefficients $c_{1}=-(64-27\pi)/3\pi R^{2}$, $c_{2}-4(3\pi-8)/\pi R^{2}=$ and $c_{3}=-(128-45\pi)/12\pi R^{4}$ are obtained from the equations $\tilde{f}_{r'}(0)=0$, $\tilde{f}_{r'}(2R)=0$, $\int_{0}^{2R}\tilde{f}_{r'}(r')dr'=1$, and $\int_{0}^{2R}r'\tilde{f}_{r'}(r')dr'=128\pi/45\pi$. The resulting expression is
 \begin{equation}\label{Egrprime}
-\begin{array}{lcl}
-\underset{r'}{\mathbf{E}}\left[g(r)\right] & \approx &  \displaystyle\int_{r'=0}^{2R}g(r)\tilde{f}_{r'}(r')dr'\\
-& = & c_{1}+\frac{-c_{3}+2c_{3}r_{c}^{2}}{4} + \frac{c_{2}}{12}\left(-8+24r_{c}-\frac{6r_{c}^{2}}{R}\right)\\
-&&-\frac{c_{1} c_{3}^{2}}{8 R^{2}}+c_{1}\text{Ln}[r_{c}]+c_{3} r_{c}^{2} \text{Ln}\left[\frac{2 R}{r_{c}}\right]
+\begin{array}{ll}
+\underset{r'}{\mathbf{E}}\left[g(r)\right] & \approx \displaystyle\int_{r'=0}^{2R}g(r)\tilde{f}_{r'}(r')dr'\\
+& = c_{1}+\frac{-c_{3}+2c_{3}r_{c}^{2}}{4} + \frac{c_{2}}{12}\left(-8+24r_{c}-\frac{6r_{c}^{2}}{R}\right) -\frac{c_{1} c_{3}^{2}}{8 R^{2}}+c_{1}\text{Ln}[r_{c}]+c_{3} r_{c}^{2} \text{Ln}\left[\frac{2 R}{r_{c}}\right]
 \end{array}
 \end{equation}
 
 \subsection{SU capacity with interference}
-During a time-slot, the SU per-channel capacity under PU interference is $C'^{I}~=~W\text{log}_{2}\left(1+\text{\ttfamily{SINR}}_{s}\right)$, where $\text{\ttfamily{SINR}}_{s}$ denotes the SU signal to interference ratio. 
+During a time-slot, the SU per-channel capacity under PU interference is $C'^{I} = W\text{log}_{2}\left(1+\text{\ttfamily{SINR}}_{s}\right)$, where $\text{\ttfamily{SINR}}_{s}$ denotes the SU signal to interference ratio. 
 When both signals experience Rayleigh fading, the $\text{\ttfamily{SINR}}_{s}$ is given by
 \begin{equation}\label{SINRs}
 \begin{array}{lcl}
@@ -476,20 +480,16 @@ where $p_{ss}= p_{SU}K'g(r')/n_{s}$ and $p_{ps}=p_{PU}Kg(r)/n_{p}$. For the aver
 \end{equation}
 The corresponding SU per-channel capacity with interference, for an ($n_{p},n_{s})$ pair is
 \begin{equation}\label{CISU}
-\begin{array}{l}
 C'^{I}(n_{s},n_{p}) = \\
 W\text{log}_{2}\left(1+
 \frac{n_{p}p_{SU}K'\underset{r'}{\mathbf{E}}\left[g(r')\right]\text{exp}\left(\text{\ttfamily{SNR}}'_{p}(\bar{r})^{-1}\right)E_{1}\left(\text{\ttfamily{SNR}}'_{p}(\bar{r})^{-1}\right)}
 {n_{s}p_{PU}Kg(\bar{r})}\right)
-\end{array}
 \end{equation}
 where $\text{\ttfamily{SNR}}'_{p}(r)=p_{PU}Kg(r)/n_{p}N_{0}W$.
 \subsubsection{without Bandwidth Reservation}
 Let $z$ denote the number of channels with overlapping transmissions. Given $n_{s}$ and $n_{p}$, $z$ takes random values ranging from $z_{\text{min}}=\left(n_{s}+n_{p}-N\right)^{+}$ to $z_{\text{max}}=\text{min}\left(n_{s},n_{p}\right)$, with hypergeometric distribution. The SU capacity, without BR, in the $n_{s}$ used channels, $C'^{\text{nbr}}(n_{s},n_{p})$ is obtained by taking expectation over the $z$ values:
 \begin{equation}
-\begin{array}{l}
 C'^{\text{nbr}}(n_{s},n_{p}) = \\ \displaystyle\sum_{z=z_{\text{min}}}^{z_{\text{max}}}\left(\left(n_{s}-z\right)C'(n_{s})+zC'^{I}(n_{s},n_{p})\right)P_{H}\left(z;N,n_{p},n_{s}\right)
-\end{array}
 \end{equation}
 To define the reward function $R^{\text{nbr}}_{SU}\left(n_{s},n_{p}\right)$, we consider the maximum SU capacity, $\rho_{SU}C'(n_{s,\text{max}})$, corresponding to an ideal case where the SUs access the spectrum on every attempt, and transmit in $n_{s,\text{max}}$ channels without interference. Therefore
 \begin{equation}\label{RoffSU}
@@ -504,28 +504,28 @@ C'^{\text{br}}(n_{s},n_{p}) =\left(n_{s}-z_{\text{min}}\right)C'(n_{s})+z_{\text
 The reward $R^{\text{br}}_{SU}\left(n_{s},n_{p}\right)$, is obtained as in (\ref{RoffSU}).
 
 
-\section{Results and Discussion}\label{sec:Results}
+\section{Numerical Results}\label{sec:Results}
 \subsection{System Configuration}
-The model developed in previous section allows us to obtain numerical results upon which we address the main issues presented in the introduction of the paper: Is it justified the use of spectrum reservation for OSA? Under which conditions? Can we jointly improve the performance of both PUs and SUs?
+The model developed in previous section allows us to obtain numerical results upon which we address the main issues presented in the introduction of the chapter: Is it justified the use of spectrum reservation for OSA? Under which conditions? Can we jointly improve the performance of both PUs and SUs?
 
 To jointly evaluate PU-SU configurations, we have considered several combinations of PU and SU traffic intensities. To illustrate it, we show the results for $\rho_{s}=0.5$ and two PU traffic intensities: $\lambda_{p}=0.1$ (low PU traffic) and $\lambda_{p}=0.5$ (high PU traffic). Considering that each PU remains in the spectrum for $1/\mu_{p}=60$ s, the PU blocking probabilities are 0.2\% for $\lambda_{p}=0.1$, and 50\% for $\lambda_{p}=0.5$.  
 In all cases, the licensed spectrum band is divided into $N=15$ narrowband channels of $W=200$ KHz, the time-slot duration is $\tau=200$ $\mu$s, and the average duration of an SU transmission is $T_{s}=10$ time-slots. The remaining parameters of the model, such as transmission powers and cell radius, are provided in Table \ref{BR_table_sim_param}. 
 Regarding the sensing error probabilities, the detection threshold is $\theta=17.8$ dB as in \cite{ref:comparativaMAC}, resulting in $p_{f}=8.3\times10^{-3}$ and $p_{n}=1.4\times10^{-16}$ for $\Delta=6$.
 
 \begin{table}
-\begin{tabular}{|c|l|} \hline
-\textbf{Parameter} & \textbf{Assigned value}\\\hline\hline
-number of channels, $N$&15\\\hline
-channel bandwidth, $W$&200 KHz\\\hline
-time slot duration, $\tau$&200 $\mu$s\\\hline
-PU average Tx time, $1/\mu_{p}$&60 s\\\hline
-SU average Tx time, $T_{s}$&$10\times\tau$\\\hline
-sensing detection threshold, $\theta$&17.8 dB\\\hline
-PU Tx power, $p_{p}$&10 W\\\hline
-SU Tx power, $p_{s}$&4 W\\\hline
-cell radius, $R$ &1000 m\\\hline
-$g(r)$ threshold distance, $r_{c}$&100 m\\\hline
-$g(r)$ propagation factor, $K=K'$&4 dB\\\hline
+\begin{tabular}{lr} \hline
+\textbf{Parameter} & \textbf{Assigned value}\\\hline
+number of channels, $N$&15\\
+channel bandwidth, $W$&200 KHz\\
+time slot duration, $\tau$&200 $\mu$s\\
+PU average Tx time, $1/\mu_{p}$&60 s\\
+SU average Tx time, $T_{s}$&$10\times\tau$\\
+sensing detection threshold, $\theta$&17.8 dB\\
+PU Tx power, $p_{p}$&10 W\\
+SU Tx power, $p_{s}$&4 W\\
+cell radius, $R$ &1000 m\\
+$g(r)$ threshold distance, $r_{c}$&100 m\\
+$g(r)$ propagation factor, $K=K'$&4 dB\\
 receivers' noise figure, $F$&7 dB\\\hline
 \end{tabular}
 \centering
@@ -611,7 +611,7 @@ Finally, Figure \ref{BR_fig_sim_interference} depicts the interference power at 
 
 \section{Conclusions}\label{sec:Conclusion}
 Even with the sensing capabilities of cognitive radios, OSA is always associated to some degree of transmission overlapping with PU transmissions and therefore to harmful interference at PU receivers. 
-This paper studies the idea of a primary network reserving some part of its spectrum for OSA to reduce harmful interference from SUs. 
+This chapter studies the idea of a primary network reserving some part of its spectrum for OSA to reduce harmful interference from SUs. 
 The reserved channels are only used for PU transmissions when the rest of the channels overflow.
 We have developed a Markov-reward model for evaluating the PU and SU capacities in coexistence scenarios with and without bandwidth reservation.
 The numerical results showed that using BR implies moderate PU capacity reduction, e.g. reserving 4 out of 15 channels, resulted in a PU capacity reduction of 1\% in the worst case. If the PU traffic intensity is below a certain value, the PU capacity obtained with BR is higher than the capacity achieved without BR, because of the better interference (and collision probability) performance of BR.  
