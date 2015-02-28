@@ -1,4 +1,3 @@
-%Explico los conceptos basicos de OSA (con sensing) y spec. trading?
 \graphicspath{ {img/SPEC_MAN/} }
 \chapter{Introduction}
 \section{Why Coexistence Policies?}
@@ -127,7 +126,7 @@ This chapter comprises two main contributions: first we develop an optimal SU ac
 The formulation combines SU throughput and PU performance degradation, characterized by the overlapping time with SU activity which is a more general parameter than collision probability.    
 As most OSA protocols, our approach requires the SU to characterize the traffic profile of the PUs. The results of this chapter also illustrate the robustness of our approach to misestimation of PU traffic intensity.
 
-\textbf{Chapter \ref{RSM_chap}: Response Surface Methodology for Efficient Spectrum Reuse in Cellular Networks} \cite{ref:Alcaraz2014_RSM,ref:Alcaraz2015_RSM}.
+\textbf{Chapter \ref{RSM_chap}. Response Surface Methodology for Efficient Spectrum Reuse in Cellular Networks} \cite{ref:Alcaraz2014_RSM,ref:Alcaraz2015_RSM}.
 This chapter addresses one promising application of the OSA strategy: spectrum reuse of legacy access networks. As cellular network technology evolves, the operators deploy new generation networks while maintaining their legacy networks, since not all users upgrade their terminals at the same pace.
 Therefore, the spectrum associated to these legacy networks becomes gradually underused.
 By means of cognitive radio techniques, the operator can allow its new generation terminals to reuse this spectrum without any modification (and therefore any investment) on their legacy infrastructure.
@@ -140,7 +139,7 @@ Part \ref{part_auto} of the thesis contains our contributions in the field of au
 It is especially in this part where our low-complexity-intention has a greater significance, since the mainstream trend mostly neglects the importance of real-time adaptation, as chapter \ref{Survey_chap} shows. 
 Our contributions in this topic can be summarized as follows:
 
-\textbf{Chapter \ref{Survey_chap}: Automated spectrum trading mechanisms: understanding the big picture} \cite{ref:Mario2014}.
+\textbf{Chapter \ref{Survey_chap}. Automated spectrum trading mechanisms: understanding the big picture} \cite{ref:Mario2014}.
 This work presents a general view of automated spectrum trading.
 Our work is unique in its scope, focusing on automated spectrum trading as the most promising mechanism to solve spectrum scarcity.
 We identify the specific aspects that make spectrum different from conventional goods and the impact that these features have on automatic trading.
@@ -148,22 +147,26 @@ We discuss past, current approaches and future research lines, highlighting thei
 Each sub-topic is presented and developed explicitly with references to previous works where each aspect has been considered or addressed.
 Finally, as a conclusion of the surveying effort, we highlight overlooked issues of automated spectrum trading, with a special focus on practical implementation.
 
-\textbf{Chapter \ref{Sarnoff_chap}: An MDP Framework for Centralized Dynamic Spectrum Auction} \cite{ref:Alcaraz2012}.
-This work addresses the design of centralized DSA MAC protocols comprising dynamic spectrum auction. We explore the possibilities of a formal design based on a Markov decision process (MDP) formulation. We propose a design framework to balance the grade-of-service (given by the blocking probability for PUs) and the expected economic revenue provided by the SUs' accepted bids. We make use of MDP and CMDP formulations to balance benefit and grade of service for PUs. 
+\textbf{Chapter \ref{Sarnoff_chap} An MDP Framework for Centralized Dynamic Spectrum Auction} \cite{ref:Alcaraz2012}.
+This work addresses the design of centralized DSA MAC protocols comprising dynamic spectrum auction. We explore the possibilities of a formal design based on a Markov decision process (MDP) formulation. We propose a design framework to balance the grade-of-service (given by the blocking probability for PUs) and the expected economic revenue provided by the SUs' accepted bids. 
+This trade-off can be managed in two ways. One consists of computing a single objective value given by a combination of the blocking probability and the expected revenue. 
+The weights assigned to each objective determine the point in the Pareto front where the obtained policy lies. The other approach, consists of solving for one of the objectives and setting constraints on the remaining ones.
+This chapter focuses on centralized trading in which we explore the use of MDP and CMDP formulations to balance benefit and grade of service for PUs. 
 The main advantages of this approach is that it assures operating at global optimum and reduces the computational effort at SUs.
 
-\textbf{Chapter \ref{MAB_CSSA_chap}: A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing} \cite{ref:Mario2015_MAB_CSSA_1,ref:Mario2015_MAB_CSSA_2}. In this last chapter we focus on Cooperative Spectrum Sharing (CSS). CSS is is an appealing approach for primary networks to share spectrum with SUs because it increases the transmission range or rate of the PUs. Most previous works are focused on developing complex algorithms which may not be fast enough for real-time variations such as channel availability and/or assume perfect information about the network. Instead, we develop a learning mechanism for a primary network to enable CSS in a strongly incomplete information scenario with low computational overhead. Our mechanism is based on a Markovian variant of multi-armed bandits (MABs) called superprocess, enhanced with the concept of Upper Confidence Bound (UCB) from stochastic MABs. By means of Monte-Carlo simulations we show that, despite its low computational overhead, it converges to the optimal solution and outperforms baseline approaches such as $\epsilon$-greedy. This algorithm can be extended to include more sophisticated features while maintaining its desirable properties such as low computational overhead and fast speed of convergence. 
+\textbf{Chapter \ref{MAB_CSSA_chap}. A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing} \cite{ref:Mario2015_MAB_CSSA_1,ref:Mario2015_MAB_CSSA_2}. In this last chapter we focus on Cooperative Spectrum Sharing (CSS). CSS is is an appealing approach for primary networks to share spectrum with SUs because it increases the transmission range or rate of the PUs. Most previous works are focused on developing complex algorithms which may not be fast enough for real-time variations such as channel availability and/or assume perfect information about the network. Instead, we develop a learning mechanism for a primary network to enable CSS in a strongly incomplete information scenario with low computational overhead. Our mechanism is based on a Markovian variant of multi-armed bandits (MABs) called superprocess, enhanced with the concept of Upper Confidence Bound (UCB) from stochastic MABs. By means of Monte-Carlo simulations we show that, despite its low computational overhead, it converges to the optimal solution and outperforms baseline approaches such as $\epsilon$-greedy. This algorithm can be extended to include more sophisticated features while maintaining its desirable properties such as low computational overhead and fast speed of convergence. 
 
 \section{Methodology}
 \begin{table}
 \small
-\begin{tabular}{|C{1.7cm}|C{7cm}|C{4.7cm}|} \hline
+\rowcolors{1}{}{lightgray}
+\begin{tabular}{H{1.7cm}H{7cm}H{4.7cm}} \hline
 \textbf{Chapters} & \textbf{Tools used by proposed mechanisms} & \textbf{Numerical Evaluation}\\\hline
-2 & Statistical inference, MDP & DTMC, Monte-Carlo sim.\\\hline
-3 & - & Stochastic model, DTMC, Monte-Carlo sim.\\\hline
-4 & POMDP & DTMC \\\hline
-5 & Stochastic optimization (RSM) & Monte-Carlo sim.\\\hline
-7 & CMDP & DTMC \\\hline
+2 & Statistical inference, MDP & DTMC, Monte-Carlo sim.\\
+3 & - & Stochastic model, DTMC, Monte-Carlo sim.\\
+4 & POMDP & DTMC \\
+5 & Stochastic optimization (RSM) & Monte-Carlo sim.\\
+7 & CMDP & DTMC \\
 8 & Reinforcement learning (MABs), MDP & Monte-Carlo sim. \\\hline
 \end{tabular}
 
