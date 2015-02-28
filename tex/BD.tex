@@ -13,16 +13,16 @@ The generic OSA model described is referred to as \textit{optimized OSA} in this
 We propose a collision detection mechanism that performs PU activity estimation during SU packet reception, and uses it to improve the classic optimized OSA mechanism.
 
 \subsection{Related Work}
-Most of the works about collision detection for single-radio transceivers only focus on the detection carried out at the transmitter side, such as periodic spectrum sensing in OSA protocols \cite{ref:TransWire2009}, \cite{ref:TransWireOct2008}, \cite{ref:TransWire2012}. To the best of our knowledge, there are only two exceptions to this \cite{ref:Chockler05,ref:Stotas2010}. Paper \cite{ref:Chockler05} theoretically studies the impact of different receiver-side detectors, but it does not detail their implementations. The work in \cite{ref:Stotas2010} implements an energy-detector \cite[Ch. 4]{ref:Biglieri13} at the SU Rx. However, as opposed to ours, they assume that the secondary transmission is always correctly decoded and can be substracted from the received signal.
+Most of the works about collision detection for single-radio transceivers only focus on the detection carried out at the transmitter side, such as periodic spectrum sensing in OSA protocols \cite{ref:Zhou2009}, \cite{ref:Lee2008}, \cite{ref:Zhang2012_opt}. To the best of our knowledge, there are only two exceptions to this \cite{ref:Chockler05,ref:Stotas2010}. Paper \cite{ref:Chockler05} theoretically studies the impact of different receiver-side detectors, but it does not detail their implementations. The work in \cite{ref:Stotas2010} implements an energy-detector \cite[Ch. 4]{ref:Biglieri13} at the SU Rx. However, as opposed to ours, they assume that the secondary transmission is always correctly decoded and can be substracted from the received signal.
 
-We adopt a worst case PU QoS criteria used in previous works \cite{ref:TransWire2012}, \cite{ref:OptimalStrategies}, \cite{ref:OpportunisticAccess}, by which any collision is considered to cause harmful interference to PU receivers. 
-As in \cite{ref:TransWire2012}, our model also includes the effect of transmission overlap in SU performance. 
+We adopt a worst case PU QoS criteria used in previous works \cite{ref:Zhang2012_opt}, \cite{ref:OptimalStrategies}, \cite{ref:Huang2008_opp}, by which any collision is considered to cause harmful interference to PU receivers. 
+As in \cite{ref:Zhang2012_opt}, our model also includes the effect of transmission overlap in SU performance. 
 Additionally, we use the statistical description of the fading in the direct and interfering links to evaluate this performance.
 
-Perfect collision detection is implicitly assumed in \cite{ref:JSAC2013_PUreturn,ref:TransNet2012}. 
+Perfect collision detection is implicitly assumed in \cite{ref:Zhang2013_wha,ref:Jung2012}. 
 In this work, we relax that assumption, taking into consideration the multiple factors that hinder perfect detection: path loss, fading effects, and decoding probability as a function of the modulation used and the signal-to-interference-and-noise ratio. 
 To overcome these difficulties and perform an optimal collision detection, the SU receiver can make use of diverse estimations performed during the successive spectrum scanning and sensing periods. 
-As an example, an accurate PU traffic estimator is described in \cite{ref:JSAC2013_PUtraffic}. 
+As an example, an accurate PU traffic estimator is described in \cite{ref:Gabran2013}. 
 
 \subsection{Our Contribution}
 We refer to our proposed mechanism as \textit{background detection} (BD). 
