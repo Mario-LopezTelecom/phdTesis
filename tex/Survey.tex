@@ -1,15 +1,23 @@
 \graphicspath{ {img/Survey/} }
 \chapter[Automated spectrum trading mechanisms: understanding the big picture][Automated spectrum trading mechanisms]{Automated spectrum trading mechanisms: understanding the big picture}\label{Survey_chap}
 \section{Introduction}\label{Survey_sec_Intro}
+In this second part of the thesis, we direct our attention to automated spectrum trading mechanisms.
+Compared to other DSA approaches, automated spectrum trading has the advantage of providing economic (and/or other) incentives to the entities involved, especially important to licensed operators, encouraging their cooperation and promoting motivation for future investments in primary spectrum acquisitions.
+Nevertheless, adopting a spectrum trading market could also cause the opposite result if is not properly crafted, that is, undermining the competition structure, by giving rise to collusive behaviors and/or service providers becoming monopolists (see the introduction of Sect. \ref{subsec:Oligo} of this chapter and \cite{ref:Yoon2012}, especially its Sect. 5.2 ‘‘Comparison of competition: tipping effects’’).
+
+This chapter is a survey on automated spectrum trading which, to the best of our knowledge, is novel in its treatment of the subject in the following key aspects: its scope (a general view of spectrum trading), the proposed classification of the different issues and approaches in spectrum trading, its tutorial nature, its coverage of the most up-to-date works, and the identification of the main open problems.  
+
+\subsection{Motivation of automated spectrum trading}
 Previous works in economic theory are not easily translated to spectrum trading because of the specific features of the traded good. A spectrum market poses the following additional challenges:
 \begin{itemize}
+\tightlist
 \item{Rapid variations with time}
 \item{Imperfect information}
 \item{Complex resource allocation considering re-utilization and heterogeneity of the good}
 \end{itemize}
 
 Both spectrum supply and demand changes are related to data traffic intensity which, in general, experiences \textit{rapid variations with time}. 
-In addition, spectrum characteristics are also highly variable, in particular, availability and channel quality parameters. This implies that the agents making the decisions in the spectrum markets have to be algorithmic. Automatic transactions are present in financial trading (\cite{ref:Adler2012}), but that market does not show the specific issues of spectrum trading. 
+In addition, spectrum characteristics are also highly variable, in particular, availability and channel quality parameters. If trading decisions could be made in such short time-scales (possibly in the order of seconds), the spectrum exploitation efficiency would increase. This implies that the agents making the decisions in the spectrum markets have to be computerized. Automatic transactions are present in financial trading (\cite{ref:Adler2012}), but that market does not show the specific issues of spectrum trading. 
 
 \textit{Imperfect information} not only refers to the competitive behavior of agents in a traditional market, by which they are not willing to reveal their true valuation of a good. 
 It also refers to the fact that agents may not have complete or reliable information about the market due to the communication complexity that it would involve, specially in ad-hoc networks. 
@@ -24,46 +32,49 @@ Dealing with imperfect information makes optimal resource allocation more comple
 
 \subsection{Our contribution}
 \newcolumntype{x}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
-Our contribution is summarized as follows:
-\begin{enumerate}[I]
+Our contribution in this chapter is summarized as follows:
+\begin{itemize}
+\tightlist
 \item Our work is unique in its scope, focusing on automated spectrum trading as the most promising mechanism to solve spectrum scarcity.
 \item We identify the specific aspects that make spectrum different from conventional goods and the impact that these features have on automatic trading.
 \item We discuss past, current approaches and future research lines, highlighting their advantages and disadvantages. 
 \item Each sub-topic is presented and developed explicitly with references to previous works where each aspect has been considered or addressed.
 \item This work can serve as an introduction to the field for novel researchers, and is useful to experienced ones for its critical discussion of the most recent trends.
 \item Finally, as a conclusion of the surveying effort, we highlight overlooked issues of automated spectrum trading, with a special focus on practical implementation.
-\end{enumerate}
+\end{itemize}
 \begin{landscape}
 \begin{table*}
+\setlength{\tabcolsep}{3pt}
+\scriptsize
 \caption{Summary of related works.''E'' means the topic is developed explicitly, ``I'' means the topic is developed implicitly, ``M'' means the topic is mentioned but not developed, ``X'' means the topic is not present. }
 \label{survey_table_related_work}
-\begin{tabular}{|p{5cm}|c*{7}{x{1.8cm}}|}
+\begin{tabular}{p{4.5cm}lllllllll|}
 \hline
 &	Our work 			& \cite{ref:Maharjan2011} & \cite{ref:Niyato2008_Spec} 		& \cite{ref:Hossain2009} & \cite{ref:Huang2013} & \cite{ref:Zhang2013} 	& \cite{ref:Akkara2011} & \cite{ref:Zhang2012} \\
-\hline
-Scope																		& Spec. trading & DSA and spec. trading 	& DSA and spec. trading 				& DSA 									 & CSSA in imperfect info. & Self-organization	& Game Th. DSA  				& Spec. auctions \\
+
+Scope																		& Spec. trading & DSA and spec. trading 	& DSA and spec. trading 				& DSA 									 & CSSA in imperfect info. & Self-org.	& Game Th. DSA  				& Spec. auctions \\
 Type of work														& Survey 				& Survey 							 		& Model												  & Book					 				 & Survey 								 & Survey							& Survey 								& Survey \\
 Year																		&	2013 					& 2010 										& 2008 													& 2008 									 & 2013 									 & 2013 							& 2011 									& 2012 \\
 Number of references										&	98	 					& 36 											& 14 														& \textless 30 									 & 15 										 & 15 								& 74 										& 32 \\
 \hline
 Economic objectives											&	\textbf{E} 		& X												& X 														& I 										 & X 											 & X 									& \textbf{E} 						& \textbf{E} \\ 
-\hline
+
 CSSA																		&	\textbf{E} 		& X 											& X 														& \textbf{E} 						 & \textbf{E} 						 & \textbf{E} 				& M 										& M \\
-\hline
+
 Real-time variations										&	\textbf{E} 		& X 											& X 														& X 										 & X											 & I 									& I 										& M \\
-\hline
+
 Imperfect information										&	\textbf{E} 		& I 											& M 														& \textbf{E} 						 & \textbf{E}							 & I 									& \textbf{E} 						& M \\
-\hline
+
 Spatial reuse														&	\textbf{E} 		& X 											& X 														& X 										 & M											 & X 									& X 										& \textbf{E} \\
-\hline
+
 Heterogeneity														&	\textbf{E} 		& M 											& X 														& M 										 & X											 & I 									& M 										& M \\
-\hline
+
 Formulation frameworks									&	\textbf{E}	  & \textbf{E}							& \textbf{E} 									  & \textbf{E} 						 & \textbf{E}							 & M 									& \textbf{E} 						& M \\
-\hline
+
 Market forms														&	\textbf{E} 		& \textbf{E} 							& \textbf{E} 										& \textbf{E} 						 & X											 & X 									& X 										& M \\
-\hline
+
 Implementation issues										&	\textbf{E} 		& M 											& M 														& \textbf{E} 						 & \textbf{E}							 & \textbf{E} 				& I 										& \textbf{E} \\
-\hline
+
 Protection against malfunctions					&	\textbf{E} 		& \textbf{E} 							& X 														& \textbf{E} 						 & X											 & X 									& \textbf{E} 						& \textbf{E} \\
 \hline				
 \end{tabular}
@@ -74,10 +85,10 @@ Although the scope of \cite{ref:Maharjan2011} claims to be ``economic approaches
 In addition, it is structured around a classification of related works where the items are a mix of mathematical tools and market principles, specially focusing on game theory, while our work extends the classification including further aspects in spectrum trading such as its objectives, mechanisms, possible market forms, etc. 
 We also perform a deeper identification of key issues in the entities' decision, especially real-time adaptation, which could be considered as one of the most critical aspects for a spectrum trading mechanism to achieve an efficient solution. 
 There is a small essay on spectrum sharing and trading in \cite{ref:Niyato2008_Spec}, and \cite{ref:Hossain2009} presents a general study of spectrum trading with a notable tutorial approach. 
-Compared to these works, our paper offers an extensive coverage of the advances in this field during the last five years, showing an upgraded taxonomy comprising the most novel proposals. 
+Compared to these works, our survey offers an extensive coverage of the advances in this field during the last five years, showing an upgraded taxonomy comprising the most novel proposals. 
 From a different perspective other works cover only part of the issues addressed in this survey: \cite{ref:Huang2013} is a survey of spectrum trading for Cooperative Secondary Spectrum Access (CSSA) under imperfect information, \cite{ref:Zhang2013} is concerned with self-organization paradigms in cognitive radio and \cite{ref:Akkara2011,ref:Zhang2012} develop a summary of game theoretic and auction approaches in dynamic spectrum access respectively. 
 
-The rest of this paper is organized as follows. In section \ref{sec:Trading} we show key points in the spectrum trading mechanism design. Section \ref{sec:TradedGood} reviews the challenges arising as a consequence of the special properties of spectrum as a trading good. The mathematical tools used to study these trading models are discussed in section \ref{sec:Math}. How those techniques are used in different market forms is analyzed in section \ref{sec:Market}. Finally, we provide some guidelines and feedback for future research in section \ref{sec:Open} and summarize the main conclusions of this survey in section \ref{sec:Conclusions}.
+The rest of this chapter is organized as follows. In section \ref{sec:Trading} we show key points in the spectrum trading mechanism design. Section \ref{sec:TradedGood} reviews the challenges arising as a consequence of the special properties of spectrum as a trading good. The mathematical tools used to study these trading models are discussed in section \ref{sec:Math}. How those techniques are used in different market forms is analyzed in section \ref{sec:Market}. Finally, we provide some guidelines and feedback for future research in section \ref{sec:Open} and summarize the main conclusions of this survey in section \ref{sec:Conclusions}.
 
 \section{Trading mechanism design} 
 \label{sec:Trading}
@@ -87,7 +98,7 @@ The most basic form of spectrum trading (and any trading in general) is found wh
 
 \begin{figure}[!ht]
   \begin{center}
-  \includegraphics[scale=1]{Fig1.eps}
+  \includegraphics[scale=1.25]{Fig1.eps}
   \end{center}
   \caption{Basic spectrum trading}
    \label{fig:BasicMarket}
@@ -114,16 +125,13 @@ When there are multiple sellers and buyers in an area,  the conflict between sel
 \begin{table}
 \caption{Classification of different works by their economic objective}
 \label{Survey_table_economic_obj}
-\begin{tabular}{|c|C{8cm}|} 
+\begin{tabular}{lL{8cm}} 
 \hline
-Main economic objective & Works \\
+\textbf{Main economic objective} & \textbf{Works} \\
 \hline
-Benefit of the spectrum owner& \cite{ref:Mutlu2008,ref:Yu2010,ref:Gao2011,ref:Yang2011,ref:Simeone2008,ref:Zhang2009,ref:Yi2010,ref:Li2011,ref:Duan2011_Contract,ref:Jayaweera2009,ref:Jayaweera2010,ref:Vazquez2010,ref:Maille2009,ref:Guijarro2011,ref:Niyato2008_Comp,ref:Dixit2010,ref:Sengupta2007,ref:Sengupta2009,ref:Jia2009_Rev,ref:Kaskebar2012} \\
-\hline
-Social optimum & \cite{ref:Wang2008,ref:Huang2006,ref:Huang2008_auc,ref:Gopinathan2011,ref:Xu2011,ref:Ji2008,ref:Zhu2012,ref:Niyato2007_Hier,ref:Niyato2007_Eq,ref:Niyato2008_Mark,ref:Niyato2008_Spec,ref:Niyato2010,ref:Zhou2009_TRUST,ref:Wang2010_TODA,ref:Wang2010_Spec,ref:Gao2011_MAP,ref:Xu2010,ref:Xu2012}\\
-\hline
-Benefit of intermediaries & \cite{ref:Illeri2005,ref:Duan2010_Cog,ref:Jia2008_com,ref:Xing2007,ref:Duan2010_Comp,ref:Duan2011_Duo,ref:Duan2011_Inves,ref:Min2011,ref:Kim2011,ref:Sengupta2007,ref:Sengupta2009,ref:Zhu2012_Dyn,ref:Min2011}\\
-\hline
+Benefit of the spectrum owner & \cite{ref:Mutlu2008,ref:Yu2010,ref:Gao2011,ref:Yang2011,ref:Simeone2008,ref:Zhang2009,ref:Yi2010,ref:Li2011,ref:Duan2011_Contract,ref:Jayaweera2009,ref:Jayaweera2010,ref:Vazquez2010,ref:Maille2009,ref:Guijarro2011,ref:Niyato2008_Comp,ref:Dixit2010,ref:Sengupta2007,ref:Sengupta2009,ref:Jia2009_Rev,ref:Kaskebar2012} \\\hline
+Social optimum & \cite{ref:Wang2008,ref:Huang2006,ref:Huang2008_auc,ref:Gopinathan2011,ref:Xu2011,ref:Ji2008,ref:Zhu2012,ref:Niyato2007_Hier,ref:Niyato2007_Eq,ref:Niyato2008_Mark,ref:Niyato2008_Spec,ref:Niyato2010,ref:Zhou2009_TRUST,ref:Wang2010_TODA,ref:Wang2010_Spec,ref:Gao2011_MAP,ref:Xu2010,ref:Xu2012}\\\hline
+Benefit of intermediaries & \cite{ref:Illeri2005,ref:Duan2010_Cog,ref:Jia2008_com,ref:Xing2007,ref:Duan2010_Comp,ref:Duan2011_Duo,ref:Duan2011_Inves,ref:Min2011,ref:Kim2011,ref:Sengupta2007,ref:Sengupta2009,ref:Zhu2012_Dyn,ref:Min2011}\\\hline
 \end{tabular}
 \end{table}
 
@@ -143,29 +151,31 @@ There are few works whose objective is maximizing the benefit of the unlicensed 
 
 \subsection{What goods can be traded}
 \label{subsec:What}
-On the side of the spectrum owner, the offered good consists of spectrum opportunities. These opportunities can be
+\textit{On the side of the spectrum owner}, the offered good consists of spectrum opportunities. These opportunities can be
 \begin{itemize}
 \item Frequency bandwidth (FDMA-like Medium Access Control [MAC]) \cite{ref:Niyato2007_Game,ref:Niyato2008_Comp,ref:Duan2010_Cog,ref:Duan2010_Comp,ref:Zhu2012_Dyn,ref:Xu2010,ref:Sengupta2007,ref:Sengupta2009,ref:Niyato2008_Mark,ref:Niyato2010,ref:Wang2010_Spec}. 
 \item Power (CDMA) \cite{ref:Wang2008,ref:Yu2010,ref:Gao2011,ref:Huang2006,ref:Jayaweera2009,ref:Jayaweera2010,ref:Vazquez2010}.
 \item Time\footnote{Most papers outside this category also consider the time dimension, since channels are not leased forever. However, the difference is that they consider a fixed amount of time and do not charge a price per timeshare unit.} (TDMA)  \cite{ref:Xu2011,ref:Simeone2008,ref:Zhang2009,ref:Li2011,ref:Duan2011_Contract,ref:Niyato2007_Eq}.
-\item Transmission rate or capacity \cite{ref:Illeri2005,ref:Jia2008_com,ref:Maille2009} .
+\item Transmission rate or capacity \cite{ref:Illeri2005,ref:Jia2008,ref:Maille2009} .
 \item Admission to the system \cite{ref:Kaskebar2012,ref:Mutlu2008,ref:Yang2011}.
 \item A combination of previous resources (referred to as ``channels'' without specification) \cite{ref:Xu2012,ref:Zhou2008,ref:Zhu2012,ref:Xing2007,ref:Jia2009_Rev,ref:Niyato2009_Dyn,ref:Niyato2007_Hier,ref:Gao2011_MAP,ref:Zhou2009_TRUST}. 
 \end{itemize}
 
 Although most of the models are flexible to use any of these ways of considering spectrum opportunities, they may influence the formulation of utility/profit functions (\textit{e.g.,} if power is being traded, the impact of channel gains on the utility/profit functions may be higher)
 
-On the side of the spectrum buyer, spectrum is typically traded for money, but not always. There is a current trend in the design of trading mechanisms that considers the possibility that SUs can offer their cooperation in data transmission to the spectrum owner, increasing the coverage, the battery life and/or the throughput of the licensed network. Next subsection is devoted to this increasingly popular approach. 
+\textit{On the side of the spectrum buyer}, spectrum is typically traded for money, but not always. There is a current trend in the design of trading mechanisms that considers the possibility of SUs offering their cooperation to the spectrum owner, increasing the coverage, the battery life and/or the throughput of the licensed network. This increasingly popular approach is known as \textit{Cooperative Secondary Spectrum Access} (CSSA). It also receives the names of \textit{Cooperative Spectrum Sharing} (CSS) or \textit{Cooperative Cognitive Radio Networks} (CCRNs) \cite{ref:Simeone2008,ref:Zhang2009,ref:Yi2010,ref:Vazquez2010,ref:Li2011,ref:Duan2011_Contract,ref:Duan2014,ref:Yan2013,ref:Feng2014}.
 
-\subsection{Bandwidth for cooperation, Cooperative Secondary Spectrum Access (CSSA)}
-\label{subsec:Band}
-The transactions do not always imply monetary exchanges. SUs could reward PUs in a different way: helping them with their transmissions. The premise is simple: a primary user will lease some transmission opportunities if SUs, in exchange, act as transmission relays for the primary nodes. This allows the PU to increase its transmission rate which, in turn, reduces its spectrum usage, resulting in more transmission opportunities for secondaries, something that is particularly useful when the primary own demands are high and it would rarely have spectrum to lease \cite{ref:Simeone2008,ref:Zhang2009,ref:Yi2010,ref:Vazquez2010,ref:Li2011,ref:Duan2011_Contract}.
+The premise is simple: a primary user will lease some transmission opportunities if SUs, in exchange, act as transmission relays for the primary nodes. This is different from other market-driven spectrum sharing approaches in that it fosters the creation of transmission opportunities in the PU spectrum in an exogenous way: by increasing the transmission rate of the PU, it reduces its spectrum usage. Because of that, CSSA is particularly useful when the PU own demands are so high that it rarely has spectrum to lease.
 
 One of the earlier proposals \cite{ref:Simeone2008}, considers one primary transmitter and receiver, and the transmission time is divided into blocks, each block containing three stages. In the first stage, the PU communicates with its intended receiver via direct link and SUs also receive the information (broadcast). On the second stage, some SUs re-transmit the same information to the primary receiver. Finally, the secondary transmitters can communicate with their intended secondary receivers. Before each transmission block, the PU tries to optimize its profit function by selecting which SUs it is willing to use as relays and determining a time assignment for each stage based on knowledge about what SUs will do (``best response'') depending on the system status (\textit{e.g.,} channel gains). After the PU makes its decision public, the selected SUs try to maximize their utilities taking into account that they will use the same amount of power for cooperating with the PU as for their own transmission. That election includes the possibility of not transmitting at all in case the bandwidth offered by the PU is not worth acting as relay. That decision is modeled with non cooperative power control game.
 
 Given that framework, in \cite{ref:Zhang2009} the authors propose the consideration that a PU has certain traffic demand and once it is satisfied, it will have no incentive in improving its transmission rate and therefore it will not be willing to allow SUs to access its spectrum. In order to avoid that situation, the authors propose that SUs should also pay some monetary value to the primary. They also consider a different MAC for SUs, TDMA, rather than power control, claiming that simultaneous transmission of all SUs on an interference channel, as in \cite{ref:Simeone2008}, is unrealistic because a SNR constraint cannot be met. In \cite{ref:Zhang2009}  SUs' interactions are modeled with a non cooperative payment selection game: they have to decide how much they are willing to pay and transmission time is assigned proportionally to the amount each secondary paid with respect to the total paid by all users. Two later works \cite{ref:Yi2010,ref:Li2011}, consider more than one primary and secondary links. 
 In the first one, \cite{ref:Yi2010}, the framework is extended to consider a primary and a secondary networks, both centralized. This implies that there are more than one primary transmitter-receiver pair and optimal selection of relays needs to be considered. On the other hand, SUs no longer compete as the central SUs' infrastructure takes into account aggregated utility, and thus, the payment mechanism changes. 
-However, the proposal in \cite{ref:Li2011}, does the opposite, and assumes multiple selfish entities with no central authority. In addition, the authors use a different technique, coalitional games, where POs form cooperating coalitions with SUs, either involving a payment mechanism or no monetary exchange at all. A different mathematical approach is proposed in \cite{ref:Duan2011_Contract}, which applies the idea of contract-based trading and studies different cases of incomplete information: the authors consider different types of SUs, according to their preference for a particular transmission power (as the trading good, with an associated cost) and their efficiency of acting as a relay. For each type, they design an optimal contract: a pair of values that link the power used by an SU as a relay and the time allocated for their own transmission, such that each type of user will choose the contract that is designed for its type and the PU's utility is maximized. 
+However, the proposal in \cite{ref:Li2011}, does the opposite, and assumes multiple selfish entities with no central authority. In addition, the authors use a different technique, coalitional games, where POs form cooperating coalitions with SUs, either involving a payment mechanism or no monetary exchange at all. A different mathematical approach is proposed in \cite{ref:Duan2011_Contract} and \cite{ref:Duan2014}, which apply the idea of contract-based trading and study different cases of incomplete information: the authors consider different types of SUs, according to their willingness to pay and their link qualities with PU receivers. An optimal contract between the PU and each SU type comprises the SU transmission powers (for PU and SU data), and the time allocated for the SU own data transmission. The contracts are designed such that each type of user will choose the contract that is designed for its type while maximizing the PU's utility. CSSA under incomplete information is also addressed by the latest works \cite{ref:Yan2013,ref:Feng2014}, applying bargaining and an auction-like mechanism, both with learning algorithms. A recent survey on the topic can be found in \cite{ref:Huang2013}.
+
+Other related works explore alternative flavors of CSSA. For example \cite{ref:Tran2014} explores the possibility of both PUs and SUs acting as relays of each other assuming a cooperative attitude between them. The work in \cite{ref:Shao2014} shows the optimal strategy of a SU which is allowed to dynamically decide whether it enters a CSSA or a spectrum leasing market. 
+
+A close related topic to CSSA is the \textit{overlay} cognitive radio network paradigm \cite{ref:Goldsmith2009}, by which a SU acts as relay for the PU and, at the same time, transmits its own message. The interference constraint on the SU transmission is enlarged thanks to the cooperative transmission and the use of interference cancellation techniques \cite{ref:Han2010}. 
 
 \subsection{Market mechanisms}
 \label{subsec:Market}
@@ -240,7 +250,7 @@ Fig. \ref{fig:SpecReuse} shows an illustrative example of one operator willing t
 
 \begin{figure}[!ht]
   \begin{center}
-  \includegraphics[scale=1]{Fig2.eps}
+  \includegraphics[scale=1.5]{Fig2.eps}
   \end{center}
   \caption{Example comparison of a spatial unaware and aware spectrum owner}
    \label{fig:SpecReuse}
@@ -274,11 +284,11 @@ In this section, we explain which and how the characteristics of the spectrum tr
 \begin{table}
 \caption{Classification of papers by market mechanism and formulation framework}
 \label{Survey_table_market_formulation}
-\begin{tabular}{|C{2cm}|C{4cm}|C{7,5cm}|}
+\begin{tabular}{L{2.5cm}L{4cm}L{7cm}}
 \hline
-Market mechanism & Formulation framework & Works \\
+\textbf{Market mechanism} & \textbf{Formulation framework} & \textbf{Works} \\
 \hline
-Pricing & Game Theory (pricing) & \cite{ref:Shen2013,ref:Zhu2012_Dyn,ref:Li2011,ref:Niyato2007_Game,ref:Niyato2008_Comp,ref:Niyato2009_Dyn,ref:Jia2008_com,ref:Ji2008,ref:Min2011,ref:Kaskebar2012,ref:Duan2011_Duo,ref:Duan2011_Inves,ref:Duan2010_Comp,ref:Duan2010_Cog,ref:Kim2011,ref:Dixit2010,ref:Tan2010,ref:Yu2010,ref:Maille2009,ref:Wang2008,ref:Xing2007} \\
+Pricing & Game Theory & \cite{ref:Shen2013,ref:Zhu2012_Dyn,ref:Li2011,ref:Niyato2007_Game,ref:Niyato2008_Comp,ref:Niyato2009_Dyn,ref:Jia2008_com,ref:Ji2008,ref:Min2011,ref:Kaskebar2012,ref:Duan2011_Duo,ref:Duan2011_Inves,ref:Duan2010_Comp,ref:Duan2010_Cog,ref:Kim2011,ref:Dixit2010,ref:Tan2010,ref:Yu2010,ref:Maille2009,ref:Wang2008,ref:Xing2007} \\
 				& Contract Theory & \cite{ref:Duan2011_Contract,ref:Gao2011,ref:Gao2013,ref:Duan2014} \\
 				& Optimization & \cite{ref:Mutlu2008,ref:Yang2011}\\
 				& Market-equilibrium & \cite{ref:Niyato2007_Hier,ref:Niyato2007_Eq,ref:Niyato2008_Mark,ref:Niyato2008_Spec,ref:Niyato2010,ref:Xu2011}\\
@@ -295,13 +305,13 @@ Bargaining & Bargaining games & \cite{ref:Xu2012,ref:Yan2012,ref:Zhang2012_Fair,
 
 Since the early works on spectrum trading, game theory \cite{ref:Myerson1997} has been the most used framework. 
 \textit{Game theory} is a mathematical discipline studying situations involving individual rational decision makers (\textit{players}) pursuing their own (and often conflicting) objectives. 
-In the framework of game theory, the interaction among these individuals is a \textit{game}. The actions (\textit{moves} or \textit{decisions}) made by the players bring an outcome (``payoff'') to each of them. 
-Each player's actions are mapped to the set of possible situations it can perceive in a \textit{strategy}. Agents are assumed to be rational in the sense that their strategies are going to be composed of actions that maximize their individual payoffs.
+In the framework of game theory, the interaction among these individuals is a \textit{game}. The actions (\textit{moves} or \textit{decisions}) made by the players bring outcomes (``payoffs'') to them.
+The mapping of an action to every possible situation a player can perceive (\textit{information state}) is a player's \textit{strategy}, which can be, in general, random distributions over the action space. Agents are assumed to be rational in the sense that they will choose strategies that maximize, in expectation, their individual payoffs.
 
 Clearly, the game theoretic framework matches the spectrum trading scenario.
 For example, from the SUs' side, each user has the goal of maximizing its utility function by requesting a portion of a finite shared resource from an operator, at some cost. 
 The fact of sharing a limited resource makes their actions to have an influence on each other. 
-In this case, their interactions in spectrum trading can be seen as a game, where users are the players, their moves are their requests of spectrum opportunities and their payoffs are the variations they experience of their utility functions. 
+In this case, their interactions in spectrum trading can be seen as a game, where users are the players, their moves are their requests of spectrum opportunities and their payoffs are the value of their utility functions (\textit{e.g.} the data rate they get minus the payment to the PU).
 This was indeed the origin of the works that used game theory in spectrum trading: it was used to study operators' resource allocation to secondary users in works that used pricing as the market mechanism.
 For example, in \cite{ref:Niyato2007_Game}, the interaction between SUs when requesting spectrum to a primary operator comes from the price of spectrum, which depends on the total demand of all SUs. 
 That is to say, the cost of a spectrum unit is determined by the amount of spectrum requested by other SUs, and this influences the amount of spectrum a particular SU requests. 
@@ -364,7 +374,7 @@ Again, recently the idea is to incorporate dynamics to the bargaining model, so 
 In contract theory, the spectrum seller, rather than looking for an optimal price of spectrum, offers different spectrum items (for example, channels with different qualities) at different prices. 
 If it offers the correct combinations of items and prices, the different type of users would respond according to their true valuations of the spectrum and the seller would optimize its revenue or social welfare.
 The major drawback is that the spectrum seller still needs to have market power (be a monopolist).
-This framework is currently making its first steps so the researchers' efforts are oriented to apply it to spectrum trading in diverse scenarios, specially in Cooperative Secondary Spectrum Access (CSSA, see section \ref{subsec:Band}).
+This framework is currently making its first steps so the researchers' efforts are oriented to apply it to spectrum trading in diverse scenarios, specially in Cooperative Secondary Spectrum Access (CSSA, see section \ref{subsec:What}).
 
 \subsubsection{Cooperative games}
 Finally, it is worth saying that almost all works try to find sets of strategies that constitute an equilibrium of the game.
@@ -410,7 +420,7 @@ In fact, it is still interesting for them to make the trading incentive-compatib
 In the context of spectrum trading it is developed in a single spectrum owner market form (monopoly). \footnote {It could also be carried out by a third party, a regulator authority, although no examples have been found of that, probably because that would not be accepted by the entities involved as they would not have any way to influence it.}
 The parameters to look for are usually price per commodity unit (often bandwidth or power), the constraints to respect are related to degradation caps on PUs' activity and the goal of the optimization could be as diverse as pointed out when describing the design of trading mechanisms (see section \ref{subsec:Market}).
 
-The main advantage of optimization is that, in theory, it could achieve the best solution among all techniques described. 
+The main advantage of optimization is that, in theory, it could achieve the best solution among all techniques described, from a system perspective or in the case of only one decision maker with market power (a monopolist). The definition of ``best'' depends on the objective of the optimization, and thus, of that trading mechanism (see section \ref{subsec:Objective}): \textit{e.g.} best in terms of the sum of the utility functions of all users, or in terms of fairness, best from the PU monopolist perspective in terms of its revenue, etc. 
 Nevertheless, that is only possible in very simple models. 
 It suffers from the ``curse of dimensionality'' and models become easily intractable, as explained in \cite{ref:Ji2006}.
 
@@ -454,11 +464,11 @@ This technique has not been completely abandoned since the work in \cite{ref:Xu2
 We present in Fig. \ref{fig:frameworks} a diagram summarizing the trade-off between how satisfactory the solution of a particular scenario is with each framework and how difficult it is to implement in a real scenario due to the communication and computation overheads (with regard to trades in real-time). 
 This figure also features the research status of each approach. 
 The color of each circle is related to the attention that the technique is currently receiving and the size of the circle is proportional to the amount of works using this technique.
-Our conclusion, as we develop in the final section of the paper, is that attention should now be directed more to the practical issues of implementing spectrum trading algorithms rather than trying to push their analytical optimality forward: the key of automated spectrum trading should be adaptability to time-varying spectrum and self-organization (distributed, local based algorithms), not only to ``make them happen'' with the real phenomena they have to deal, but also to convince actual and potential spectrum owners, who are the ones that would have to actively adopt them in the end. 
+Our conclusion, as we develop in the final section of the chapter, is that attention should now be directed more to the practical issues of implementing spectrum trading algorithms rather than trying to push their analytical optimality forward: the key of automated spectrum trading should be adaptability to time-varying spectrum and self-organization (distributed, local based algorithms), not only to ``make them happen'' with the real phenomena they have to deal, but also to convince actual and potential spectrum owners, who are the ones that would have to actively adopt them in the end. 
 
 \begin{figure}[!ht]
   \begin{center}
-  \includegraphics[scale=1]{Fig4.eps}
+  \includegraphics[scale=1.25]{Fig4.eps}
   \end{center}
   \caption{Formulation frameworks: optimality of solutions versus implementability. The size of each circle represents the amount of works in the area. Game theory (pricing) is shaded because interest in it is decreasing}
    \label{fig:frameworks}
@@ -487,12 +497,11 @@ A fully decentralized approach is presented in \cite{ref:Wang2008}, where SUs ar
 \begin{table}
 \caption{Classification of papers by market form.}
 \label{Survey_table_market_form}
-\begin{tabular}{|c|C{11cm}|} 
+\begin{tabular}{L{3cm}L{11cm}} 
 \hline
-Market forms & Works \\
+\textbf{Market forms} & \textbf{Works} \\
 \hline
-Monopoly& \cite{ref:Niyato2007_Game,ref:Mutlu2008,ref:Wang2008,ref:Yu2010,ref:Gao2011,ref:Yang2011,ref:Xu2012,ref:Huang2006,ref:Zhou2008,ref:Huang2008_auc,ref:Wang2010_Spec,ref:Gopinathan2011,ref:Zhu2012,ref:Simeone2008,ref:Jayaweera2009,ref:Zhang2009,ref:Jayaweera2010,ref:Vazquez2010,ref:Yi2010,ref:Duan2011_Contract,ref:Duan2010_Cog,ref:Duan2011_Inves,ref:Jia2009_Rev} \\
-\hline
+Monopoly& \cite{ref:Niyato2007_Game,ref:Mutlu2008,ref:Wang2008,ref:Yu2010,ref:Gao2011,ref:Yang2011,ref:Xu2012,ref:Huang2006,ref:Zhou2008,ref:Huang2008_auc,ref:Wang2010_Spec,ref:Gopinathan2011,ref:Zhu2012,ref:Simeone2008,ref:Jayaweera2009,ref:Zhang2009,ref:Jayaweera2010,ref:Vazquez2010,ref:Yi2010,ref:Duan2011_Contract,ref:Duan2010_Cog,ref:Duan2011_Inves,ref:Jia2009_Rev} \\\hline
 Oligopoly & \cite{ref:Li2011,ref:Xu2012,ref:Xing2007,ref:Jia2008_com,ref:Niyato2008_Comp,ref:Maille2009,ref:Duan2010_Comp,ref:Duan2011_Duo,ref:Zhu2012_Dyn,ref:Guijarro2011,ref:Min2011,ref:Kim2011,ref:Tan2010,ref:Dixit2010,ref:Xu2010,ref:Sengupta2007,ref:Sengupta2009,ref:Illeri2005,ref:Wang2010_TODA,ref:Gao2011_MAP} \\
 \hline
 \end{tabular}
@@ -502,7 +511,7 @@ Oligopoly & \cite{ref:Li2011,ref:Xu2012,ref:Xing2007,ref:Jia2008_com,ref:Niyato2
 \label{subsec:Oligo}
 A monopoly may not be the most usual situation, as it is highly likely that, in a region, more than one spectrum owner will be interested in selling, and furthermore, it is a desirable situation from the point of view of resource exploitation and users' welfare because, in general, sellers competition lowers prices. 
 
-However, setting up a competitive spectrum trading market is not easy. As licensed spectrum owners' profit diminishes, they would be willing to use aggressive market strategies to eliminate competition and end up as monopolists or to forbid entrance to newcomers. For example, licensed operators may acquire spectrum not to increase service quality or to provide a new service but to make the others fail to acquire it and thus lose their competitive power. Or, they may acquire extra spectrum to speculate with it: obtaining benefit from the trading itself. Collusions, as we explained in section \ref{sec:Math} when describing cooperative games, also belong to this category. 
+However, setting up a competitive spectrum trading market is not easy. As licensed spectrum owners' profit diminishes, they would be willing to use aggressive market strategies to eliminate competition and end up as monopolists or to forbid entrance to newcomers. For example, licensed operators may acquire spectrum not to increase service quality or to provide a new service but to make the others fail to acquire it and thus lose their competitive power. Or, they may acquire extra spectrum to speculate with it: obtaining benefit from the trading itself. Collusions, as we introduced in section \ref{sec:Math} when describing cooperative games, also belong to this category. 
 
 To avoid these issues, a well designed and enforced regulation can help to encourage and protect competition while keeping incentives for spectrum owners. This issue is addressed in \cite{ref:Yoon2012,ref:Tan2010}. In particular, in \cite{ref:Yoon2012}, this effect of competition can be seen in a comparative study of secondary-use frameworks (auction, pricing and brokerage). The authors also propose and analyze the effect of a maximum amount of spectrum trading on the different frameworks and show when each of them is more convenient to use depending on the state of maturity of the market. They argue that the final objective should be to use pricing, as it is the one that produced better results under their experiments, considering not only profits but fair competition issues, users' utilities, and spectrum efficiency. Aggressive strategies are studied in  \cite{ref:Tan2010} from two perspectives: the short-term aggressive strategies to capture more users of the market and the long-term predatory pricing. It also shows a cooperative responding strategy for the smaller spectrum owners to avoid monopoly. 
 
@@ -515,7 +524,7 @@ The market layers should not be confused with the number of game stages modeling
 
 \begin{figure}[!ht]
   \begin{center}
-  \includegraphics[scale=1]{Fig5.eps}
+  \includegraphics[scale=1.25]{Fig5.eps}
   \end{center}
   \caption{Three-layered market}
    \label{fig:LayeredMarket}
@@ -547,7 +556,6 @@ In consequence, we think that time consumption should be regarded as a key featu
 In addition, the more time devoted to negotiation among the agents, the less time used in transmission. 
 For that reason, it is more practical to design models that may not fully exploit spectrum in a particular moment (for example, by not taking into account spectrum geographical reuse) but that are capable of reducing the uncertainty due to the changes over time, and thus, providing higher guarantees on the agents' satisfaction. 
 
-\subsubsection{Application to formulation frameworks}
 According to the computation and communication overhead, it would be fair to say that the most suitable frameworks to achieve real-time adaptation are those that are decentralized and compute solutions based on local observations (imperfect information), otherwise it would imply lots of entities communicating with a central node. 
 Despite that idea, achieving real time operation in complex auction models is a hot topic in spectrum trading research \cite{ref:Vidal2013,ref:Kim2013,ref:Xu2012}. 
 This is due to the fact that optimality is still in the spotlight, as pointed out in \cite{ref:Vidal2013}: ``The decentralized approach has several advantages that make it attractive: lower complexity than the centralized approach, robustness and scalability. 
@@ -593,13 +601,13 @@ It is hard to convince he telecommunications industry to adopt spectrum trading 
 
 On the other hand, secondary users also need an incentive to request spectrum from the primary operator (\textit{e.g.} inexpensive tariffs). Otherwise, the trading market will not work because they would all prefer to become primary users. 
 
-In a different and complementary approach, something can be added to money as an incentive to spectrum owners: services, specifically, secondary users acting as relays in Cooperative Secondary Spectrum Access (as we have pointed out in section \ref{subsec:Band}). 
+In a different and complementary approach, something can be added to money as an incentive to spectrum owners: services, specifically, secondary users acting as relays in Cooperative Secondary Spectrum Access (as we have pointed out in section \ref{subsec:What}). 
 Albeit money is always an incentive and satisfaction due to it never saturates, this adds a new and non-substitutable reason for sharing: \textit{e.g.} secondary users can act as relays for increasing the primary operator range. 
 Furthermore, the most promising feature of CSSA is using it when the primary operator is congested, in order to increase its transmission rate. 
 Due to that increase, new spectrum opportunities would be generated and there would be more spectrum sharing and efficiency. 
 
 However, CSSA provides no incentive to primary operators when they have low traffic volume and they are not interested in augmenting their transmission rate.
-For that reason, hybrid approaches of CSSA and economic exchanges are being studied \cite{ref:Zhang2012,ref:Zhang2009}. 
+For that reason, hybrid approaches of CSSA and economic exchanges are being studied \cite{ref:Zhang2012_Fair,ref:Zhang2009}. 
 New approaches are also exploring the idea of offering other services to the primaries like secure transmissions \cite{ref:Lee2011} or offload services \cite{ref:Pantisano,ref:Yi}
 
 \subsection{Protection against malfunctions}
@@ -672,7 +680,7 @@ These overlooked considerations are indeed relevant in a real scenario and could
 
 Automated spectrum trading is a promising strategy for increasing spectrum efficiency while providing incentives to spectrum owners and users to take part in it.
 It faces challenges because of its novelty in wireless networks and the fact that techniques from other markets are not applicable due to the peculiarities of spectrum as a traded good.
-In consequence, it is still far from proving its worth in real implementations, which raises some concerns about its feasibility.
-Current and prospective spectrum operators may not support this functionality unless their profits are guaranteed. Of course they can be forced to implement such a market but they will feel discouraged to invest in spectrum and deploy new services. The biggest obstacles to implementation are the fast variations of the environment parameters and dealing with imperfect information, while trying to reach the best possible solution. ``Best solution'' refers here to maximizing the utilities of the agents, including fairness considerations (depending on the economic objectives). 
+In consequence, it raises some concerns among the wireless industry incumbents about its feasibility and value.
+Current and prospective spectrum operators may not support this functionality unless their profits are guaranteed. Of course they can be forced to implement such a market but they may feel discouraged to invest in spectrum and deploy new services. The biggest obstacles to implementation are the fast variations of the environment parameters and dealing with imperfect information, while trying to reach the best possible solution. ``Best solution'' refers here to maximizing the utilities of the agents, including fairness considerations (depending on the economic objectives). 
 This survey showed that the research community tends to build increasingly complex models (such as sophisticated auctions) and is trying to improve their speed. However, researchers are devoting less attention to real-time operation capabilities, which is important not only for the optimality of the solution itself (the solution of a complex model is of no use if the real situation has changed and has nothing to do with it), but also to assure that the algorithm will not be economically harmful to the agents, at least on the long run. In consequence, it can be concluded that suboptimal but faster mechanisms should receive more attention in the near future, in particular the approaches using bargaining and contract theory. 
 Also, in the line of giving incentives to spectrum operators, cooperative secondary spectrum access could be considered an appealing approach. It adds a non-substitutable value to these operators such as increased range, transmission rate or security.

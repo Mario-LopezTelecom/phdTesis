@@ -62,5 +62,7 @@
 \DeclareMathOperator*{\argmax}{arg\,max}	% Operator "arg max"
 \renewcommand{\vec}[1]{\mathbold{#1}}		% Vector
 \newcommand*{\mat}[1]{\mathbf{#1}}		% Matrix
-% Centered column type with desired length
+% Column types with desired length
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
