@@ -6,20 +6,19 @@ In fact, OSA relies on the idea that it makes sense to minimally reduce the QoS 
 Previous research efforts have been mainly focused on designing OSA for the best SU performance at a desired level of PU QoS protection \cite{ref:SurveyMACs}. In contrast, the PN point of view has not received enough attention, let alone the consideration of the PN as an active agent collaborating in OSA. And, as we expalined in the introduction, the consent of the spectrum owners is vital to the implementation of DSA mechanisms. 
 
 \subsection{Motivation}
-The question addressed in this chapter is: is it worth for the PN to reserve part of its spectrum for OSA of a secondary network (SN)? The reserved channels will only be used by the PUs if the non-reserved ones are occupied by other PU transmissions. 
+The question addressed in this chapter is: is it worth for the PN to reserve part of its spectrum for easing OSA to a secondary network (SN)? The reserved channels will only be used by the PUs if the non-reserved ones are occupied by other PU transmissions. 
 Intuitively, it seems to be beneficial for the SUs, since it eases finding spectrum opportunities and assures that the free channels are adjacent, simplifying the SU's transmission hardware.
 The incentives for the PN are not so clear. On the one hand it might avoid collisions with SU transmissions, resulting in less interference at PU receivers, but on the other hand it would reduce the amount of channels available to the PN resource allocation algorithm. In a PN exploiting the channels with best instantaneous propagation conditions, the reservation scheme would reduce the achievable rate.
 Determining when the positive aspects compensate the negative ones is not a trivial question and depends on several characteristics of the system: the PU traffic, the SU traffic, the configuration of OSA parameters, the transmission parameters, etc.
 
-The situation considered is not only theoretical. There are scenarios where it would be a feasible coexistence framework. For example, in areas where the regulators force OSA in a licensed spectrum band, it would be an affordable way for the licensed operator to minimize the harmful effects of SU activity. Or if a spectrum owner decides to grant access to certain spectrum bands in exchange for a pre-established flat-rate fee for SUs. This solution could be an alternative to the more complex automatic spectrum trading mechanisms in the literature \cite{ref:Gao2011}, \cite{ref:Yu2010}, and more feasible in the early stages of cognitive radio deployment since, not requiring the introduction of new protocols, interfaces, etc, as spectrum trading does \cite{ref:Yang2011}. With the scheme described in this chapter, the licensed operator maintains the reserved band free of PU activity with a high probability and the cognitive users assure, by means of their sensing capabilities and short transmissions periods, a small collision probability and a low interference level with PU communications.
+The situation considered is not only theoretical. There are scenarios where it would be a feasible coexistence framework. For example, in areas where the regulators force OSA in a licensed spectrum band, it would be an affordable way for the licensed operator to minimize the harmful effects of SU activity. Or if a spectrum owner decides to grant access to certain spectrum bands in exchange for a pre-established flat-rate fee for SUs. This solution could be an alternative to the more complex automatic spectrum trading mechanisms in the literature \cite{ref:Gao2011}, \cite{ref:Yu2010}, and more feasible in the early stages of cognitive radio deployment, not requiring the introduction of new protocols, interfaces, etc, as spectrum trading does \cite{ref:Yang2011}. With the scheme described in this chapter, the licensed operator maintains the reserved band free of PU activity with a high probability and the cognitive users assure, by means of their sensing capabilities and short transmissions periods, a small collision probability and a low interference level with PU communications.
  
 \subsection{Related Work}\label{sec:RelatedWork}
 In many networking technologies we can find examples of mechanisms for exploiting spare network resources. For example, in circuit switched networks, it is usual to use protection provisioned capacity to accommodate low-priority traffic in failure-free conditions \cite{ref:CircuitSwitched}.
 In wireless networks, channel reservation schemes were applied to reduce the dropping probability of handover calls \cite{ReservationHandoff}, \cite{ReservationHandoff2}. 
 Although the bandwidth reservation idea studied in this paper is conceptually similar to those classic schemes, its application in opportunistic spectrum access environments is completely different in many technical aspects: interference and propagation issues, the sensing of PU activity, the variability of the channel gain, the effect of BR on PU Shannon capacity, among others. Therefore, new research challenges have to be addressed.
 
-There has been an intense research effort on cognitive radio so far. Many of the most relevant previous results can be found in recent and extensive surveys \cite{ref:Surveycognitive1} and \cite{ref:Surveycognitive2}.
-However, the issue of bandwidth reservation for OSA and its impact on SU and PN performance has not been yet addressed in detail.
+Despite the intense research effort conducted on cognitive radio so far, the issue of bandwidth reservation for OSA and its impact on SU and PN performance has not been yet addressed in detail.
 The term channel reservation in cognitive radio environments is used in \cite{ref:Reservation} and later works like \cite{ref:Reservation2}, \cite{ref:Reservation3} and \cite{ref:Reservation3b} to refer to a mechanism by which some of the channels not used by the PN are kept free of SU traffic by the secondary network (SN) itself. These ``reserved channels'' are used by the SN to accommodate ongoing SU transmissions that, forced by PUs, have to leave their initially occupied channels. In that case, the reservation is performed by the SN at the cost of an increased SU blocking probability. That idea is indeed an adaptation of the classic handoff channel reservation scheme to the cognitive environment.
 
 To the best of our knowledge, only one work \cite{ref:Reservation4} has considered reserving part of the spectrum so that PUs only occupy the second part when the first one is congested.
@@ -63,7 +62,7 @@ The bandwidth reservation (BR) mechanism considered implies that the AN reserves
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.9]{channelReservation.eps}
-\caption[]{Channel reservation scheme in the licensed spectrum}\label{BR_fig_allocation}
+\caption[]{Channel reservation scheme in the licensed spectrum. Greyed-out channels are occupied by PUs.}\label{BR_fig_allocation}
 \end{figure}
 
 \subsection{Secondary Network}\label{secondarynetwork}
@@ -236,7 +235,7 @@ P\left(h_{m}\right) =
 \end{cases}
 \end{equation}
 \subsection{SU Spectrum Access}
-Let $D_{\Delta}\left(a,h\right)$ denote the probability of finding $a$ available channels given that, during the sensing phase, $h$ out of the $\Delta$ scanned channels are occupied by PU transmissions. 
+Let $D_{\Delta}\left(a,h\right)$ denote the probability of finding a number $a$ of available channels given that, during the sensing phase, $h$ out of the $\Delta$ scanned channels are occupied by PU transmissions. 
 In order to compute $D_{\Delta}\left(a,h\right)$ let us define $X_{\hat{h}}$ as the set of possible values of $\mathbf{x}$ for which the outcome of the MAP estimator equals $\hat{h}$: $X_{\hat{h}} = \left\{\mathbf{x}|\hat{h} = \underset{h}{\text{argmax }} P\left(h\right)P\left(\mathbf{x}|h\right)\right\}$.
 
 Finding $a$ free channels implies detecting PU activity in $\hat{h}=\Delta-a$, therefore
