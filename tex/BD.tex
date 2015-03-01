@@ -57,7 +57,7 @@ Once the cognitive pair makes the access decision, the SU Tx starts the SU trans
 
 The SU transmission is divided into time-slots. 
 At the end of each time-slot, the SU Rx submits a control message to the SU Tx over the control channel. 
-In general, this message would contain an ACK (or NACK) of the data transmitted on the time-slot, but our proposal will also include information about the power received at the SU Rx during the time-slot.
+In general, this message would contain an ACK (or NACK) of the data transmitted on the time-slot.
 
 It is assumed that the signal power received at the SU Rx remains constant during a symbol time $T_{s}$ of the SU Tx transmission. 
 In this case, the probability of correct signal detection at the SU Rx is defined in terms of the probability that the signal to interference ratio (SINR) is above a given threshold, which is determined by the minimum acceptable bit error rate (BER) for correct decoding, the transmission rate and the modulation used. 
@@ -70,7 +70,7 @@ Each SU data packet may be received at the SU Rx with or without PU interference
 Let $P$ denote the signal power at the SU Rx during the reception of an SU data packet. 
 The SU signal is received with power $Y$ at the SU Rx and, in case of transmission overlap, the signal transmitted by the PU BS is received with power $X$ at the SU Rx. 
 Let $N$ denote the average white noise power in the channel bandwidth at the SU Rx during the packet reception.
-Note that $P$, $X$, and $Y$ are random variables, while $N$ is a constant. Since it is a constant, $N$ does not add any value to the observation of $P$, therefore, we will subtract it.
+Note that $P$, $X$, and $Y$ are random variables, while $N$ is a constant determined by the noise factor of the receiver, which is a known design parameter. Therefore, we can subtract $N$ from the power observation.
 Then, under PU-SU transmission overlap, $P=X+Y$ and, in absence of overlap, $P=Y$. 
 Similarly, $\text{\ttfamily{SINR}}=\frac{Y}{N+X}$, with overlap, and $\text{\ttfamily{SINR}}=\frac{Y}{N}$ without overlap.
 If $\text{\ttfamily{SINR}}>\gamma$ the packet is correctly received and, if $\text{\ttfamily{SINR}}\leq\gamma$ the packet is impossible to decode (error event). 
@@ -397,7 +397,7 @@ It can be checked that for each $H_k$ event ($k$={0,1}), $\sum_{i:0,1}\sum_{j:0,
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=1.2]{Regions.eps}
-\caption{Integration regions to compute probabilities of correct detection, type I and type II errors under the H1 event (transmission overlap).}\label{fig:Regions}
+\caption{Integration regions to compute the probabilities of correct detection, type I and type II errors under the H1 event (transmission overlap).}\label{fig:Regions}
 \end{figure}
 
 Let us now obtain the probabilities for $H_{0}$, i.e. in absence of transmission overlap. The probabilities are defined in the following way
@@ -420,7 +420,7 @@ The correct estimation probability $\mathbf{P}(\hat{H}_{0},E_{0}|H_{0})$ is give
 \end{array}
 \end{equation}
 which, in the case of Rayleigh fading equals $e^{-N\gamma/p_{ss}}-e^{-p^{*}_{E_{0}}/p_{ss}}$.
-The Type I error $\mathbf{P}(\hat{H}_{0},E_{0}|H_{0})$ is 
+The Type I error $\mathbf{P}(\hat{H}_{1},E_{0}|H_{0})$ is 
 \begin{equation}\label{PH1E0H0}
 \begin{array}{lcl}
 \mathbf{P}(\hat{H}_{1},E_{0}|H_{0}) & = & \mathbf{P}\left(P>p^{*}_{E_{0}}, \text{\ttfamily{SINR}}>\gamma|H_{0}\right)\\
@@ -462,13 +462,13 @@ which equals $e^{-p^{*}_{E_{1}}/p_{ss}}-e^{-N\gamma/p_{ss}}$ for Rayleigh fading
 In the following sections, we analyze the use of the proposed background detection (BD) mechanism in an OSA system, studying its effect on the SU throughput and collision probability with PU transmissions, compared to common practical approaches in OSA. 
 
 We assume single-channel transmission capabilities for the SU, leaving for future research the generalization to the multiple-channel case.
-We also assume that it takes certain number of slots $n_s$ for the SU to detect at least one available channel. For the sake of simplicity, we will consider $n_s$ fixed to 5.
+We also assume that it takes certain number of slots $n_s$ for the SU to detect at least one available channel. For the sake of simplicity, we will consider $n_s$ fixed to 5, although, as we explain letter, the resulting expressions can be easily generalized for the case of a randomly distributed $n_s$.
 An SU transmission period consists of these scanning slots followed by a number of consecutive transmission time-slots.
 The SU transmits one data packet in each one of these consecutive time-slots.
 The PU inter arrival time and the PU channel holding time are characterized by geometric distributions, i.e. the equivalent of a Poisson traffic model for discrete-time. 
 In every time-slot, a channel free of PU traffic is occupied by a PU transmission with probability $p$, and an ongoing PU transmission ends with probability $q$.
-We use a Markov model for the PU activity in the channel, whose transition matrix is $M=\left[\begin{smallmatrix}1-p&p\\q&1-q\end{smallmatrix}\right]$.
-Considering the $n$-th time-slot of an SU transmission period, $\phi_{n}$ denotes the probability vector for PU activity in the channel during this time-slot. In the single-channel traffic model considered, $\phi_{n}$ contains two elements: $\phi_{n}(1)$ and $\phi_{n}(2)$, corresponding to no PU activity and PU activity in the channel respectively. The probability vector in the scanning slot is $\phi_{0} = (1,0)$ if the detection is perfect. With imperfect sensing, $\phi_{0} = (1-p_{\bar{n}},p_{\bar{n}})$, where $p_{\bar{n}}$ denotes the probability of false negative (the sensing outcome indicates that the channel is free of PU activity when it is not). Given the transition matrix of the Markov model for the PU activity in the channel, $M$, the probability vector for the $n$-th time-slot is given by $\phi_{n}' = M^{n}\phi_{n}'$, where ``$'$'' stands for the transpose operation.
+We can therefore characterize the PU activity in a channel as a two-state discrete time Markov chain (DTMC), whose transition matrix is $M=\left[\begin{smallmatrix}1-p&p\\q&1-q\end{smallmatrix}\right]$.
+Considering the $n$-th time-slot of an SU transmission period, $\phi_{n}$ denotes the probability distribution of the DTMC state on this time-slot. In the single-channel traffic model considered, $\phi_{n}$ contains two elements: $\phi_{n}(1)$ and $\phi_{n}(2)$, corresponding to no PU activity and PU activity in the channel respectively. The probability distribution in the scanning slot is $\phi_{0} = (1,0)$ if the detection is perfect. With imperfect sensing, $\phi_{0} = (1-p_{\bar{n}},p_{\bar{n}})$, where $p_{\bar{n}}$ denotes the probability of false negative (the sensing outcome indicates that the channel is free of PU activity when it is not). Given the transition matrix $M$, the probability distribution for the $n$-th time-slot is given by $\phi_{n}' = M^{n}\phi_{n}'$, where ``$'$'' stands for the transpose operation.
 
 Two parameters characterize the \textit{system performance}: the SU \textit{throughput} ($T$), defined as the expected number of correctly received SU packets per time-slot in an SU transmission period, and the \textit{collision probability} $P_{c}$, defined as the PU-SU transmission overlap probability per time-slot in an SU transmission period. These parameters can be computed by means of a Markov reward process characterizing the number of consecutive SU transmission slots.
 
@@ -579,15 +579,15 @@ Fig. \ref{fig:Markov} depicts the graph of the DTMC.
 \end{figure}
 
 For a generic reward $r(i)$, the expected average reward is defined as 
-$\bar{r} = \underset{K\rightarrow\infty}{\text{lim }}\frac{1}{K}\sum_{k = 0}^{K}r\left(Z_{k}\right)$. For an ergodic, finite-state Markov chain, and provided that $\left|r\left(i\right)\right|$ is bounded for every $i$, the total expected average reward $\bar{r}$ is $\bar{r} = \sum_{i = 0}^{n}r\left(i\right)\pi_{i}$, where $\pi_{i}$ are the steady state probabilities of the DTMC obtained by solving the equilibrium equations $\boldsymbol{\pi} = \boldsymbol{\pi}\mathbf{T}$, $\left\|\boldsymbol{\pi}\right\| = \displaystyle\sum_{i=0}^{n}\pi_{i}=1$, where $\mathbf{T}$ is the transition matrix containing the probabilities defined in (\ref{BD_transition_prob}). Let $r_{T}(i)$ and $r_{P_{c}}(i)$ denote the per-state reward for computing $T$ and $P_{c}$ respectively. According to the definitions of $T$ and $P_{c}$, and because the DTMC models consecutive SU transmissions, $\bar{r}_{T} = T$ and $\bar{r}_{P_{c}} = P_{c}$. We will use the terms $\bar{r}_{T}(n)$ and $\bar{r}_{P_{c}}(n)$ to refer to the SU throughput and collision probability when using BD and the maximum length of SU transmissions is set to $n$ time-slots. The optimal $n$ is obtained by solving the following optimization problem
+$\bar{r} = \underset{K\rightarrow\infty}{\text{lim }}\frac{1}{K}\sum_{k = 0}^{K}r\left(Z_{k}\right)$. For an ergodic, finite-state Markov chain, and provided that $\left|r\left(i\right)\right|$ is bounded for every $i$, the total expected average reward $\bar{r}$ is $\bar{r} = \sum_{i = 0}^{n}r\left(i\right)\pi_{i}$, where $\pi_{i}$ are the steady state probabilities of the DTMC obtained by solving the equilibrium equations $\boldsymbol{\pi} = \boldsymbol{\pi}\mathbf{T}$, $\left\|\boldsymbol{\pi}\right\| = \displaystyle\sum_{i=0}^{n}\pi_{i}=1$, where $\mathbf{T}$ is the transition matrix containing the probabilities defined in (\ref{BD_transition_prob}). Let $r_{T}(i)$ and $r_{P_{c}}(i)$ denote the per-state reward for computing $T$ and $P_{c}$ respectively. According to the definitions of $T$ and $P_{c}$, and because the DTMC models consecutive SU transmissions, we have that $\bar{r}_{T} = T$ and $\bar{r}_{P_{c}} = P_{c}$. When using BD, we will use the terms $\bar{r}_{T}(n)$ and $\bar{r}_{P_{c}}(n)$ to refer to the expected averages for the SU throughput and collision probability given a maximum length, $n$, of SU transmissions. The optimal $n$ is obtained by solving the following optimization problem:
 \begin{equation}
 \underset{n}{\mbox{max }} \bar{r}_{T}(n)\mbox{ subject to }\bar{r}_{P_{c}}(n) \leq \alpha
 \end{equation}
 which is solved for integers $n \in \left\{0,1,\ldots,n_{\text{m}}\right\}$. 
 Note that the trivial values for $n=0$ are $\bar{r}_{T}(0)=0$ and $\bar{r}_{P_{c}}(0)=0$. 
-If there are more than one solution, the optimal transmission limit $n^{*}$ is the lowest one attaining the maximum throughput.
+If there is more than one solution, the optimal transmission limit, $n^{*}$, is the lowest one attaining the maximum throughput.
 
-Let us see how to obtain $r_{T}(i)$ and $r_{P_{c}}(i)$ for every $i$. The per-stage throughput $r_{T}(i)$ is defined as the expected number of SU packets correctly received at the $i$-th SU transmission time-slot. By definition, for every $i>0$, the SU transmits one packet, therefore $r_{T}(i) = \mathbf{P}(E_{0}|i)\cdot1$, where $\mathbf{P}(E_{0}|i)$ is the probability of the $E_{0}$ event at the $i$-th time-slot, and is given by
+Let us see how to obtain the per-stage reward functions $r_{T}(i)$ and $r_{P_{c}}(i)$, for every $i$. The per-stage throughput $r_{T}(i)$ is defined as the expected number of SU packets correctly received at the $i$-th SU transmission time-slot. By definition, for every $i>0$, the SU transmits one packet, therefore $r_{T}(i) = \mathbf{P}(E_{0}|i)\cdot1$, where $\mathbf{P}(E_{0}|i)$ is the probability of the $E_{0}$ event at the $i$-th time-slot, and is given by
 \begin{equation}
 \mathbf{P}(E_{0}|i) =
 \begin{cases}
@@ -636,7 +636,7 @@ where $\textbf{B}_{0,0} = (0, 0)$, $\textbf{B}_{0,1} = ((1-p), p)$, and
 			\end{pmatrix}\\			
 \end{array}
 \end{equation}
-Let us define $\boldsymbol{\pi}_{k}~=~(\pi_{2k-1}, \pi_{2k})$, denoting the probability of the events $H_{0}$ and $H_{1}$ at the $k$-th transmission slot. Applying the equilibrium equations we have $\pi_{0}~=~\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{B} + \boldsymbol{\pi}_{n}\mathbf{1}$, $\boldsymbol{\pi}_{1}~=~\pi_{0}\textbf{B}_{0,1}$, and $\boldsymbol{\pi}_{k}$ can be expressed in the matrix-geometric form $\boldsymbol{\pi}_{k}~=~\boldsymbol{\pi}_{1}\mathbf{A}^{k-1}~=~\pi_{0}\textbf{B}_{0,1}\mathbf{A}^{k-1}$. The normalization condition is $\pi_{0}+\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{1} + \boldsymbol{\pi}_{n}\mathbf{1}~=~1$, which combined with the equilibrium equations results in the following expression for $\pi_{0}$
+Let us define $\boldsymbol{\pi}_{k}~=~(\pi_{2k-1}, \pi_{2k})$, denoting the probability of the events $H_{0}$ and $H_{1}$ at the $k$-th transmission slot. Applying the equilibrium equations we have $\pi_{0}~=~\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{B} + \boldsymbol{\pi}_{n}\mathbf{1}$, $\boldsymbol{\pi}_{1}~=~\pi_{0}\textbf{B}_{0,1}$, and $\boldsymbol{\pi}_{k}$ can be expressed in the matrix-geometric form $\boldsymbol{\pi}_{k}~=~\boldsymbol{\pi}_{1}\mathbf{A}^{k-1}~=~\pi_{0}\textbf{B}_{0,1}\mathbf{A}^{k-1}$, for $k > 1$. The normalization condition is $\pi_{0}+\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{1} + \boldsymbol{\pi}_{n}\mathbf{1}~=~1$, which combined with the equilibrium equations results in the following expression for $\pi_{0}$
 \begin{equation}\label{pi_0_basic}
 \pi_{0} = \displaystyle\frac{1}{2+\sum_{k=1}^{n-1}\textbf{B}_{0,1}\mathbf{A}^{k-1}(\mathbf{1}-\textbf{B})}
 \end{equation}
@@ -660,14 +660,14 @@ which allows us to express (\ref{pi_0_basic}) in the following closed form
 \end{equation}
 which enables an efficient computation of $\boldsymbol{\pi}_{k}~=~\pi_{0}\textbf{B}_{0,1}\mathbf{A}^{k-1}$, for $k = 1,\ldots,n$.
 
-The Markov model for OSA-ACK would be similar, changing the value of correct detection probability in case of no PU activity and missed detection in case of PU activity to
+The Markov model for OSA-ACK would be similar, and only requires changing the value of correct detection probability in case of no PU activity and missed detection in case of PU activity to
 \begin{equation}
 \begin{array}{lcl}
 \mathbf{P}(\hat{H}_{0}|H_{0}) & = & \mathbf{P}(E_{0}|H_{0}) \\
 \mathbf{P}(\hat{H}_{0}|H_{1}) & = & \mathbf{P}(E_{0}|H_{1})
 \end{array}
 \end{equation}
-respectively. That is to say, as we introduced previously, OSA-ACK assumes that every decoding error is due to collision with a PU, thus, a SU with OSA-ACK goes back to sensing whenever there is a packet error: with probability $1-\mathbf{P}(E_{0}|H_{0}$) in case there is no PU activity, and with probability $1-\mathbf{P}(E_{0}|H_{1})$ in case of PU activity).
+respectively. That is to say, as we introduced previously, OSA-ACK assumes that every decoding error is due to collision with a PU, thus, a SU with OSA-ACK goes back to sensing whenever there is a packet error: with probability $1-\mathbf{P}(E_{0}|H_{0}$) in case there is no PU activity, and with probability $1-\mathbf{P}(E_{0}|H_{1})$ in case of PU activity.
 \section{Numerical Results}\label{BD_sec_results}
 \begin{table}
 \begin{tabular}{c c|c c} 
