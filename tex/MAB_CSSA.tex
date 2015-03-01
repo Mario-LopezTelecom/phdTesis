@@ -2,9 +2,8 @@
 \chapter[A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing][A superprocess with UCB for CSS]{A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing}\label{MAB_CSSA_chap}
 
 \section{Introduction}
-The mechanism we proposed in the previous chapter was appropiate when the spectrum owner has unused spectrum to lease. What happens if the PU demands are higher and there are not so many opportunities to sell? Is automated spectrum trading possible in such context? In this chapter we give a positive answer to that question, in the framework of \textit{Cooperative Spectrum Sharing} (CSS), also known as \textit{Cooperative Secondary Spectrum Access} (CSSA). 
-More specifically, we are interested in the trading scenario introduced by \cite{ref:Simeone2008}. 
-The basic premise of CSS is that SUs without license may act as transmission relays for a PU in exchange for transmission opportunities in the spectral resources of the PU.
+The mechanism we proposed in the previous chapter is appropiate when the spectrum owner has unused spectrum to lease. What happens if the PU demands are higher and there are not so many opportunities to sell? Is automated spectrum trading possible in such context? In this chapter we give a positive answer to that question, in the framework of \textit{Cooperative Spectrum Sharing} (CSS), also known as \textit{Cooperative Secondary Spectrum Access} (CSSA). 
+More specifically, we are interested in the trading scenario introduced by \cite{ref:Simeone2008}, whose basic premise is that SUs without license may act as transmission relays for a PU in exchange for transmission opportunities in the spectral resources of the PU.
 
 CSS is different from other market-driven spectrum sharing approaches in that it fosters the creation of transmission opportunities in the PU spectrum in an exogenous way: by increasing the transmission rate of the PU, it reduces its spectrum usage. 
 Because of that, CSS is particularly useful when the PU's own demands are so high that it would rarely have spectrum to lease.
@@ -16,10 +15,10 @@ As we highlighted in chapter \ref{Survey_chap}, most previous works are focused 
 \subsection{Motivation}
 A CSS system poses the following \textit{key challenges}: 1) spectrum resource allocation; 2) the SUs may belong to self-interested networks different from the PU's, and thus, the PU should not expect the SUs to collaborate in maximizing the PU's profit; 3) the PU has to undergo a negotiation process with the nearby SUs, having no previous information about them, in general; 4) spectrum opportunities may happen on a short timescale (of the order of seconds or less), thus, for CSS to be effective, this negotiation must be carried out in real-time; 5) the situation around the PU can change quickly (\textit{e.g.,} SUs arriving and leaving the system). 
 
-Previous works in CSS have not addressed these issues simultaneously. As we discussed in \cite{ref:Mario2014} and we explain in Section \ref{sec:Rel}, they are focused on requirements 1-3, but the time needed to reach elaborated solutions (requirements 4 and 5) is not considered in detail. 
+Previous works in CSS have not addressed these issues simultaneously. As we discussed in chapter \ref{Survey_chap} and we explain in Section \ref{sec:Rel}, they are focused on requirements 1-3, but the time needed to reach elaborated solutions (requirements 4 and 5) is not considered in detail. 
 Multiple factors in spectrum trading (\textit{e.g.,} supply, demand, channel gains) vary rapidly with time, and trying to reach a complex allocation solution for a particular spectrum opportunity could take so long that it may render the solution impractical.
 
-We focus on meeting all the aforementioned requirements from the perspective of a PU willing to transmit (a primary transmitter or PT), requesting help from SUs to communicate with an intended primary receiver (PR). The PT has to gradually learn the optimal SU - offer combination based on its accumulated observations. Our proposal aims to achieve a balance between the time devoted by the PT to exploration of options and the time spent exploiting the best alternative known so far, to maximize the PT's payoff (in terms of net transmitted data) over time.
+We focus on meeting all the aforementioned requirements from the perspective of a PU willing to transmit (a primary transmitter or PT), requesting help from SUs to communicate with an intended primary receiver (PR). The PT has to gradually learn the optimal SU-offer combination based on its accumulated observations. Our proposal aims to achieve a balance between the time devoted by the PT to exploration of options and the time spent exploiting the best alternative known so far, to maximize the PT's payoff (in terms of net transmitted data) over time.
 \subsection{Related Work}\label{sec:Rel}
 Many previous works in CSS such as \cite{ref:Simeone2008,ref:Zhang2009,ref:Yi2010,ref:Nadkar2011} consider perfect information scenarios. 
 They assume global knowledge of the network, actions and payoffs of other entities present in the system, and even private information like the value an entity gives to the traded good.
@@ -27,14 +26,31 @@ It is unlikely that the SUs belonging to a different operator would reveal priva
 Some of this private information, in addition, is non-measurable. For example, if a PT suspects an SU is lying about its transmission power, it could check what the transmission power of an SU is, but there is no way to know how much battery it has left.
 The incompleteness of information in our scenario is stronger than in most works addressing this issue. In \cite{ref:Duan2014}, the probability distribution of SU-PR average channel gains is fully known, and \cite{ref:Feng2014} assumes that the PT knows the set of such averages for the SUs present in its coverage area. Instead, we completely rely on learning to discover this information, although prior belief distributions can be easily included in our mechanism. 
 
-Other approaches like the ones proposed in \cite{ref:Yuan2013,ref:Han2010,ref:Li2011} consider cooperation between networks belonging to different operators. 
+Other approaches \cite{ref:Yuan2013,ref:Han2010,ref:Li2011} consider cooperation between networks belonging to different operators. 
 Although it is possible to design mechanisms that provide incentives to selfish SUs to collaborate with the PT (cooperation in terms of game theory \cite{ref:Zhang2012_Fair}), they require the exchange of several messages between these individuals, and therefore a loss in transmission efficiency, as pointed out in \cite{ref:Niyato2008}.
 
 These selfish entities, however, do have incentives to make strategies and/or collude against the PT. 
-In our proposal, the PT employs one-to-one bargaining instead of broadcast offers, as \cite{ref:Yan2013}, but we consider more than one SU. The benefits of one-to-one transactions versus broadcast mechanisms \cite{ref:Feng2014,ref:Duan2014,ref:Jayaweera2011,ref:Zhang2009,ref:Simeone2008} are: the reduction of the strategic power of the SUs, as they cannot overhear public offers or other information about their competitors; their robustness against collusions of SUs \cite{ref:Alcaraz2014_coa}; and the reduction of the communication overhead on the control channels in comparison to widespread mechanisms such as auctions \cite{ref:Feng2014, ref:Jayaweera2011} (\textit{e.g.,} multiple rounds of bidding messages).
+In our proposal, the PT employs one-to-one bargaining instead of broadcast offers, as \cite{ref:Yan2013}, but considering more than one SU. The benefits of one-to-one transactions versus broadcast mechanisms \cite{ref:Feng2014,ref:Duan2014,ref:Jayaweera2011,ref:Zhang2009,ref:Simeone2008} are: the reduction of the strategic power of the SUs, as they cannot overhear public offers or other information about their competitors; their robustness against collusions of SUs \cite{ref:Alcaraz2014_coa}; and the reduction of the communication overhead on the control channels in comparison to widespread mechanisms such as auctions \cite{ref:Feng2014, ref:Jayaweera2011} (\textit{e.g.,} multiple rounds of bidding messages).
  
 Auction mechanisms are also a popular approach to handle the incomplete information issues in CSS.
-Truthful auctions allow optimal solutions without assuming the knowledge of private information, but at the cost of complex winner-selection algorithms and/or increased communication overheads. 
+Truthful auctions allow optimal solutions without assuming the knowledge of private information, but at the cost of complex winner-selection algorithms and/or increased communication overheads. This may not be suitable for spectrum trading in short timescales. There are other mechanisms such as the stochastic optimization based on contract theory proposed in \cite{ref:Duan2014}, in which the authors do not assume perfect information and are concerned about the complexity of the algorithm. Nevertheless, in contrast to our proposal, they do not implement any learning process from successive interactions with SUs. Independent learning is a key feature of self-organizing networks and scalability, as indicated in the survey on market mechanisms for CSS with incomplete network information in \cite{ref:Huang2013}.
+
+Our work is inspired by \cite{ref:Yan2013}, where the authors consider CSS between a PU and a cognitive SU pair in a repeated bargaining game. 
+The bargaining partner selection problem in our work is not comparable to the one formulated in \cite{ref:Calvo2002} because we do not assume knowledge about the impatience of other players, and we consider the PU has full bargaining power and learning abilities, among other differences. 
+Bargaining partner selection is also different from traditional best-relay selection problems in multi-hop networks or cooperative networks \cite{ref:Yuan2013,ref:Tran2014}, which expect an internetwork collaborative behavior in the form of relays revealing their true link qualities, battery life, etc.
+
+Our research in this chapter is built on the techniques for multi-armed bandit with dependent arms developed by D.B. Brown and J.E. Smith in \cite{ref:Brown2013} and S. Pandey, D. Chakrabarti and D. Agarwal in \cite{ref:Pandey2007}. In \cite{ref:Brown2013}, a MAB superprocess is used to develop an optimal policy for exploring oil and gas fields in the North Sea. The state space of their problem is finite, unlike ours. 
+Our dependency model is also different enough from \cite{ref:Pandey2007} to require substantial changes in their algorithm, such as the integration with an MDP. 
+Multi-armed bandits have been previously used in spectrum sharing, mainly for sensing or resource allocation \cite{ref:Si2010}. 
+Surveys on bandits and other machine learning algorithms in cognitive radio can be found in \cite{ref:Bkassiny2013} and \cite{ref:Gavrilovska2013}.
+To the best of our knowledge, however, this it the first work exploiting MABs in CSS. 
+
+Other related works explore alternative flavors of CSS. For example \cite{ref:Tran2014} explores the possibility of both PUs and SUs acting as relays of each other assuming a cooperative attitude between them. 
+The work in \cite{ref:Shao2014} shows the optimal strategy of an SU which is allowed to dynamically decide whether it enters a CSSs or a spectrum leasing market. A closely related topic to CSS is the overlay cognitive radio network paradigm \cite{ref:Goldsmith2009}, by which an SU acts as relay for the PU and, at the same time, transmits its own message. 
+The interference constraint on the SU transmission is enlarged thanks to the cooperative transmission and the use of interference cancellation techniques \cite{ref:Han2010}. 
+
+Table \ref{MAB_CSSA_table_ref} summarizes the most significant features of our work and compares it to previous works. 
+Note that for those works analyzing different configurations, we select and compare to the one closest to our proposal. 
 
 \begin{landscape}
 \begin{table*}
@@ -63,25 +79,6 @@ Year & \textbf{2014} & \textbf{2014} & \textbf{2014} & 2013 & 2012 & 2010 & 2013
 \end{threeparttable}
 \end{table*}
 \end{landscape}
-This may not be suitable for spectrum trading in short timescales. There are other mechanisms such as the stochastic optimization based on contract theory proposed in \cite{ref:Duan2014}, in which the authors do not assume perfect information and are concerned about the complexity of the algorithm. Nevertheless, in contrast to our proposal, they do not implement any learning process from successive interactions with SUs. Independent learning is a key feature of self-organizing networks and scalability, as indicated in the survey on market mechanisms for CSS with incomplete network information in \cite{ref:Huang2013}.
-
-Our work is inspired by \cite{ref:Yan2013}, where the authors consider CSS between a PU and a cognitive SU pair in a repeated bargaining game. 
-The bargaining partner selection problem in our work is not comparable to the one formulated in \cite{ref:Calvo2002} because we do not assume knowledge about the impatience of other players, and we consider the PU has full bargaining power and learning abilities, among other differences. 
-Bargaining partner selection is also different from traditional best-relay selection problems in multi-hop networks or cooperative networks \cite{ref:Yuan2013,ref:Tran2014}, which expect an internetwork collaborative behavior in the form of relays revealing their true link qualities, battery life, etc.
-
-Our research in this chapter is built on the techniques for multi-armed bandit with dependent arms developed by D.B. Brown and J.E. Smith in \cite{ref:Brown2013} and S. Pandey, D. Chakrabarti and D. Agarwal in \cite{ref:Pandey2007}. In \cite{ref:Brown2013}, a MAB superprocess is used to develop an optimal policy for exploring oil and gas fields in the North Sea. The state space of their problem is finite, unlike ours. 
-Our dependency model is also different enough from \cite{ref:Pandey2007} to require substantial changes in their algorithm, such as the integration with an MDP. 
-Multi-armed bandits have been previously used in spectrum sharing, mainly for sensing or resource allocation \cite{ref:Si2010}. 
-Surveys on bandits and other machine learning algorithms in cognitive radio can be found in \cite{ref:Bkassiny2013} and \cite{ref:Gavrilovska2013}.
-To the best of our knowledge, however, this it the first work exploiting MABs in CSS. 
-
-Other related works explore alternative flavors of CSS. For example \cite{ref:Tran2014} explores the possibility of both PUs and SUs acting as relays of each other assuming a cooperative attitude between them. 
-The work in \cite{ref:Shao2014} shows the optimal strategy of an SU which is allowed to dynamically decide whether it enters a CSSs or a spectrum leasing market. A closely related topic to CSS is the overlay cognitive radio network paradigm \cite{ref:Goldsmith2009}, by which an SU acts as relay for the PU and, at the same time, transmits its own message. 
-The interference constraint on the SU transmission is enlarged thanks to the cooperative transmission and the use of interference cancellation techniques \cite{ref:Han2010}. 
-
-Table \ref{MAB_CSSA_table_ref} summarizes the most significant features of our work and compares it to previous works. 
-Note that for those works analyzing different configurations, we select and compare to the one closest to our proposal. 
-
 \subsection{Our Contribution}
 
 \textit{We develop a new approach for the PT learning problem in the context of CSS}, by means of a stochastic multi-armed bandit (MAB) problem with dependent arms. This approach allows the PT to group the information gathered from SUs instead of treating every possible action independently. Thus, the PT learns in a more efficient way from its observations compared to other reinforcement learning approaches. We formulate the main problem in Section \ref{sec:Sys}.
@@ -430,7 +427,7 @@ Note that it cannot be assured that this algorithm performs a fully optimal lear
 %This formulation does not perform an optimal learning of both the average SNR $\mu_{\gamma_s}$ and the type of an SU. The MDP of each arm does not consider the possibility of the PT of choosing a different SU, or how interacting several times with the same has an impact on the estimate $\overline{\gamma_s}^{(n)}$, although this is captured in some way by the stochastic MAB. And viceversa in the MAB decision: when choosing the SU, the UCB index is not considering all the information the PT knows about the SUs acceptance of offers, just the maximum offer $(1-\alpha_{x}^{min})$ the PT believes it can get from each SU. But the exploration-exploration trade-off in discovering the optimal offer is considered by the MDP.
 
 \section{Super-UCB Algorithm}\label{sec:Super}
-The MAB-MDP algorithm of the previous section is based on a stochastic MAB. In this section we follow the Markovian MAB approach. Our objective is to profit from all the information gathered about the SU types, instead of considering only their presumed best achievable offer.
+The MAB-MDP algorithm of the previous section is based on a stochastic MAB. In this section we follow the Markovian MAB approach. Our objective is to benefit from all the information gathered about the SU types, instead of considering only their presumed best achievable offer.
 
 For the classic Markovian MAB with independent arms in which a decision-maker (the PT in our scenario) selects an arm to play and receives a random reward from a Markov chain, Gittins \cite{ref:Gittins2011} developed an index policy proven to be optimal if the transition probabilities are known.
 The computation of the indices for each state of each arm is performed offline. 
@@ -461,7 +458,6 @@ where $\phi_s^{(n)}$ denotes the reward function at round $n$, associated to a t
     0 & \text{for } a = h'
    \end{cases}
 \end{equation}
-
 and $J_s^{(n)}$ denotes a UCB index of the form $J_s^{(n)} = \left(\overline{\gamma}_{s}^{(n)}+4\sigma_{\gamma_s}\sqrt{\frac{\ln{(n_{\left\{W>0\right\}}+2)}}{n_s+1}}\right)$.
 The \textit{Gittins index} $M_s^{(n)}(x)$ for SU $s$ in state $x$ and round $n$ is the smallest $M$ that makes the PT indifferent between taking the retirement action or continuing in the sequential decision problem. The retirement reward symbolizes the reward that could be achieved by switching to the other arms.
 
@@ -551,7 +547,7 @@ Note that, when computing $\widehat{W}_s^{(n)}$ in MAB-MDP, if we represent the 
   \ENSURE $(s^{(n)},\alpha^{(n)});\text{ } s^{(n)} \in \mathcal{S}, \alpha^{(n)} \in \mathcal{A};\text{ } \forall n$
   \STATE Initialize. $\forall s \in \mathcal{S}$: 
     \STATE\hspace{\algorithmicindent}$n_{\left\{W>0\right\}}, n_s^{(n)}, n \leftarrow 0$
-    \STATE\hspace{\algorithmicindent}$[{M_s'},\pi_s^{\text{SPR}}] \leftarrow Frontier Algorithm(\mathcal{X}_s,\mathcal{A},P_s)$   
+    \STATE\hspace{\algorithmicindent}$[{M_s'},\pi_s^{\text{SPR}}] \leftarrow \text{Frontier Algorithm}(\mathcal{X}_s,\mathcal{A},P_s)$   
     \STATE\hspace{\algorithmicindent}$x_s^{(0)} \leftarrow (0,A)$
     \STATE\hspace{\algorithmicindent}$J_s^{(0)} = \gamma_{s}^{(0)}+4\sigma_{\gamma_s}\sqrt{\frac{\ln{(n_{\left\{W>0\right\}}+2)}}{n_s^{(n)}+1}}$    
     \STATE\hspace{\algorithmicindent}$M_s^{(0)} \leftarrow M_s'J_s^{(0)}$
