@@ -14,10 +14,10 @@ We explore the use of MDP and CMDP formulations to balance benefit and grade of 
 \subsection{Related Work}\label{sec:Application}
 
 Centralized dynamic spectrum trading has been addressed in previous works. In the proposal by Yu \textit{et. al.} \cite{ref:Yu2007}, the spectrum broker controls the access of SUs based on a threshold rule computed by means of an MDP formulation with the objective of minimizing the blocking probability of secondary users. In order to cope with the non-stationarity of traffic conditions, the authors propose a finite horizon MDP instead of an infinite horizon one. The drawback is that the policy cannot be computed off-line, imposing a high computational overhead on the system.
-Tang \textit{et. al.} study in \cite{ref:Tang2009_per} several admission control schemes at a centralized spectrum manager. The objective is to meet the traffic demands of SUs, increasing spectrum utilization efficiency while assuring a grade of service in terms of blocking probability to primary users. Among the schemes analyzed, the best performing one is based on a constrained Markov decision process (CMDP).
+Tang \textit{et. al.} study in \cite{ref:Kay_Tang2009} several admission control schemes at a centralized spectrum manager. The objective is to meet the traffic demands of SUs, increasing spectrum utilization efficiency while assuring a grade of service in terms of blocking probability to primary users. Among the schemes analyzed, the best performing one is based on a constrained Markov decision process (CMDP).
 
 When the problem is distributed, dynamic game theory is used instead of MDP.
-In \cite{ref:Niyato}, spectrum trading from PUs to SUs is modeled as a non-cooperative dynamic game, using a Markov chain to describe groups of SUs buying opportunities from PUs. Given its distributed implementation, the main goal of this approach is finding the system's equilibrium. The objective in \cite{ref:eBay} and \cite{ref:Jia} is maximizing the profit of PUs, with especial interest in assuring bidding truthfulness. Wang \textit{et. al.} present in \cite{ref:Wang} a bandwidth auction mechanism between an PU and multiple SUs, where the objective is to maximize the SU's payoff and reach Nash equilibrium in a competitive and distributed manner, while the PU sets a minimum remaining bandwidth for its own use as a constraint. 
+In \cite{ref:Niyato2009_Dyn}, spectrum trading from PUs to SUs is modeled as a non-cooperative dynamic game, using a Markov chain to describe groups of SUs buying opportunities from PUs. Given its distributed implementation, the main goal of this approach is finding the system's equilibrium. The objective in \cite{ref:Zhou2008} and \cite{ref:Jia2009_Rev} is maximizing the profit of PUs, with especial interest in assuring bidding truthfulness. Wang \textit{et. al.} present in \cite{ref:Wang2010_Spec} a bandwidth auction mechanism between an PU and multiple SUs, where the objective is to maximize the SU's payoff and reach Nash equilibrium in a competitive and distributed manner, while the PU sets a minimum remaining bandwidth for its own use as a constraint. 
 
 \subsection{Our contribution}
 
@@ -104,8 +104,8 @@ We can compute the transition probabilities $\tilde{p}_{ij}(u)$ for the auxiliar
 
 %We can formulate the auxiliary discrete-time average cost problem for the model described. 
 %The equation providing the optimum average cost $\lambda$ is
-We can now formulate Bellman's equation (see \cite{ref:Bertsekas}) to obtain the optimum average cost $\lambda$
-%It is known (see \cite{ref:Bertsekas}) that if the scalar $\lambda$ and the vector $\tilde{h}$ satisfy
+We can now formulate Bellman's equation (see \cite{ref:Bertsekas2012}) to obtain the optimum average cost $\lambda$
+%It is known (see \cite{ref:Bertsekas2012}) that if the scalar $\lambda$ and the vector $\tilde{h}$ satisfy
 \begin{equation}\label{BellmanEqAuction}
 \tilde{h}\left(i\right) = \min_{u\in \left\{0,1\right\}}\biggl[\alpha g_{L}(i,u) + \beta g_{U}(i,u)v_{i}(u) -
  \lambda + \displaystyle\sum_{j=1}^{N_{T}}\tilde{p}_{ij}\bigl(u\bigr)\tilde{h}\left(j\right)\biggr]
@@ -121,8 +121,8 @@ When several objectives concur in an MDP problem, another feasible approach is t
 However, these policies do not, in general, solve CMDP problems. Instead, the solution of a CMDP is a randomized policy, \textit{i.e.} it associates each state to a probability distribution defined over the elements in $U(i)$.
 
 There are mainly two approaches to solve CMDPs, linear programming (LP) and Lagrangian relaxation of the Bellman's equation. This proposal follows the former one. Each feasible LP formulation relies on the use of the \textit{dual} variables $\phi\left(i,u\right)$, defined as the stationary probability that the system is in state $i$ and chooses action $u$ under a given randomized stationary policy. The problem addressed in this chapter results, under every stationary policy, in a truncated birth-death process, since PUs are always accepted. In consequence, every resulting Markov chain is \textit{irreducible}, in other words, it is recurrent and there are not transient states. Moreover, the state and action spaces are finite.
-Under these circumstances, as shown in \cite{ref:Puterman}, every feasible solution of the LP problem corresponds to some randomized stationary policy. Therefore, if the constrained problem is feasible, then there exists an optimal randomized stationary policy.
-%Under these circumstances, several results \cite{ref:Puterman} guarantee that every feasible solution of the LP problem corresponds to some randomized stationary policy resulting in the probabilities  and, what is even more important, if the constrained problem is feasible, then there exists an optimal randomized stationary policy.
+Under these circumstances, as shown in \cite{ref:Puterman2005}, every feasible solution of the LP problem corresponds to some randomized stationary policy. Therefore, if the constrained problem is feasible, then there exists an optimal randomized stationary policy.
+%Under these circumstances, several results \cite{ref:Puterman2005} guarantee that every feasible solution of the LP problem corresponds to some randomized stationary policy resulting in the probabilities  and, what is even more important, if the constrained problem is feasible, then there exists an optimal randomized stationary policy.
 
 The LP approach consists of expressing the objective and the constraints in terms of $\phi\left(i,u\right)$. Once the problem is discretized, the average cost is defined as
 \begin{equation}\label{objective}

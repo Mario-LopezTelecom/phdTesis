@@ -1,47 +1,139 @@
 This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
-I found no \bibdata command---while reading file main.aux
-I found no \bibstyle command---while reading file main.aux
-You've used 242 entries,
-            0 wiz_defined-function locations,
-            566 strings with 7337 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 14630 items from 5000.
+Database file #1: IEEEabrv.bib
+Database file #2: ./bibtex/thesisBib.bib
+Warning--string name "sept" is undefined
+--line 55 of file ./bibtex/thesisBib.bib
+I was expecting a `,' or a `}'---line 272 of file ./bibtex/thesisBib.bib
+ :  
+ :  year = {2012}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--string name "sept" is undefined
+--line 462 of file ./bibtex/thesisBib.bib
+Warning--string name "sept" is undefined
+--line 656 of file ./bibtex/thesisBib.bib
+Warning--string name "sept" is undefined
+--line 749 of file ./bibtex/thesisBib.bib
+Warning--string name "sept" is undefined
+--line 828 of file ./bibtex/thesisBib.bib
+I was expecting a `,' or a `}'---line 873 of file ./bibtex/thesisBib.bib
+ :  
+ :  year = {2005}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--string name "sept" is undefined
+--line 1111 of file ./bibtex/thesisBib.bib
+Warning--string name "sept" is undefined
+--line 1138 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 1184 of file ./bibtex/thesisBib.bib
+ : month=jan,
+ :           ,
+I'm skipping whatever remains of this entry
+Warning--string name "iee_j_wcom" is undefined
+--line 1191 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 1202 of file ./bibtex/thesisBib.bib
+ :  booktitle = {{ACM} {MobiHoc}},
+ :                                ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 1275 of file ./bibtex/thesisBib.bib
+ : month=jan,
+ :           ,
+I'm skipping whatever remains of this entry
+Warning--string name "sept" is undefined
+--line 1372 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 1467 of file ./bibtex/thesisBib.bib
+ : month=jan,
+ :           ,
+I'm skipping whatever remains of this entry
+Warning--string name "sept" is undefined
+--line 1696 of file ./bibtex/thesisBib.bib
+I was expecting a `,' or a `}'---line 1734 of file ./bibtex/thesisBib.bib
+ :  
+ :  year = {1975},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 1751 of file ./bibtex/thesisBib.bib
+ : 
+ : % MAB_CSSA
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 1877 of file ./bibtex/thesisBib.bib
+ : @article{ref:Niyato2008_Mark
+ :                             ,
+I'm skipping whatever remains of this entry
+Warning--string name "sept" is undefined
+--line 2150 of file ./bibtex/thesisBib.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing institution in ref:FCC2002
+Warning--missing institution in ref:Commission2007
+Warning--missing institution in ref:ECC2011
+Warning--edition ordinal word "Reprint" may be too high (or improper) for conversion in ref:Mihaly2013
+Warning--empty year in ref:Goldsmith2005
+Warning--missing publisher in ref:Omnet
+Warning--missing publisher in ref:SciPy
+Warning--empty year in ref:Biglieri2012
+Name 1 in "J.P. Vasseur, M. Pickavet, and P. Demeester" has a comma at the end for entry ref:Vasseur2004
+while executing---line 2419 of file IEEEtran.bst
+Warning--missing institution in CTIA2011
+Warning--empty author in ref:Yoon2012
+Warning--missing publisher in ref:Adler2012
+Warning--empty year in ref:Zhang2009
+Warning--empty journal in ref:Jayaweera2009
+Warning--missing institution in AdvisorsonScience
+Warning--empty year in ref:Klei
+Warning--missing institution in ref:RSPG2009
+
+Done.
+You've used 214 entries,
+            4039 wiz_defined-function locations,
+            2352 strings with 49555 characters,
+and the built_in function-call counts, 165754 in all, are:
+= -- 13387
+> -- 3755
+< -- 1496
++ -- 2156
+- -- 616
+* -- 8009
+:= -- 24436
+add.period$ -- 427
+call.type$ -- 214
+change.case$ -- 189
+chr.to.int$ -- 3345
+cite$ -- 230
+duplicate$ -- 11988
+empty$ -- 13575
+format.name$ -- 791
+if$ -- 38766
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
+int.to.str$ -- 214
+missing$ -- 2050
+newline$ -- 691
+num.names$ -- 213
+pop$ -- 4476
+preamble$ -- 1
 purify$ -- 0
-quote$ -- 0
-skip$ -- 0
+quote$ -- 4
+skip$ -- 12939
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 7917
+swap$ -- 10210
+text.length$ -- 381
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+top$ -- 5
+type$ -- 214
+warning$ -- 16
+while$ -- 698
+width$ -- 217
+write$ -- 2128
+(There were 10 error messages)

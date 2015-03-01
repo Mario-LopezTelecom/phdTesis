@@ -11,61 +11,67 @@ Database file #1: IEEEabrv.bib
 Database file #2: thesisBib.bib
 Warning--string name "sept" is undefined
 --line 55 of file thesisBib.bib
-Repeated entry---line 230 of file thesisBib.bib
- : @book{ref:White2012
- :                    ,
+"{" immediately follows a field part---line 92 of file thesisBib.bib
+ :  url = \url
+ :            {http://dealbook.nytimes.com/2012/08/02/trying-to-be-nimble-knight-capital-stumbles/?_r=0},Year = {2012},
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 344 of file thesisBib.bib
+I was expecting a `,' or a `}'---line 274 of file thesisBib.bib
  :  
- :  year = {2013}
+ :  year = {2012}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 419 of file thesisBib.bib
+I was expecting a `,' or a `}'---line 423 of file thesisBib.bib
  :  
  :  author={Vazquez-Avila, J. and Cruz-Perez, F.A. and Ortigoza-Guerrero, L.},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
---line 433 of file thesisBib.bib
-Warning--string name "sept" is undefined
---line 479 of file thesisBib.bib
-"{" immediately follows a field part---line 528 of file thesisBib.bib
- :  title = 
- :           {Queueing Networks and Markov Chains : Modeling and Performance Evaluation With Computer Science Applications},
+--line 464 of file thesisBib.bib
+I was expecting a `,' or a `}'---line 561 of file thesisBib.bib
+ :  
+ :  title={Flexible Spectrum Access for Opportunistic Secondary Operation in Cognitive Radio Networks},
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 574 of file thesisBib.bib
+I was expecting a `,' or a `}'---line 601 of file thesisBib.bib
+ :  
+ :  address = {Philadelphia,{PA}}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 633 of file thesisBib.bib
  : @article{ref:Domenico2012
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 596 of file thesisBib.bib
+Repeated entry---line 655 of file thesisBib.bib
  : @article{ref:Pawelczak2009
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 649 of file thesisBib.bib
- : @article{ref:Jung2012
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 693 of file thesisBib.bib
- : @book{ref:Bertsekas2012
- :                        ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 701 of file thesisBib.bib
- : @book{ref:Puterman2005
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 707 of file thesisBib.bib
- : @book{ref:Bolch2006
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 734 of file thesisBib.bib
+Repeated entry---line 748 of file thesisBib.bib
  : @article{ref:Wu2012
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 787 of file thesisBib.bib
+Repeated entry---line 768 of file thesisBib.bib
+ : @book{ref:Biglieri2012
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 801 of file thesisBib.bib
  : @article{ref:Li2012
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 840 of file thesisBib.bib
+Warning--string name "sept" is undefined
+--line 885 of file thesisBib.bib
+Repeated entry---line 900 of file thesisBib.bib
+ : @book{ref:Bertsekas2012
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 908 of file thesisBib.bib
+ : @book{ref:Bolch2006
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 915 of file thesisBib.bib
+ : @book{ref:Puterman2005
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 921 of file thesisBib.bib
  : @inproceedings{ref:Berthold2008
  :                                ,
 I'm skipping whatever remains of this entry
@@ -75,60 +81,60 @@ I'm skipping whatever remains of this entry
 Warning--missing institution in ref:FCC2002
 Warning--missing institution in ref:Commission2007
 Warning--missing institution in ref:ECC2011
-Too many commas in name 1 of "E. Jones, T. Oliphant, P. Peterson, et al." for entry ref:SciPy
-while executing---line 2411 of file IEEEtran.bst
+Warning--there's a month but no year in web:Silver2012
 Warning--missing publisher in ref:SciPy
 Warning--missing publisher in ref:Omnet
-Warning--empty year in ref:Biglieri13
+Warning--edition ordinal word "Reprint" may be too high (or improper) for conversion in ref:Mihaly2013
+Warning--empty year in ref:Biglieri2012
 Name 1 in "J.P. Vasseur, M. Pickavet, and P. Demeester" has a comma at the end for entry ref:Vasseur2004
 while executing---line 2411 of file IEEEtran.bst
 Warning--empty author in ref:Vazquez2006
 Warning--empty title in ref:Vazquez2006
 Warning--empty journal in ref:Vazquez2006
 Warning--empty year in ref:Vazquez2006
-Warning--empty title in ref:Bolch2006
-Warning--empty year in ref:Bolch2006
+Warning--empty title in ref:Gelabert2011
+Warning--empty year in ref:Gelabert2011
 
 Done.
-You've used 78 entries,
+You've used 86 entries,
             4024 wiz_defined-function locations,
-            1624 strings with 27508 characters,
-and the built_in function-call counts, 58232 in all, are:
-= -- 4699
-> -- 1334
-< -- 501
-+ -- 759
-- -- 226
-* -- 2830
-:= -- 8715
-add.period$ -- 154
-call.type$ -- 78
-change.case$ -- 66
-chr.to.int$ -- 1104
-cite$ -- 90
-duplicate$ -- 4237
-empty$ -- 4766
-format.name$ -- 287
-if$ -- 13539
+            1663 strings with 28500 characters,
+and the built_in function-call counts, 64369 in all, are:
+= -- 5177
+> -- 1477
+< -- 566
++ -- 836
+- -- 247
+* -- 3136
+:= -- 9572
+add.period$ -- 169
+call.type$ -- 86
+change.case$ -- 76
+chr.to.int$ -- 1257
+cite$ -- 100
+duplicate$ -- 4698
+empty$ -- 5270
+format.name$ -- 316
+if$ -- 14984
 int.to.chr$ -- 0
-int.to.str$ -- 78
-missing$ -- 736
-newline$ -- 269
-num.names$ -- 77
-pop$ -- 1610
+int.to.str$ -- 86
+missing$ -- 806
+newline$ -- 291
+num.names$ -- 85
+pop$ -- 1780
 preamble$ -- 1
 purify$ -- 0
-quote$ -- 2
-skip$ -- 4541
+quote$ -- 4
+skip$ -- 5009
 stack$ -- 0
-substring$ -- 2629
-swap$ -- 3571
-text.length$ -- 133
+substring$ -- 2934
+swap$ -- 3944
+text.length$ -- 147
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 78
-warning$ -- 12
-while$ -- 238
-width$ -- 80
-write$ -- 787
+type$ -- 86
+warning$ -- 14
+while$ -- 264
+width$ -- 88
+write$ -- 858
 (There were 15 error messages)

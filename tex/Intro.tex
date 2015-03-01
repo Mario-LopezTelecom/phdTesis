@@ -184,23 +184,23 @@ The main advantages of this approach is that it assures operating at global opti
 \caption{Relation of mathematical tools and thesis chapters}
 \label{intro_table_math_tools}
 \end{table}
-This thesis is part of the project “ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM), funded by the Spanish Ministry of Economy and Competitiveness. 
+This thesis is part of the project \enquote{ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM)}, funded by the Spanish Ministry of Economy and Competitiveness. 
 The CALM project is organized as a set of objectives interrelating key technologies for the Future Internet, \emph{with a special focus on mathematical tools} for the development, analysis and improvement of networks and protocols.
 
 Most of our proposed coexistence mechanisms and policies in this thesis are grounded in Markov Decision Processes (MDPs) \cite{ref:Puterman2005}. 
-The suitability of this tool for our scenario is straightforward to see: Markov models \enquote{are applicable to any dynamic system whose evolution over time involves uncertainty} \cite{ref:Bertsekas}, as is the case of spectrum occupancy over time. 
+The suitability of this tool for our scenario is straightforward to see: Markov models \enquote{are applicable to any dynamic system whose evolution over time involves uncertainty} \cite{ref:Bertsekas2012}, as is the case of spectrum occupancy over time. 
 The constrained-MDP (CMDP) formulated in chapter \ref{Sarnoff_chap}, and the Partially Observable MDP (POMDP) in chapter \ref{SPEC_MAN_chap}, are especially remarkable because of their far-from-common presence in previous DSA works. 
 
 Trying to characterize incomplete information scenarios, by taking into account all the possible values of the (often continuous) unknown parameters, is computationally infeasible with MDPs. 
-This is known as \enquote{the curse of dimensionality} \cite{ref:Powell}. 
+This is known as \enquote{the curse of dimensionality} \cite{ref:Powell2012}. 
 In the chapters devoted to these scenarios, we resort to reinforcement learning and stochastic optimization approaches. 
 Some of the tools used in this thesis like Response Surface Methodology (RSM) (chapter \ref{RSM_chap}) or Multi-Armed bandits (MABs) (chapter \ref{MAB_CSSA_chap}) are of new applicability to coexistence issues in cognitive radio and are becoming hot topics, not only in the research community \cite{ref:Bkassiny2013} but also in highly profitable businesses like online advertisement \cite{ref:White2012}. 
 
 Regarding the analysis and numerical evaluation of our mechanisms, we used Markov Reward Models (MRM). Either accompanying the previous tool or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation.
 
-We rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson traffic model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2}
+We rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson traffic model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2005}
 
-Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB \cite{ref:MATLAB}, Mathematica \cite{ref:Mathematica} for some mathematical derivations, and the OMNeT\verb!++! simulator \cite{ref:Omnet} in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy \cite{ref:SciPy} and R \cite{ref:RStudio}, because of their suitability for machine learning applications and data analysis.
+Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB \cite{ref:MATLAB}, Mathematica \cite{ref:Mathematica} for some mathematical derivations, and the OMNeT\verb!++! simulator \cite{ref:Omnet} in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy \cite{ref:SciPy} and R \cite{ref:RStudio}, because of their suitability for machine learning applications and data analysis.
 
 
 

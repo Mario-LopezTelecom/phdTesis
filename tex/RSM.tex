@@ -8,7 +8,7 @@ Finally, in this last chapter devoted to OSA, we hope to go one step further in 
 
 \subsection{Motivation}
 Approximately every decade, a new cellular access technology is developed and introduced in the market. However, because not all users upgrade their terminals at the same pace, the operators have to keep their legacy networks working, and the spectrum assigned to these old networks becomes gradually more and more underused. 
-One way to increase the spectrum efficiency is to allow the users of the newest networks to opportunistically access the spectrum of the legacy networks. Applying the concepts of cognitive radio \cite{ref:Goldsmith2}, the terminals of the newest network would be the secondary users (SUs), and the terminals of the legacy network would be the primary users (PUs). The secondary access to the spectrum of the primary (legacy) network should not cause noticeable degradation to PU transmissions. 
+One way to increase the spectrum efficiency is to allow the users of the newest networks to opportunistically access the spectrum of the legacy networks. Applying the concepts of cognitive radio \cite{ref:Biglieri2012}, the terminals of the newest network would be the secondary users (SUs), and the terminals of the legacy network would be the primary users (PUs). The secondary access to the spectrum of the primary (legacy) network should not cause noticeable degradation to PU transmissions. 
 In this scenario, the operator owns and control both the primary and the secondary networks, and therefore can establish the rules for secondary access and monitor the impact of these rules on the performance of both SU and PU transmissions.
 However, we assume \textit{no modifications on the legacy network}, implying that the operation of the secondary network is \textit{transparent} to the primary network.
 %The operator could establish the rules for secondary access but we assume no signaling between the primary network and the SUs.
@@ -23,16 +23,16 @@ To fully exploit its potential, we propose an on-line algorithm that, with very 
 
 \subsection{Related Work}
 
-Other works have proposed the combination of temporal and spatial sensing by the SUs \cite{ref:Hybrid}, \cite{ref:Hybrid2}, \cite{ref:HybridVehicular}, \cite{ref:Hybrid3}. Works like \cite{ref:Hybrid} and \cite{ref:Hybrid2} consider a single secondary transmitter and exploit information from spatial sensing to improve the performance of temporal sensing. The single transmitter model is also applied in \cite{ref:HybridVehicular} for vehicular networks.
-In \cite{ref:Hybrid3} the capacity is optimized by randomizing the access strategies, but for a single PU, single SU scenario.
+Other works have proposed the combination of temporal and spatial sensing by the SUs \cite{ref:Do2009}, \cite{ref:Wu2013}, \cite{ref:Ding2011}, \cite{ref:Khosh2010}. Works like \cite{ref:Do2009} and \cite{ref:Wu2013} consider a single secondary transmitter and exploit information from spatial sensing to improve the performance of temporal sensing. The single transmitter model is also applied in \cite{ref:Ding2011} for vehicular networks.
+In \cite{ref:Khosh2010} the capacity is optimized by randomizing the access strategies, but for a single PU, single SU scenario.
 However, the motivational scenario of our work comprises multiple secondary transmitters with multiple primary base stations. Thus, we must consider relevant features that are not captured by the single transmitter model, such as the inter SU-interference and the frequency reuse in a cellular structure.
 
-In cellular networks, previous works as \cite{ref:Cellular} and \cite{ref:Cellular2} have addressed spatial spectrum reuse by a secondary network. However, these works assume that the secondary users only scan one frequency. As pointed out by their authors, scanning all the frequencies would improve the performance. 
+In cellular networks, previous works as \cite{ref:Larsson2008} and \cite{ref:Axell2009} have addressed spatial spectrum reuse by a secondary network. However, these works assume that the secondary users only scan one frequency. As pointed out by their authors, scanning all the frequencies would improve the performance. 
 
 \subsection{Our Contribution}
 Our contribution in this work is a semi-distributed mechanism for opportunistic spectrum access in which \textit{all the spectrum of the system can be made available} to each SU. 
 Each SU decides locally which frequency band to access in, according to a probability distribution. \textit{A centralized entity learns the optimal probability distribution over the frequency bands of the cellular network}, which is periodically broadcasted among the SUs.
-The learning algorithm applies the response surface methodology (RSM) \cite{ref:RSM_book}, whose application is novel in interference management problems.
+The learning algorithm applies the response surface methodology (RSM) \cite{ref:Marti2008}, whose application is novel in interference management problems.
 
 In the following section we describe the system. Section \ref{sec:Formulation} formulates the design problem and Section \ref{sec:RSM} presents the RSM algorithm to solve it. Finally, Sections \ref{RSM_sec_results} and \ref{RSM_sec_conclusion} presents the numerical results and the conclusions of this work.
 
@@ -79,7 +79,7 @@ Each SU builds its own $\vec\phi$ vector by scanning the PBS pilot tones on each
 %El hecho de que un SU no reciba potencia de alguna de las estaciones tambi√©n aporta informacion de la ubicacion del mismo
 
 When an SU transmits over any band $\phi_i = f_j$, it may cause some interference to the closest PUs using the same channel. Obviously, these PUs are located at cells using the same band $f_j$. Given how vector $\vec\phi$ is built, the average level of SU interference caused at PU receivers is proportional to the ordering index $i$ of the selected band $\phi_i$, i.e. a single SU transmission over $\phi_1$ causes interference on the most distant cell, a transmission over $\phi_2$ interferes on the second most distant cell and so forth.
-%The channels in $\phi_1$ can therefore be considered as \textit{spatial opportunities}, \cite{ref:DualTesselation}.
+%The channels in $\phi_1$ can therefore be considered as \textit{spatial opportunities}, \cite{ref:Alcaraz2014_RSM}.
 %Multiple previous works consider that secondary access occurs only in \textit{spatial opportunities}, which in our case corresponds to restrict the access of each SU to $\phi_1$ in its $\phi$ vector.
 In our system, an OSA strategy exploiting only \textit{spatial opportunities}, implies that each SU only tries to access over $\phi_1$.
 However, what really matters is the aggregate interference at the receivers.
@@ -92,8 +92,8 @@ In this case, the benefit of giving more frequency band options to the SUs is to
 %More importantly, while the typical location of a PBS (outdoors and on top of a relatively high building) is intended to provide coverage to a wide area, a secondary transmitter is usually a user terminal, and its location (indoors or outdoors at small heights) will cause the SU signal power to decrease faster with distance compared to the transmission of a PBS.
 %Therefore, in a system with high secondary activity, it is the aggregated interference at the PU receivers what should be kept under a desired level. 
 
-Besides, when an SU tries to access the band of a close PBS, i.e. a band associated to a higher interference power such as $\phi_7$, the SU can perform \textit{PU activity detection} on the channels within the band \cite{ref:Goldsmith2}. This activity detection allows the SU to detect free channels before starting transmission, and to stop SU transmission when detecting overlap with PU transmissions. One way to implement this latter capability is the Background Detection mechanism described in Chapter \ref{BD_chap}. The closer the SU is to the PBS, the more reliable is the PU activity detection and therefore the less impact on PU communication.
-The free channels in $\phi_7$ are identified as \textit{temporal opportunities} \cite{ref:DualTesselation} in previous works.
+Besides, when an SU tries to access the band of a close PBS, i.e. a band associated to a higher interference power such as $\phi_7$, the SU can perform \textit{PU activity detection} on the channels within the band \cite{ref:Biglieri2012}. This activity detection allows the SU to detect free channels before starting transmission, and to stop SU transmission when detecting overlap with PU transmissions. One way to implement this latter capability is the Background Detection mechanism described in Chapter \ref{BD_chap}. The closer the SU is to the PBS, the more reliable is the PU activity detection and therefore the less impact on PU communication.
+The free channels in $\phi_7$ are identified as \textit{temporal opportunities} \cite{ref:Alcaraz2014_RSM} in previous works.
 %por tanto no est· claro que es mejor si acceder a phi 1 o a phi 7.
 %Regarding the SU interference at the PU receivers, the following considerations should be highlighted.
 %Because of its ad-hoc nature, the power of an SU transmission on each channel can be very small compared to a PBS transmission.
@@ -104,8 +104,8 @@ The free channels in $\phi_7$ are identified as \textit{temporal opportunities} 
 %However, the capacity of each cell (primary or dual) is limited for secondary users as well, because of the intra and inter cell interference, and the limitation in the number of available channels when using temporal opportunities.
 %One way to increase the capacity for the secondary network is to simultaneously use the primary and the dual tessellation, therefore duplicating the area where each frequency band can be used by the secondary terminals. This approach is the \textbf{hybrid access} and comprises the following 3 steps:
 
-As shown in \cite{ref:DualTesselation} the typical strategies of using only spatial opportunities ($\phi_1$ channels) or only temporal ones ($\phi_7$ free channels) are not optimal, and an hybrid scheme combining both types of access increases the capacity of the system.
-%In our previous work \cite{ref:DualTesselation} we showed that an \textit{hybrid access} combining spatial opportunities ($\phi_1$ channels) with temporal opportunities ($\phi_7$ free channels) increases notably the capacity of the secondary access network, and is compatible to keeping the SU interference at PU receivers below the desired levels.
+As shown in \cite{ref:Alcaraz2014_RSM} the typical strategies of using only spatial opportunities ($\phi_1$ channels) or only temporal ones ($\phi_7$ free channels) are not optimal, and an hybrid scheme combining both types of access increases the capacity of the system.
+%In our previous work \cite{ref:Alcaraz2014_RSM} we showed that an \textit{hybrid access} combining spatial opportunities ($\phi_1$ channels) with temporal opportunities ($\phi_7$ free channels) increases notably the capacity of the secondary access network, and is compatible to keeping the SU interference at PU receivers below the desired levels.
 The challenge is to find the optimal balance between the fraction of the SU population exploiting each type of spectrum opportunities. %exploiting temporal opportunities and the SUs using spatial opportunities.
 In this work we incorporate a learning strategy to address this issue, and we extend the hybrid access idea by allowing the SU to use 3 or more bands from its $\phi$ vector.%, and incorporate a crucial learning feature.
 
@@ -189,9 +189,9 @@ On the other hand, the interference from the SUs using bands that usually do not
 %Moreover, these processes and the decision vector $\rho$, take values from continuous spaces, and therefore conventional dynamic programming techniques result infeasible.
 %And the SAC can do that by observing realizations of the random variables $C_{s}(\rho)$ and $P_{c}(\rho)$.
 %This is a \textit{stochastic optimization problem with stochastic constraints}. 
-The problem (\ref{main_problem}) is formally a \textit{stochastic optimization problem with stochastic constraints} \cite{ref:RSM_book}, that must be solved online, i.e. while the system is operating.
+The problem (\ref{main_problem}) is formally a \textit{stochastic optimization problem with stochastic constraints} \cite{ref:Marti2008}, that must be solved online, i.e. while the system is operating.
 Therefore, the SAC has to dynamically \textit{learn} an optimal $\vec\rho$. 
-One feasible way to address it is by means of the Response Surface Methodology (RSM) \cite{ref:RSM_restr}. However, the inclusion of stochastic constraints introduces high complexity in the formulation. In the following section we develop the particular case in which $P_{c,\text{min}}$ is sufficiently low for condition $P_{c}(\rho)\geq P_{c,\text{min}}$ to hold at the optimal $\vec\rho$ (in numerical results, $P_{c}(\vec\rho)$ at the optimal $\vec\rho$ is never less than $5 \%$ of the $P_{c}$ obtained in absence of SU access). This allows us to remove the stochastic constraint regarding $P_c(\vec\rho)$. We leave as future work the inclusion of constraints in the RSM formulation.
+One feasible way to address it is by means of the Response Surface Methodology (RSM) \cite{ref:Angun2009}. However, the inclusion of stochastic constraints introduces high complexity in the formulation. In the following section we develop the particular case in which $P_{c,\text{min}}$ is sufficiently low for condition $P_{c}(\rho)\geq P_{c,\text{min}}$ to hold at the optimal $\vec\rho$ (in numerical results, $P_{c}(\vec\rho)$ at the optimal $\vec\rho$ is never less than $5 \%$ of the $P_{c}$ obtained in absence of SU access). This allows us to remove the stochastic constraint regarding $P_c(\vec\rho)$. We leave as future work the inclusion of constraints in the RSM formulation.
 
 %performance del SU (formula)
 %performance del PU (formula)
@@ -212,7 +212,7 @@ At each one of these steps, numbered by $n=1,2,\ldots$, the system generates one
 \begin{equation}\label{gradascent}
 \vec\rho_{(n+1)}=\vec\rho_{(n)} + \alpha_{(n)}\hat{\nabla}C_s(\vec\rho_{(n)})
 \end{equation}
-where $\hat{\nabla}C_s$ denotes the estimation of the gradient $\nabla C_s$, and $\alpha_{(n)}$ is the step-size weighting factor. A standard condition for the selection of $\alpha_{(n)}$, assuring the convergence of $\vec\rho_{(n)}$ \cite{ref:RSM_book}, is
+where $\hat{\nabla}C_s$ denotes the estimation of the gradient $\nabla C_s$, and $\alpha_{(n)}$ is the step-size weighting factor. A standard condition for the selection of $\alpha_{(n)}$, assuring the convergence of $\vec\rho_{(n)}$ \cite{ref:Marti2008}, is
 $\sum_{n=1}^{\infty}\alpha_{(n)}=\infty$, $\sum_{n=1}^{\infty}\alpha_{(n)}^2<\infty$.
 
 Let us discuss the computation of $\hat{\nabla}C_s$. Given $\vec\rho_{(n)}$ at step $n$, we consider a subdomain $\mathcal{S}_{(n)}$ of the feasible domain $\mathcal{P}$ such that 
@@ -293,14 +293,14 @@ with $\vec\delta^{(i)} = \vec\rho_{(n,i)} - \vec\rho_{(n)}$, for $i = 1,2,\ldots
 
 In case $C_s(\vec\rho)$ is concave on $\mathcal{P}$, the RSM algorithm will approach the global optimum following the stochastic gradient ascent iterations (\ref{gradascent}). 
 The concavity of $C_s(\vec\rho)$ has been observed in numerical simulations in the scenarios considered in the following Section.
-%The concavity of $C_s(\rho)$ was numerically in \cite{ref:DualTesselation} , and it has been also observed for $R>2$ dimensions in the numerical experiments discussed in following Section.
+%The concavity of $C_s(\rho)$ was numerically in \cite{ref:Alcaraz2014_RSM} , and it has been also observed for $R>2$ dimensions in the numerical experiments discussed in following Section.
 %HABLAR SOBRE LA CONVEXIDAD
 
 \section{Numerical Results}\label{RSM_sec_results}
 \subsection{Evaluation Framework}
 
 This subsection describes the Monte-Carlo methodology and the scenario used to evaluate $C_{s}$. 
-The primary network uses a 7-band frequency planning, as previously stated, with irregular shaped cells having an average radius $r=700$ m. We consider pathloss and multipath fading. To compute the pathloss attenuation over distance, $A(d)$ (dB), we use the following piecewise dual-slope model \cite{ref:Goldsmith}:
+The primary network uses a 7-band frequency planning, as previously stated, with irregular shaped cells having an average radius $r=700$ m. We consider pathloss and multipath fading. To compute the pathloss attenuation over distance, $A(d)$ (dB), we use the following piecewise dual-slope model \cite{ref:Goldsmith2005}:
 \begin{equation}
 \begin{array}{l}
 A(d) = \\
