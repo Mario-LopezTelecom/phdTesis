@@ -1,16 +1,17 @@
 \graphicspath{ {img/Sarnoff/} }
-\chapter{An MDP Framework for Centralized Dynamic Spectrum Auction}\label{Sarnoff_chap}
+\chapter{An MDP Framework for Centralized Dynamic Spectrum Leasing}\label{Sarnoff_chap}
 \section{Introduction}
-In the next two chapters we propose two automated spectrum trading mechanisms, suitable for different scenarios. The one described in this chapter is appropiate for situations of low spectrum usage by PUs. In such scenario, the spectrum owner may be willing to obtain some benefit from its unused resource by selling it to SUs. Nevertheless, it still has to meet the demands of the PUs (to some extent). We show how to compute a policy that balances those two objectives by means of an MDP and a constrained-MDP formulations. 
+In the next two chapters we propose two automated spectrum trading mechanisms, suitable for different scenarios. The one described in this chapter is appropiate for situations of low spectrum usage by PUs. In such scenario, the spectrum owner may be willing to obtain some benefit from its unused resource by selling it to SUs. Nevertheless, it still has to meet the demands of the PUs (to some extent), assuring that the blocking probability for the PUs remains under a desired threshold. We show how to compute a policy that balances those two objectives by means of an MDP and a constrained-MDP formulations. 
 
 \subsection{Motivation}
 In situations of low spectrum usage, a licensed operator may decide to sell spectrum opportunities to SUs in the \textit{secondary spectrum market} to obtain extra-revenue from its resources. A regulator may encourage this behavior, for example, by setting a fee proportional to the amount of spectrum held. \cite{AdvisorsonScience}.  
 
 The operator does not know the future demands from its users in advance (apart from a statistical characterization). What would happen if, at any given moment, all of its spectrum is in use and a new PU arrives to the system? As the licensed operator, it could reclaim the spectrum it leased to SUs if needed, but the process is not inmediate and the incurred delay could result in, for example, a PU missed call. We refer to the probability of such event as the \emph{blocking probability}. In addition, reclaiming its spectrum may not be a convenient solution for the operator (\textit{e.g.} because it may require a compensation to the SU). 
 
-Therefore, a licensed operator should carefully balance the revenue obtained from granting access to its spectrum to SUs with the blocking probability of PUs. In order to do this in real-time, a protocol is required to support negotiations on access price, channel holding time, \textit{etc}., between the spectrum owner and the SUs. In this work, we consider a centralized bid-auction model, in which SUs bid for the spectrum of a single spectrum owner. We explore the use of MDP and CMDP formulations to balance benefit and grade of service for PUs. The main advantages of this approach is that it assures operating at global optimum and reduces the computational effort at SUs.
+Therefore, a licensed operator should carefully balance the revenue obtained from allowing the SUs to access its spectrum, with the blocking probability of the PUs. In order to do this in real-time, a protocol is required to support negotiations on access price, channel holding time, \textit{etc}., between the spectrum owner and the SUs. In this work, we consider a centralized bid-auction model, in which SUs bid for the spectrum of a single spectrum owner. We consider a continuous bid process, in which each incoming SU makes its bid upon arrival. Because of the real-time constraint, the operator only knows one bid at a time, and has to make its decision for each incoming SU, before knowing future bids.
+We explore the use of MDP and CMDP formulations to balance benefit and grade of service for PUs. The main advantages of this approach is that it assures operating at global optimum and reduces the computational effort at SUs.
 
-\section{Related Work}\label{sec:Application}
+\subsection{Related Work}\label{sec:Application}
 
 Centralized dynamic spectrum trading has been addressed in previous works. In the proposal by Yu \textit{et. al.} \cite{ref:Yu2007}, the spectrum broker controls the access of SUs based on a threshold rule computed by means of an MDP formulation with the objective of minimizing the blocking probability of secondary users. In order to cope with the non-stationarity of traffic conditions, the authors propose a finite horizon MDP instead of an infinite horizon one. The drawback is that the policy cannot be computed off-line, imposing a high computational overhead on the system.
 Tang \textit{et. al.} study in \cite{ref:Tang2009_per} several admission control schemes at a centralized spectrum manager. The objective is to meet the traffic demands of SUs, increasing spectrum utilization efficiency while assuring a grade of service in terms of blocking probability to primary users. Among the schemes analyzed, the best performing one is based on a constrained Markov decision process (CMDP).
@@ -20,7 +21,7 @@ In \cite{ref:Niyato}, spectrum trading from PUs to SUs is modeled as a non-coope
 
 \subsection{Our contribution}
 
-This chapter addresses the design of centralized DSA MAC protocols comprising dynamic spectrum auction. We explore the possibilities of a formal design based on a Markov decision process (MDP) formulation and propose, in Section \ref{Sarnoff_sec_model}, a design framework to balance the grade-of-service (given by the blocking probability for PUs) and the expected economic revenue provided by the SUs' accepted bids. This trade-off can be managed in two ways. One consists of computing a single objective value given by a combination of the blocking probability and the expected revenue. The weights assigned to each objective determine the point in the Pareto front where the obtained policy lies. The other approach, which is presented in Section \ref{sec:Constrained MDP}, consists of solving for one of the objectives and setting constraints on the remaining ones.
+This chapter addresses the design of centralized DSA MAC protocols for real-time dynamic spectrum auction. We explore the possibilities of a formal design based on a Markov decision process (MDP) formulation and propose, in Section \ref{Sarnoff_sec_model}, a design framework to balance the grade-of-service (given by the blocking probability for PUs) and the expected economic revenue provided by the SUs' accepted bids. This trade-off can be managed in two ways. One consists of computing a single objective value given by a combination of the blocking probability and the expected revenue. The weights assigned to each objective determine the point in the Pareto front where the obtained policy lies. The other approach, which is presented in Section \ref{sec:Constrained MDP}, consists of solving for one of the objectives and setting constraints on the remaining ones.
 This strategy results in a constrained MDP formulation (CMDP) and the policies obtained are not necessarily deterministic.
 
 \section{System model}\label{Sarnoff_sec_model}
@@ -128,18 +129,15 @@ The LP approach consists of expressing the objective and the constraints in term
 \lambda = \lim_{K\rightarrow\infty}\frac{1}{K}
 E\left\{\sum^{K}_{k=0}g_{U}\left(x_{k},u_{k}\right)\right\}
 \end{equation}
-where $k$ denotes the decision epoch of the process. The objective is to find the policy $\mu$ solving
-\begin{equation}
-\min_{\mu} \lambda
-\end{equation}
+where $k$ denotes the decision epoch of the process.
 The constraints are defined similarly to the main objective: each constraint imposes a bound on an average cost related to a different per-stage cost. In our case, it is given by
 \begin{equation}\label{constraint}
 c = \lim_{K\rightarrow\infty}\frac{1}{K}
 E\left\{\sum^{K}_{k=0}g_{L}\left(x_{k},u_{k}\right)\right\} \leq \beta
 \end{equation}
-where $g_{L}\left(x(t),u(t)\right)$ is the real-valued function providing the per-stage cost associated to the constraint $\beta$. Therefore the average reward MDP with a single constraint is defined as
+where $g_{L}\left(x(t),u(t)\right)$ is the real-valued function providing the per-stage cost associated to the constraint $\beta$. Therefore the average reward MDP with a single constraint is defined as the following minimization problem:
 \begin{equation}
-\min \lambda \text{ subject to } c \leq \beta
+\min_{\mu} \lambda \text{ subject to } c \leq \beta
 \end{equation}
 Given the characteristics of the problem (finite state and action spaces and recurrent Markov chain under every policy), the limits in (\ref{objective}) and (\ref{constraint}) exist and are equal to
 \begin{equation}
@@ -255,7 +253,7 @@ The height of the bars corresponds to the lowest accepted class (prices) at each
 %In order to illustrate how policies change on the Pareto front, let us consider three different points of the Pareto front for scenario 2. These points correspond to the following blocking probabilities for PU: 0.01, 0.02 and 0.03.
 
 \section{Conclusions}\label{Sarnoff_sec_conclusions}
-In this chapter we propose an MDP framework for centralized bid-auction access to the spectrum by SUs. The SUs are classified according to the price they are willing to pay for the use of the spectrum. The main issue of the problem addressed is that two contrary objectives coexist: to reduce blocking probability for PUs and to increase the income received from spectrum leasing. For these type of problems there does not exist an \textit{optimal} policy, but a set of \textit{Pareto optimal} policies. 
+In this chapter we propose an MDP framework for real-time auction-based spectrum leasing. The SUs are classified according to the price they are willing to pay for the use of the spectrum. The main issue of the problem addressed is that two contrary objectives coexist: to reduce blocking probability for PUs and to increase the income received from spectrum leasing. For these type of problems there does not exist an \textit{optimal} policy, but a set of \textit{Pareto optimal} policies. 
 
 We have shown how to compute policies at the Pareto front by weighting the objectives in an MDP problem or by reformulating the problem as a constrained MDP. 
 Numerical solutions of the proposed equations show the influence of the traffic share on system's performance and on the structure of Pareto-optimal policies. 
