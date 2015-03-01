@@ -27,18 +27,15 @@ If each channel is randomly occupied by a PU, both the collision probability and
 However, the licensed operator could allocate its channels to the PUs with a different pattern, more friendly to the coexistence with OSA nodes.
 Specifically, we show that a simple sequential channel assignment for PUs reduces collisions with SUs. In addition, if the licensed network has the ability to aggregate channels with ongoing PU sessions into a compacted spectrum block (\textit{spectrum merging}), the reduction is even greater.
 It is easy to see that SUs' throughput will be dramatically improved. 
-On the other hand, the primary network has less ability to exploit the channels with best instantaneous propagation conditions. Its negative impact in PUs' throughput, however, is compensated, under certain traffic intensities, by the effect of the reduced collisions, as we showed in \cite{ref:Alcaraz2013} and is also highlighted in \cite{ref:ElSawy2013}. For other traffic scenarios, the reduction in PUs' throughput due to spectrum merging is minimal.
+On the other hand, for primary systems that can dynamically change the channels assigned to ongoing PU transmissions, using these policies reduces the ability of the base station to exploit the channels with best instantaneous propagation conditions. In those cases, the negative impact in PUs' throughput is compensated by the effect of the reduced collisions, under certain traffic intensities, as we shown in the previous chapter and is also highlighted in \cite{ref:ElSawy2013}. For other scenarios, the reduction in PUs' throughput due to spectrum merging is minimal.
 
 Obviously, this OSA framework requires the SU nodes to have a previous knowledge of PU traffic descriptors. 
 This is a typical requirement for OSA protocols, and multiple previous works offer solutions to this problem.  
 However, traffic estimations are generally imperfect.
-Therefore, we also evaluate the impact of the difference between estimated and real PU traffic parameter. 
+Therefore, we also evaluate the impact of the difference between estimated and real PU traffic parameters. 
 Our findings show that this difference has a surprisingly low impact on PU performance.
 
 \subsection{Related Work}\label{SPEC_MAN_sec_related_work}
-
-Comprehensive and up-to-date overviews of cognitive MAC protocols can be found in \cite{ref:Gavrilovska2015,ref:Domenico2012}. 
-
 MAC designs for hardware-constrained radios were introduced in \cite{ref:Jia2008_HC}. However its authors focused only on optimizing SU's throughput and did not provide a method to compute the actual overlapping time which is one of the objectives of our model. In addition, it uses a worst case approach, setting a fixed duration of $T$ seconds for SU transmissions, where $T$ is the maximum overlap time with SU activity that a PU receiver could tolerate.
 
 Several works consider multichannel access with sensing constraint \cite{ref:Kim2008,ref:Gabran2011,ref:Cheng2011}. The proposal in \cite{ref:Kim2008} optimizes the discovery of spectrum opportunities. In contrast to our model, the system in \cite{ref:Kim2008} is assumed to be collision-free. In \cite{ref:Gabran2011}, the focus is on optimizing the sensing phase considering, among other aspects, the trade-off between its duration (and reliability) and collision probability. As we will explain later, our model incorporates similar considerations, but in the design of access policies that include not only the sensing phase but also the number of channels to transmit in. Finally, the approach in \cite{ref:Cheng2011} is perhaps the closest to ours, although there are two significant differences: first, \cite{ref:Cheng2011} aimed to optimize SU's throughput without quantifying the effect on PU's performance. Second, our formulation incorporates the increase in the uncertainty of past channel observations over time, which is crucial for evaluating the effect of PU channel allocation schemes.
@@ -132,13 +129,7 @@ Fig. \ref{fig:allocation} illustrates the arrival and departures of PUs under th
 \end{figure}
 Many wireless access systems, \textit{e.g.} OFDMA-based systems, allow both sequential allocation of channels (subcarriers) and channel rearrangement for ongoing communications.
 However, in some cases, sequential allocation may imply assigning channels whose propagation conditions are not optimal for the incoming PUs.
-This issue was largely addressed in \cite{ref:Alcaraz2013}, where it was concluded that the benefits of easing secondary access overcome its drawbacks when the primary traffic intensity is below certain threshold. Therefore, the use of a coexistence-friendly spectrum management scheme implies the implicit assumption that the PU traffic intensity is below that threshold, which is reasonable since OSA is conceived to increase the efficiency of underused spectrum of, e.g. legacy networks.
-%Note that this problem can be alleviated by the following considerations: (1) Since, OSA is supposed to operate under light PU traffic conditions, an incoming PU could be assigned a wider bandwidth in order to meet its quality requirements. This may cause the traffic model to differ from the one explained, but this is not such an important issue as we show in section \ref{ref:Results}. (2) In the case of merged spectrum for PUs, the AN's scheduling algorithm could optimize the channel distribution within the spectrum band occupied by the PUs.
-
-%In any case, the impact of OSA activity on PU's performance is notably reduced when the resource management scheme of the licensed network facilitate spectrum sharing, while the performance of SU communication is improved, as shown in section \ref{ref:Results} and backed by the more general study we did in \cite{ref:Alcaraz2013} and by other works such as \cite{ref:ElSawy2013}.
-
-%PU inter-arrival time is characterized by an exponential random variable with rate $\lambda$. Upon arrival each PU occupies one channel, if available. The channel holding time is described by an exponential random variable with rate $\mu$. 
-%Note that, in contrast to many previous works, the model does not assume slotted time. 
+For those cases, we assume that the AN uses the bandwidth reservation scheme of the previous chapter, which would be equivalent to spectrum merging. In that chapter it was concluded that the benefits of easing secondary access overcome its drawbacks when the primary traffic intensity is below certain threshold. Therefore, the use of a coexistence-friendly spectrum management scheme implies the implicit assumption that the PU traffic intensity is below that threshold, which is reasonable since OSA is conceived to increase the efficiency of underused spectrum of, e.g. legacy networks.
 
 \subsection{Secondary Network}
 The unlicensed or secondary network operates in a decentralized, ad-hoc fashion. 
@@ -166,7 +157,7 @@ During the $\tau$ seconds of each slot both the sender and the receiver sense th
 At the end of every slot, a decision is made whether to sense the next channel or to transmit using one or more of the available channels detected. 
 Because of the information exchange, the cognitive pair acts as a single entity when making the transmission decision provided that both nodes operate under the same policy.
 %RTS/CTS exchange procedures in each phase prevent collisions among SU transmissions.
-Similarly to \cite{ref:Jia2008_HC} and \cite{ref:Park2011}, in case of overlapping with PU activity, the SU transmission is considered to be successful since, in our model, SUs establish close \textit{ad-hoc} connections and thus, the received power at a SU receiver from a SU transmitter is much higher than interference from PUs.
+Similarly to \cite{ref:Jia2008_HC} and \cite{ref:Park2011}, in case of overlapping with PU activity, the SU transmission is considered to be successful, \textit{i.e.,} it is assmmed that the received power at the SU receiver from the corresponding SU transmitter is much higher than the interference from PUs. Nevertheless, since the model also estimates the expected overlapping time at each state, it could be readily extended to the case in which the SU transmissions can be harmed by PU interference.
 
 The OSA policy considered in this work differs from the one in HC-MAC in its decision space and its computation procedure.
 We use an extended decision space such that instead of using the total number of available channels, the sender may use any smaller number, including quitting the sensing process without transmitting. 
@@ -211,7 +202,7 @@ Fig. \ref{fig:access} depicts a simplified example of SU access incurring in an 
 %our model possesses the same limitations as those in \cite{ref:compartivaMAC}.
 %due to the significant involvement of the delay analysis, the model is limited to throughput assessment only. In addition, this work is limited to a single collision domain, and effects such as hidden/exposed terminals are not modeled.
 
-In this section we formulate the opportunistic access problem as a POMDP with finite horizon and obtain an equivalent MDP by means of a \textit{state augmentation} approach. 
+In this section we formulate the opportunistic access problem as a POMDP with finite horizon and obtain an equivalent MDP by means of the \textit{state augmentation} approach. 
 The formulation in this section uses a generic objective, and therefore it is applicable to any optimization criterion, e.g. increasing SU throughput, capacity, etc. Section \ref{sec:Policies} describes the computation of a specific cost function balancing SU throughput and overlapping time.
 %We follow a top-down approach to describe the model. 
 %We use in this section in order to provide a general understanding of the POMDP framework, and becomes more specific in Section \ref{sec:Policies}.
@@ -351,7 +342,7 @@ Therefore, $z_k$ is a partial (and possibly unreliable) observation of $Y(t)$.
 %At the end of this slot an observation $z_{k}$, the sensing result, is obtained.
 %OSA decisions should be made according to these partial observations. 
 Hence, we face a POMDP problem, which implies that decisions should be based on \textit{imperfect state information}.
-Moreover, note that the observations $z_k$ obtained in consecutive scanning slots $k=1,2,\ldots$, correspond to samples of $Y(t)$ taken in different instants. Let us formalize this aspects and its implications.
+Moreover, note that the observations $z_k$ obtained in consecutive scanning slots $k=1,2,\ldots$, correspond to samples of $Y(t)$ taken in different instants. Let us formalize these aspects and their implications.
 
 %descripción del proceso Z_{n}
 Let us define the \textit{observation process} $Z_{k}$ taking values from the observation space $\left\{0,1\right\}$. We assume that the channel activity detection depends on the values of the spectrum process at the end of each slot. Therefore we define the discrete-time Markov chain (DTMC)
@@ -432,7 +423,7 @@ X_{k-1},& \quad \mbox{if } Z_{k} = 1\\
 \left(k, X_{k-1}\right),& \quad \mbox{if } Z_{k} = 0\\
 \end{cases}
 \end{equation}
-Therefore, the information vector $X_{k}$ contains the position of the channels that have been observed idle up to stage $k$. Let $\mathcal{X}_{k}$ be the set of possible values for $\mathcal{X}_{k}$.
+Therefore, the information vector $X_{k}$ contains the position of the channels that have been observed idle up to stage $k$. Let $\mathcal{X}_{k}$ be the set of possible values for ${X}_{k}$.
 %\begin{equation}
 %\begin{array}{lcl}
 %\mathcal{X}_{k} & = &\{\left(x(1),\ldots,x(r)\right)| x(a) \in \mathbb{Z}^{+}, r\leq k,\\
@@ -873,7 +864,7 @@ Therefore, selected OSA policies have low overlapping times at nominal traffic d
 
 Fig. \ref{fig:random} shows the throughput and overlapping time values attained by the OSA policy in a system with random PU channel assignment, for different combinations of the estimated $\lambda$ and $\mu$ values. 
 %The reference policy is computed for $\lambda = \frac{8}{60}$ and $\mu = \frac{1}{60}$, thus the figure shows the results for negative and positive drifts on both parameters.
-The nominal traffic descriptors are $\lambda = \frac{8}{60}$ and $\mu = \frac{1}{60}$, thus the axis in Fig. \ref{fig:random} contains negative and positive drifts on both parameters.  
+The nominal traffic descriptors are $\lambda = \frac{8}{60}$ s$^{-1}$ (8 arrivals per minute) and $\mu = \frac{1}{60}$ s$^{-1}$ (average holding time: 1 minute), thus the axis in Fig. \ref{fig:random} contains negative and positive drifts on both parameters.  
 It was expectable that positive and negative drifts resulted in reduced and improved throughput respectively.
 Nevertheless, the overlapping time remains at relatively low values for every combination of $\lambda$ and $\mu$. This shows a very desirable feature of the OSA strategy proposed: contrary to the usual belief, PU traffic estimation inaccuracies have little impact on PU's QoS. This effect is also observed in the scenarios of sequential PU channel assignment (see Fig. \ref{fig:seq}) and spectrum merging for PUs (see Fig. \ref{fig:comp}). 
 
@@ -918,6 +909,6 @@ Regarding the PU allocation schemes, the overall performance improves when chann
 %Pareto front representations  
 We also showed the robustness of Pareto-optimal policies against inaccuracies in PU traffic estimation, supporting the use of off-line pre-computed policies.
 %Depending on how the channels are assigned to PUs and the total amount of channels, approximate methods may be required to address the problem. %Exploring these methods is an interesting future research issue.
-The results described in this chapter also reinforce the recently suggested idea that, in situations of low or moderate PU traffic in which the operation of cognitive networks is justified, it is convenient for the licensed network to adjust its own channel allocation polices to facilitate spectrum sharing with SUs. 
+The results described in this chapter also reinforce the idea that, in situations of low or moderate PU traffic in which the operation of cognitive networks is justified, it is convenient for the licensed network to adjust its own channel allocation polices to facilitate spectrum sharing with SUs. 
 %Similarly, it is still required a wider study of the costs and the benefits of modifying licensed spectrum management in overlay scenarios.
 %However, the results presented in this paper suggest that, in situations of low or moderate PU traffic, in which the operation of cognitive networks is justified, it is convenient for the licensed network to adjust its own channel allocation polices to facilitate spectrum sharing with SUs. 
