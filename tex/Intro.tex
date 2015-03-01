@@ -2,7 +2,7 @@
 \chapter{Introduction}
 \section{Why Coexistence Policies?}
 Wireless communications need, among other resources, radio-electric spectrum, which is finite. 
-Government agencies, such as the FCC in the United States or the Electronic Communications Committee (ECC) through national administrations in Europe, grant access to it through fixed, long-term licenses on large geographical areas, in what is called the \enquote{command-and-control} management scheme. 
+Government agencies, such as the FCC in the United States or the Electronic Communications Committee (ECC) through national administrations in Europe, grant access to the spectrum through fixed, long-term licenses on large geographical areas, in what is called the \enquote{command-and-control} management scheme. 
 Licenses were given to operators in a first-come-first-served basis initially. As the demand of spectrum grew, the procedure changed to national lotteries and comparative hearings. Nowadays, licenses are granted through spectrum auctions generating large revenues to the public administration. %Por aquello de que parece un procedimiento menos manipulable.
 Nevertheless, the ever-growing demand of spectrum due to the popularization of mobile services has left these traditional policies obsolete since almost all the spectrum has already been assigned. % Add figure (the typical with the spectrum assignments).
 
@@ -22,7 +22,7 @@ Cognitive capability refers to the ability of the radio to become aware of its s
 % Añadir la tipica figura de los huecos.
 
 In the most typical scenario, secondary users (SUs, unlicensed), equipped with cognitive radios, would look for unused fragments of spectrum in licensed bands and would use them for their transmissions subject to interference constraints for the protection of primary users (PUs, licensed). That is, PUs and SUs will coexist in some areas.
-This situation corresponds to the “Hierarchical Access Model”, also known as \emph{Opportunistic Spectrum Access (OSA)}, one of the possible coexistence approaches under \emph{Dynamic Spectrum Access (DSA)} but there are others \cite{ref:Zhao2007_sur}. 
+This situation corresponds to the “Hierarchical Access Model”, also known as \emph{Opportunistic Spectrum Access (OSA)}, one of the possible coexistence approaches under \emph{Dynamic Spectrum Access (DSA)} \cite{ref:Zhao2007_sur}. 
 Along the lines of current regulation models is the Dynamic Exclusive Use Model, also called \emph{spectrum trading}, which considers leasing or selling licenses but at a smaller time-scale, even in a real-time basis and with a free choice of technology.
 Lastly, the “Spectrum Commons Model”  assumes open sharing with no categories of users.
 % ¿Añadir grafico con los tipos de modelos?
@@ -30,7 +30,7 @@ Lastly, the “Spectrum Commons Model”  assumes open sharing with no categorie
 DSA has recently gained popularity because of the TV digitalization, in order to take advantage of the spectrum opportunities it has generated. % Añadir año. Explicar que se libera espectro procedente de las teles analogicas pero se nombra a algunos usuarios particulares como primarios.
 Therefore, the last few years have seen some DSA standards such as IEEE 802.22 [9], ECMA-392 [10], 802.11af [12], 802.19.1 [11] and IEEE SCC41 [13].
 
-No matter which model is considered, DSA is still annoying to licensed operators at present, because it implies additional costs to them such as changes in their infrastructures, QoS impairments due to interferences, or profit reduction due to increased competition, while they have already paid for their licenses. %Una cita de los operadores hablando de cog. radio? 
+No matter which model is considered, DSA is still annoying licensed operators at present, because it implies additional costs to them such as changes in their infrastructures, QoS impairments due to interferences, or profit reduction due to increased competition, while they have already paid for their licenses.
 Protecting and creating incentives for PUs instead of forcing them avoids that actual spectrum owners, as well as prospective ones, feel discouraged from investing in new spectrum technologies and services: \enquote{why am I going to spend money in spectrum if the government is going to give it for free to others?}.
 
 It is needed that these operators believe in an automated mechanism that controls their profits. But this idea alone is scary: \enquote{How big is the risk of experiencing a great economic loss?}. Especially if they take into account incidents like the one experienced in 2012 by the Knight Capital Group in the related
@@ -43,7 +43,7 @@ It is hard to convince the telecommunications industry to adopt automated dynami
 As discussed in the previous section, while DSA has been widely accepted as the most promising approach to address the spectrum inefficiency problem, there are still some concerns that hinder its fully adoption by the telecom industry \cite{ref:Kelly2012}.
 % Añadir cita que corrobore esto. De momento se queda la que hay.
 
-Spectrum holders and regulators alike demand a higher level of protection for PU communications, and better incentives to accept coexistence with other users in their spectrum. In consequence, our\footnote{I will be using the first person plural by default throughout my thesis. Most of the ideas and work is a team effort involving my supervisor and other authors. This should not be considered as something that works against showing my autonomy, but even my personal decisions where strongly inspired by others' opinions. Meaningful research is not done (or should not be done) by a single person in a vacuum \cite{ref:Mihaly2013}. Thus, I consider artificial the use of singular forms here. In other parts of this thesis, such first person plural also includes the reader, primarily when describing mathematical derivations, as a natural way of walking him through the process.} \emph{motivation} in this thesis is, \emph{to develop dynamic spectrum access mechanisms focusing on the protection and creation of incentives to the PUs.} We directed our attention to the Opportunistic Spectrum Access framework, as it is more conservative regarding PU's protection, and to spectrum trading in our search for incentives.
+Spectrum holders and regulators alike demand a higher level of protection for PU communications, and better incentives to accept coexistence with other users in their spectrum. In consequence, our\footnote{I will be using the first person plural by default throughout my thesis. Most of the ideas and work is a team effort involving my supervisor and other authors. This should not be considered as something that works against showing my autonomy, but even my personal decisions where strongly inspired by others' opinions. Meaningful research is not done (or should not be done) by a single person in a vacuum \cite{ref:Mihaly2013}. Thus, I consider artificial the use of singular forms here. In other parts of this thesis, such first person plural also includes the reader, primarily when describing mathematical derivations, as a natural way of walking him through the process.} \emph{motivation} in this thesis is, \emph{to develop dynamic spectrum access mechanisms focusing on the protection and creation of incentives to the PUs}. We directed our attention to the Opportunistic Spectrum Access framework, as it is more conservative regarding PU's protection with respect to other DSA approaches (such as the spectrum overlay and underlay models, consisting of concurrent transmissions of PUs and SUs), and to spectrum trading in our search for incentives.
 Improvements in the Spectrum Commons Model are out of the scope of this thesis, since it removes property rights over spectrum and its challenges are significantly different.\footnote{There has been a long ongoing debate about whether such a drastic change of paradigm is convenient \cite{ref:Peha2005}, given the success witnessed in unlicensed bands (e.g. in the ISM band).}
 
 More specifically, we set the following sub-objectives regarding unresolved issues in OSA: 
@@ -123,7 +123,7 @@ The results show that, in a non-congested PN with SU activity, the interference 
 
 \textbf{Chapter \ref{SPEC_MAN_chap}: Uncertainty-Aware Opportunistic Spectrum Access in Coexistence - Friendly Systems} \cite{ref:Alcaraz2015_SPEC_MAN}.
 This chapter comprises two main contributions: first we develop an optimal SU access strategy that considers the effect of delay in the uncertainty of the information available at the SUs. This effect has been largely ignored in the design of OSA protocols for hardware limited radios. Second, this OSA scheme is designed for coexistence-oriented scenarios (such as the bandwidth reservation of previous chapter), and evaluated under these conditions.
-The formulation combines SU throughput and PU performance degradation, characterized by the overlapping time with SU activity which is a more general parameter than collision probability.    
+The formulation combines SU throughput and PU performance degradation, characterized by the overlapping time with SU activity.    
 As most OSA protocols, our approach requires the SU to characterize the traffic profile of the PUs. The results of this chapter also illustrate the robustness of our approach to misestimation of PU traffic intensity.
 
 \textbf{Chapter \ref{RSM_chap}. Response Surface Methodology for Efficient Spectrum Reuse in Cellular Networks} \cite{ref:Alcaraz2014_RSM,ref:Alcaraz2015_RSM}.
@@ -162,11 +162,11 @@ The main advantages of this approach is that it assures operating at global opti
 \rowcolors{1}{}{lightgray}
 \begin{tabular}{C{1.7cm}C{7cm}C{4.7cm}} \hline
 \textbf{Chapters} & \textbf{Tools used by proposed mechanisms} & \textbf{Numerical Evaluation}\\\hline
-2 & Statistical inference, MDP & DTMC, Monte-Carlo sim.\\
-3 & - & Stochastic model, DTMC, Monte-Carlo sim.\\
-4 & POMDP & DTMC \\
+2 & Statistical inference, MRM, discrete optimization & MRM, Monte-Carlo sim.\\
+3 & MRM & Stochastic model, MRM, Monte-Carlo sim.\\
+4 & POMDP & MRM \\
 5 & Stochastic optimization (RSM) & Monte-Carlo sim.\\
-7 & CMDP & DTMC \\
+7 & CMDP & MRM \\
 8 & Reinforcement learning (MABs), MDP & Monte-Carlo sim. \\\hline
 \end{tabular}
 
@@ -196,11 +196,11 @@ This is known as \enquote{the curse of dimensionality} \cite{ref:Powell}.
 In the chapters devoted to these scenarios, we resort to reinforcement learning and stochastic optimization approaches. 
 Some of the tools used in this thesis like Response Surface Methodology (RSM) (chapter \ref{RSM_chap}) or Multi-Armed bandits (MABs) (chapter \ref{MAB_CSSA_chap}) are of new applicability to coexistence issues in cognitive radio and are becoming hot topics, not only in the research community \cite{ref:Bkassiny2013} but also in highly profitable businesses like online advertisement \cite{ref:White2012}. 
 
-Regarding the analysis and numerical evaluation of our mechanisms, we used Markov reward processes, mainly in their discrete form as Discrete Time Markov Chains (DTMC). Either accompanying the previous tool or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation.
-% ¿Incluir cita?
-We rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson model as traffic generation model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2}
+Regarding the analysis and numerical evaluation of our mechanisms, we used Markov Reward Models (MRM). Either accompanying the previous tool or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation.
 
-Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB \cite{ref:MATLAB}, Mathematica \cite{ref:Mathematica} for mathematical derivations, and the OMNeT\verb!++! simulator \cite{ref:Omnet} in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy \cite{ref:SciPy} and R \cite{ref:RStudio}, because of their suitability for machine learning applications and data analysis.
+We rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson traffic model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2}
+
+Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB \cite{ref:MATLAB}, Mathematica \cite{ref:Mathematica} for some mathematical derivations, and the OMNeT\verb!++! simulator \cite{ref:Omnet} in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy \cite{ref:SciPy} and R \cite{ref:RStudio}, because of their suitability for machine learning applications and data analysis.
 
 
 
