@@ -21,75 +21,413 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{AdvisorsonScience}
-P.~C. of~Advisors~on Science and T.~(PCAST), ``Report to the president:
-  Realizing the full potential of government-held spectrum to spur economic
-  growth,'' PCAST, Tech. Rep., 2012.
+\bibitem{ref:FCC2002}
+{Federal Communications Commission Spectrum Policy Task Force}, ``Report of the
+  {S}pectrum {E}fficiency {W}orking {G}roup,'' Tech. Rep., 2002, {ET} {D}ocket
+  {N}o. 02-135.
 
-\bibitem{Andrews2014}
-J.~G. Andrews, S.~Buzzi, W.~Choi, S.~Hanly, A.~Lozano, A.~C. Soong, and J.~C.
-  Zhang, ``What will 5g be?'' 2014.
+\bibitem{ref:Commission2007}
+{Commission of the European Communities}, ``Impact assessment accompanying
+  document to {COM}(2007)697, {COM}(2007)698, and {COM}(2007)699,'' Tech. Rep.,
+  2007.
 
-\bibitem{CTIA2011}
-C.~T.~W. Association, ``In the matter of promoting more efficient use of
-  spectrum through dynamic spectrum use technologies. comments of ctia - the
-  wireless association,'' CTIA - The Wirelss Association, Tech. Rep., 2011, eT
-  Docket No. 10-237.
+\bibitem{ref:Valletti2001}
+T.~M. Valletti, ``Spectrum trading,'' \emph{Telecommunications Policy},
+  vol.~25, no. 10–11, pp. 655--670, Oct. - Nov. 2001.
 
-\bibitem{Baker2015}
+\bibitem{ref:Mayo2010}
+J.~W. Mayo and S.~Wallsten, ``Enabling efficient wireless communications: The
+  role of secondary spectrum markets,'' \emph{Information Economics and
+  Policy}, vol.~22, no.~1, pp. 61--72, Mar. 2010, {W}ireless {T}echnologies.
+
+\bibitem{ref:ECC2011}
+{Electronic Communications Committee (ECC)}, ``Description of practices
+  relative to trading of spectrum rights of use,'' Tech. Rep., 2011, {ECC}
+  {R}eport 169.
+
+\bibitem{ref:Mitola1999}
+J.~Mitola and J.~Maguire, G.Q., ``Cognitive radio: making software radios more
+  personal,'' \emph{{IEEE} Personal Commun. Mag.}, vol.~6, no.~4, pp. 13--18,
+  Aug. 1999.
+
+\bibitem{ref:Akyildiz2006}
+I.~F. Akyildiz, W.-Y. Lee, M.~C. Vuran, and S.~Mohanty, ``{NeXt}
+  generation/dynamic spectrum access/cognitive radio wireless networks: A
+  survey,'' \emph{Computer Networks}, vol.~50, no.~13, pp. 2127--2159, 2006.
+
+\bibitem{ref:Zhao2007_sur}
+Q.~Zhao and B.~Sadler, ``A survey of dynamic spectrum access,'' \emph{{IEEE}
+  Signal Process. Mag.}, vol.~24, no.~3, pp. 79--89, May 2007.
+
+\bibitem{ref:Kelly2012}
+R.~B. Kelly and A.~Lafrance, ``Spectrum trading in the eu and the us - shifting
+  ends and means,'' in \emph{The International Comparative Legal Guide to:
+  Telecommunication Laws and Regulations}.\hskip 1em plus 0.5em minus
+  0.4em\relax Global Legal Group, 2012.
+
+\bibitem{ref:Peha2005}
+J.~Peha, ``Approaches to spectrum sharing,'' \emph{{IEEE} Commun. Mag.},
+  vol.~43, no.~2, pp. 10--12, Feb. 2005.
+
+\bibitem{web:Silver2012}
 \BIBentryALTinterwordspacing
-M.~A. Baker. (2015, January) Ctia statement after the conclusion of the fcc’s
-  aws-3 spectrum auction. CTIA Blog. [Online]. Available: \url{CTIA Statement
-  After the Conclusion of the FCC’s AWS-3 Spectrum Auction}
+B.~P. J.~Silver-Greenberg, ``Trying to be nimble, knight capital stumbles,''
+  \emph{Dealbook, The New York Times}, Aug. 2012, {Accessed on: Jan. 22, 2015}.
+  [Online]. Available:
+  \url{http://dealbook.nytimes.com/2012/08/02/trying-to-be-nimble-knight-capital-stumbles/?_r=0}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Br2012}
+\bibitem{ref:Bkassiny2013}
+M.~Bkassiny, Y.~Li, and S.~K. Jayaweera, ``A survey on machine-learning
+  techniques in cognitive radios,'' \emph{{IEEE} Commun. Surveys Tuts.},
+  vol.~15, no.~3, pp. 1136--1159, Oct. 2013.
+
+\bibitem{ref:White2012}
+J.~M. White, \emph{Bandit Algorithms for Website Optimization}.\hskip 1em plus
+  0.5em minus 0.4em\relax Sebastopol, CA: O’Reilly, 2012.
+
+\bibitem{ref:MATLAB}
 \BIBentryALTinterwordspacing
-B.~X. Chen. (2012, May) Q.\&a.: Martin cooper, father of the cellphone, on
-  spectrum sharing. The New York Times. [Online]. Available:
-  \url{http://bits.blogs.nytimes.com/2012/05/31/qa-marty-cooper-spectrum-sharing/}
+{MATLAB}, \emph{Release 2014b}.\hskip 1em plus 0.5em minus 0.4em\relax Natick,
+  MA: The MathWorks Inc., 2014. [Online]. Available:
+  \url{http://www.mathworks.com/products/matlab/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Chen2012}
+\bibitem{ref:Mathematica}
 \BIBentryALTinterwordspacing
-------. (2012, May) Q.\&a.: Wireless industry likes spectrum sharing, but still
-  wants more. The New York Times. [Online]. Available:
-  \url{http://bits.blogs.nytimes.com/2012/05/30/qa-ctia-spectrum-sharing/?_r=0}
+Mathematica, \emph{Version 10.0}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Champaign, IL: Wolfram Research Inc., 2014. [Online]. Available:
+  \url{http://www.wolfram.com/mathematica/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Chen2012b}
+\bibitem{ref:RStudio}
 \BIBentryALTinterwordspacing
-------. (2012, April) Carriers warn of crisis in mobile spectrum. The New York
-  Times. [Online]. Available:
-  \url{http://www.nytimes.com/2012/04/18/technology/mobile-carriers-warn-of-spectrum-crisis-others-see-hyperbole.html?pagewanted=all}
+{RS}tudio: Integrated development environment~for {R}, \emph{Version
+  0.98.1091}.\hskip 1em plus 0.5em minus 0.4em\relax Boston, MA: {RS}tudio,
+  2014. [Online]. Available: \url{http://www.wolfram.com/mathematica/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{FCC2015}
+\bibitem{ref:SciPy}
 \BIBentryALTinterwordspacing
-FCC. (2015) Interactive specrum chart. [Online]. Available:
-  \url{http://reboot.fcc.gov/spectrumdashboard/searchSpectrum.seam}
+P.~P. e.~a. E.~Jones, T.~Oliphant, \emph{SciPy: Open Source Scientific Tools
+  for Python. Version 0.15.0}, 2015. [Online]. Available:
+  \url{http://www.scipy.org}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Kelly2012}
-R.~B. Kelly and A.~Lafrance, \emph{The International Comparative Legal Guide
-  to: Telecommunication Laws and Regulations}.\hskip 1em plus 0.5em minus
-  0.4em\relax Global Legal Group, 2012, ch. Spectrum Trading in the EU and the
-  US - Shifting Ends and Means.
-
-\bibitem{Nuechterlein2013}
-J.~E. Nuechterlein, \emph{Digital Crossroads}.\hskip 1em plus 0.5em minus
-  0.4em\relax The MIT PRESS, 2013.
-
-\bibitem{Roche2015}
+\bibitem{ref:Omnet}
 \BIBentryALTinterwordspacing
-R.~Roche. (2015, February) Mobile usage continues to increase + projections say
-  skyrocketing demand = more spectrum required. [Online]. Available:
-  \url{http://blog.ctia.org/2015/02/06/mobile-usage-more-spectrum-required/}
+A.~Varga, \emph{OMNeT++, Version 4.6}, 2015. [Online]. Available:
+  \url{http://www.omnetpp.org}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Yoon2012}
-J.~W. M.~B. Yoon, Hyenyoung~Hwang, ``An analytic research on secondary-spectrum
-  trading mechanisms based on technical and market changes,'' \emph{Computer
-  Network}, 2012.
+\bibitem{ref:Alcaraz2015_BD}
+J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro,
+  ``Background detection of primary user activity in opportunistic spectrum
+  access,'' in \emph{{IEEE} {ICC}}, 2015.
+
+\bibitem{ref:Alcaraz2014_BR}
+------, ``Bandwidth reservation as a coexistence strategy in opportunistic
+  spectrum access environments,'' \emph{{IEEE} J. Sel. Areas Commun.}, vol.~32,
+  no.~3, pp. 478--488, Mar. 2014.
+
+\bibitem{ref:Alcaraz2015_SPEC_MAN}
+J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, J.~Ayala-Romero, and
+  J.~Garcia-Haro, ``Uncertainty-aware opportunistic spectrum access in
+  coexistence-friendly systems,'' \emph{{IEEE} Transactions on Cognitive
+  Communications and Networking}, 2015.
+
+\bibitem{ref:Alcaraz2014_RSM}
+J.~Alcaraz, J.~Ayala-Romero, M.~L\'{o}pez-Mart\'{i}nez, and J.~Vales-Alonso,
+  ``Combining dual tessellation and temporal opportunities for spectrum reuse
+  in cellular systems,'' in \emph{11th International Symposium on Wireless
+  Communications Systems ({ISWCS})}, Aug. 2014, pp. 486--490.
+
+\bibitem{ref:Alcaraz2015_RSM}
+------, ``Response surface methodology for efficient spectrum reuse in cellular
+  networks,'' in \emph{{IEEE} {ICC}}, 2015.
+
+\bibitem{ref:Mario2014}
+M.~L\'{o}pez-Mart\'{\i}nez, J.~J. Alcaraz, J.~Vales-Alonso, and J.~Garcia-Haro,
+  ``Automated spectrum trading mechanisms: Understanding the big picture,''
+  \emph{Wireless Networks}, vol.~21, no.~2, pp. 685--708, Jan. 2015.
+
+\bibitem{ref:Alcaraz2012}
+J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro,
+  ``An {MDP} framework for centralized dynamic spectrum auction,'' in
+  \emph{35th {IEEE} Sarnoff Symposium ({SARNOFF})}, May 2012, pp. 1--5.
+
+\bibitem{ref:Mario2015_MAB_CSSA_1}
+J.~Alcaraz, J.~Ayala-Romero, M.~L\'{o}pez-Mart\'{i}nez, and J.~Vales-Alonso,
+  ``Multi-armed bandits with dependent arms for cooperative spectrum sharing,''
+  in \emph{{IEEE} {ICC}}, 2015.
+
+\bibitem{ref:Mario2015_MAB_CSSA_2}
+M.~López-Martínez, J.~J. Alcaraz, B.~L., and M.~Zorzi, ``A superprocess with
+  upper confidence bounds for cooperative spectrum sharing,'' \emph{{IEEE}
+  Trans. Mobile Comput.}, 2015.
+
+\bibitem{ref:Zhou2009}
+X.~Zhou, J.~Ma, G.~Li, Y.~H. Kwon, and A.~Soong, ``Probability-based
+  optimization of inter-sensing duration and power control in cognitive
+  radio,'' \emph{{IEEE} Trans. Wireless Commun.}, vol.~8, no.~10, pp.
+  4922--4927, Oct. 2009.
+
+\bibitem{ref:Lee2008}
+W.-Y. Lee and I.~Akyildiz, ``Optimal spectrum sensing framework for cognitive
+  radio networks,'' \emph{{IEEE} Trans. Wireless Commun.}, vol.~7, no.~10, pp.
+  3845--3857, Oct. 2008.
+
+\bibitem{ref:Zhang2012_opt}
+J.~Zhang, L.~Qi, and H.~Zhu, ``Optimization of {MAC} frame structure for
+  opportunistic spectrum access,'' \emph{{IEEE} Trans. Wireless Commun.},
+  vol.~11, no.~6, pp. 2036--2045, Jun. 2012.
+
+\bibitem{ref:Jung2012}
+E.~Jung and X.~Liu, ``Opportunistic spectrum access in multiple-primary-user
+  environments under the packet collision constraint,'' \emph{{IEEE/ACM} Trans.
+  Netw.}, vol.~20, no.~2, pp. 501--514, Apr. 2012.
+
+\bibitem{ref:Huang2009}
+S.~Huang, X.~Liu, and Z.~Ding, ``Optimal transmission strategies for dynamic
+  spectrum access in cognitive radio networks,'' \emph{{IEEE} Trans. Mobile
+  Comput.}, vol.~8, no.~12, pp. 1636--1648, Dec. 2009.
+
+\bibitem{ref:Huang2008_opp}
+------, ``Opportunistic spectrum access in cognitive radio networks,'' in
+  \emph{IEEE INFOCOM}, Apr. 2008.
+
+\bibitem{ref:Zhang2013_wha}
+C.~Zhang and K.~Shin, ``What should secondary users do upon incumbents'
+  return?'' \emph{{IEEE} J. Sel. Areas Commun.}, vol.~31, no.~3, pp. 417--428,
+  March 2013.
+
+\bibitem{ref:Gabran2013}
+W.~Gabran, C.-H. Liu, P.~Pawelczak, and D.~Cabric, ``Primary user traffic
+  estimation for dynamic spectrum access,'' \emph{{IEEE} J. Sel. Areas
+  Commun.}, vol.~31, no.~3, pp. 544--558, Mar. 2013.
+
+\bibitem{ref:Chockler05}
+G.~Chockler, M.~Demirbas, S.~Gilbert, C.~Newport, and T.~Nolte, ``Consensus and
+  collision detectors in wireless ad hoc networks,'' in \emph{Proc. of the 24th
+  Annual {ACM} Symposium on Principles of Distributed Computing}, 2005, pp.
+  197--206.
+
+\bibitem{ref:Biglieri13}
+E.~Biglieri, A.~Goldsmith, L.~Greenstein, N.~Mandayam, and H.~V. Poor,
+  \emph{Principles of Cognitive Radio}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Cambridge Univ. Press.
+
+\bibitem{ref:Stotas2010}
+S.~Stotas and A.~Nallanathan, ``Overcoming the sensing-throughput tradeoff in
+  cognitive radio networks,'' in \emph{{IEEE} {ICC}}, May 2010, pp. 1--5.
+
+\bibitem{ref:Pawelczak2009}
+P.~Pawelczak, S.~Pollin, H.-S. So, A.~Bahai, R.~Venkatesha~Prasad, and
+  R.~Hekmat, ``Performance analysis of multichannel medium access control
+  algorithms for opportunistic spectrum access,'' \emph{{IEEE} Trans. Veh.
+  Technol.}, vol.~58, no.~6, pp. 3014--3031, Jul. 2009.
+
+\bibitem{ref:Domenico2012}
+A.~De~Domenico, E.~Strinati, and M.~Di~Benedetto, ``A survey on {MAC}
+  strategies for cognitive radio networks,'' \emph{{IEEE} Commun. Surveys
+  Tuts.}, vol.~14, no.~1, pp. 21--44, Feb. 2012.
+
+\bibitem{ref:Jia2008_HC}
+J.~Jia, Q.~Zhang, and X.~Shen, ``{HC-MAC}: A hardware-constrained cognitive
+  {MAC} for efficient spectrum management,'' \emph{{IEEE} J. Sel. Areas
+  Commun.}, vol.~26, no.~1, pp. 106--117, Jan. 2008.
+
+\bibitem{ref:Vasseur2004}
+M.~P. J.P.~Vasseur and P.~Demeester, \emph{Network recovery: Protection and
+  Restoration of Optical, {SONET-SDH}, {IP}, and {MPLS}}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Morgan Kaufmann, 2004.
+
+\bibitem{ref:Ramjee1996}
+R.~Ramjee, R.~Nagarajan, and D.~Towsley, ``On optimal call admission control in
+  cellular networks,'' in \emph{{IEEE} {INFOCOM}}, vol.~1, Mar. 1996, pp.
+  43--50 vol.1.
+
+\bibitem{ref:Vazquez2006}
+
+
+\bibitem{ref:Liang2011}
+Y.-C. Liang, K.-C. Chen, G.~Li, and P.~Mahonen, ``Cognitive radio networking
+  and communications: an overview,'' \emph{{IEEE} Trans. Veh. Technol.},
+  vol.~60, no.~7, pp. 3386--3407, 2011.
+
+\bibitem{ref:Wang2011_Adv}
+B.~Wang and K.~Liu, ``Advances in cognitive radio networks: A survey,''
+  \emph{{IEEE} Sel. Topics Signal Process.}, vol.~5, no.~1, pp. 5--23, Feb.
+  2011.
+
+\bibitem{ref:Wu2012}
+G.~Wu, P.~Ren, and Q.~Du, ``Recall-based dynamic spectrum auction with the
+  protection of primary users,'' \emph{{IEEE} J. Sel. Areas Commun.}, vol.~30,
+  no.~10, pp. 2070--2081, Nov. 2012.
+
+\bibitem{ref:Tang2006}
+P.~K. Tang, Y.~H. Chew, L.~C. Ong, and M.~Haldar, ``Performance of secondary
+  radios in spectrum sharing with prioritized primary access,'' in \emph{{IEEE}
+  {MILCOM}}, Oct. 2006, pp. 1--7.
+
+\bibitem{ref:Lai2011}
+J.~Lai, R.~P. Liu, E.~Dutkiewicz, and R.~Vesilo, ``Optimal channel reservation
+  in cooperative cognitive radio networks,'' in \emph{{IEEE} Vehicular
+  Technology Conference (VTC Spring)}, May 2011, pp. 1--6.
+
+\bibitem{ref:Ahmed2009}
+W.~Ahmed, J.~Gao, H.~Suraweera, and M.~Faulkner, ``Comments on ``analysis of
+  cognitive radio spectrum access with optimal channel reservation'',''
+  \emph{{IEEE} Trans. Wireless Commun.}, vol.~8, no.~9, pp. 4488--4491, 2009.
+
+\bibitem{ref:Martinez2009}
+J.~Martinez-Bauset, V.~Pla, and D.~Pacheco-Paramo, ``Comments on ``analysis of
+  cognitive radio spectrum access with optimal channel reservation'',''
+  \emph{{IEEE} Commun. Lett.}, vol.~13, no.~10, pp. 739--739, Oct. 2009.
+
+\bibitem{ref:Zhu2007}
+X.~Zhu, L.~Shen, and T.-S. Yum, ``Analysis of cognitive radio spectrum access
+  with optimal channel reservation,'' \emph{{IEEE} Commun. Lett.}, vol.~11,
+  no.~4, pp. 304--306, Apr. 2007.
+
+\bibitem{ref:Li2012}
+Y.~Li, S.~Jayaweera, M.~Bkassiny, and K.~Avery, ``Optimal myopic sensing and
+  dynamic spectrum access in cognitive radio networks with low-complexity
+  implementations,'' \emph{{IEEE} Trans. Wireless Commun.}, vol.~11, no.~7, pp.
+  2412--2423, Jul. 2012.
+
+\bibitem{ref:Bertsekas2012}
+D.~Bertsekas, \emph{Dynamic Programming and Optimal Control}, 4th~ed.\hskip 1em
+  plus 0.5em minus 0.4em\relax Athena Scientific, 2012, vol.~I.
+
+\bibitem{ref:Bolch2006}
+D.~Bolch.\hskip 1em plus 0.5em minus 0.4em\relax Wiley-Interscience.
+
+\bibitem{ref:Puterman2005}
+M.~L. Puterman, \emph{Markov Decision Processes: Discrete Stochastic Dynamic
+  Programming}.\hskip 1em plus 0.5em minus 0.4em\relax Wiley-Interscience,
+  2005.
+
+\bibitem{ref:Berthold2008}
+U.~Berthold, F.~Fu, M.~van~der Schaar, and F.~Jondral, ``Detection of spectral
+  resources in cognitive radios using reinforcement learning,'' in \emph{{IEEE}
+  Symposium on New Frontiers in Dynamic Spectrum Access Networks {(DySPAN)}},
+  Oct. 2008, pp. 1--5.
+
+\bibitem{ref:Pawelczak2008}
+P.~Pawelczak, S.~Pollin, H.-S. So, A.~Bahai, R.~Prasad, and R.~Hekmat,
+  ``Quality of service assessment of opportunistic spectrum access: a medium
+  access control approach,'' \emph{{IEEE} Wireless Commun. Mag.}, vol.~15,
+  no.~5, pp. 20--29, October 2008.
+
+\bibitem{ref:Jia2008}
+J.~Jia, Q.~Zhang, and X.~Shen, ``{HC-MAC}: A hardware-constrained cognitive mac
+  for efficient spectrum management,'' \emph{{IEEE} J. Sel. Areas Commun.},
+  vol.~26, no.~1, pp. 106--117, Jan 2008.
+
+\bibitem{ref:Kim2008}
+H.~Kim and K.~Shin, ``Efficient discovery of spectrum opportunities with
+  {MAC}-layer sensing in cognitive radio networks,'' \emph{{IEEE} Trans. Mobile
+  Comput.}, vol.~7, no.~5, pp. 533--545, May 2008.
+
+\bibitem{ref:Gabran2011}
+W.~Gabran, P.~Pawelczak, and D.~Cabric, ``Throughput and collision analysis of
+  multichannel multistage spectrum sensing algorithms,'' \emph{{IEEE} Trans.
+  Veh. Technol.}, vol.~60, no.~7, pp. 3309--3323, Sept 2011.
+
+\bibitem{ref:Cheng2011}
+H.~T. Cheng, H.~Shan, and W.~Zhuang, ``Stopping rule-driven channel access in
+  multi-channel cognitive radio networks,'' in \emph{{IEEE} {ICC}}, June 2011,
+  pp. 1--6.
+
+\bibitem{ref:Zhao2007}
+Q.~Zhao, L.~Tong, A.~Swami, and Y.~Chen, ``Decentralized cognitive {MAC} for
+  opportunistic spectrum access in ad hoc networks: A {POMDP} framework,''
+  \emph{{IEEE} J. Sel. Areas Commun.}, vol.~25, no.~3, pp. 589--600, April
+  2007.
+
+\bibitem{ref:Park2011}
+J.~Park, P.~Paweczak, and D.~Cabric, ``Performance of joint spectrum sensing
+  and {MAC} algorithms for multichannel opportunistic spectrum access ad hoc
+  networks,'' \emph{{IEEE} Trans. Mobile Comput.}, vol.~10, no.~7, pp.
+  1011--1027, July 2011.
+
+\bibitem{ref:Tang2009}
+S.~Tang and B.~Mark, ``Modeling and analysis of opportunistic spectrum sharing
+  with unreliable spectrum sensing,'' \emph{{IEEE} Trans. Wireless Commun.},
+  vol.~8, no.~4, pp. 1934--1943, April 2009.
+
+\bibitem{ref:Lima2012}
+C.~de~Lima, M.~Bennis, and M.~Latva-aho, ``Coordination mechanisms for
+  self-organizing femtocells in two-tier coexistence scenarios,'' \emph{{IEEE}
+  Trans. Wireless Commun.}, vol.~11, no.~6, pp. 2212--2223, June 2012.
+
+\bibitem{ref:ElSawy2013}
+H.~ElSawy and E.~Hossain, ``Channel assignment and opportunistic spectrum
+  access in two-tier cellular networks with cognitive small cells,'' in
+  \emph{IEEE Global Communications Conference ({GLOBECOM})}, Dec 2013, pp.
+  4477--4482.
+
+\bibitem{ref:Maille2009}
+P.~Maille and B.~Tuffin, ``Price war with partial spectrum sharing for
+  competitive wireless service providers,'' in \emph{IEEE Global
+  Telecommunications Conference, {GLOBECOM}}, Nov 2009, pp. 1--6.
+
+\bibitem{ref:Biglieri2012}
+E.~Biglieri, A.~J. Goldsmith, L.~J. Greenstein, N.~B. Mandayam, and H.~V. Poor,
+  \emph{Principles of Cognitive Radio}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Cambridge University Press, 2012.
+
+\bibitem{ref:Mitola2000}
+J.~Mitola, ``Cognitive radio: An integrated agent architecture for software
+  defined radio,'' Ph.D. dissertation, Royal Institute of Technology (KTH),
+  Kista, Sweden, 2000.
+
+\bibitem{ref:Mao2010}
+X.~Mao, H.~Ji, V.~Leung, and M.~Li, ``Performance enhancement for unlicensed
+  users in coordinated cognitive radio networks via channel reservation,'' in
+  \emph{IEEE Global Telecommunications Conference {GLOBECOM}}, Dec 2010, pp.
+  1--5.
+
+\bibitem{ref:Kay_Tang2009}
+P.~K. Tang, Y.~H. Chew, W.-L. Yeow, and L.~C. Ong, ``Performance comparison of
+  three spectrum admission control policies in coordinated dynamic spectrum
+  sharing systems,'' \emph{{IEEE} Trans. Veh. Technol.}, vol.~58, no.~7, pp.
+  3674--3683, Sept 2009.
+
+\bibitem{ref:Gavrilovska2015}
+L.~Gavrilovska, D.~Denkovski, V.~Rakovic, and M.~Angjelicinoski, ``Medium
+  access control protocols in cognitive radio networks,'' in \emph{Cognitive
+  Radio and Networking for Heterogeneous Wireless Networks}, ser. Signals and
+  Communication Technology.\hskip 1em plus 0.5em minus 0.4em\relax Springer
+  International Publishing, 2015, pp. 109--149.
+
+\bibitem{ref:Sun2012}
+C.~Sun, G.~Villardi, Z.~Lan, Y.~Alemseged, H.~Tran, and H.~Harada, ``Optimizing
+  the coexistence performance of secondary-user networks under primary-user
+  constraints for dynamic spectrum access,'' \emph{{IEEE} Trans. Veh.
+  Technol.}, vol.~61, no.~8, pp. 3665--3676, Oct 2012.
+
+\bibitem{ref:Alcaraz2013}
+J.~J. Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro,
+  ``Bandwidth reservation as a coexistence strategy in opportunistic spectrum
+  access environments,'' \emph{{IEEE} J. Sel. Areas Commun.}, vol.~32, no.~3,
+  pp. 478--488, March 2014.
+
+\bibitem{ref:Zhao2008}
+Q.~Zhao, B.~Krishnamachari, and K.~Liu, ``On myopic sensing for multi-channel
+  opportunistic access: structure, optimality, and performance,'' \emph{{IEEE}
+  Trans. Wireless Commun.}, vol.~7, no.~12, pp. 5431--5440, December 2008.
+
+\bibitem{ref:Filippi2011}
+S.~Filippi, O.~Cappe, and A.~Garivier, ``Optimally sensing a single channel
+  without prior information: The tiling algorithm and regret bounds,''
+  \emph{{IEEE} Trans. Signal Process.}, vol.~5, no.~1, pp. 68--76, Feb 2011.
+
+\bibitem{ref:Lunden2011}
+J.~Lund\'en, V.~Koivunen, S.~Kulkarni, and H.~Poor, ``Reinforcement learning
+  based distributed multiagent sensing policy for cognitive radio networks,''
+  in \emph{{IEEE} Symposium on New Frontiers in Dynamic Spectrum Access
+  Networks {(DySPAN)}}, May 2011, pp. 642--646.
 
 \end{thebibliography}
