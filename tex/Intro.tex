@@ -2,9 +2,9 @@
 \chapter{Introduction}
 \section{Why Coexistence Policies?}
 Wireless communications need, among other resources, radio-electric spectrum, which is finite. 
-Government agencies, such as the FCC in the United States or the Electronic Communications Committee (ECC) through national administrations in Europe, grant access to the spectrum through fixed, long-term licenses on large geographical areas, in what is called the \enquote{command-and-control} management scheme. 
+Government agencies, such as the FCC in the United States or the Electronic Communications Committee (ECC) through national administrations in Europe, grant access to the spectrum through fixed, long-term licenses on large geographical areas, in what is called the \emph{command-and-control} management scheme. 
 Licenses were given to operators in a first-come-first-served basis initially. As the demand of spectrum grew, the procedure changed to national lotteries and comparative hearings. Nowadays, licenses are granted through spectrum auctions generating large revenues to the public administration. %Por aquello de que parece un procedimiento menos manipulable.
-Nevertheless, the ever-growing demand of spectrum due to the popularization of mobile services has left these traditional policies obsolete since almost all the spectrum has already been assigned. % Add figure (the typical with the spectrum assignments).
+Nevertheless, the ever-growing demand of spectrum due to the popularization of mobile services has left these traditional policies obsolete since almost all the usable spectrum has already been assigned. % Add figure (the typical with the spectrum assignments).
 
 However, several reports have been pointing out that most of the licensed spectrum show very little use. In 2002, the FCC Spectrum Policy Task Force highlighted that the typical channel occupancy of a public safety community, for example, could be less than 15\% \cite{ref:FCC2002}. The European Commission, in 2007, also stated that \enquote{some users hold large amounts of valuable spectrum that they do not use to its full capacity} \cite{ref:Commission2007}.
 
@@ -22,13 +22,13 @@ Cognitive capability refers to the ability of the radio to become aware of its s
 % Añadir la tipica figura de los huecos.
 
 In the most typical scenario, secondary users (SUs, unlicensed), equipped with cognitive radios, would look for unused fragments of spectrum in licensed bands and would use them for their transmissions subject to interference constraints for the protection of primary users (PUs, licensed). That is, PUs and SUs will coexist in some areas.
-This situation corresponds to the \enquote{Hierarchical Access Model}, also known as \emph{Opportunistic Spectrum Access (OSA)}, one of the possible coexistence approaches under \emph{Dynamic Spectrum Access (DSA)} \cite{ref:Zhao2007_sur}. 
+This situation corresponds to the Hierarchical Access Model, also known as \emph{Opportunistic Spectrum Access (OSA)}, one of the possible coexistence approaches under \emph{Dynamic Spectrum Access (DSA)} \cite{ref:Zhao2007_sur}. 
 Along the lines of current regulation models is the Dynamic Exclusive Use Model, also called \emph{spectrum trading}, which considers leasing or selling licenses but at a smaller time-scale, even in a real-time basis and with a free choice of technology.
-Lastly, the \enquote{Spectrum Commons Model}  assumes open sharing with no categories of users.
+Lastly, the Spectrum Commons Model assumes open sharing with no categories of users.
 % ¿Añadir grafico con los tipos de modelos?
 
 DSA has recently gained popularity because of the TV digitalization, in order to take advantage of the spectrum opportunities it has generated. % Añadir año. Explicar que se libera espectro procedente de las teles analogicas pero se nombra a algunos usuarios particulares como primarios.
-Therefore, the last few years have seen some DSA standards such as IEEE 802.22 [9], ECMA-392 [10], 802.11af [12], 802.19.1 [11] and IEEE SCC41 [13].
+Therefore, the last few years have seen some standards for DSA such as IEEE 802.22 [9], ECMA-392 [10], 802.11af [12], 802.19.1 [11] and IEEE SCC41 [13].
 
 No matter which model is considered, DSA is still annoying licensed operators at present, because it implies additional costs to them such as changes in their infrastructures, QoS impairments due to interferences, or profit reduction due to increased competition, while they have already paid for their licenses.
 Protecting and creating incentives for PUs instead of forcing them avoids that actual spectrum owners, as well as prospective ones, feel discouraged from investing in new spectrum technologies and services: \enquote{why am I going to spend money in spectrum if the government is going to give it for free to others?}.
@@ -36,7 +36,7 @@ Protecting and creating incentives for PUs instead of forcing them avoids that a
 It is needed that these operators believe in an automated mechanism that controls their profits. But this idea alone is scary: \enquote{How big is the risk of experiencing a great economic loss?}. Especially if they take into account incidents like the one experienced in 2012 by the Knight Capital Group in the related
 field of High Frequency Trading of stocks \cite{web:Silver2012} where the firm's algorithms caused a loss of \$440 million in 30 minutes (four times its net income from 2011).
 
-It is hard to convince the telecommunications industry to adopt automated dynamic spectrum management mechanisms if there is no strong evidence that these algorithms are safe againist wrong decisions (due to disadaptation to real time, for example). We believe that optimality, then, should be considered as a secondary objective.
+It is hard to convince the telecommunications industry to adopt automated dynamic spectrum management mechanisms if there is no strong evidence that these algorithms are safe againist wrong decisions (due to disadaptation to real-time operation, for example). We believe that optimality, then, should be considered as a secondary objective.
 
 \section{Motivation and Objective}
 
@@ -136,7 +136,7 @@ Our results show a notable capacity improvement compared to the classical approa
 
 ~\newline
 Part \ref{part_auto} of the thesis contains our contributions in the field of automated spectrum trading. 
-It is especially in this part where our low-complexity-intention has a greater significance, since the mainstream trend mostly neglects the importance of real-time adaptation, as chapter \ref{Survey_chap} shows. 
+It is especially in this part where our low-complexity intention has a greater significance, since the mainstream trend mostly neglects the importance of real-time adaptation, as chapter \ref{Survey_chap} shows. 
 Our contributions in this topic can be summarized as follows:
 
 \textbf{Chapter \ref{Survey_chap}. Automated spectrum trading mechanisms: understanding the big picture} \cite{ref:Mario2014}.
@@ -147,12 +147,8 @@ We discuss past, current approaches and future research lines, highlighting thei
 Each sub-topic is presented and developed explicitly with references to previous works where each aspect has been considered or addressed.
 Finally, as a conclusion of the surveying effort, we highlight overlooked issues of automated spectrum trading, with a special focus on practical implementation.
 
-\textbf{Chapter \ref{Sarnoff_chap} An MDP Framework for Centralized Dynamic Spectrum Leasing} \cite{ref:Alcaraz2012}.
-This work addresses the design of centralized DSA MAC protocols comprising dynamic spectrum auction. We explore the possibilities of a formal design based on a Markov decision process (MDP) formulation. We propose a design framework to balance the grade-of-service (given by the blocking probability for PUs) and the expected economic revenue provided by the SUs' accepted bids. 
-This trade-off can be managed in two ways. One consists of computing a single objective value given by a combination of the blocking probability and the expected revenue. 
-The weights assigned to each objective determine the point in the Pareto front where the obtained policy lies. The other approach, consists of solving for one of the objectives and setting constraints on the remaining ones.
-This chapter focuses on centralized trading in which we explore the use of MDP and CMDP formulations to balance benefit and grade of service for PUs. 
-The main advantages of this approach is that it assures operating at global optimum and reduces the computational effort at SUs.
+\textbf{Chapter \ref{Sarnoff_chap}. An MDP Framework for Centralized Dynamic Spectrum Leasing} \cite{ref:Alcaraz2012}.
+This work addresses the design of centralized DSA MAC protocols comprising dynamic spectrum auction. We explore the possibilities of a formal design based on a Markov decision process (MDP) formulation. We propose a design framework to balance the grade-of-service (given by the blocking probability for PUs) and the expected economic revenue from leasing the spectrum to the SUs.  We make use of MDP and CMDP formulations to balance benefit and grade of service for PUs. The main advantages of this approach is that it assures operating at global optimum and reduces the computational effort at SUs.”
 
 \textbf{Chapter \ref{MAB_CSSA_chap}. A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing} \cite{ref:Mario2015_MAB_CSSA_1,ref:Mario2015_MAB_CSSA_2}. In this last chapter we focus on Cooperative Spectrum Sharing (CSS). CSS is is an appealing approach for primary networks to share spectrum with SUs because it increases the transmission range or rate of the PUs. Most previous works are focused on developing complex algorithms which may not be fast enough for real-time variations such as channel availability and/or assume perfect information about the network. Instead, we develop a learning mechanism for a primary network to enable CSS in a strongly incomplete information scenario with low computational overhead. Our mechanism is based on a Markovian variant of multi-armed bandits (MABs) called superprocess, enhanced with the concept of Upper Confidence Bound (UCB) from stochastic MABs. By means of Monte-Carlo simulations we show that, despite its low computational overhead, it converges to the optimal solution and outperforms baseline approaches such as $\epsilon$-greedy. This algorithm can be extended to include more sophisticated features while maintaining its desirable properties such as low computational overhead and fast speed of convergence. 
 
@@ -184,7 +180,7 @@ The main advantages of this approach is that it assures operating at global opti
 \caption{Relation of mathematical tools and thesis chapters}
 \label{intro_table_math_tools}
 \end{table}
-This thesis is part of the project \enquote{ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM)}, funded by the Spanish Ministry of Economy and Competitiveness. 
+This thesis is has been supported by the research project \enquote{ChAracterization, EvaLuation, Planning and IMprovement of Key Technologies for the Future Internet: Knowledge and Transfer (CALM)}, funded by the Spanish Ministry of Economy and Competitiveness. 
 The CALM project is organized as a set of objectives interrelating key technologies for the Future Internet, \emph{with a special focus on mathematical tools} for the development, analysis and improvement of networks and protocols.
 
 Most of our proposed coexistence mechanisms and policies in this thesis are grounded in Markov Decision Processes (MDPs) \cite{ref:Puterman2005}. 
@@ -198,7 +194,7 @@ Some of the tools used in this thesis like Response Surface Methodology (RSM) (c
 
 Regarding the analysis and numerical evaluation of our mechanisms, we used Markov Reward Models (MRM). Either accompanying the previous tool or as the main performance evaluation resource, we resorted to the simple but powerful concept of Monte-Carlo simulation.
 
-We rely on well-known stochastic models of the different real world parameters of interest, such as the Poisson traffic model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2005}
+We relied on well-known stochastic models of the different real world parameters of interest, such as the Poisson traffic model, the log-normal distribution to describe shadow fading, etc. Such models have been widely used and validated in previous literature \cite{ref:Goldsmith2005}
 
 Because of our focus in algorithms and the link layer of cognitive networks, a characterization involving a full-protocol stack or a deep modeling of physical effects is not needed. Therefore, regarding the software support, we mainly worked with MATLAB \cite{ref:MATLAB}, Mathematica \cite{ref:Mathematica} for some mathematical derivations, and the OMNeT\verb!++! simulator \cite{ref:Omnet} in the particular case of chapter \ref{BR_chap} (used for numerical evaluation). We have also employed other development platforms such as Python with SciPy \cite{ref:SciPy} and R \cite{ref:RStudio}, because of their suitability for machine learning applications and data analysis.
 
