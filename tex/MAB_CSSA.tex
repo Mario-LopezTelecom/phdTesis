@@ -6,8 +6,7 @@ The mechanism we proposed in the previous chapter is appropiate when the spectru
 More specifically, we are interested in the trading scenario introduced by \cite{ref:Simeone2008}, whose basic premise is that SUs without license may act as transmission relays for a PU in exchange for transmission opportunities in the spectral resources of the PU.
 
 CSS is different from other market-driven spectrum sharing approaches in that it fosters the creation of transmission opportunities in the PU spectrum in an exogenous way: by increasing the transmission rate of the PU, it reduces its spectrum usage. 
-Because of that, CSS is particularly useful when the PU's own demands are so high that it would rarely have spectrum to lease.
-\footnote{It could be the case that the PU has a low traffic volume and it is not interested in increasing its transmission rate. 
+Because of that, CSS is particularly useful when the PU's own demands are so high that it would rarely have spectrum to lease.\footnote{It could be the case that the PU has a low traffic volume and it is not interested in increasing its transmission rate. 
 For that reason, hybrid approaches combining CSS and other DSA ideas, with monetary transactions, have also been studied \cite{ref:Zhang2009,ref:Zhang2012_Fair}.}
 
 As we highlighted in chapter \ref{Survey_chap}, most previous works are focused on developing complex algorithms which may not be fast enough for real-time decisions and/or assume perfect information about the network. Instead, we develop a learning mechanism for a PU to enable CSS in a strongly incomplete information scenario, with low computation overhead. Our mechanism is based on a Markovian variant of multi-armed bandits (MABs) called superprocess, enhanced with the concept of Upper Confidence Bound (UCB) from stochastic MABs. By means of Monte-Carlo simulations we show that, despite its low computational overhead, it outperforms baseline approaches such as $\epsilon$-greedy.

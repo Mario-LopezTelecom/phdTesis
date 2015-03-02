@@ -309,7 +309,7 @@ The $N$ subscript remarks that there are $N$ available channels to allocate PU t
 Each one of the $N$ channels has a different gain for the $j$-th PU Rx, but, because $j-1$ channels are already assigned, the AN selects, for the $j$-th PU, the channel with the highest gain among the $N-j+1$ remaining ones. 
 In consequence the received power will be the highest among $N-j+1$ possible values. 
 
-The cumulative distribution function (CDF) for Rayleigh fading is $F(p)=\left(1-e^{-p/p_{pp}}\right)$.
+The cumulative distribution function (CDF) for Rayleigh fading is $F(p)=(1-e^{-p/p_{pp}})$.
 Therefore, the CDF of the highest value among $N-j+1$, is given by $\mathbf{P}(P\leq p) = (1-e^{-p/p_{pp}})^{N-j+1}$, resulting in the following \textit{pdf}
 \begin{equation}
 f_{j}(p) = \displaystyle\frac{d\mathbf{P}(P\leq p)}{dp} = \frac{N-j+1}{p_{pp}}e^{-\frac{p}{p_{pp}}}\left(1-e^{-\frac{p}{p_{pp}}}\right)^{N-j}
@@ -373,7 +373,7 @@ which follows from Jensen's inequality. Assuming independence between $r$ and $r
 \frac{\text{exp}\left(\frac{n_{s}N_{0}W}{p_{SU}K'g(r')}\right) E_{1}\left(\frac{n_{s}N_{0}W}{p_{SU}K'g(r')}\right)}{n_{p}p_{SU}K'g(r')}\right]
 \end{array}
 \end{equation}
-The function involving the expectation over $r'$ in the last term ($\phi_{\text{\ttfamily{SINR}}_{p}}(r') = \underset{r}{\mathbf{E}}\left[\text{\ttfamily{SINR}}_{p}(r,r')\right]$) is strictly increasing in $r'$ ($\text{\ttfamily{SINR}}_{p}$ increases as the interfering Tx moves away) and concave for $r'>\delta$.
+The function involving the expectation over $r'$ in the last term, that is, $\phi_{\text{\ttfamily{SINR}}_{p}}(r') = \underset{r}{\mathbf{E}}\left[\text{\ttfamily{SINR}}_{p}(r,r')\right]$, is strictly increasing in $r'$ ($\text{\ttfamily{SINR}}_{p}$ increases as the interfering Tx moves away) and concave for $r'>\delta$.
 In particular, $\delta$ is the smallest $r'$ such that $r' \geq r_{c}$ and $\frac{\partial^{2}\phi_\text{\ttfamily{SINR}}(r')}{\partial r'^{2}} \leq 0$.
 Let $f_{r'}(r')$ and $\bar{r}'$ denote the \textit{pdf} and the average value of $r'$ respectively. 
 If $f_{r'}(r')>0$ for every $r'$, and $\delta<\bar{r}'$ then
