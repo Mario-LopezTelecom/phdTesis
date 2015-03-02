@@ -90,7 +90,8 @@ J.~Peha, ``Approaches to spectrum sharing,'' \emph{{IEEE} Commun. Mag.},
 \bibitem{ref:Alcaraz2015_BD}
 \textbf{J.~J. Alcaraz}, \textbf{M. L\'{o}pez-Mart\'{i}nez}, J.~Vales-Alonso,
   and J.~Garcia-Haro, ``Background detection of primary user activity in
-  opportunistic spectrum access,'' in \emph{{IEEE} {ICC}}, 2015.
+  opportunistic spectrum access,'' in \emph{{IEEE} {ICC}}, 2015, to be
+  published.
 
 \bibitem{ref:Alcaraz2014_BR}
 ------, ``Bandwidth reservation as a coexistence strategy in opportunistic
@@ -101,7 +102,7 @@ J.~Peha, ``Approaches to spectrum sharing,'' \emph{{IEEE} Commun. Mag.},
 \textbf{J.~J. Alcaraz}, \textbf{M. L\'{o}pez-Mart\'{i}nez}, J.~Vales-Alonso,
   J.~Ayala-Romero, and J.~Garcia-Haro, ``Uncertainty-aware opportunistic
   spectrum access in coexistence-friendly systems,'' \emph{{IEEE} Transactions
-  on Cognitive Communications and Networking}, 2015.
+  on Cognitive Communications and Networking}, 2015, submitted for publication.
 
 \bibitem{ref:Alcaraz2014_RSM}
 \textbf{J.~J. Alcaraz}, J.~Ayala-Romero, \textbf{M. L\'{o}pez-Mart\'{i}nez},
@@ -112,7 +113,7 @@ J.~Peha, ``Approaches to spectrum sharing,'' \emph{{IEEE} Commun. Mag.},
 
 \bibitem{ref:Alcaraz2015_RSM}
 ------, ``Response surface methodology for efficient spectrum reuse in cellular
-  networks,'' in \emph{{IEEE} {ICC}}, 2015.
+  networks,'' in \emph{{IEEE} {ICC}}, 2015, to be published.
 
 \bibitem{ref:Mario2014}
 \textbf{M. L\'{o}pez-Mart\'{i}nez}, \textbf{J.~J. Alcaraz}, J.~Vales-Alonso,
@@ -123,17 +124,17 @@ J.~Peha, ``Approaches to spectrum sharing,'' \emph{{IEEE} Commun. Mag.},
 \bibitem{ref:Alcaraz2012}
 \textbf{J.~J. Alcaraz}, \textbf{M. L\'{o}pez-Mart\'{i}nez}, J.~Vales-Alonso,
   and J.~Garcia-Haro, ``An {MDP} framework for centralized dynamic spectrum
-  auction,'' in \emph{35th {IEEE} Sarnoff Symposium ({SARNOFF})}, May 2012, pp.
-  1--5.
+  auction,'' in \emph{{IEEE} {SARNOFF}}, May 2012, pp. 1--5.
 
 \bibitem{ref:Mario2015_MAB_CSSA_1}
-\textbf{M. L\'{o}pez-Mart\'{i}nez}, \textbf{J.~J. Alcaraz}, , B.~L., and
+\textbf{M. L\'{o}pez-Mart\'{i}nez}, \textbf{J.~J. Alcaraz}, L.~Badia, and
   M.~Zorzi, ``Multi-armed bandits with dependent arms for cooperative spectrum
-  sharing,'' in \emph{{IEEE} {ICC}}, 2015.
+  sharing,'' in \emph{{IEEE} {ICC}}, 2015, to be published.
 
 \bibitem{ref:Mario2015_MAB_CSSA_2}
 ------, ``A superprocess with upper confidence bounds for cooperative spectrum
-  sharing,'' \emph{{IEEE} Trans. Mobile Comput.}, 2015.
+  sharing,'' \emph{{IEEE} Trans. Mobile Comput.}, 2015, submitted for
+  publication.
 
 \bibitem{ref:Puterman2005}
 M.~L. Puterman, \emph{Markov Decision Processes: Discrete Stochastic Dynamic
