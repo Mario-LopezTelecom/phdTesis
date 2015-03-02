@@ -14,6 +14,16 @@
 \raggedbottom	% LaTeX will make little attempt to keep a constant height. 
 				% But I get rid of glue spaces
 \firmlists
+% Ack
+\newlength{\toptafiddle} \setlength{\toptafiddle}{1\baselineskip}
+\newlength{\bottafiddle} \setlength{\bottafiddle}{0pt}
+\newlength{\topfiddle} \setlength{\topfiddle}{\toptafiddle}
+\newlength{\botfiddle} \setlength{\botfiddle}{\onelineskip}
+%%% general macro for Abstract, etc., headings
+\newcommand*{\pretoctitle}[1]{{\clearpage\centering
+\vspace*{-\topfiddle}#1\par}}
+%%% Start the ACKNOWLEDGEMENTS
+\newcommand{\asuacknowledgements}{\pretoctitle{\textbf{Agradecimientos}}}
 % Heading
 \nouppercaseheads
 \makeheadrule{headings}{\textwidth}{0.3pt}
@@ -26,7 +36,7 @@
 \chapterstyle{veelo}
 
 % Fonts
-\usepackage{cmbright,fourier}
+\usepackage{cmbright,euler}
 %\usepackage[bitstream-charter]{mathdesign} % For the printed version?
 %\usepackage[T1]{fontenc}					% In case of needing accents
 \usepackage{amssymb}

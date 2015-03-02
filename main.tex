@@ -1,4 +1,4 @@
- \documentclass[12pt,a4paper,twoside]{memoir}
+\documentclass[12pt,a4paper,twoside]{memoir}
 \usepackage{graphicx}
 \usepackage{ifpdf}
 \ifpdf
@@ -8,8 +8,12 @@
 \usepackage{mystyle}
 
 \begin{document}
-\input{./tex/TitleB}
 \frontmatter
+\input{./tex/TitleB}
+%\input{./tex/Ack}
+%\clearpage
+\input{./tex/Abstract}
+\clearpage
 
 \begin{KeepFromToc}
   \tableofcontents
@@ -19,7 +23,7 @@
 %\clearpage
 %\listoftables
 %\clearpage
-\input{./tex/Abstract}
+
 
 \mainmatter
 \input{./tex/Intro}
