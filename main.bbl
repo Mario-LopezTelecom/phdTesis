@@ -88,9 +88,9 @@ J.~Peha, ``Approaches to spectrum sharing,'' \emph{{IEEE} Commun. Mag.},
   vol.~43, no.~2, pp. 10--12, Feb. 2005.
 
 \bibitem{ref:Alcaraz2015_BD}
-J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro,
-  ``Background detection of primary user activity in opportunistic spectrum
-  access,'' in \emph{{IEEE} {ICC}}, 2015.
+\textbf{J.~J. Alcaraz}, \textbf{M. L\'{o}pez-Mart\'{i}nez}, J.~Vales-Alonso,
+  and J.~Garcia-Haro, ``Background detection of primary user activity in
+  opportunistic spectrum access,'' in \emph{{IEEE} {ICC}}, 2015.
 
 \bibitem{ref:Alcaraz2014_BR}
 ------, ``Bandwidth reservation as a coexistence strategy in opportunistic
@@ -98,40 +98,42 @@ J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro,
   no.~3, pp. 478--488, Mar. 2014.
 
 \bibitem{ref:Alcaraz2015_SPEC_MAN}
-J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, J.~Ayala-Romero, and
-  J.~Garcia-Haro, ``Uncertainty-aware opportunistic spectrum access in
-  coexistence-friendly systems,'' \emph{{IEEE} Transactions on Cognitive
-  Communications and Networking}, 2015.
+\textbf{J.~J. Alcaraz}, \textbf{M. L\'{o}pez-Mart\'{i}nez}, J.~Vales-Alonso,
+  J.~Ayala-Romero, and J.~Garcia-Haro, ``Uncertainty-aware opportunistic
+  spectrum access in coexistence-friendly systems,'' \emph{{IEEE} Transactions
+  on Cognitive Communications and Networking}, 2015.
 
 \bibitem{ref:Alcaraz2014_RSM}
-J.~Alcaraz, J.~Ayala-Romero, M.~L\'{o}pez-Mart\'{i}nez, and J.~Vales-Alonso,
-  ``Combining dual tessellation and temporal opportunities for spectrum reuse
-  in cellular systems,'' in \emph{11th International Symposium on Wireless
-  Communications Systems ({ISWCS})}, Aug. 2014, pp. 486--490.
+\textbf{J.~J. Alcaraz}, J.~Ayala-Romero, \textbf{M. L\'{o}pez-Mart\'{i}nez},
+  and J.~Vales-Alonso, ``Combining dual tessellation and temporal opportunities
+  for spectrum reuse in cellular systems,'' in \emph{11th International
+  Symposium on Wireless Communications Systems ({ISWCS})}, Aug. 2014, pp.
+  486--490.
 
 \bibitem{ref:Alcaraz2015_RSM}
 ------, ``Response surface methodology for efficient spectrum reuse in cellular
   networks,'' in \emph{{IEEE} {ICC}}, 2015.
 
 \bibitem{ref:Mario2014}
-M.~L\'{o}pez-Mart\'{\i}nez, J.~J. Alcaraz, J.~Vales-Alonso, and J.~Garcia-Haro,
-  ``Automated spectrum trading mechanisms: Understanding the big picture,''
-  \emph{Wireless Networks}, vol.~21, no.~2, pp. 685--708, Jan. 2015.
+\textbf{M. L\'{o}pez-Mart\'{i}nez}, \textbf{J.~J. Alcaraz}, J.~Vales-Alonso,
+  and J.~Garcia-Haro, ``Automated spectrum trading mechanisms: Understanding
+  the big picture,'' \emph{Wireless Networks}, vol.~21, no.~2, pp. 685--708,
+  Jan. 2015.
 
 \bibitem{ref:Alcaraz2012}
-J.~Alcaraz, M.~L\'{o}pez-Mart\'{i}nez, J.~Vales-Alonso, and J.~Garcia-Haro,
-  ``An {MDP} framework for centralized dynamic spectrum auction,'' in
-  \emph{35th {IEEE} Sarnoff Symposium ({SARNOFF})}, May 2012, pp. 1--5.
+\textbf{J.~J. Alcaraz}, \textbf{M. L\'{o}pez-Mart\'{i}nez}, J.~Vales-Alonso,
+  and J.~Garcia-Haro, ``An {MDP} framework for centralized dynamic spectrum
+  auction,'' in \emph{35th {IEEE} Sarnoff Symposium ({SARNOFF})}, May 2012, pp.
+  1--5.
 
 \bibitem{ref:Mario2015_MAB_CSSA_1}
-J.~Alcaraz, J.~Ayala-Romero, M.~L\'{o}pez-Mart\'{i}nez, and J.~Vales-Alonso,
-  ``Multi-armed bandits with dependent arms for cooperative spectrum sharing,''
-  in \emph{{IEEE} {ICC}}, 2015.
+\textbf{M. L\'{o}pez-Mart\'{i}nez}, \textbf{J.~J. Alcaraz}, , B.~L., and
+  M.~Zorzi, ``Multi-armed bandits with dependent arms for cooperative spectrum
+  sharing,'' in \emph{{IEEE} {ICC}}, 2015.
 
 \bibitem{ref:Mario2015_MAB_CSSA_2}
-M.~L\'{o}pez-Mart\'{i}nez, J.~J. Alcaraz, B.~L., and M.~Zorzi, ``A superprocess
-  with upper confidence bounds for cooperative spectrum sharing,'' \emph{{IEEE}
-  Trans. Mobile Comput.}, 2015.
+------, ``A superprocess with upper confidence bounds for cooperative spectrum
+  sharing,'' \emph{{IEEE} Trans. Mobile Comput.}, 2015.
 
 \bibitem{ref:Puterman2005}
 M.~L. Puterman, \emph{Markov Decision Processes: Discrete Stochastic Dynamic

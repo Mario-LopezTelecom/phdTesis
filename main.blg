@@ -102,37 +102,37 @@ Warning--missing institution in ref:RSPG2009
 Done.
 You've used 216 entries,
             4039 wiz_defined-function locations,
-            2362 strings with 49934 characters,
-and the built_in function-call counts, 167632 in all, are:
-= -- 13545
-> -- 3803
+            2361 strings with 49922 characters,
+and the built_in function-call counts, 167700 in all, are:
+= -- 13547
+> -- 3811
 < -- 1516
-+ -- 2184
-- -- 624
-* -- 8105
-:= -- 24710
++ -- 2188
+- -- 626
+* -- 8109
+:= -- 24715
 add.period$ -- 431
 call.type$ -- 216
 change.case$ -- 191
 chr.to.int$ -- 3387
 cite$ -- 232
-duplicate$ -- 12120
-empty$ -- 13707
-format.name$ -- 801
-if$ -- 39204
+duplicate$ -- 12124
+empty$ -- 13711
+format.name$ -- 803
+if$ -- 39221
 int.to.chr$ -- 0
 int.to.str$ -- 216
-missing$ -- 2072
+missing$ -- 2074
 newline$ -- 697
 num.names$ -- 215
-pop$ -- 4516
+pop$ -- 4522
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 4
-skip$ -- 13083
+skip$ -- 13087
 stack$ -- 0
 substring$ -- 8017
-swap$ -- 10336
+swap$ -- 10340
 text.length$ -- 387
 text.prefix$ -- 0
 top$ -- 5
