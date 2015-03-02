@@ -35,6 +35,11 @@
 T.~M. Valletti, ``Spectrum trading,'' \emph{Telecommunications Policy},
   vol.~25, no. 10-11, pp. 655--670, Oct. - Nov. 2001.
 
+\bibitem{ref:Jorswieck2013}
+E.~A. Jorswieck, L.~Badia, T.~Fahldieck, E.~Karipidis, and J.~Luo, ``Spectrum
+  sharing improves the network efficiency for cellular operators,''
+  \emph{{IEEE} Commun. Mag.}, vol.~52, no.~3, pp. 129--136, Dec. 2013.
+
 \bibitem{ref:Mayo2010}
 J.~W. Mayo and S.~Wallsten, ``Enabling efficient wireless communications: The
   role of secondary spectrum markets,'' \emph{Information Economics and
@@ -805,6 +810,11 @@ Y.~Yan, J.~Huang, and J.~Wang, ``Dynamic bargaining for relay-based cooperative
 X.~Feng, G.~Sun, X.~Gan, F.~Yang, and X.~Tian, ``Cooperative spectrum sharing
   in cognitive radio networks: A distributed matching approach,'' \emph{{IEEE}
   Trans. Commun.}, vol.~62, no.~8, pp. 2651--2644, Aug. 2014.
+
+\bibitem{ref:Canzian2013}
+L.~Canzian, L.~Badia, and M.~Zorzi, ``Promoting cooperation in wireless relay
+  networks through stackelberg dynamic scheduling,'' \emph{{IEEE} Trans.
+  Commun.}, vol.~61, no.~2, pp. 700--711, Feb. 2013.
 
 \bibitem{ref:Tran2014}
 T.~T. Tran and H.~Y. Kong, ``Exploitation of diversity in cooperative spectrum

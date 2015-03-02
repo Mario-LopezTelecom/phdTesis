@@ -397,7 +397,7 @@ It can be checked that for each $H_k$ event ($k$={0,1}), $\sum_{i:0,1}\sum_{j:0,
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=1.2]{Regions.eps}
-\caption{Integration regions to compute the probabilities of correct detection, type I and type II errors under the H1 event (transmission overlap).}\label{fig:Regions}
+\caption{Integration regions to compute the probabilities of correct detection, type I and type II errors under the $H_1$ event (transmission overlap).}\label{fig:Regions}
 \end{figure}
 
 Let us now obtain the probabilities for $H_{0}$, i.e. in absence of transmission overlap. The probabilities are defined in the following way
@@ -462,7 +462,7 @@ which equals $e^{-p^{*}_{E_{1}}/p_{ss}}-e^{-N\gamma/p_{ss}}$ for Rayleigh fading
 In the following sections, we analyze the use of the proposed background detection (BD) mechanism in an OSA system, studying its effect on the SU throughput and collision probability with PU transmissions, compared to common practical approaches in OSA. 
 
 We assume single-channel transmission capabilities for the SU, leaving for future research the generalization to the multiple-channel case.
-We also assume that it takes certain number of slots $n_s$ for the SU to detect at least one available channel. For the sake of simplicity, we will consider $n_s$ fixed to 5, although, as we explain letter, the resulting expressions can be easily generalized for the case of a randomly distributed $n_s$.
+We also assume that it takes certain number of slots $n_s$ for the SU to detect at least one available channel. For the sake of simplicity, we will consider $n_s$ fixed to 5, although, as we explain later, the resulting expressions can be easily generalized for the case of a randomly distributed $n_s$.
 An SU transmission period consists of these scanning slots followed by a number of consecutive transmission time-slots.
 The SU transmits one data packet in each one of these consecutive time-slots.
 The PU inter arrival time and the PU channel holding time are characterized by geometric distributions, i.e. the equivalent of a Poisson traffic model for discrete-time. 
@@ -609,14 +609,14 @@ The specific structure of matrix $\mathbf{T}$ allows an efficient computation of
 \begin{equation}
 \mathbf{T} =
 \begin{pmatrix}
-			\textbf{B}_{0,0} & \textbf{B}_{0,1}  & \textbf{0} & \textbf{0} & \cdots \textbf{0} \\
-			\textbf{B} & \textbf{0} & \textbf{A} & \textbf{0} & \cdots \textbf{0} \\
-			\textbf{B} & \textbf{0} & \textbf{0} & \textbf{A} & \cdots \textbf{0} \\
+			\mathbf{B}_{0,0} & \mathbf{B}_{0,1}  & \mathbf{0} & \mathbf{0} & \cdots \mathbf{0} \\
+			\mathbf{B} & \mathbf{0} & \mathbf{A} & \mathbf{0} & \cdots \mathbf{0} \\
+			\mathbf{B} & \mathbf{0} & \mathbf{0} & \mathbf{A} & \cdots \mathbf{0} \\
 			\vdots & \vdots & \vdots & \vdots &  \vdots\\
-			\textbf{1} & \textbf{0} & \textbf{0} & \textbf{0} & \cdots \textbf{A} \\
+			\mathbf{1} & \mathbf{0} & \mathbf{0} & \mathbf{0} & \cdots \mathbf{A} \\
 			\end{pmatrix}
 \end{equation}
-where $\textbf{B}_{0,0} = (0, 0)$, $\textbf{B}_{0,1} = ((1-p), p)$, and
+where $\mathbf{B}_{0,0} = (0, 0)$, $\mathbf{B}_{0,1} = ((1-p), p)$, and
 \begin{equation}
 \begin{array}{lcl}
 \mathbf{A} & = &
@@ -636,9 +636,9 @@ where $\textbf{B}_{0,0} = (0, 0)$, $\textbf{B}_{0,1} = ((1-p), p)$, and
 			\end{pmatrix}\\			
 \end{array}
 \end{equation}
-Let us define $\boldsymbol{\pi}_{k}~=~(\pi_{2k-1}, \pi_{2k})$, denoting the probability of the events $H_{0}$ and $H_{1}$ at the $k$-th transmission slot. Applying the equilibrium equations we have $\pi_{0}~=~\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{B} + \boldsymbol{\pi}_{n}\mathbf{1}$, $\boldsymbol{\pi}_{1}~=~\pi_{0}\textbf{B}_{0,1}$, and $\boldsymbol{\pi}_{k}$ can be expressed in the matrix-geometric form $\boldsymbol{\pi}_{k}~=~\boldsymbol{\pi}_{1}\mathbf{A}^{k-1}~=~\pi_{0}\textbf{B}_{0,1}\mathbf{A}^{k-1}$, for $k > 1$. The normalization condition is $\pi_{0}+\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\textbf{1} + \boldsymbol{\pi}_{n}\mathbf{1}~=~1$, which combined with the equilibrium equations results in the following expression for $\pi_{0}$
+Let us define $\boldsymbol{\pi}_{k}~=~(\pi_{2k-1}, \pi_{2k})$, denoting the probability of the events $H_{0}$ and $H_{1}$ at the $k$-th transmission slot. Applying the equilibrium equations we have $\pi_{0}~=~\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\mathbf{B} + \boldsymbol{\pi}_{n}\mathbf{1}$, $\boldsymbol{\pi}_{1}~=~\pi_{0}\mathbf{B}_{0,1}$, and $\boldsymbol{\pi}_{k}$ can be expressed in the matrix-geometric form $\boldsymbol{\pi}_{k}~=~\boldsymbol{\pi}_{1}\mathbf{A}^{k-1}~=~\pi_{0}\mathbf{B}_{0,1}\mathbf{A}^{k-1}$, for $k > 1$. The normalization condition is $\pi_{0}+\sum_{k=1}^{n-1}\boldsymbol{\pi}_{j}\mathbf{1} + \boldsymbol{\pi}_{n}\mathbf{1}~=~1$, which combined with the equilibrium equations results in the following expression for $\pi_{0}$
 \begin{equation}\label{pi_0_basic}
-\pi_{0} = \displaystyle\frac{1}{2+\sum_{k=1}^{n-1}\textbf{B}_{0,1}\mathbf{A}^{k-1}(\mathbf{1}-\textbf{B})}
+\pi_{0} = \displaystyle\frac{1}{2+\sum_{k=1}^{n-1}\mathbf{B}_{0,1}\mathbf{A}^{k-1}(\mathbf{1}-\mathbf{B})}
 \end{equation}
 Because $\mathbf{A}$ is strictly positive we know, by the Perron-Frobenius theorem, that it has one positive eigenvalue, with multiplicity 1, which is strictly higher than all other eigenvalues. Since the dimension of $\mathbf{A}$ is $2\times2$, it has only two eigenvalues and thus we conclude that $\mathbf{A}$ has two distinct eigenvalues, $\lambda_{1}$ and $\lambda_{2}$ (with their corresponding eigenvectors $\mathbf{e}_{1}$ and $\mathbf{e}_{2}$). This implies that $\mathbf{A}$ can be expressed as $\mathbf{A}~=~\mathbf{M}\boldsymbol\Lambda\mathbf{M}^{-1}$ where $\mathbf{M}~=~\left[\mathbf{e}_{1} \mathbf{e}_{2}\right]$ and $\boldsymbol\Lambda$ is a diagonal matrix containing $(\lambda_{1}, \lambda_{2})$ in its diagonal. Then
 \begin{equation}
@@ -651,14 +651,14 @@ Because $\mathbf{A}$ is strictly positive we know, by the Perron-Frobenius theor
 \end{equation}
 which allows us to express (\ref{pi_0_basic}) in the following closed form
 \begin{equation}
-\pi_{0} = \left(2+\textbf{B}_{0,1}\mathbf{M}
+\pi_{0} = \left(2+\mathbf{B}_{0,1}\mathbf{M}
 \begin{pmatrix}
 \frac{1-\lambda_{1}^{n-1}}{1-\lambda_{1}}&0\\
 0&\frac{1-\lambda_{2}^{n-1}}{1-\lambda_{2}}
 \end{pmatrix}
-\mathbf{M}^{-1}(\mathbf{1}-\textbf{B})\right)^{-1}
+\mathbf{M}^{-1}(\mathbf{1}-\mathbf{B})\right)^{-1}
 \end{equation}
-which enables an efficient computation of $\boldsymbol{\pi}_{k}~=~\pi_{0}\textbf{B}_{0,1}\mathbf{A}^{k-1}$, for $k = 1,\ldots,n$.
+which enables an efficient computation of $\boldsymbol{\pi}_{k}~=~\pi_{0}\mathbf{B}_{0,1}\mathbf{A}^{k-1}$, for $k = 1,\ldots,n$.
 
 The Markov model for OSA-ACK would be similar, and only requires changing the value of correct detection probability in case of no PU activity and missed detection in case of PU activity to
 \begin{equation}

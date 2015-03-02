@@ -7,7 +7,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 14630 items from 5000.
+Reallocated field_info (elt_size=4) to 14720 items from 5000.
 Database file #1: IEEEabrv.bib
 Database file #2: ./bibtex/thesisBib.bib
 Warning--string name "sept" is undefined
@@ -56,22 +56,27 @@ You're missing a field name---line 1467 of file ./bibtex/thesisBib.bib
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
 --line 1696 of file ./bibtex/thesisBib.bib
-I was expecting a `,' or a `}'---line 1734 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 1736 of file ./bibtex/thesisBib.bib
+ : 
+ : % Sarnoff
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1742 of file ./bibtex/thesisBib.bib
  :  
  :  year = {1975},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 1751 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 1759 of file ./bibtex/thesisBib.bib
  : 
  : % MAB_CSSA
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 1877 of file ./bibtex/thesisBib.bib
+Repeated entry---line 1885 of file ./bibtex/thesisBib.bib
  : @article{ref:Niyato2008_Mark
  :                             ,
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
---line 2150 of file ./bibtex/thesisBib.bib
+--line 2158 of file ./bibtex/thesisBib.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -95,45 +100,45 @@ Warning--empty year in ref:Klei
 Warning--missing institution in ref:RSPG2009
 
 Done.
-You've used 214 entries,
+You've used 216 entries,
             4039 wiz_defined-function locations,
-            2352 strings with 49555 characters,
-and the built_in function-call counts, 165754 in all, are:
-= -- 13387
-> -- 3755
-< -- 1496
-+ -- 2156
-- -- 616
-* -- 8009
-:= -- 24436
-add.period$ -- 427
-call.type$ -- 214
-change.case$ -- 189
-chr.to.int$ -- 3345
-cite$ -- 230
-duplicate$ -- 11988
-empty$ -- 13575
-format.name$ -- 791
-if$ -- 38766
+            2362 strings with 49934 characters,
+and the built_in function-call counts, 167632 in all, are:
+= -- 13545
+> -- 3803
+< -- 1516
++ -- 2184
+- -- 624
+* -- 8105
+:= -- 24710
+add.period$ -- 431
+call.type$ -- 216
+change.case$ -- 191
+chr.to.int$ -- 3387
+cite$ -- 232
+duplicate$ -- 12120
+empty$ -- 13707
+format.name$ -- 801
+if$ -- 39204
 int.to.chr$ -- 0
-int.to.str$ -- 214
-missing$ -- 2050
-newline$ -- 691
-num.names$ -- 213
-pop$ -- 4476
+int.to.str$ -- 216
+missing$ -- 2072
+newline$ -- 697
+num.names$ -- 215
+pop$ -- 4516
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 4
-skip$ -- 12939
+skip$ -- 13083
 stack$ -- 0
-substring$ -- 7917
-swap$ -- 10210
-text.length$ -- 381
+substring$ -- 8017
+swap$ -- 10336
+text.length$ -- 387
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 214
+type$ -- 216
 warning$ -- 16
-while$ -- 698
-width$ -- 217
-write$ -- 2128
-(There were 10 error messages)
+while$ -- 706
+width$ -- 219
+write$ -- 2150
+(There were 11 error messages)
