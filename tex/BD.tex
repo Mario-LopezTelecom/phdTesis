@@ -376,7 +376,6 @@ where the last equality comes from the fact that $p^{*}_{E_{1}}\leq N\gamma$. %T
 \begin{equation}
 \mathbf{P}(\hat{H}_{0},E_{1}|H_{1}) = \frac{p_{ps}\left(1-e^{-\frac{p^{*}_{E_{1}}}{p_{ps}}}\right)+\left(-1+e^{-\frac{p^{*}_{E_{1}}}{p_{ss}}}\right) p_{ss}}{p_{ps}-p_{ss}}
 \end{equation}
-
 The probability of correct PU activity detection at $E_{1}$ is:
 \begin{equation}\label{PH1E1H1}
 \begin{array}{lcl}
@@ -670,13 +669,15 @@ The Markov model for OSA-ACK would be similar, and only requires changing the va
 respectively. That is to say, as we introduced previously, OSA-ACK assumes that every decoding error is due to collision with a PU, thus, a SU with OSA-ACK goes back to sensing whenever there is a packet error: with probability $1-\mathbf{P}(E_{0}|H_{0}$) in case there is no PU activity, and with probability $1-\mathbf{P}(E_{0}|H_{1})$ in case of PU activity.
 \section{Numerical Results}\label{BD_sec_results}
 \begin{table}
-\begin{tabular}{c c|c c} 
+\begin{tabular}{l r|l r} 
+\hline
 \textbf{Parameter} & \textbf{Assigned value} & \textbf{Parameter} & \textbf{Assigned value}\\\hline
 $p_{ss}$&-72.9 dBm & $\mathbf{P}\left(H_{1}\right)$ & 1/3\\
 $p_{ps}$&-70.5 dBm & $p^{*}_{E_{0}}$ & -61.8 dBm\\
 $N$&-103 dBm & $p^{*}_{E_{1}}$ & -95.9 dBm\\
 $\gamma$& 7 dBm & $\mathbf{P}(\hat{H}_{1}|H_{0})$ & $2.65\cdot10^{-6}$\\
 $p, q$ & $10^{-3},2\cdot10^{-3}$ & $\mathbf{P}(\hat{H}_{0}|H_{1})$ & 0.1026\\
+\hline
 \end{tabular}
 \centering
 \caption{Parameter setting of the reference scenario used in numerical evaluations}
