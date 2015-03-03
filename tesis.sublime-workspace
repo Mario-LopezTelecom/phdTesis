@@ -15,7 +15,23 @@
 			"file": "main.tex",
 			"settings":
 			{
-				"buffer_size": 867,
+				"buffer_size": 919,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tex/Ack.tex",
+			"settings":
+			{
+				"buffer_size": 2178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tex/Conclusion.tex",
+			"settings":
+			{
+				"buffer_size": 15091,
 				"line_ending": "Unix"
 			}
 		}
@@ -24,6 +40,7 @@
 	"build_system_choices":
 	[
 	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 374.0,
@@ -83,27 +100,28 @@
 	"file_history":
 	[
 		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
-		"/Users/mariol/Documents/git/TESIS/main.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
-		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.bib",
 		"/Users/mariol/Documents/git/TESIS/tex/RSM.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/SPEC_MAN.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/BR.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Intro.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
+		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
+		"/Users/mariol/Documents/git/TESIS/main.tex",
+		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.bib",
+		"/Users/mariol/Documents/git/TESIS/tex/Ack.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.log",
 		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.aux",
-		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/MyThesis.bib",
 		"/Users/mariol/Documents/git/TESIS/bibtex/IEEEfull.bib",
 		"/Users/mariol/Documents/git/TESIS/bibtex/auxbib.tex",
-		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/main.pdf",
 		"/Users/mariol/Documents/git/TESIS/originals/BD_journal/long_background_detection.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/TitleB.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
 		"/Users/mariol/Documents/git/SPEC_MAN/diff.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Title.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.aux",
@@ -196,6 +214,53 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"Conclusion",
+			"\\section",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"\\subsection",
+			"without",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"\\subsubsection",
+			"\\subsection",
+			"\\section",
+			"section",
+			"Notes",
+			"disadaptation",
+			"enquote",
+			"ñ",
+			"ú",
+			"ó",
+			"í",
+			"é",
+			"á",
 			"\\mathbf",
 			"\\textbf",
 			"President",
@@ -276,54 +341,7 @@
 			"Wireless Communications",
 			"ref:Goldsmith2005",
 			"Contract-Based Approach",
-			"Bertsekas",
-			"ref:Alcaraz2014",
-			"Coalitional Games",
-			"@book",
-			"ref:Jia",
-			"ref:Zhang2013",
-			"Wireless Communications",
-			"ref:Huang201",
-			"ref:Yi",
-			"Pantisano",
-			"ref:Kim",
-			"ref:Lee",
-			"{Dec}",
-			"{December}",
-			"{Nov}",
-			"{October}",
-			"{Sept}",
-			"{September}",
-			"{Aug}",
-			"{Jun}",
-			"{June}",
-			"{May}",
-			"{April}",
-			"{March}",
-			"{Feb}",
-			"{February}",
-			"{Jan}",
-			"{January}",
-			"Fair and",
-			"ref:Zhang2012",
-			"Address",
-			"Wireless Communication",
-			"ref:Ji",
-			"ref:Xu",
-			"ref:Kim",
-			"ref:Zhu2012_Dyn",
-			"ref:Zhu2012",
-			"Jia2008",
-			"Xing",
-			"ref:Li201",
-			"DySPAN",
-			"Frontiers",
-			"Vazquez2010",
-			"Vazquez",
-			"Yi2010",
-			"Zhang2009",
-			"ref:Zhu",
-			"Zhu"
+			"Bertsekas"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -331,6 +349,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\\~{n}",
+			"\\'{u}",
+			"\\'{o}",
+			"\\'{i}",
+			"\\'{e}",
+			"\\'{a}",
 			"\\mathbf",
 			"ref:Yoon2012",
 			"ref:Andrews2014",
@@ -452,13 +476,7 @@
 			"^{(n)}",
 			"^{\\text{MDP}}",
 			"Fig. ",
-			"[ht]",
-			"-",
-			"''",
-			"``",
-			"\\alpha_{x_s}^{min}",
-			"-",
-			"\\boldsymbol"
+			"[ht]"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -478,15 +496,45 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 867,
+						"buffer_size": 919,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								234,
-								234
+								695,
+								695
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "latex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 433.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tex/Ack.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								697,
+								697
 							]
 						],
 						"settings":
@@ -499,7 +547,37 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "tex/Conclusion.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15091,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								50
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "latex",
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -538,7 +616,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 279.0
+		"height": 214.0
 	},
 	"output.find_results":
 	{
