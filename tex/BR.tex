@@ -49,14 +49,14 @@ As in previous works (e.g. \cite{ref:Zhao2007_dec}, \cite{ref:Kim2008},\cite{ref
 We are evaluating the impact of the spectrum reservation scheme on the capacity of the licensed network. Therefore we consider that the AN's resource allocation mechanism exploits all the available bandwidth independently of the number of PUs connected.
 We only consider resource allocation in the downlink bandwidth, were the OSA operates.
 
-\subsubsection{Radio Resource Allocation of the Licensed Network} 
+\subsubsection{Radio resource allocation of the licensed network} 
 The downlink spectrum consists of $N$ channels or subcarriers, each one with a bandwidth of $W$ Hz. At each time-slot, each one of the $n_{p}$ PUs in the system is assigned one of the $N$ channels and part of the total transmission power $p_{PU}$ of the AN.
 At time-slot $t$, the wireless link between the $j$-th PU and the AN is associated to $N$ channel gains, one for each channel. The channels are assumed to present a constant gain over the bandwidth $W$ and over the duration $\tau$ of the time-slot, and change over consecutive time-slots due to fading effects (block fading model, \cite{ref:Goldsmith2005}).
 A perfect channel state information is assumed, so that the AN knows all the channel gains at each time-slot.
 The objective of the resource management algorithm is to assign one channel to each PU and to allocate the power $p_{PU}$ among the $n_{p}$ assigned channels, at each time-slot, such that the total PU capacity is maximized.
 A well known strategy to attain this objective is to use a flat transmit power spectral density (PSD) \cite{ref:Rhee2000}, i.e. all the assigned subcarriers are allocated the same power ($p_{PU}/n_{p}$). This simplifies the problem to a subcarrier allocation problem which is solved by allocating the best available subcarrier to the PU with the least achieved rate, and then allocating the best subcarrier among the $N-1$ remaining ones to the PU with the second least rate, and so on. This strategy is shown to assure fairness among users and to achieve 96\% of the optimum capacity (\cite{ref:Rhee2000}, \cite{ref:Sadr2009}).
 
-\subsubsection{Bandwidth Reservation for OSA} 
+\subsubsection{Bandwidth reservation for OSA} 
 The bandwidth reservation (BR) mechanism considered implies that the AN reserves $m$ adjacent downlink channels for OSA, and the remaining $N-m$ channels are assigned to the $n_{p}$ PUs following the subcarrier allocation strategy described, whenever $n_{p}\leq N-m$. In case $n_{p}>N-m$, part of the $m$ reserved channels (concretely $n_{p}+m-N$) are assigned to PU transmissions, such that the $n_{p}$ channels used for PUs remain adjacent among them. Summarizing, the spectrum available for PU downlink transmission contains $\text{max}\left(n_{p},N-m\right)$ adjacent channels. Figure \ref{BR_fig_allocation} shows an example of the BR mechanism studied.
 
 \begin{figure}[ht]
@@ -184,7 +184,7 @@ After the sensing phase, the SU generates an estimate $\hat{h}$ of the number $h
 The estimation is based upon the sensing outcome, $\mathbf{x} = \left(x_{1},\dots,x_{\Delta}\right)$, where $x_{i} = 1$ if the SU detected PU activity in channel $i$ and $x_{i} = 0$ otherwise. We consider that the SU obtains $\hat{h}$ by a Maximum A Posteriori (MAP) estimation, $\hat{h}~=~\text{argmax }_{h} P\left(h|\mathbf{x}\right)$, which, applying Bayes' rule is equivalent to $\hat{h}~=~\text{argmax }_{h} P\left(h\right)P\left(\mathbf{x}|h\right)$ (see \cite{ref:Bertsekas2008}),
 where $P\left(h\right)$ and $P\left(\mathbf{x}|h\right)$ can be obtained from the PU traffic and sensing error models, and depend on the spectrum reservation policy.
 
-\subsubsection{Without Spectrum Reservation}
+\subsubsection{Without spectrum reservation}
 The conditional distribution $P\left(\mathbf{x}|h\right)$ of each outcome can be obtained as follows.
 For each $\mathbf{x}$ the number of positive detections is $\left\|\mathbf{x}\right\|_{1}=\sum_{i=1}^{\Delta}x_{i}$.
 For a given $h$, the number of false positives $f_{\text{p}}$ in $\mathbf{x}$ ranges from $f_{\text{p,min}}=\left(\left\|\mathbf{x}\right\|_{1}-h\right)^{+}$ to $f_{\text{p,max}}=\text{min}\left(\left\|\mathbf{x}\right\|_{1},\Delta-h\right)$.
@@ -212,7 +212,7 @@ P\left(h\right) =
 \end{cases}
 \end{equation}
 
-\subsubsection{With Spectrum Reservation}
+\subsubsection{With spectrum reservation}
 The SU is assumed to scan, at least, the $m$ reserved channels. Therefore, $\mathbf{x}=\left(\mathbf{x}_{m}, \mathbf{x}_{\Delta-m}\right)$, where $\mathbf{x}_{m}$ is the observation obtained in the first $m$ scanned channels and $\mathbf{x}_{\Delta-m}$ is the observation in the $\Delta-m$ channels scanned in the non-reserved spectrum. Similarly, $h=h_{m}+h_{\Delta-m}$, where $h_{m}$ and $h_{\Delta-m}$ are the PUs in the reserved and non-reserved channels respectively. The probabilities $P\left(\mathbf{x}_{\Delta-m}|h_{\Delta-m}\right)$ and $P\left(h_{\Delta-m}\right)$ are computed using (\ref{Pxh}) and (\ref{Ph}) respectively, for $\Delta-m$ scanned channels. In the reserved spectrum, the PUs occupy contiguous channels, therefore, for a given $h_{m}$, we can obtain $f_{\text{p}}$, $c_{\text{n}}$, $f_{\text{n}}$, and $c_{\text{p}}$ in $\mathbf{x}_{m}$ as follows
 \begin{equation}
 \begin{array}{lcl}
@@ -247,7 +247,7 @@ D_{\Delta}\left(a,h\right) & = & P(\hat{h}|h)\\
 \end{array}
 \end{equation}  
 Let us consider the no BR and the BR cases separately for the computation of $O_{s}\left(n'_{s},n_{p}\right)$ .
-\subsubsection{Without Spectrum Reservation}
+\subsubsection{Without spectrum reservation}
 The probability that, in any time slot, $h$ channels out of $\Delta$ scanned channels are used by PUs, when there are $n_{p}$ PUs in the spectrum, is hypergeometrical. Therefore
 \begin{equation}\label{Os1}
 O_{s}\left(n'_{s},n_{p}\right) = 
@@ -256,7 +256,7 @@ O_{s}\left(n'_{s},n_{p}\right) =
 \end{cases}
 \end{equation} 
 where $h_{\text{min}} = \left(\Delta+n_{p}-N\right)^{+}$ and $h_{\text{max}} = \mbox{min}\left(\Delta,n_{p}\right)$ are the minimum and maximum number of PUs within $\Delta$.
-\subsubsection{With Spectrum Reservation}
+\subsubsection{With spectrum reservation}
 In this case, an incoming SU occupies $n'_{s}$ channels, always within the $m$ reserved ones. Therefore, the SU detects $a_{m}=\text{min}\left(m,n'_{s}+k\right)$ in the $m$ reserved channels and $a_{\Delta-m}=\left(n'_{s}+k-m\right)^{+}$ in the no reserved ones. For $n_{p}>N-m$, $h_{m}=n_{p}+m-N$ and $h_{\Delta-m} = \Delta-m$, therefore 
 \begin{equation}\label{Os2}
 O_{s}\left(n'_{s},n_{p}\right) = D_{m}\left(a_{m},h_{m}\right)D_{\Delta-m}\left(a_{\Delta-m},h_{\Delta-m}\right)
@@ -274,7 +274,7 @@ For an ergodic, finite-state Markov chain, and provided that $\left|R\left(n_{s}
 \end{equation}
 where $P(n_{s},n_{p})$ are the steady state probabilities of the Markov process defined by (\ref{TransitionProbabilities}).
 
-\subsection{Propagation model}
+\subsection{Propagation Model}
 Before deriving the expressions for PU and SU capacities with and without BR, we have to establish the models for the pathloss and fading effects on the transmitted signals. Let $p_{PU}$ denote the total available transmission power at the PU Tx (AN) for the whole spectrum. The power transmitted in each channel, when there are $n_{p}$ PUs, is $p_{p}=p_{PU}/n_{p}$ (flat transmit PSD). The average received power at a PU terminal, after considering the path loss, is referred to as $p_{pp}$. Similarly, $p_{SU}$, $p_{s}$, and $p_{ss}$, are the total power at the SU Tx, the SU power in one channel, and the average SU received power in one channel, respectively. For interference computations, we use $p_{sp}$ to refer to the average SU power received at a PU Rx location and $p_{ps}$ for the PU power at an SU Rx location. Figure \ref{BR_fig_interference} shows a diagram with the transmission and interference powers between PUs and SUs.
 
 \begin{figure}[ht]
@@ -301,7 +301,7 @@ In particular, assuming that the fading amplitude follows a Rayleigh distributio
 
 The capacity expressions of the following subsections are obtained for the $g(r)$ and $f(p)$ functions described. Note, however that for different fading models (e.g. Nakagami or Rice) or different path loss models (two ray, Okumura-Hata, etc) the procedure is similar, although the equations may be more mathematically involved or require numerical evaluation. 
 
-\subsection{PU downlink capacity without interference}
+\subsection{PU Downlink Capacity without Interference}
 Let us consider a PU that, in a given time-slot, is the $j$-th one to be assigned a channel by the AN. 
 Because the Tx power on each channel remains constant for a fixed $n_{p}$, the maximum achievable rate per channel is determined by the additive white Gaussian noise (AWGN) capacity model (see \cite{ref:Goldsmith2005}).
 The capacity for the $j$-th PU is given by $C_{j,N}~=~W\text{log}_{2}\left(1+\text{\ttfamily{SNR}}_{p}\right)$, where $\text{\ttfamily{SNR}}_{p}$ is the average signal to noise ratio at the $j$-th PU Rx.
@@ -344,7 +344,7 @@ And finally, in absence of OSA interference, the total expected downlink capacit
 C_{N}\left(n_{p}\right) = \displaystyle\sum_{j=1}^{n_{p}}C_{j,N}\left(n_{p}\right)
 \end{equation}
 
-\subsection{PU downlink capacity with interference}
+\subsection{PU Downlink Capacity with Interference}
 Let us now consider a time-slot where the channel assigned to the $j$-th PU is occupied by an SU transmission, causing interference at the PU Rx.
 By the AWGN model, the capacity for the $j$-th PU in this time-slot is now given by $C^{I}_{j,N}~=~W\text{log}_{2}\left(1+\text{\ttfamily{SINR}}_{p}\right)$, where $\text{\ttfamily{SINR}}_{p}$ is the average signal to interference and noise ratio at the $j$-th PU Rx.
 For the general case of the PU Tx and SU Tx located at different places, the PU signal and the interference signal follow independent fading processes. 
@@ -440,7 +440,7 @@ C^{(c)}_{n_{p}}\left(n_{p},n_{s}\right) &,\mbox{if }n_{p} > N-m
 \end{equation}
 The reward function $R^{\text{br}}_{PU}(n_{p},n_{s})$ is obtained as in (\ref{Roff}).
 
-\subsection{SU capacity without interference}
+\subsection{SU Capacity without Interference}
 During an SU transmission period, the SU uses the same power $p_{s}=p_{SU}/n_{s}$ in each of the $n_{s}$ occupied channels. Therefore, the SU AWGN capacity per channel is given by $C'~=~W\text{log}_{2}\left(1+\text{\ttfamily{SNR}}_{s}\right)$, where $\text{\ttfamily{SNR}}_{s}$ is the average SU signal to noise ratio in one channel. With Rayleigh fading and an average received power $p_{ss}=p_{SU}K'g(r')/n_{s}$, we have $\text{\ttfamily{SNR}}_{s}(r')~=~p_{SU}K'g(r')/n_{s}N_{0}W$.
 Taking the expectation over $r'$ we have that $\underset{r'}{\mathbf{E}}\left[\text{log}_{2}\left(1+\text{\ttfamily{SNR}}_{s}(r')\right)\right]$ $\leq$ $\text{log}_{2}\left(1+\underset{r'}{\mathbf{E}}\left[\text{\ttfamily{SNR}}_{s}(r')\right]\right)$. This upper bound defines the SU capacity for $n_{s}$ channels as
 \begin{equation}
@@ -461,7 +461,7 @@ However, for the sake of simplicity, we present an expression for $\underset{r'}
 \end{array}
 \end{equation}
 
-\subsection{SU capacity with interference}
+\subsection{SU Capacity with Interference}
 During a time-slot, the SU per-channel capacity under PU interference is $C'^{I} = W\text{log}_{2}\left(1+\text{\ttfamily{SINR}}_{s}\right)$, where $\text{\ttfamily{SINR}}_{s}$ denotes the SU signal to interference ratio. 
 When both signals experience Rayleigh fading, the $\text{\ttfamily{SINR}}_{s}$ is given by
 \begin{equation}\label{SINRs}
@@ -485,7 +485,7 @@ W\text{log}_{2}\left(1+
 {n_{s}p_{PU}Kg(\bar{r})}\right)
 \end{equation}
 where $\text{\ttfamily{SNR}}'_{p}(r)=p_{PU}Kg(r)/n_{p}N_{0}W$.
-\subsubsection{without Bandwidth Reservation}
+\subsubsection{Without bandwidth reservation}
 Let $z$ denote the number of channels with overlapping transmissions. Given $n_{s}$ and $n_{p}$, $z$ takes random values ranging from $z_{\text{min}}=\left(n_{s}+n_{p}-N\right)^{+}$ to $z_{\text{max}}=\text{min}\left(n_{s},n_{p}\right)$, with hypergeometric distribution. The SU capacity, without BR, in the $n_{s}$ used channels, $C'^{\text{nbr}}(n_{s},n_{p})$ is obtained by taking expectation over the $z$ values:
 \begin{equation}
 C'^{\text{nbr}}(n_{s},n_{p}) = \\ \displaystyle\sum_{z=z_{\text{min}}}^{z_{\text{max}}}\left(\left(n_{s}-z\right)C'(n_{s})+zC'^{I}(n_{s},n_{p})\right)P_{H}\left(z;N,n_{p},n_{s}\right)
@@ -495,7 +495,7 @@ To define the reward function $R^{\text{nbr}}_{SU}\left(n_{s},n_{p}\right)$, we 
 R^{\text{nbr}}_{SU}\left(n_{s},n_{p}\right) = \frac{C'^{\text{nbr}}(n_{s},n_{p})}{\rho_{s}C'(n_{s,\text{max}})}
 \end{equation}
 
-\subsubsection{with Bandwidth Reservation}
+\subsubsection{With bandwidth reservation}
 In this case, given $n_{s}$ and $n_{p}$, the number of channels with overlapped transmissions is $z_{\text{min}}=\left(n_{s}+n_{p}-N\right)^{+}$, and therefore
 \begin{equation}
 C'^{\text{br}}(n_{s},n_{p}) =\left(n_{s}-z_{\text{min}}\right)C'(n_{s})+z_{\text{min}}C'^{I}(n_{s},n_{p})
@@ -579,7 +579,7 @@ However, although BR always manages to reduce collision/interference, it is not 
 \caption{SU capacity versus interference caused to the PUs for high PU traffic.}\label{BR_fig_InterferenceHigh}
 \end{figure}
 
-\subsection{Studying PU motivation to use BR}
+\subsection{Studying PU Motivation to Use BR}
 We have seen that the PU traffic intensity is closely related to the performance limits on $\overline{R}^{\text{br}}_{PU}$. This suggests that an AN implementing BR could decide to switch this feature on or off, depending on its own traffic load. To see where the traffic threshold could be located, we represent, in Figure \ref{BR_fig_Thresholds}, the highest values of $\overline{R}^{\text{br}}_{PU}$ and $\overline{R}^{\text{nbr}}_{PU}$ for $n_{s,\text{max}}=4$. To assess the effect of SU traffic as well, several $\rho_{s}$ values are used (0.1,0.5,0.8). It can be seen that, without BR, the PU capacity is higher for larger $\lambda_{p}$, because the spectrum sensing detects more PU activity and incoming SUs either do not transmit or transmit using very few channels, reducing the effects of interference/collision.
 \begin{figure}[ht]
 \begin{center}

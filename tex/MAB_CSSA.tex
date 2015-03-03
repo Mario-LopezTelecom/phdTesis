@@ -1,5 +1,5 @@
 \graphicspath{ {img/MAB_CSSA/} }
-\chapter[A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing][A superprocess with UCB for CSS]{A superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing}\label{MAB_CSSA_chap}
+\chapter[A Superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing][A Superprocess with UCB for CSS]{A Superprocess with Upper Confidence Bounds for Cooperative Spectrum Sharing}\label{MAB_CSSA_chap}
 
 \section{Introduction}
 The mechanism we proposed in the previous chapter is appropiate when the spectrum owner has unused spectrum to lease. What happens if the PU demands are higher and there are not so many opportunities to sell? Is automated spectrum trading possible in such context? In this chapter we give a positive answer to that question, in the framework of \textit{Cooperative Spectrum Sharing} (CSS), also known as \textit{Cooperative Secondary Spectrum Access} (CSSA). 
@@ -174,7 +174,7 @@ For the sake of clarity, from now on we set $\beta=0$ and $\log{(1+\Gamma_{\text
 SU $s$ accepts an offer $\alpha_a \in \mathcal{A}$ whenever $\alpha_a \geq \alpha_s^*$, where $\alpha_s^*$ is the minimum offer SU s is willing to accept. The \textit{type of an SU}, $\tau_s$, is the index of the smallest offer that this SU accepts, i.e. $\tau_s = \argmin_a\{\alpha_a: \alpha_a\geq \alpha_s^*, \alpha_a \in \mathcal{A}\}$.
 If the link between the SU pair is stable (\textit{e.g.,} a close ad hoc connection) and the offered PT bandwidth is constant (only the time offered changes), the thresholds, and therefore the type of each SU, remain constant over multiple transmission frames.
 
-\subsection {Multi-armed bandit formulation}
+\subsection {Multi-Armed Bandit Formulation}
 Mathematically, we model the sequential decisions of the PT as a multi-armed bandit (MAB) problem.
 The PT selects SU-offer pairs $(s,\alpha)$ from the action set $\mathcal{U}=\mathcal{S}\times\mathcal{A}$.
 In the MAB model each $u = (s,\alpha)$ is an arm, and $\mathcal{U}$ is the set of arms.
@@ -686,7 +686,7 @@ The state space of the MDP of an SU, $\mathcal{X}_s$, grows with the number of o
 \label{fig:VsA}
 \end{figure}
 
-\section{Conclusion and Future Work}\label{sec:Con}
+\section{Conclusions}\label{sec:Con}
 %Brief summary
 We have proposed a spectrum trading mechanism in Cooperative Spectrum Sharing (CSS) using multi-armed bandits (MABs), from the perspective of a primary transmitter (PT),  modeling channels under shadowing effects. 
 We have focused on a scenario where the PT has no knowledge of the performance of the SUs acting as relays, or about the offers they are willing to accept. 
