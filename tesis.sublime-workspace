@@ -18,22 +18,6 @@
 				"buffer_size": 919,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "tex/Ack.tex",
-			"settings":
-			{
-				"buffer_size": 2178,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "tex/Conclusion.tex",
-			"settings":
-			{
-				"buffer_size": 15091,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -99,6 +83,8 @@
 	],
 	"file_history":
 	[
+		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
+		"/Users/mariol/Documents/git/TESIS/tex/Ack.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/MAB_CSSA.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/BD.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Sarnoff.tex",
@@ -111,9 +97,7 @@
 		"/Users/mariol/Documents/git/TESIS/mystyle.sty",
 		"/Users/mariol/Documents/git/TESIS/main.tex",
 		"/Users/mariol/Documents/git/TESIS/bibtex/thesisBib.bib",
-		"/Users/mariol/Documents/git/TESIS/tex/Ack.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Abstract.tex",
-		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.tex",
 		"/Users/mariol/Documents/git/TESIS/tex/Survey.log",
 		"/Users/mariol/Documents/git/TESIS/tex/Conclusion.aux",
 		"/Users/mariol/Documents/git/TESIS/bibtex/aux_thesisBib.tex",
@@ -503,8 +487,8 @@
 						"selection":
 						[
 							[
-								695,
-								695
+								576,
+								576
 							]
 						],
 						"settings":
@@ -514,70 +498,10 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 433.0,
+						"translation.y": 436.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "tex/Ack.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2178,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								697,
-								697
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "latex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "tex/Conclusion.tex",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15091,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								48,
-								50
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "latex",
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -626,6 +550,7 @@
 	{
 		"height": 152.0
 	},
+	"pinned_build_system": "",
 	"project": "tesis.sublime-project",
 	"replace":
 	{
