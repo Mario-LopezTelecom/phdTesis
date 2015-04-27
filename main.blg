@@ -11,72 +11,72 @@ Reallocated field_info (elt_size=4) to 14720 items from 5000.
 Database file #1: IEEEabrv.bib
 Database file #2: ./bibtex/thesisBib.bib
 Warning--string name "sept" is undefined
---line 55 of file ./bibtex/thesisBib.bib
-I was expecting a `,' or a `}'---line 271 of file ./bibtex/thesisBib.bib
+--line 109 of file ./bibtex/thesisBib.bib
+I was expecting a `,' or a `}'---line 541 of file ./bibtex/thesisBib.bib
  :  
  :  year = {2012}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
---line 461 of file ./bibtex/thesisBib.bib
+--line 921 of file ./bibtex/thesisBib.bib
 Warning--string name "sept" is undefined
---line 655 of file ./bibtex/thesisBib.bib
+--line 1309 of file ./bibtex/thesisBib.bib
 Warning--string name "sept" is undefined
---line 748 of file ./bibtex/thesisBib.bib
+--line 1495 of file ./bibtex/thesisBib.bib
 Warning--string name "sept" is undefined
---line 827 of file ./bibtex/thesisBib.bib
-I was expecting a `,' or a `}'---line 872 of file ./bibtex/thesisBib.bib
+--line 1653 of file ./bibtex/thesisBib.bib
+I was expecting a `,' or a `}'---line 1743 of file ./bibtex/thesisBib.bib
  :  
  :  year = {2005}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
---line 1110 of file ./bibtex/thesisBib.bib
+--line 2219 of file ./bibtex/thesisBib.bib
 Warning--string name "sept" is undefined
---line 1137 of file ./bibtex/thesisBib.bib
-You're missing a field name---line 1183 of file ./bibtex/thesisBib.bib
+--line 2273 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 2365 of file ./bibtex/thesisBib.bib
  : month=jan,
  :           ,
 I'm skipping whatever remains of this entry
 Warning--string name "iee_j_wcom" is undefined
---line 1190 of file ./bibtex/thesisBib.bib
-You're missing a field name---line 1201 of file ./bibtex/thesisBib.bib
+--line 2379 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 2401 of file ./bibtex/thesisBib.bib
  :  booktitle = {{ACM} {MobiHoc}},
  :                                ,
 I'm skipping whatever remains of this entry
-You're missing a field name---line 1274 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 2547 of file ./bibtex/thesisBib.bib
  : month=jan,
  :           ,
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
---line 1371 of file ./bibtex/thesisBib.bib
-You're missing a field name---line 1466 of file ./bibtex/thesisBib.bib
+--line 2741 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 2931 of file ./bibtex/thesisBib.bib
  : month=jan,
  :           ,
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
---line 1695 of file ./bibtex/thesisBib.bib
-You're missing a field name---line 1735 of file ./bibtex/thesisBib.bib
+--line 3389 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 3469 of file ./bibtex/thesisBib.bib
  : 
  : % Sarnoff
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1741 of file ./bibtex/thesisBib.bib
+I was expecting a `,' or a `}'---line 3481 of file ./bibtex/thesisBib.bib
  :  
  :  year = {1975},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 1758 of file ./bibtex/thesisBib.bib
+You're missing a field name---line 3515 of file ./bibtex/thesisBib.bib
  : 
  : % MAB_CSSA
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 1884 of file ./bibtex/thesisBib.bib
+Repeated entry---line 3767 of file ./bibtex/thesisBib.bib
  : @article{ref:Niyato2008_Mark
  :                             ,
 I'm skipping whatever remains of this entry
 Warning--string name "sept" is undefined
---line 2157 of file ./bibtex/thesisBib.bib
+--line 4313 of file ./bibtex/thesisBib.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.

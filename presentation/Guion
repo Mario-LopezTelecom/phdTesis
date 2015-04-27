@@ -1,0 +1,176 @@
+INTRODUCTION
+============
+Init
+----
+Welcome members of the thesis committee, thank you for your presence. The title of my thesis is "Coexistence Policies in Cognitive Radio", and for the next 40 minutes I am going to give you a brief overview of some of the works that are part of it. 
+
+Mobile traffic per end-user connection
+--------------------------------------
+What is the problem we are trying to solve? Mobile data traffic demand is increasing. This is something we have all seen in our everyday life. According to this forecast by Cisco, by 2019 the data demand per user will increase 8 times. 
+
+United States Frequency Allocations
+-----------------------------------
+Wireless communications need, among other resources, radio-electric spectrum, which is finite. Government agencies, such as the FCC in the United States grant access to it through fixed, long-term licenses on large geographical areas. The most obvious thought to meet the increasing demands would be to allocate more spectrum to mobile operators.
+
+The next figure shows the US frequency allocations, with the unallocated spectrum in white. Almost all the spectrum has already been allocated to a service. 
+
+Underutilized spectrum
+----------------------
+But most of it is underutilized. This is one of the several measurements campaings conducted over the past 10 years. The figure shows the average utilization of the frequencies between 30 Mhz to 3 Ghz in a particular zone of Washington, in 2010. These bands are highly valued by the mobile operators because of its propagation characteristics and its called "beachfront spectrum".
+
+Dynamic Spectrum Access
+-----------------------
+Since most of the spectrum is underutilized, we could think of dynamically exploiting its unused portions. This is called Dynamic Spectrum Access, and it is possible thanks to cognitive radios, which can sense the spectrum and become aware of their radio environment, as well as adapt their transmission parameters to it. 
+
+Unlicensed users (also called Secondary users) will scan the spectrum in search of unused fragments by the licensed users (also called Primary users).
+
+Motivation of the thesis
+------------------------
+However, the wireless industry have some concerns about Dynamic Spectrum Access:
+
++ Interferences: A shared access to spectrum with unlicensed users may imply a certain degree of harmful interference with the licensed users. In addition, the licensed operators may not accurately predict how much value they can obtain from a certain spectrum band because they cannot predict the degree of interference they are going to suffer.
+
++ Lack of incentives: what are the licensed users going to obtain in return?
+
++ Scalability: what happens with these mechanisms as the number of entities of the system increases? And when the time scale of the sharing reduces?
+
+Therefore, we propose DSA mechanisms focusing on the protection and creation of incentives to the licensed users. 
+
+Index
+-----
+More specifically, under the framework of Dynamic Spectrum Access, we directed our attention to Opportunistic Spectrum
+Access, which corresponds to the sensing and access to spectrum holes of the previous diagram. Compared to other DSA approaches, which consists on concurrent transmissions of the licensed and unlicensed users, it is more conservative regarding the licensed users' protection.
+
+With regard to the search of incentives for the licensed users, we have also directed our attention to spectrum trading. In automated spectrum trading, the licensed users dynamically sell part of its spectrum to unlicensed users mainly in exchange of money.
+
+Next, I am going to show some of the works addressing key issues of DSA, starting by those under Opportunistic Spectrum Access.
+
+
+
+
+
+
+
+
+
+BD
+==
+Motivation
+----------
+One of the main problems of OSA is that current radio frequency front-ends cannot perform sensing and transmission in the same channels at the same time. In consequence, in OSA protocols, spectrum sensing and SU data transmission are performed in two separated phases.
+
+During the transmission phase, a channel occupied by an SU can be eventually used by a PU transmission causing a potentially harmful interference to the PU receiver. In consequence, OSA protocols rely on periodic spectrum sensing periods and the length of the sensing and transmission phases are set to a value that maximize the SU throughput under a given collision probability constraint.
+
+However, this does not completeley solve the problem: if a PU arrives while an SU is on data tranmission, the SU will only notice that during the next sensing period, colliding with the PU until then.
+
+Contribution
+------------
+We propose a collision detection mechanism (which we call Background Detection), on top of optimized OSA. It operates at the SU receiver, during ongoing SU transmission, and decides, by means of a Maximum a Posteriori estimator based on local observations, if there has been overlap with a primary user.
+
+MAP Rule
+--------
+More specifically, upon each packet reception, the SU receiver conducts a binary hypothesis testing on the presence or abscesce of a PU, given the observation of the received power and whether or not it was able to decode the packet.
+
+This MAP rule partitions the observation
+space into disjoint sets in which each of the two hypothesis is chosen. It translates into two power thresholds, one for the case of no packet error and one for the case of correct packet reception. 
+
+For example, in case there is no packet error, if the received power is below p_e_0, the SU infers the PU is not active, and if its above, the SU infers the PU is active. It is similar for the case of packet error (although the power threshold is different).
+
+Benchmark of our proposal
+-------------------------
+We compare our proposal with the optimized OSA without Background detection and with a mechanism that, on top of optimized OSA, vacates the channel as soon as there is a packet error. 
+Let me show in a diagram how these mechanisms react to two kind of events in the channel. Let us imagine that the SUs transmit in a slotted manner, transmitting one packet per time slot. In the first of the two events of the diagram, there is overlap with the PU in two slots, causing a packet error in the second slot.
+
+Plain OSA makes no use of any observation, and transmits the fixed number of slots which are the solution of the optimization problem we saw in the first slide. 
+
+OSA-ACK stops transmission as soon as it sees a packet error.
+
+Our proposal (with a certain probability), detects the presence of the PU in the first slot and leaves the channel.
+
+In the second event I am using as illustrative example in the diagram, there is a packet error in a slot, but due to propagation issues and not because of the presence of an SU. Again, plain OSA will transmit a fixed number of slots, OSA-ACK will leave the channel after the packet error, and our mechanism (with a certain probability) will infer that there is no PU present in the system and thus, keep on transmitting. 
+
+Results (I)
+-----------
+In the figure we can see the SU throughput and collision probability for different ratios of average secondary power to primary power at the SU receiver. 
+
+OSA-BD improves the SU throughput for the same target collision probability. BD is especially useful compared to the ACK mechanism when secondary power is small in relation to the primary. In that case, SU packet errors are caused by propagation issues more often than by PU interference, therefore, the ACK mechanism aborts transmission earlier and attains less throughput per transmission period.
+
+Results (II)
+------------
+In this figure we can see the SU throughput and collision performance of the three mechanisms against different levels of underestimation of the PU arrival traffic intensity. This parameter is used in the computation of the optimal number of slots to transmit, as well as in the computation of the power thresholds of the BD. The figure shows that OSA-BD does not suffer a severe degradation because of that underestimation and still outperforms the other two mechanisms.
+
+Novelty of the work
+-------------------
+Finally, the novelty of our work is that most of the works about collision detection in OSA are focused on the detection carried out at the transmitter side, as in the periodic spectrum
+sensing problem. To the best of our knowledge, there are only two exceptions to this. One of them theoretically studies the impact of
+different receiver-side detectors, but it does not detail their implementations. The
+other implements an energy-detector at the SU Rx. However, as opposed to ours, they assume that the secondary transmission is always correctly decoded and can be substracted from the received signal (while we use it as an observation to perform an inference).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FINAL REMARKS
+=============
+Index
+-----
+I have just given you some details about our works in the areas of Opportunistic Spectrum Access and Automated Spectrum Trading. 
+
+Final Remarks index
+-------------------
+Finally, I will show the implications of this thesis and some highlights regarding future research lines in the problem of the increasing mobile data demand.
+
+Relevance of the thesis
+-----------------------
+The collection of mechanisms I have shown here,  provide specific ideas that can be implemented in the context of DSA with the ultimate objective of meeting the future mobile data demands. 
+
+Given our focus on the concerns of the wireless industry, we believe our thesis helps in making DSA more attractive to such industry. Actually, they are the ones that will have to implement these mechanisms, so it is important that they agree on their convenience.
+
+In addition, our thesis is also relevant to other two approaches enjoying more support from the industry: 
+- Coexistence with legacy networks. Legacy spectrum reuse.
+- HetNets, as the small cells behave as secondary users.
+
+Future Work on OSA
+------------------
+improve the accuracy of the sensing process, in order to minimize interferences. That may not only mean more research in improvements on the physical layer, but also techniques such as coordinated spectrum sensing (multiple SUs exchanging sensing information) or the additional use of spectrum utilization databases. In that sense,promising approaches (in terms of the industry's support) are Prioritized Access, Licensed Spectrum Access or Assisted Spectrum Access, which also involves the concept of licenses for secondary users.
+
+As a recap from the our survey on spectrum trading, we advocate for more research on real-time operation (because of the varying conditions of demand, channel gains, etc.), incomplete information (as we should not assume we know much from the entities in the system) and Cooperative Spectrum Sharing (because of the added value it entails). 
+
+Regulation issues
+-----------------
+Although this is a bit off-topic of the thesis, it is worth mentioning given its influence.
+- Policy enforcement and monitoring. It depends on political views on the matter but regulator intervention could be helpful to avoid harm to the social welfare, at least in a transition fase to a full-fledged free market. Complex interference disputes are expected.
+- Standardization will help to streamline administrative processes and help remove uncertainty about the expected interference and how much spectrum each entity gets to use in reality.
+- Direct incentives to licensed users to collaborate.
+- Micro-economic and long-term studies of the impact of spectrum trading, to, for example, forecast anti-competitive outcomes of the market.
+
+
+
+
