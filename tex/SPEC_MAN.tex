@@ -81,11 +81,11 @@ While some works \cite{ref:ElSawy2013,ref:Lima2012} have studied channel assignm
 \subsection{Our Contribution}
 %The goal of this work is to find and characterize OSA policies for SUs with the hardware limitations described previously and to evaluate the impact of PU channel allocation mechanisms.
 This chapter comprises the following main contributions: 
-\begin{enumerate}
+\begin{itemize}
 \item We address an issue that has been largely ignored in the design of multi-channel OSA protocols for hardware constrained radios: considering the effect of the scanning delay in the uncertainty of the information available at the SUs. Finding an optimal OSA strategy implies solving a Partially Observable Markov Decision Process (POMDP) with finite horizon. This is a challenging task because of the inherent complexity of POMDPs, which is increased by the inclusion of delay-dependent uncertainty.
 %We develop an optimal SU access strategy that considers the effect of scanning delay in the uncertainty of the information available at the SUs. This effect has been largely ignored in the design of OSA protocols for hardware limited radios. 
 \item The OSA scheme is designed and evaluated for different levels of \textit{coexistence friendliness} at the spectrum owner, reflected on its spectrum management policies. Specifically: random allocation, sequential allocation and sequential allocation with spectrum merging. We also show how the selected spectrum management policy relates to the delay effects considered in the OSA design.
-\end{enumerate}
+\end{itemize}
 
 %Existing research had addressed the trade-off imposed by the scanning delay: scanning more channels allows the SU to transmit in more channels simultaneously but also increases the delay overhead.
 %Part of our contribution is to include another key element into the model: the effect of the scanning delay on the reliability of the observations, which is crucial when considering PU activity in all the spectrum band.
@@ -117,10 +117,10 @@ Similarly to many related works (\textit{e.g.} \cite{ref:Zhao2007_dec}, \cite{re
 The criteria for PU channel allocation depend on the system, \textit{e.g.} the AN may assign them according to channel quality measurements reported by the PUs. So far, in OSA research it has been usually assumed that channels are occupied by PUs according to independent identically distributed (i.i.d.) processes. In that scheme, that we refer to as \textit{random allocation}, every channel can be assigned to an incoming PU with the same probability.
 However, when the same spectrum band is accessed by opportunistic nodes, random allocation is not optimal in terms of collision probability. In this work we investigate the benefits of using different spectrum management strategies for allocating channels to PUs. Therefore, we consider two additional schemes:
 % Therefore, in addition to the random allocation described previously, we consider two other schemes:
-\begin{enumerate}
+\begin{itemize}
 	\item \textit{Sequential allocation}: Considering the $N$ channels numbered from $1$ to $N$, each incoming PU is always assigned the highest numbered available channel.
 	\item \textit{Sequential allocation with spectrum aggregation}: channels are assigned to PUs sequentially, es explained before, but when one PU releases its channel, all the spectrum currently in use by ongoing PU communications is rearranged so that all the active PUs occupy the adjacent channels with the highest numbers (merged spectrum).  
-\end{enumerate}
+\end{itemize}
 Fig. \ref{fig:allocation} illustrates the arrival and departures of PUs under these allocation schemes.
 \begin{figure}[ht]
 \centering
@@ -660,7 +660,7 @@ where $0\leq \alpha \leq 1$. The objectives are divided by their maximum values 
 \subsubsection{Throughput}
 The maximum throughput is attained when $M$ channels are found idle in the first $M$ scanning slots and the decision made is to transmit using these $M$ channels. Given a transmission rate $R$ and scanning and transmission times equal to $\tau$ and $T$ respectively, the maximum throughput is
 \begin{equation}
-b_{\text{max}} = \frac{MRT}{M\tau + T}.
+b_{\text{max}} = \frac{MRT}{M\tau + T}
 \end{equation}
 When the access algorithm decides to transmit in $n$ channels at stage $k$ the throughput is
 \begin{equation}
@@ -669,7 +669,7 @@ b_{k}(m_{k}) = \frac{nRT}{k\tau + T},\text{ } n \leq k
 \subsubsection{Average overlapping time}
 The maximum average overlapping time occurs when, after selecting $M$ channels to transmit in, these $M$ channels turn out to be occupied by PUs when the SU starts to transmit and remain occupied for at least $T$ seconds. Therefore, in the worst case of having $M$ collisions lasting for $T$ seconds, the total overlapping time is:
 \begin{equation}
-c_{\text{max}} = MT.
+c_{\text{max}} = MT
 \end{equation}
 Accordingly, given a vector $m_{k}$ selecting $n$ channels to transmit in after the $k$-th scanning slot, the average overlapping time is given by
 \begin{equation}\label{collision}

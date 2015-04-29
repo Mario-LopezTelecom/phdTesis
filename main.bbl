@@ -1112,6 +1112,17 @@ M.~A. Baker, \emph{{CTIA} Statement After the Conclusion of the FCC's AWS-3
   \url{{http://blog.ctia.org/2015/01/29/ctia-statement-after-the-conclusion-of-the-fccs-aws-3-spectrum-auction/}}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Matinmikko2013}
+M.~Matinmikko, M.~Palola, H.~Saarnisaari, M.~Heikkila, J.~Prokkola, T.~Kippola,
+  T.~Hanninen, M.~Jokinen, and S.~Yrjola, ``Cognitive radio trial environment:
+  First live authorized shared access-based spectrum-sharing demonstration,''
+  \emph{{IEEE} Veh. Technol. Mag.}, vol.~8, no.~3, pp. 30--37, 2013.
+
+\bibitem{Song2012}
+M.~Song, C.~Xin, Y.~Zhao, and X.~Cheng, ``Dynamic spectrum access: from
+  cognitive radio to network radio,'' \emph{{IEEE} Wireless Commun. Mag.},
+  vol.~19, no.~1, pp. 23--29, Feb. 2012.
+
 \bibitem{ref:Andrews2014}
 J.~Andrews, S.~Buzzi, W.~Choi, S.~Hanly, A.~Lozano, A.~Soong, and J.~Zhang,
   ``What will {5G} be?'' \emph{{IEEE} J. Sel. Areas Commun.}, vol.~32, no.~6,
@@ -1120,11 +1131,5 @@ J.~Andrews, S.~Buzzi, W.~Choi, S.~Hanly, A.~Lozano, A.~Soong, and J.~Zhang,
 \bibitem{ref:RSPG2009}
 ERG-RSPG, ``Report on radio spectrum competition issues,'' Tech. Rep., 2009, {
   ERG (09) 22. RSPG09-279 Rev.2}.
-
-\bibitem{Matinmikko2013}
-M.~Matinmikko, M.~Palola, H.~Saarnisaari, M.~Heikkila, J.~Prokkola, T.~Kippola,
-  T.~Hanninen, M.~Jokinen, and S.~Yrjola, ``Cognitive radio trial environment:
-  First live authorized shared access-based spectrum-sharing demonstration,''
-  \emph{{IEEE} Veh. Technol. Mag.}, vol.~8, no.~3, pp. 30--37, 2013.
 
 \end{thebibliography}

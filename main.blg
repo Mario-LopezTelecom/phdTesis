@@ -7,7 +7,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 14720 items from 5000.
+Reallocated field_info (elt_size=4) to 14765 items from 5000.
 Database file #1: IEEEabrv.bib
 Database file #2: ./bibtex/thesisBib.bib
 Warning--string name "sept" is undefined
@@ -100,45 +100,45 @@ Warning--empty year in ref:Klei
 Warning--missing institution in ref:RSPG2009
 
 Done.
-You've used 216 entries,
+You've used 217 entries,
             4039 wiz_defined-function locations,
-            2363 strings with 49936 characters,
-and the built_in function-call counts, 167862 in all, are:
-= -- 13580
-> -- 3803
-< -- 1516
-+ -- 2184
-- -- 624
-* -- 8120
-:= -- 24759
-add.period$ -- 431
-call.type$ -- 216
-change.case$ -- 196
-chr.to.int$ -- 3387
-cite$ -- 232
-duplicate$ -- 12135
-empty$ -- 13712
-format.name$ -- 801
-if$ -- 39255
+            2369 strings with 50086 characters,
+and the built_in function-call counts, 168713 in all, are:
+= -- 13652
+> -- 3825
+< -- 1524
++ -- 2196
+- -- 628
+* -- 8164
+:= -- 24889
+add.period$ -- 433
+call.type$ -- 217
+change.case$ -- 197
+chr.to.int$ -- 3402
+cite$ -- 233
+duplicate$ -- 12197
+empty$ -- 13773
+format.name$ -- 806
+if$ -- 39452
 int.to.chr$ -- 0
-int.to.str$ -- 216
-missing$ -- 2077
-newline$ -- 697
-num.names$ -- 215
-pop$ -- 4516
+int.to.str$ -- 217
+missing$ -- 2088
+newline$ -- 700
+num.names$ -- 216
+pop$ -- 4536
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 4
-skip$ -- 13103
+skip$ -- 13168
 stack$ -- 0
-substring$ -- 8027
-swap$ -- 10351
-text.length$ -- 387
+substring$ -- 8063
+swap$ -- 10408
+text.length$ -- 390
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 216
+type$ -- 217
 warning$ -- 16
-while$ -- 706
-width$ -- 219
-write$ -- 2155
+while$ -- 710
+width$ -- 220
+write$ -- 2166
 (There were 11 error messages)

@@ -135,6 +135,29 @@ other implements an energy-detector at the SU Rx. However, as opposed to ours, t
 
 
 
+UA_OSA
+======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 FINAL REMARKS
@@ -159,7 +182,7 @@ In addition, our thesis is also relevant to other two approaches enjoying more s
 
 Future Work on OSA
 ------------------
-improve the accuracy of the sensing process, in order to minimize interferences. That may not only mean more research in improvements on the physical layer, but also techniques such as coordinated spectrum sensing (multiple SUs exchanging sensing information) or the additional use of spectrum utilization databases. In that sense,promising approaches (in terms of the industry's support) are Prioritized Access, Licensed Spectrum Access or Assisted Spectrum Access, which also involves the concept of licenses for secondary users.
+Improve the accuracy of the sensing process, in order to minimize interferences. That may not only mean more research in improvements on the physical layer, but also techniques such as coordinated spectrum sensing (multiple SUs exchanging sensing information) or the additional use of spectrum utilization databases. In that sense,promising approaches (in terms of the industry's support) are Prioritized Access, Licensed Spectrum Access or Assisted Spectrum Access, which also involves the concept of licenses for secondary users.
 
 As a recap from the our survey on spectrum trading, we advocate for more research on real-time operation (because of the varying conditions of demand, channel gains, etc.), incomplete information (as we should not assume we know much from the entities in the system) and Cooperative Spectrum Sharing (because of the added value it entails). 
 
